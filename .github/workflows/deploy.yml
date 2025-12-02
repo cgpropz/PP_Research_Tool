@@ -28,7 +28,6 @@ jobs:
             --include '*.json' \
             --include '*.csv' \
             --include '*.css' \
-            --include 'CNAME' \
             --exclude '*' \
             ./ site/
       - name: Upload artifact
