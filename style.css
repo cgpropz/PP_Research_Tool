@@ -11,7 +11,34 @@ body.dashboard {padding:20px;}
 .header h1 { font-family:'Orbitron',sans-serif; color:white; text-shadow:0 0 20px var(--pp-accent-glow); margin:0; font-size:3.0rem; }
 .tagline { color:var(--pp-success); font-size:1.1rem; opacity:.9; letter-spacing:2px; font-weight:600; }
 
-.controls { max-width:1600px; margin:0 auto 30px; display:flex; flex-wrap:wrap; gap:15px; justify-content:center; align-items:center; background:var(--pp-surface); padding:20px; border-radius:16px; border:1px solid var(--pp-border); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+.controls {
+  /* 1. Full width always */
+  width: 100%;
+  max-width: 100%;                    /* removes the old 100% limit that was lying */
+
+  /* 2. God-tier max-width: full-bleed until ~1800px, then nicely capped */
+  max-width: min(100%, 1800px);
+
+  /* 3. Perfect centering + smart side gutters */
+  margin: 0 auto;                     /* keeps it centered */
+  padding-inline: max(2rem, 50vw - 800px);  /* magic formula */
+  /* Explanation: 
+       • Mobile  → 2rem padding
+       • Wide  → grows until container is 1600px wide, then stops (800px ×2) */
+
+  /* 4. Keep everything else you already had */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background: var(--pp-surface);
+  padding-block: 1.5rem;             /* vertical breathing room */
+  border-radius: 16px;
+  border: 1px solid var(--pp-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
 .controls input,.controls select { padding:12px 18px; border-radius:12px; border:2px solid var(--pp-success); background:var(--pp-surface-alt); color:var(--pp-text); font-size:1rem; outline:none; }
 .controls input:focus,.controls select:focus { border-color:var(--pp-accent); box-shadow:0 0 16px var(--pp-accent-glow); }
 .controls input { width:340px; }
