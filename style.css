@@ -8,7 +8,7 @@ body.dashboard {padding:20px;}
 .header { text-align:center; margin-bottom:30px; display:flex; flex-direction:column; align-items:center; gap:12px; }
 .logo { height:90px; filter:drop-shadow(0 0 15px var(--pp-success)); transition:transform .4s; }
 .logo:hover { transform:scale(1.08); }
-.header h1 { font-family:'Orbitron',sans-serif; color:var(--pp-accent); text-shadow:0 0 20px var(--pp-accent-glow); margin:0; font-size:3.0rem; }
+.header h1 { font-family:'Orbitron',sans-serif; color:white; text-shadow:0 0 20px var(--pp-accent-glow); margin:0; font-size:3.0rem; }
 .tagline { color:var(--pp-success); font-size:1.1rem; opacity:.9; letter-spacing:2px; font-weight:600; }
 
 .controls { max-width:1600px; margin:0 auto 30px; display:flex; flex-wrap:wrap; gap:15px; justify-content:center; align-items:center; background:var(--pp-surface); padding:20px; border-radius:16px; border:1px solid var(--pp-border); box-shadow:0 8px 24px rgba(0,0,0,.4); }
@@ -64,7 +64,7 @@ body.dashboard {padding:20px;}
 
 /* Hit rate colors */
 .hit-green { color:var(--pp-success); text-shadow:0 0 10px var(--pp-success); }
-.hit-neutral { color:var(--pp-accent); text-shadow:0 0 8px var(--pp-accent-glow); }
+.hit-neutral { color:rgb(218, 208, 208); text-shadow:0 0 8px var(--pp-accent-glow); }
 .hit-red { color:var(--pp-danger); text-shadow:0 0 6px var(--pp-danger); }
 .no-results { text-align:center; font-size:1.4rem; color:var(--pp-danger); margin:80px 0; font-weight:600; }
 
@@ -124,8 +124,9 @@ a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
   margin: 50px 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* center header content */
   position: relative;
+  text-align: center;
 }
 
 .player-page header h1 {
@@ -154,7 +155,8 @@ a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 4px;
   background: var(--pp-success);

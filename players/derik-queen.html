@@ -12,12 +12,13 @@
   <a href="../index.html" class="back">Home</a>
 
   <header>
-    <h1>PRIZEPICKS EDGE</h1>
+    <h1>CGEDGE</h1>
     <div class="tag">WEAPONIZED STATS.</div>
   </header>
 
   <div class="wrap">
     <div class="panel">
+      <div id="dvpBadge" class="dvp-badge" style="display:none;"></div>
       <div class="player-img-container">
         <img id="playerHeadshot" src="https://www.basketball-reference.com/req/202106291/images/players/queende01.jpg" alt="Derik Queen">
       </div>
@@ -31,11 +32,10 @@
 
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Rebounds">Rebounds</option>
+          <option value="Assists">Assists</option>
         </select>
-        • Line <strong id="lineVal">6.5</strong> 
-        • Projection <strong id="projectionVal">6.1</strong>
-        • DVP <strong id="dvpVal">N/A</strong>
+        • Line <strong id="lineVal">3.5</strong> 
+        • Projection <strong id="projectionVal">4.1</strong>
         <span id="edgeBadge"></span>
       </div>
 
@@ -43,9 +43,9 @@
       <div class="hitrates-wrapper">
         <div class="hitrates">
           <div class="rate-box"><div class="label">Last 5</div><div class="val">2/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">7/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">11/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">11/21</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">6/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">9/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">9/21</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -61,10 +61,10 @@
 
   <!-- Your original script + dot sync (unchanged) -->
   <script>
-    let line = Number('6.5');
-    let data = JSON.parse('[10.0, 7.0, 8.0, 9.0, 7.0, 9.0, 5.0, 2.0, 3.0, 7.0]');
+    let line = Number('3.5');
+    let data = JSON.parse('[5.0, 6.0, 3.0, 4.0, 11.0, 3.0, 4.0, 9.0, 0.0, 3.0]');
     let dates = JSON.parse('["11/14", "11/16", "11/17", "11/19", "11/21", "11/22", "11/24", "11/26", "11/29", "11/30"]');
-    let projection = Number('6.1');
+    let projection = Number('4.1');
     const playerName = 'Derik Queen';
 
     (function(){
@@ -124,17 +124,49 @@
       return m[stat] || stat;
     }
 
+    function mapStatToRankField(stat){
+      const s = mapStatToDVP(stat).toUpperCase();
+      const rankMap = {
+        'PTS':'pts_rank',
+        'REB':'reb_rank',
+        'AST':'ast_rank',
+        '3PM':'pt3_rank',
+        'STL':'stl_rank',
+        'BLK':'blk_rank',
+        'PTS+REB':'dkpts_rank',
+        'PTS+AST':'dkpts_rank',
+        'REB+AST':'dkpts_rank',
+        'PTS+REB+AST':'dkpts_rank',
+        'FPTS':'dkpts_rank'
+      };
+      return rankMap[s] || 'avg_dfs';
+    }
+
+    function normalizeTeamCode(team){
+      const t = String(team||'').toUpperCase();
+      const map = { 'BKN':'BRO','BRK':'BRO','CHO':'CHA','PHX':'PHO','NO':'NOP','NOR':'NOP','NY':'NYK' };
+      return map[t] || t;
+    }
+
     function computeDVP(rankings, team, position, stat){
       if(!Array.isArray(rankings)) return null;
-      const statKey = mapStatToDVP(stat).toUpperCase();
       const posKey = String(position||'').toUpperCase();
-      const teamKey = String(team||'').toUpperCase();
-      const rows = rankings.filter(r => String(r.team||r.Team||'').toUpperCase()===teamKey && String(r.position||r.pos||'').toUpperCase()===posKey);
+      const teamKey = normalizeTeamCode(team);
+      const rows = rankings.filter(r => String(r.team||'').toUpperCase()===teamKey && String(r.position||'').toUpperCase()===posKey);
       if(!rows.length) return null;
-      // If per-stat DVP present, pick matching; else fallback to generic dvp
-      const statRow = rows.find(r => String(r.stat||r.Stat||'').toUpperCase()===statKey);
-      const value = statRow ? (statRow.dvp ?? statRow.DVP ?? statRow.value) : (rows[0].dvp ?? rows[0].DVP ?? rows[0].value);
-      return typeof value === 'number' ? value : Number(value||0);
+      const field = mapStatToRankField(stat);
+      const raw = rows[0][field];
+      if (raw === '-' || raw == null) return null;
+      const num = typeof raw === 'number' ? raw : Number(raw);
+      return isNaN(num) ? null : num;
+    }
+
+    function dvpClassByRank(rank){
+      if (rank == null) return '';
+      const r = Math.round(Number(rank));
+      if (r <= 8) return 'dvp-red';
+      if (r <= 22) return 'dvp-neutral';
+      return 'dvp-green';
     }
 
     function renderBadge(){
@@ -168,9 +200,9 @@
       if(boxes.length < 4) return;
       const vals = [
         record.last_5 || '2/5',
-        record.last_10 || '7/10',
-        record.last_20 || '11/20',
-        record.season || '11/21'
+        record.last_10 || '6/10',
+        record.last_20 || '9/20',
+        record.season || '9/21'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -242,8 +274,13 @@
       function updateDVPDisplay(currentStat){
         const oppTeam = 'MIN'.toUpperCase();
         const dvpVal = computeDVP(dvpRankings, oppTeam, playerPosition, currentStat);
-        const dvpEl = document.getElementById('dvpVal');
-        if(dvpEl){ dvpEl.textContent = (dvpVal!=null? dvpVal.toFixed(2): 'N/A'); }
+        const badge = document.getElementById('dvpBadge');
+        if (!badge) return;
+        if (dvpVal == null) { badge.style.display = 'none'; badge.textContent=''; badge.className='dvp-badge'; return; }
+        const rankInt = Math.round(Number(dvpVal));
+        badge.textContent = `DVP: ${rankInt}`;
+        badge.className = `dvp-badge ${dvpClassByRank(rankInt)}`;
+        badge.style.display = 'block';
       }
 
       const records = await fetchPlayerProps(playerName);
