@@ -1,39 +1,84 @@
 import os
 import json
 import requests
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 
 # Read configuration from environment variables
 PP_API_KEY = os.environ.get('PP_API_KEY')
 PP_API_URL = os.environ.get('PP_API_URL', 'https://api.prizepicks.com/projections')
+PP_LEAGUE_ID = os.environ.get('PP_LEAGUE_ID', '7')  # 7 = NBA
+
 HEADERS = {
-    'User-Agent': os.environ.get('BR_USER_AGENT', 'Mozilla/5.0 (Copilot Automation)'),
+    'User-Agent': os.environ.get('BR_USER_AGENT', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'),
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Origin': 'https://app.prizepicks.com',
+    'Referer': 'https://app.prizepicks.com/',
 }
 if PP_API_KEY:
     HEADERS['Authorization'] = f'Bearer {PP_API_KEY}'
 
+PARAMS = {
+    'league_id': PP_LEAGUE_ID,
+    'per_page': os.environ.get('PP_PER_PAGE', '500'),
+    'page': os.environ.get('PP_PAGE', '1'),
+    'single_stat': os.environ.get('PP_SINGLE_STAT', 'true')
+}
+
+def build_session():
+    s = requests.Session()
+    retries = Retry(total=3, backoff_factor=1.2, status_forcelist=[429, 500, 502, 503, 504])
+    s.mount('https://', HTTPAdapter(max_retries=retries))
+    proxy = os.environ.get('HTTP_PROXY') or os.environ.get('http_proxy')
+    if proxy:
+        s.proxies.update({'http': proxy, 'https': proxy})
+    return s
+
 # Existing logic (minimal integration) — replace direct requests with configured values
 def fetch_pp_odds():
     try:
-        resp = requests.get(PP_API_URL, headers=HEADERS, timeout=30)
+        session = build_session()
+        resp = session.get(PP_API_URL, headers=HEADERS, params=PARAMS, timeout=30)
         resp.raise_for_status()
-        data = resp.json()
-        return data
+        return resp.json()
     except Exception as e:
         print(f"[Fetch_PP_Odds] Error fetching PP odds: {e}")
         return None
+
+def looks_like_canonical(items):
+    # Expect list of dicts with keys like Name/Stat/Line/Team/Versus
+    if not isinstance(items, list) or not items:
+        return False
+    sample = items[0]
+    return isinstance(sample, dict) and any(k in sample for k in ('Name','Stat','Line'))
 
 if __name__ == '__main__':
     data = fetch_pp_odds()
     if not data:
         exit(0)
-    # Save to the canonical input for the builder
-    out_path = os.environ.get('PP_LINES_PATH', 'NBA_PURE_STANDARD_SINGLE.json')
+
+    # Always keep a raw snapshot for debugging
+    os.makedirs('downloaded_files', exist_ok=True)
+    raw_path = os.path.join('downloaded_files', 'pp_odds.raw.json')
     try:
-        with open(out_path, 'w') as f:
-            json.dump(data, f, indent=2)
-        print(f'[Fetch_PP_Odds] Saved PrizePicks lines → {out_path}')
+        with open(raw_path, 'w') as rf:
+            json.dump(data, rf, indent=2)
+        print(f'[Fetch_PP_Odds] Saved raw response → {raw_path}')
     except Exception as e:
-        print(f'[Fetch_PP_Odds] Error saving PP odds: {e}')
+        print(f'[Fetch_PP_Odds] Warning: could not save raw odds: {e}')
+
+    # Only overwrite canonical file if structure already matches expected format
+    out_path = os.environ.get('PP_LINES_PATH', 'NBA_PURE_STANDARD_SINGLE.json')
+    if looks_like_canonical(data):
+        try:
+            with open(out_path, 'w') as f:
+                json.dump(data, f, indent=2)
+            print(f'[Fetch_PP_Odds] Saved canonical lines → {out_path}')
+        except Exception as e:
+            print(f'[Fetch_PP_Odds] Error saving canonical lines: {e}')
+    else:
+        print('[Fetch_PP_Odds] Raw response did not match canonical schema; skipped overwriting NBA_PURE_STANDARD_SINGLE.json')
 # Fetch_Pure_NBA_Odds.py → THE UNBREAKABLE ONE
 import requests
 import pandas as pd
