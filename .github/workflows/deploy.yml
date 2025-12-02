@@ -16,10 +16,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare static site artifact
+        run: |
+          set -euxo pipefail
+          mkdir -p site
+          rsync -av --delete --prune-empty-dirs \
+            --include 'index.html' \
+            --include 'player-template-new.html' \
+            --include 'players/***' \
+            --include 'Images/***' \
+            --include '*.json' \
+            --include '*.csv' \
+            --include '*.css' \
+            --include 'CNAME' \
+            --exclude '*' \
+            ./ site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
 
   deploy:
     environment:
