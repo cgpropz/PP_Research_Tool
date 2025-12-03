@@ -39,10 +39,10 @@
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Points">Points</option>
+          <option value="Rebounds">Rebounds</option>
         </select>
-        • Line <strong id="lineVal">21.5</strong> 
-        • Projection <strong id="projectionVal">24.8</strong>
+        • Line <strong id="lineVal">4.5</strong> 
+        • Projection <strong id="projectionVal">4.8</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -50,10 +50,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">4/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">4/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">4/4</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">4/4</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">2/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">2/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">2/4</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">2/4</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,10 +69,10 @@
   </div>
 
   <script>
-    let line = Number('21.5');
-    let data = JSON.parse('[24.0, 29.0, 24.0, 22.0]');
+    let line = Number('4.5');
+    let data = JSON.parse('[7.0, 5.0, 4.0, 3.0]');
     let dates = JSON.parse('["11/24", "11/26", "11/29", "12/01"]');
-    let projection = Number('24.8');
+    let projection = Number('4.8');
     const playerName = 'Tyler Herro';
 
     (function(){
@@ -232,10 +232,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '4/5',
-        record.last_10 || '4/10',
-        record.last_20 || '4/4',
-        record.season || '4/4'
+        record.last_5 || '2/5',
+        record.last_10 || '2/10',
+        record.last_20 || '2/4',
+        record.season || '2/4'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
