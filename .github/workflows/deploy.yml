@@ -3,7 +3,20 @@ name: Deploy Static Site
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'players/**'
+      - 'player-template-new.html'
+      - '*.json'
+      - '*.csv'
+      - '.github/workflows/update-data.yml'
+      - 'logs/**'
   workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Update NBA UI Data"]
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -26,6 +39,7 @@ jobs:
             --include 'players/***' \
             --include 'Images/***' \
             --include '*.json' \
+            --include 'logs/***' \
             --include '*.csv' \
             --include '*.css' \
             --exclude '*' \
