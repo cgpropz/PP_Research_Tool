@@ -12,28 +12,17 @@ body.dashboard {padding:20px;}
 .tagline { color:var(--pp-success); font-size:1.1rem; opacity:.9; letter-spacing:2px; font-weight:600; }
 
 .controls {
-  /* 1. Full width always */
   width: 100%;
-  max-width: 100%;                    /* removes the old 100% limit that was lying */
-
-  /* 2. God-tier max-width: full-bleed until ~1800px, then nicely capped */
   max-width: min(100%, 1800px);
-
-  /* 3. Perfect centering + smart side gutters */
-  margin: 0 auto;                     /* keeps it centered */
-  padding-inline: max(2rem, 50vw - 800px);  /* magic formula */
-  /* Explanation: 
-       • Mobile  → 2rem padding
-       • Wide  → grows until container is 1600px wide, then stops (800px ×2) */
-
-  /* 4. Keep everything else you already had */
+  margin: 0 auto;
+  padding-inline: max(2rem, 50vw - 800px);
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
   align-items: center;
   background: var(--pp-surface);
-  padding-block: 1.5rem;             /* vertical breathing room */
+  padding-block: 1.5rem;
   border-radius: 16px;
   border: 1px solid var(--pp-border);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -43,9 +32,27 @@ body.dashboard {padding:20px;}
 .controls input:focus,.controls select:focus { border-color:var(--pp-accent); box-shadow:0 0 16px var(--pp-accent-glow); }
 .controls input { width:340px; }
 
-.cards-container { display:grid; grid-template-columns:repeat(auto-fill,minmax(380px,1fr)); gap:20px; max-width:1600px; margin:0 auto; }
-.card { background:linear-gradient(135deg,var(--pp-surface),var(--pp-surface-alt)); border-radius:16px; padding:16px; box-shadow:0 8px 32px rgba(0,0,0,0.5); border:1px solid var(--pp-border); transition:.3s; cursor:pointer; position:relative; }
-.card:hover { transform:translateY(-8px); box-shadow:0 16px 40px rgba(0,0,0,0.6); border-color:var(--pp-accent); }
+.cards-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
+  gap:20px;
+  max-width:1600px;
+  margin:0 auto;
+}
+.card {
+  position:relative;
+  background:linear-gradient(135deg,var(--pp-surface),var(--pp-surface-alt));
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  border:1px solid var(--pp-border);
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.6);
+  border-color:var(--pp-accent);
+}
 .player-name { font-size:1.5rem; font-weight:700; color:var(--pp-text); cursor:pointer; text-decoration:underline; }
 .player-name:hover { text-shadow:0 0 15px var(--pp-accent-glow); }
 .team { font-size:0.85rem; color:#88ffd1; background:#003322; padding:4px 10px; border-radius:8px; display:inline-block; }
@@ -58,69 +65,19 @@ body.dashboard {padding:20px;}
 .label { font-size:0.72rem; color:var(--pp-text-dim); letter-spacing:.12em; text-transform:uppercase; font-weight:600; }
 .value { font-size:1.15rem; font-weight:700; }
 
-/* DVP badge in top-right corner of card */
-/* DVP badge in top-right corner of player panel */
-.player-page .panel .dvp-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(255, 212, 59, 0.12);
-  color: #ffd43b;
-  font-weight: 700;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 212, 59, 0.35);
-  z-index: 2;
-}
-
-/* DVP rank color scale */
-.player-page .panel .dvp-badge.dvp-red {
-  background: rgba(248, 114, 114, 0.15);
-  color: #f87272;
-  border-color: rgba(248, 114, 114, 0.35);
-}
-.player-page .panel .dvp-badge.dvp-neutral {
-  background: rgba(255, 212, 59, 0.12);
-  color: #ffd43b;
-  border-color: rgba(255, 212, 59, 0.35);
-}
-.player-page .panel .dvp-badge.dvp-green {
-  background: rgba(57, 217, 169, 0.15);
-  color: #39d9a9;
-  border-color: rgba(57, 217, 169, 0.35);
-}
-/* Minutes badge: top-left corner of player panel */
-.player-page .panel .min-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(57, 217, 169, 0.12);
-  color: #39d9a9;
-  font-weight: 700;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(57, 217, 169, 0.35);
-  z-index: 2;
-}
-
-/* Reuse the same color scale classes applied via JS:
-   .dvp-green / .dvp-neutral / .dvp-red */
-.player-page .panel .min-badge.dvp-red {
-  background: rgba(248, 114, 114, 0.15);
-  color: #f87272;
-  border-color: rgba(248, 114, 114, 0.35);
-}
-.player-page .panel .min-badge.dvp-neutral {
-  background: rgba(255, 212, 59, 0.12);
-  color: #ffd43b;
-  border-color: rgba(255, 212, 59, 0.35);
-}
-.player-page .panel .min-badge.dvp-green {
-  background: rgba(57, 217, 169, 0.15);
-  color: #39d9a9;
-  border-color: rgba(57, 217, 169, 0.35);
+/* Dashboard: DVP badge in top-right corner of each card */
+.dashboard .card .dvp-badge {
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:rgba(255, 212, 59, 0.12);
+  color:#ffd43b;
+  font-weight:700;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid rgba(255,212,59,0.35);
+  z-index:2;
 }
 
 /* Hit rate colors */
@@ -147,7 +104,7 @@ body.dashboard {padding:20px;}
 
 * { box-sizing:border-box; }
 body { margin:0; background:var(--pp-bg); color:var(--pp-text); font-family:Roboto,system-ui,sans-serif; padding:30px 30px 90px; -webkit-font-smoothing:antialiased; }
-a.back { position:fixed; top:16px; left:16px; font-size:.65rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; padding:8px 14px; border:1px solid var(--pp-border); border-radius:26px; background:var(--pp-surface-alt); color:var(--pp-text-dim); text-decoration:none; transition:.25s; z-index:1000; }
+a.back { position:fixed; top:16px; left:16px; font-size:.65rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; padding:8px 14px; border:1px solid var(--pp-border); border-radius:26px; text-decoration:none; color:var(--pp-text-dim); background:rgba(13,17,23,0.8); backdrop-filter:blur(10px); }
 a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
 
 /* ============================================================= */
@@ -185,7 +142,7 @@ a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
   margin: 50px 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* center header content */
+  align-items: center;
   position: relative;
   text-align: center;
 }
@@ -255,7 +212,7 @@ a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
 }
 
 /* ============================================================= */
-/* Rest of Player Page Styles (unchanged but cleaned)          */
+/* Player Page Styles                                           */
 /* ============================================================= */
 
 .player-page body {
@@ -344,6 +301,54 @@ a.back:hover { border-color:var(--pp-success); color:var(--pp-success); }
   border-radius: 12px;
   padding: 8px 14px;
   font-weight: 600;
+}
+
+/* Player-page: DVP + Minutes badges in corners of panel */
+.player-page .panel .dvp-badge {
+  position:absolute;
+  top:16px;
+  right:16px;
+  background:rgba(255, 212, 59, 0.12);
+  color:#ffd43b;
+  font-weight:700;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,212,59,0.35);
+  z-index:2;
+}
+.player-page .panel .min-badge {
+  position:absolute;
+  top:16px;
+  left:16px;
+  background:rgba(57, 217, 169, 0.12);
+  color:#39d9a9;
+  font-weight:700;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(57,217,169,0.35);
+  z-index:2;
+}
+
+/* Color scale classes used by JS for both badges */
+.player-page .panel .dvp-badge.dvp-red,
+.player-page .panel .min-badge.dvp-red {
+  background: rgba(248, 114, 114, 0.15);
+  color: #f87272;
+  border-color: rgba(248, 114, 114, 0.35);
+}
+.player-page .panel .dvp-badge.dvp-neutral,
+.player-page .panel .min-badge.dvp-neutral {
+  background: rgba(255, 212, 59, 0.12);
+  color: #ffd43b;
+  border-color: rgba(255, 212, 59, 0.35);
+}
+.player-page .panel .dvp-badge.dvp-green,
+.player-page .panel .min-badge.dvp-green {
+  background: rgba(57, 217, 169, 0.15);
+  color: #39d9a9;
+  border-color: rgba(57, 217, 169, 0.35);
 }
 
 /* Glowing pill hitrates + scroll-snap */
