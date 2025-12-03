@@ -2,7 +2,7 @@ name: Update NBA UI Data
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # PP odds every 10 minutes
+    - cron: '*/5 * * * *' # PP odds every 5 minutes
     - cron: '0 7 * * *'    # Daily 7:00 AM for gamelogs + DVP
   workflow_dispatch: {}
 
@@ -52,6 +52,16 @@ jobs:
           python UI_DATA_BUILDER_PERFECT.py || true
           python generate_players.py || true
 
+      - name: Write run log summary
+        run: |
+          mkdir -p logs
+          echo "$(date -u +'%Y-%m-%dT%H:%M:%SZ') • run_id=${GITHUB_RUN_ID} • event=${{ github.event_name }} • ref=${{ github.ref }}" >> logs/update_data.log
+          echo "PP odds updated: $(test -f NBA_PURE_STANDARD_SINGLE.json && echo yes || echo no)" >> logs/update_data.log
+          echo "Cards rebuilt: $(test -f PLAYER_UI_CARDS_PERFECT.json && echo yes || echo no)" >> logs/update_data.log
+          echo "Players regenerated: $(ls -1 players | wc -l) files" >> logs/update_data.log
+          echo "DVP file present: $(test -f nba_dvp_latest.json && echo yes || echo no)" >> logs/update_data.log
+          echo "---" >> logs/update_data.log
+
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -61,3 +71,4 @@ jobs:
             players/**
             index.html
             player-template-new.html
+            logs/**
