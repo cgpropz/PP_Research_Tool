@@ -41,7 +41,7 @@
         <select id="propSelect">
           <option value="Rebounds">Rebounds</option>
         </select>
-        • Line <strong id="lineVal">7.5</strong> 
+        • Line <strong id="lineVal">9.5</strong> 
         • Projection <strong id="projectionVal">6.9</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
@@ -52,8 +52,8 @@
         <div class="hitrates">
           <div class="rate-box"><div class="label">Last 5</div><div class="val">1/5</div></div>
           <div class="rate-box"><div class="label">Last 10</div><div class="val">2/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">8/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">8/21</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">6/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">6/21</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,7 +69,7 @@
   </div>
 
   <script>
-    let line = Number('7.5');
+    let line = Number('9.5');
     let data = JSON.parse('[3.0, 11.0, 4.0, 1.0, 7.0, 7.0, 3.0, 7.0, 13.0, 6.0]');
     let dates = JSON.parse('["11/12", "11/13", "11/16", "11/18", "11/20", "11/23", "11/25", "11/28", "11/30", "12/01"]');
     let projection = Number('6.9');
@@ -234,8 +234,8 @@
       const vals = [
         record.last_5 || '1/5',
         record.last_10 || '2/10',
-        record.last_20 || '8/20',
-        record.season || '8/21'
+        record.last_20 || '6/20',
+        record.season || '6/21'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
