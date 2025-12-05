@@ -40,6 +40,7 @@ jobs:
             --include 'index.html' \
             --include 'Team_Matchup.html' \
             --include 'Team_DVP.html' \
+            --include '404.html' \
             --include '.nojekyll' \
             --include 'player-template-new.html' \
             --include 'players/***' \
