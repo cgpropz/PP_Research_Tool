@@ -107,8 +107,9 @@
         <div class="col-12 col-md-4">
           <input id="teamSearch" class="form-control" type="search" placeholder="Search teams (name or abbr)" />
         </div>
-        <div class="col-12 col-md-auto ms-md-auto">
+        <div class="col-12 col-md-auto ms-md-auto d-flex align-items-center gap-2 flex-wrap">
           <span class="badge-chip" id="dvpMeta">DVP: —</span>
+          <span class="badge-chip" id="buildMeta">Build: —</span>
         </div>
       </div>
     </div>
@@ -278,6 +279,13 @@
 
     (async function init(){
       try {
+        // Stamp build meta to verify latest page load
+        try {
+          const buildEl = document.getElementById('buildMeta');
+          const now = new Date();
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local';
+          buildEl.textContent = `Build: ${now.toLocaleString()} (${tz})`;
+        } catch(e) {}
         const dvp = await loadDvp();
         const rows = (dvp && dvp.data && dvp.data.team_dvp_rankings) || [];
         dvpRows = Array.isArray(rows) ? rows : [];
