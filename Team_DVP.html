@@ -72,11 +72,15 @@
     }
     .header-nav a{color:#00ff9d;text-decoration:none;font-weight:700}
     .header-nav{display:flex;gap:14px;align-items:center}
-    /* Rank color scale: 1 red -> 15 neutral -> 30 green */
-    .rank-cell{border-radius:6px;padding:.25rem .5rem;display:inline-block;min-width:42px}
-    .rank-red{background:#3a0e12;color:#ff6b6b;border:1px solid #5a1a20}
-    .rank-neutral{background:#202a2e;color:#cfd8dc;border:1px solid #334047}
-    .rank-green{background:#10361f;color:#7bffc1;border:1px solid #1b5830}
+    /* Rank pill style: matches CGEDGE badge aesthetic */
+    .rank-cell{border-radius:12px;padding:.2rem .5rem;display:inline-flex;align-items:center;justify-content:center;min-width:44px;font-weight:700;letter-spacing:.2px}
+    .rank-cell .hash{opacity:.85;margin-right:2px}
+    /* Color scale: 1 red -> 15 neutral -> 30 green */
+    .rank-red{background:#2c0d10;color:#ff6b6b;border:1px solid #4a171c}
+    .rank-orange{background:#2d1e0b;color:#ffb74d;border:1px solid #4a3416}
+    .rank-yellow{background:#2a2a0b;color:#ffe082;border:1px solid #41411a}
+    .rank-neutral{background:#1c2529;color:#cfd8dc;border:1px solid #2c3a40}
+    .rank-green{background:#0f2f1b;color:#7bffc1;border:1px solid #1b5830}
   </style>
 </head>
 <body class="theme-dark">
@@ -216,12 +220,23 @@
             if (isNaN(num)) {
               td.textContent = '-';
             } else {
-              td.textContent = num;
-              // Apply color scale: 1 red, 15 neutral, 30 green
-              const cls = num <= 7 ? 'rank-red' : (num >= 23 ? 'rank-green' : 'rank-neutral');
+              // Determine color class with finer buckets for a smoother scale
+              let cls = 'rank-neutral';
+              if (num <= 5) cls = 'rank-red';
+              else if (num <= 10) cls = 'rank-orange';
+              else if (num <= 15) cls = 'rank-yellow';
+              else if (num >= 26) cls = 'rank-green';
+              else if (num >= 21) cls = 'rank-neutral';
+              // Build pill: #<rank>
               const wrap = document.createElement('span');
               wrap.className = `rank-cell ${cls}`;
-              wrap.textContent = String(num);
+              const hash = document.createElement('span');
+              hash.className = 'hash';
+              hash.textContent = '#';
+              const text = document.createElement('span');
+              text.textContent = String(num);
+              wrap.appendChild(hash);
+              wrap.appendChild(text);
               td.textContent = '';
               td.appendChild(wrap);
             }
