@@ -185,7 +185,10 @@
       const raw = rows[0][field];
       if (raw === '-' || raw === undefined || raw === null) return null;
       const num = typeof raw === 'number' ? raw : Number(raw);
-      return isNaN(num) ? null : num;
+      if (isNaN(num)) return null;
+      // Hide extreme/invalid ranks above 30
+      if (Number(num) > 30) return null;
+      return num;
     }
 
     function dvpClassByRank(rank){

@@ -39,10 +39,10 @@
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Rebs+Asts">Rebs+Asts</option>
+          <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">6.5</strong> 
-        • Projection <strong id="projectionVal">6.0</strong>
+        • Line <strong id="lineVal">14.5</strong> 
+        • Projection <strong id="projectionVal">14.6</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -51,9 +51,9 @@
       <div class="hitrates-wrapper">
         <div class="hitrates">
           <div class="rate-box"><div class="label">Last 5</div><div class="val">1/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">3/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">10/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">10/21</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">2/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">8/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">8/21</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,10 +69,10 @@
   </div>
 
   <script>
-    let line = Number('6.5');
-    let data = JSON.parse('[4.0, 7.0, 13.0, 5.0, 4.0, 4.0, 5.0, 2.0, 12.0, 3.0]');
+    let line = Number('14.5');
+    let data = JSON.parse('[12.0, 13.0, 29.0, 7.0, 7.0, 13.0, 13.0, 12.0, 26.0, 9.0]');
     let dates = JSON.parse('["11/13", "11/15", "11/17", "11/19", "11/21", "11/24", "11/26", "11/28", "11/29", "12/01"]');
-    let projection = Number('6.0');
+    let projection = Number('14.6');
     const playerName = 'Isaiah Jackson';
 
     (function(){
@@ -174,7 +174,10 @@
       const raw = rows[0][field];
       if (raw === '-' || raw == null) return null;
       const num = typeof raw === 'number' ? raw : Number(raw);
-      return isNaN(num) ? null : num;
+      if (isNaN(num)) return null;
+      // Hide extreme/invalid ranks above 30
+      if (Number(num) > 30) return null;
+      return num;
     }
 
     function dvpClassByRank(rank){
@@ -243,9 +246,9 @@
       if(boxes.length < 4) return;
       const vals = [
         record.last_5 || '1/5',
-        record.last_10 || '3/10',
-        record.last_20 || '10/20',
-        record.season || '10/21'
+        record.last_10 || '2/10',
+        record.last_20 || '8/20',
+        record.season || '8/21'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);

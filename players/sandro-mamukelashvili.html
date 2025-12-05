@@ -39,10 +39,10 @@
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Pts+Rebs">Pts+Rebs</option>
+          <option value="Points">Points</option>
         </select>
-        • Line <strong id="lineVal">15.5</strong> 
-        • Projection <strong id="projectionVal">15.6</strong>
+        • Line <strong id="lineVal">10.5</strong> 
+        • Projection <strong id="projectionVal">10.9</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -50,10 +50,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">4/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">7/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">11/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">11/20</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">3/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">6/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">10/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">10/20</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,10 +69,10 @@
   </div>
 
   <script>
-    let line = Number('15.5');
-    let data = JSON.parse('[18.0, 16.0, 11.0, 9.0, 30.0, 16.0, 21.0, 10.0, 16.0, 16.0]');
+    let line = Number('10.5');
+    let data = JSON.parse('[13.0, 12.0, 7.0, 7.0, 23.0, 12.0, 12.0, 7.0, 13.0, 9.0]');
     let dates = JSON.parse('["11/13", "11/15", "11/17", "11/19", "11/21", "11/23", "11/24", "11/26", "11/29", "11/30"]');
-    let projection = Number('15.6');
+    let projection = Number('10.9');
     const playerName = 'Sandro Mamukelashvili';
 
     (function(){
@@ -174,7 +174,10 @@
       const raw = rows[0][field];
       if (raw === '-' || raw == null) return null;
       const num = typeof raw === 'number' ? raw : Number(raw);
-      return isNaN(num) ? null : num;
+      if (isNaN(num)) return null;
+      // Hide extreme/invalid ranks above 30
+      if (Number(num) > 30) return null;
+      return num;
     }
 
     function dvpClassByRank(rank){
@@ -242,10 +245,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '4/5',
-        record.last_10 || '7/10',
-        record.last_20 || '11/20',
-        record.season || '11/20'
+        record.last_5 || '3/5',
+        record.last_10 || '6/10',
+        record.last_20 || '10/20',
+        record.season || '10/20'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
