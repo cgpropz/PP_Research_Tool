@@ -43,29 +43,22 @@
   </style>
 </head>
 <body class="theme-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center mx-auto" href="./index.html">
-        <img src="Images/CG.jpg" alt="Logo" class="logo-img me-2" />
-        <span>CGEDGE</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDvp" aria-controls="navDvp" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navDvp">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./Team_Matchup.html">Team Matchups</a></li>
-        </ul>
-      </div>
+  <div class="header" style="position:relative; text-align:center; margin-bottom:24px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+    <img src="Images/CG.jpg" alt="Logo" class="logo" style="position:absolute;left:16px;top:8px;width:64px;height:64px;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.35);">
+    <h1 style="font-family:'Orbitron',sans-serif; color:#fff; margin:0;">CGEDGE</h1>
+    <div class="tagline" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <nav style="display:flex;gap:14px;align-items:center;">
+        <a href="./index.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Home</a>
+        <a href="./Team_Matchup.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Team Matchups</a>
+      </nav>
     </div>
-  </nav>
+  </div>
 
   <main class="container py-4">
-    <div class="dvp-toolbar card shadow-sm mb-4">
+    <div class="dvp-toolbar card shadow-sm mb-4" style="background:#0f171b;border:1px solid #18333b;">
       <div class="card-body row g-3 align-items-center">
         <div class="col-12 col-md-auto">
-          <div class="btn-group" role="group" aria-label="Position filter" id="posGroup">
+          <div class="btn-group pos-group" role="group" aria-label="Position filter" id="posGroup">
             <button class="btn btn-outline-success active" data-pos="PG">PG</button>
             <button class="btn btn-outline-success" data-pos="SG">SG</button>
             <button class="btn btn-outline-success" data-pos="SF">SF</button>
