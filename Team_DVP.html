@@ -18,6 +18,8 @@
   </script>
   <style>
     body.theme-dark{background:#0a0f12;color:#e6fff3}
+    /* Top mint divider to match CGEDGE banner */
+    .top-divider{height:8px;background:#d7f1dc;width:100%;}
     .navbar-dark.bg-dark{background:#0b1a20!important}
     .logo-img{width:40px;height:40px;object-fit:cover;border-radius:8px}
     .btn-outline-success{border-color:#00ff9d;color:#00ff9d}
@@ -37,19 +39,49 @@
     .pos-group .btn{min-width:44px}
     /* Compact layout on small screens */
     @media (max-width: 768px){
-      #dvpTable td:nth-child(2), #dvpTable th:nth-child(2){display:none} /* hide Conf on mobile */
       .dvp-toolbar .card-body{gap:.5rem}
     }
+    /* CGEDGE title styling to match site */
+    .cgedge-title{
+      font-family:'Orbitron',sans-serif;
+      font-size:48px;
+      font-weight:700;
+      letter-spacing:2px;
+      color:#ffffff;
+      text-shadow:0 0 10px rgba(255, 246, 200, 0.6), 0 0 24px rgba(255, 246, 200, 0.35);
+      margin:0;
+    }
+    .header-wrap{
+      background:#0b1014;
+      border-bottom:1px solid #0e1a20;
+      padding:18px 0 22px;
+    }
+    .header-inner{
+      position:relative;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      margin:0 auto;
+      max-width:1200px;
+    }
+    .header-logo{
+      position:absolute;left:16px;top:8px;width:64px;height:64px;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.35);
+    }
+    .header-nav a{color:#00ff9d;text-decoration:none;font-weight:700}
+    .header-nav{display:flex;gap:14px;align-items:center}
   </style>
 </head>
 <body class="theme-dark">
-  <div class="header" style="position:relative; text-align:center; margin-bottom:24px; display:flex; flex-direction:column; align-items:center; gap:12px;">
-    <img src="Images/CG.jpg" alt="Logo" class="logo" style="position:absolute;left:16px;top:8px;width:64px;height:64px;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.35);">
-    <h1 style="font-family:'Orbitron',sans-serif; color:#fff; margin:0;">CGEDGE</h1>
-    <div class="tagline" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
-      <nav style="display:flex;gap:14px;align-items:center;">
-        <a href="./index.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Home</a>
-        <a href="./Team_Matchup.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Team Matchups</a>
+  <div class="top-divider"></div>
+  <div class="header-wrap">
+    <div class="header-inner">
+      <img src="Images/CG.jpg" alt="Logo" class="header-logo">
+      <h1 class="cgedge-title">CGEDGE</h1>
+      <nav class="header-nav">
+        <a href="./index.html">Home</a>
+        <a href="./Team_Matchup.html">Team Matchups</a>
       </nav>
     </div>
   </div>
