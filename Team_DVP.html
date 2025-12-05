@@ -73,13 +73,6 @@
             <button class="btn btn-outline-success" data-pos="C">C</button>
           </div>
         </div>
-        <div class="col-12 col-md-3">
-          <select id="confSelect" class="form-select">
-            <option value="">All Conferences</option>
-            <option value="East">East</option>
-            <option value="West">West</option>
-          </select>
-        </div>
         <div class="col-12 col-md-4">
           <input id="teamSearch" class="form-control" type="search" placeholder="Search teams (name or abbr)" />
         </div>
@@ -112,7 +105,6 @@
   <script>
     const HEADERS = [
       { key: 'team', label: 'Team' },
-      { key: 'conference', label: 'Conf' },
       { key: 'pts_rank', label: 'PTS', sortable: true },
       { key: 'reb_rank', label: 'REB', sortable: true },
       { key: 'ast_rank', label: 'AST', sortable: true },
@@ -157,13 +149,11 @@
     }
 
     function passFilters(row){
-      const confSel = document.getElementById('confSelect').value;
       const q = document.getElementById('teamSearch').value.trim().toLowerCase();
       const name = String(row.team||'');
       const abbr = normalizeTeamCode(row.team);
-      const matchesConf = !confSel || String(row.conference||'').toLowerCase() === confSel.toLowerCase();
       const matchesSearch = !q || name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q);
-      return matchesConf && matchesSearch;
+      return matchesSearch;
     }
 
     function renderTbody(){
@@ -202,7 +192,6 @@
     }
 
     function wireControls(){
-      document.getElementById('confSelect').addEventListener('change', renderTbody);
       document.getElementById('teamSearch').addEventListener('input', renderTbody);
       document.querySelectorAll('#posGroup button').forEach(btn => {
         btn.addEventListener('click', () => {
