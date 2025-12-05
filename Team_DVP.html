@@ -81,6 +81,14 @@
     .rank-yellow{background:#2a2a0b;color:#ffe082;border:1px solid #41411a}
     .rank-neutral{background:#1c2529;color:#cfd8dc;border:1px solid #2c3a40}
     .rank-green{background:#0f2f1b;color:#7bffc1;border:1px solid #1b5830}
+    /* DVP page styles (as requested) */
+    .dvp-toolbar .btn-group .btn.active{background-color:#06752e;color:#fff;border-color:#06752e}
+    .dvp-card{border:none;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+    .dvp-card .card-header{background:#1f2937;color:#fff}
+    .dvp-card .metric{background:rgba(255,255,255,0.05);border-radius:8px;padding:8px}
+    .dvp-card .metric-label{font-size:.75rem;color:#9ca3af}
+    .dvp-card .metric-value{font-weight:600;font-size:1.1rem}
+    .table thead th{cursor:pointer}
   </style>
 </head>
 <body class="theme-dark">
@@ -127,7 +135,7 @@
       </div>
     </div>
 
-    <div id="dvpTableWrap" class="card shadow-sm table-wrap">
+    <div id="dvpTableWrap" class="card shadow-sm table-wrap dvp-card">
       <div class="table-responsive" style="max-height:70vh;overflow:auto">
         <table class="table table-dark table-striped table-hover align-middle mb-0" id="dvpTable">
           <thead></thead>
