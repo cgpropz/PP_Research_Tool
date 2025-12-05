@@ -41,7 +41,7 @@
         <select id="propSelect">
           <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">16.5</strong> 
+        • Line <strong id="lineVal">17.5</strong> 
         • Projection <strong id="projectionVal">18.0</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
@@ -52,8 +52,8 @@
         <div class="hitrates">
           <div class="rate-box"><div class="label">Last 5</div><div class="val">4/5</div></div>
           <div class="rate-box"><div class="label">Last 10</div><div class="val">7/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">10/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">10/20</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">9/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">9/20</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,7 +69,7 @@
   </div>
 
   <script>
-    let line = Number('16.5');
+    let line = Number('17.5');
     let data = JSON.parse('[25.0, 29.0, 6.0, 15.0, 20.0, 18.0, 26.0, 11.0, 22.0, 19.0]');
     let dates = JSON.parse('["11/11", "11/13", "11/16", "11/18", "11/21", "11/23", "11/24", "11/28", "11/30", "12/01"]');
     let projection = Number('18.0');
@@ -242,8 +242,8 @@
       const vals = [
         record.last_5 || '4/5',
         record.last_10 || '7/10',
-        record.last_20 || '10/20',
-        record.season || '10/20'
+        record.last_20 || '9/20',
+        record.season || '9/20'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -313,7 +313,7 @@
       function updateDVPDisplay(currentStat){
         let oppTeam = 'NYK';
         try {
-          const key = (currentStat === 'Pts+Rebs+Asts') ? 'PRA' : currentStat;
+          const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;
           const o = rec && (rec.Versus || rec.Opp || rec.opponent || rec.opp || rec.versus);
           if (o) oppTeam = o;
@@ -349,7 +349,7 @@
 
       select.addEventListener('change', () => {
         const selected = select.value;
-        const statKey = selected === 'Pts+Rebs+Asts' ? 'PRA' : selected;
+        const statKey = selected;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey);
         if(rec) {
           // Update meta (team/opponent) if present in record
@@ -364,7 +364,7 @@
       });
       // Initial render using record data if available
       (function(){
-        const statKey = current === 'Pts+Rebs+Asts' ? 'PRA' : current;
+        const statKey = current;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey) || records[0];
         if (rec) {
           const teamEl = document.querySelector('.meta-line .team');

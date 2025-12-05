@@ -313,7 +313,7 @@
       function updateDVPDisplay(currentStat){
         let oppTeam = 'DAL';
         try {
-          const key = (currentStat === 'Pts+Rebs+Asts') ? 'PRA' : currentStat;
+          const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;
           const o = rec && (rec.Versus || rec.Opp || rec.opponent || rec.opp || rec.versus);
           if (o) oppTeam = o;
@@ -349,7 +349,7 @@
 
       select.addEventListener('change', () => {
         const selected = select.value;
-        const statKey = selected === 'Pts+Rebs+Asts' ? 'PRA' : selected;
+        const statKey = selected;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey);
         if(rec) {
           // Update meta (team/opponent) if present in record
@@ -364,7 +364,7 @@
       });
       // Initial render using record data if available
       (function(){
-        const statKey = current === 'Pts+Rebs+Asts' ? 'PRA' : current;
+        const statKey = current;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey) || records[0];
         if (rec) {
           const teamEl = document.querySelector('.meta-line .team');

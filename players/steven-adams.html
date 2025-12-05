@@ -39,10 +39,10 @@
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Points">Points</option>
+          <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">5.5</strong> 
-        • Projection <strong id="projectionVal">6.4</strong>
+        • Line <strong id="lineVal">13.5</strong> 
+        • Projection <strong id="projectionVal">17.4</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -50,10 +50,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">3/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">4/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">6/15</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">6/15</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">4/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">8/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">11/15</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">11/15</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -69,10 +69,10 @@
   </div>
 
   <script>
-    let line = Number('5.5');
-    let data = JSON.parse('[4.0, 3.0, 12.0, 5.0, 5.0, 3.0, 6.0, 5.0, 6.0, 13.0]');
+    let line = Number('13.5');
+    let data = JSON.parse('[14.0, 12.0, 19.0, 17.0, 16.0, 16.0, 20.0, 15.0, 13.0, 27.0]');
     let dates = JSON.parse('["11/03", "11/07", "11/09", "11/12", "11/14", "11/16", "11/19", "11/21", "11/24", "11/30"]');
-    let projection = Number('6.4');
+    let projection = Number('17.4');
     const playerName = 'Steven Adams';
 
     (function(){
@@ -240,10 +240,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '3/5',
-        record.last_10 || '4/10',
-        record.last_20 || '6/15',
-        record.season || '6/15'
+        record.last_5 || '4/5',
+        record.last_10 || '8/10',
+        record.last_20 || '11/15',
+        record.season || '11/15'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -313,7 +313,7 @@
       function updateDVPDisplay(currentStat){
         let oppTeam = 'PHX';
         try {
-          const key = (currentStat === 'Pts+Rebs+Asts') ? 'PRA' : currentStat;
+          const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;
           const o = rec && (rec.Versus || rec.Opp || rec.opponent || rec.opp || rec.versus);
           if (o) oppTeam = o;
@@ -349,7 +349,7 @@
 
       select.addEventListener('change', () => {
         const selected = select.value;
-        const statKey = selected === 'Pts+Rebs+Asts' ? 'PRA' : selected;
+        const statKey = selected;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey);
         if(rec) {
           // Update meta (team/opponent) if present in record
@@ -364,7 +364,7 @@
       });
       // Initial render using record data if available
       (function(){
-        const statKey = current === 'Pts+Rebs+Asts' ? 'PRA' : current;
+        const statKey = current;
         const rec = records.find(r => (r.Stat || r.stat || r.prop) === statKey) || records[0];
         if (rec) {
           const teamEl = document.querySelector('.meta-line .team');
