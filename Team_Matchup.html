@@ -135,8 +135,29 @@
   }
 
   (function(){
-    fetch('data/odds/latest.json')
-      .then(r => r.ok ? r.json() : Promise.reject(new Error('Failed to load odds')))
+    function tryFetch(paths){
+      const [p, ...rest] = paths;
+      return fetch(p).then(r => {
+        if (r.ok) return r.json();
+        if (rest.length) return tryFetch(rest);
+        return Promise.reject(new Error('Failed to load odds'));
+      }).catch(err => {
+        if (rest.length) return tryFetch(rest);
+        throw err;
+      });
+    }
+
+    const base = (document.querySelector('base') && document.querySelector('base').href) || '';
+    const origin = location.origin;
+    const repoBase = `${origin}/NBA-UI-Props/`;
+    const candidates = [
+      './data/odds/latest.json',
+      'data/odds/latest.json',
+      '../data/odds/latest.json',
+      `${repoBase}data/odds/latest.json`
+    ];
+
+    tryFetch(candidates)
       .then(data => {
         const events = Array.isArray(data.events) ? data.events : [];
         const container = document.getElementById('games');
@@ -151,6 +172,7 @@
       })
       .catch(err => {
         const container = document.getElementById('games');
+        console.error('[CGEDGE] Odds load error:', err);
         container.innerHTML = `<div class="text-center text-sm text-red-500">Error loading matchups: ${err && err.message ? err.message : 'Unknown error'}</div>`;
       });
   })();
