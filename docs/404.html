@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=./index.html">
+</head>
+<body>
+  <script>
+    (function(){
+      const path = location.pathname.toLowerCase();
+      // Common fallbacks
+      if (path.endsWith('/team_dvp') || path.endsWith('/team_dvp.html')) {
+        location.replace('./Team_DVP.html');
+        return;
+      }
+      if (path.endsWith('/team_matchup') || path.endsWith('/team_matchup.html')) {
+        location.replace('./Team_Matchup.html');
+        return;
+      }
+      // Default to home
+      location.replace('./index.html');
+    })();
+  </script>
+</body>
+</html>
