@@ -72,6 +72,11 @@
     }
     .header-nav a{color:#00ff9d;text-decoration:none;font-weight:700}
     .header-nav{display:flex;gap:14px;align-items:center}
+    /* Rank color scale: 1 red -> 15 neutral -> 30 green */
+    .rank-cell{border-radius:6px;padding:.25rem .5rem;display:inline-block;min-width:42px}
+    .rank-red{background:#3a0e12;color:#ff6b6b;border:1px solid #5a1a20}
+    .rank-neutral{background:#202a2e;color:#cfd8dc;border:1px solid #334047}
+    .rank-green{background:#10361f;color:#7bffc1;border:1px solid #1b5830}
   </style>
 </head>
 <body class="theme-dark">
@@ -207,7 +212,18 @@
             td.innerHTML = `<div class=\"d-flex align-items-center gap-2\"><img src=\"${logo}\" alt=\"${abbr}\" style=\"width:24px;height:24px;object-fit:contain;border-radius:4px\" onerror=\"this.style.display='none'\"/><span>${val || '-'}<\/span><\/div>`;
           } else if (h.key.endsWith('_rank')) {
             const num = Number(val);
-            td.textContent = isNaN(num) ? '-' : num;
+            if (isNaN(num)) {
+              td.textContent = '-';
+            } else {
+              td.textContent = num;
+              // Apply color scale: 1 red, 15 neutral, 30 green
+              const cls = num <= 7 ? 'rank-red' : (num >= 23 ? 'rank-green' : 'rank-neutral');
+              const wrap = document.createElement('span');
+              wrap.className = `rank-cell ${cls}`;
+              wrap.textContent = String(num);
+              td.textContent = '';
+              td.appendChild(wrap);
+            }
           } else {
             td.textContent = val || '-';
           }
