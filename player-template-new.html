@@ -47,6 +47,12 @@
         <span id="edgeBadge"></span>
       </div>
 
+      <!-- Last N slider -->
+      <div class="lastn" style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:10px;">
+        <label for="lastNSlider" style="color:var(--pp-accent);font-weight:700">Last <span id="lastNValue">10</span> games</label>
+        <input id="lastNSlider" type="range" min="5" max="10" step="1" value="10" style="width:220px;"/>
+      </div>
+
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
@@ -72,6 +78,7 @@
     let line = Number('{{LINE}}');
     let data = JSON.parse('{{LAST10_DATA}}');
     let dates = JSON.parse('{{LAST10_DATES}}');
+    let lastN = 10;
     let projection = Number('{{PROJECTION}}');
     const playerName = '{{NAME}}';
 
@@ -225,14 +232,19 @@
 
     function renderChart(){
       try {
+        const n = Math.max(5, Math.min(10, Number(lastN||10)));
+        const seriesData = Array.isArray(data) ? data.slice(data.length - n) : [];
+        const xCats = (Array.isArray(dates) && dates.length === data.length)
+          ? dates.slice(dates.length - n)
+          : seriesData.map((_,i)=>'G'+(n-i));
         Highcharts.chart('chart', {
           chart:{backgroundColor:'var(--pp-surface-alt)'},
           title:{text:'Last 10 Games',style:{color:'var(--pp-text-dim)',fontSize:'14px',fontWeight:'600'}},
-          xAxis:{categories: (Array.isArray(dates) && dates.length === data.length) ? dates : data.map((_,i)=>'G'+(10-i)), labels:{style:{color:'var(--pp-text-dim)'}}},
+          xAxis:{categories: xCats, labels:{style:{color:'var(--pp-text-dim)'}}},
           yAxis:{title:{text:document.getElementById('propSelect').value,style:{color:'var(--pp-text-dim)'}},gridLineColor:'rgba(255,255,255,0.05)',plotLines:[{value:line,color:'var(--pp-accent)',width:3,dashStyle:'Dash',label:{text:'Line '+line,style:{color:'var(--pp-accent)',fontWeight:'700'}}}]},
           legend:{enabled:false},
           tooltip:{backgroundColor:'var(--pp-surface)',borderColor:'var(--pp-border)',style:{color:'var(--pp-text)'}},
-          series:[{type:'column',name:'{{NAME}}',data:data.map(v=>({y:v,color:v>line?'var(--pp-success)':'var(--pp-danger)'})),borderRadius:4}]
+          series:[{type:'column',name:'{{NAME}}',data:seriesData.map(v=>({y:v,color:v>line?'var(--pp-success)':'var(--pp-danger)'})),borderRadius:4}]
         });
       } catch(e){
         document.getElementById('chart').innerHTML = '<div style="text-align:center;padding:40px;color:#ff6b6b;">Chart failed to load</div>';
@@ -350,6 +362,17 @@
         select.appendChild(opt);
       });
 
+      // Slider wiring: update label and re-render chart
+      const slider = document.getElementById('lastNSlider');
+      const lastLabel = document.getElementById('lastNValue');
+      if (slider && lastLabel){
+        slider.addEventListener('input', () => {
+          lastN = Number(slider.value);
+          lastLabel.textContent = String(lastN);
+          renderChart();
+        });
+      }
+
       select.addEventListener('change', () => {
         const selected = select.value;
         const statKey = selected;
@@ -378,6 +401,9 @@
           updateUI(rec);
         }
         updateDVPDisplay(current);
+        // Initialize slider label
+        const lastLabel2 = document.getElementById('lastNValue');
+        if (lastLabel2) lastLabel2.textContent = String(lastN);
       })();
     })();
   </script>
