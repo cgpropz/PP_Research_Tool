@@ -404,6 +404,21 @@
           teamSelect.appendChild(opt);
         });
         filterAndSort();
+
+        // Client-side odds refresh every 5 minutes to keep badge current
+        async function refreshOddsBadge(){
+          try{
+            const r = await fetch('data/odds/latest.json', { cache: 'no-store' });
+            if(!r.ok) return;
+            const latest = await r.json();
+            const when = latest && latest.meta && latest.meta.generated_at ? new Date(latest.meta.generated_at) : null;
+            const badge = document.getElementById('oddsMeta');
+            if (badge && when) badge.textContent = `Odds: ${when.toLocaleTimeString()}`;
+          }catch(e){ console.warn('[CGEDGE] odds badge refresh failed', e); }
+        }
+        setInterval(refreshOddsBadge, 5 * 60 * 1000);
+        // Also refresh once after 30s to quickly pick up new run
+        setTimeout(refreshOddsBadge, 30 * 1000);
       })
       .catch(err => {
         console.error('Dashboard init error:', err);
