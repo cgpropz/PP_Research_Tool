@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=./index.html">
+</head>
+<body>
+  <script>
+    (function(){
+      const path = location.pathname.toLowerCase();
+      if (path.endsWith('/team_dvp') || path.endsWith('/team_dvp.html')) {
+        location.replace('./Team_DVP.html');
+        return;
+      }
+      if (path.endsWith('/team_rankings') || path.endsWith('/team_rankings.html')) {
+        location.replace('./Team_Rankings.html');
+        return;
+      }
+      if (path.endsWith('/team_matchup') || path.endsWith('/team_matchup.html')) {
+        location.replace('./Team_Matchup.html');
+        return;
+      }
+      location.replace('./index.html');
+    })();
+  </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
