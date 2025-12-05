@@ -203,15 +203,23 @@
       ];
       for (const url of candidates){
         try {
+          console.log('[DVP] Attempting fetch:', url);
           const res = await fetch(url);
-          if (!res.ok) continue;
+          if (!res.ok) {
+            console.warn('[DVP] Non-OK response', url, res.status, res.statusText);
+            continue;
+          }
           const json = await res.json();
           try {
             const metaEl = document.getElementById('dvpMeta');
             metaEl.textContent = `DVP: loaded from ${url}`;
           } catch(e) {}
+          console.log('[DVP] Loaded rows:', (json && json.data && Array.isArray(json.data.team_dvp_rankings)) ? json.data.team_dvp_rankings.length : 0);
           return json;
-        } catch(e) { /* try next */ }
+        } catch(e) {
+          console.error('[DVP] Fetch failed:', url, e);
+          // try next
+        }
       }
       throw new Error('Failed to load DVP');
     }
@@ -221,19 +229,21 @@
         const dvp = await loadDvp();
         const rows = (dvp && dvp.data && dvp.data.team_dvp_rankings) || [];
         dvpRows = Array.isArray(rows) ? rows : [];
+        console.log('[DVP] Init rows after load:', dvpRows.length);
         const metaEl = document.getElementById('dvpMeta');
         try {
           const ts = dvp && dvp.generated_at ? new Date(dvp.generated_at) : null;
           if (ts) metaEl.textContent += ` • ${ts.toLocaleString()}`;
         } catch(e) {}
         if (!dvpRows.length) {
+          console.warn('[DVP] No rows to render. Check data format of nba_dvp_latest.json');
           document.getElementById('dvpStatus').classList.remove('d-none');
         }
         buildThead();
         wireControls();
         renderTbody();
       } catch(err){
-        console.error('DVP init error:', err);
+        console.error('[DVP] Init error:', err);
         document.getElementById('dvpStatus').classList.remove('d-none');
       }
     })();
