@@ -6,6 +6,16 @@
   <title>CGEDGE</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Set base path for GitHub Pages subpath routing
+    (function(){
+      var base = document.createElement('base');
+      var repo = '/NBA-UI-Props/';
+      var inRepo = location.pathname.indexOf(repo) !== -1;
+      base.href = inRepo ? repo : '/';
+      document.head.appendChild(base);
+    })();
+  </script>
 </head>
 <body class="dashboard">
 
