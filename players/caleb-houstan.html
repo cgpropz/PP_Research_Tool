@@ -50,7 +50,7 @@
       <!-- Last N slider -->
       <div class="lastn" style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:10px;">
         <label for="lastNSlider" style="color:var(--pp-accent);font-weight:700">Last <span id="lastNValue">10</span> games</label>
-        <input id="lastNSlider" type="range" min="5" max="20" step="1" value="10" style="width:220px;"/>
+        <input id="lastNSlider" type="range" min="5" max="30" step="1" value="10" style="width:220px;"/>
       </div>
 
       <!-- Hitrates -->
@@ -232,7 +232,7 @@
 
     function maxRange(){
       const len = Array.isArray(data) ? data.length : 0;
-      return Math.min(20, Math.max(5, len || 20));
+      return Math.min(30, Math.max(5, len || 30));
     }
 
     function renderChart(){
