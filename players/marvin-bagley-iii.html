@@ -289,8 +289,10 @@
       const slider = document.getElementById('lastNSlider');
       const lbl = document.getElementById('lastNValue');
       if (!slider || !lbl) return;
-      slider.max = String(maxRange());
-      if (Number(slider.value) > Number(slider.max)) slider.value = slider.max;
+      const maxLen = maxRange();
+      slider.max = String(maxLen);
+      // Default slider value to full season length
+      slider.value = String(maxLen);
       lastN = Number(slider.value);
       lbl.textContent = String(lastN);
     }
@@ -419,8 +421,9 @@
           updateUI(rec);
         }
         updateDVPDisplay(current);
-        // Ensure slider reflects current dataset
+        // Ensure slider reflects current dataset and defaults to full season
         syncSliderWithData();
+        renderChart();
       })();
     })();
   </script>
