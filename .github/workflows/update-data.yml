@@ -5,6 +5,12 @@ on:
     - cron: '*/5 * * * *' # PP odds every 5 minutes
     - cron: '0 7 * * *'    # Daily 7:00 AM for gamelogs + DVP
   workflow_dispatch: {}
+  push:
+    branches: [ main ]
+    paths:
+      - 'player-template-new.html'
+      - 'generate_players.py'
+      - 'UI_DATA_BUILDER_PERFECT.py'
 
 permissions:
   contents: write
@@ -60,6 +66,11 @@ jobs:
         run: |
           python UI_DATA_BUILDER_PERFECT.py || true
           python generate_players.py || true
+      - name: Write template change note
+        if: github.event_name == 'push'
+        run: |
+          mkdir -p logs
+          echo "$(date -u +'%Y-%m-%dT%H:%M:%SZ') • template changed via push • run_id=${GITHUB_RUN_ID}" >> logs/update_data.log
 
       - name: Write run log summary
         run: |
