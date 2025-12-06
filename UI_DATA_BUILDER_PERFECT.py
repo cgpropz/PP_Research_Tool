@@ -12,7 +12,20 @@ GAMELOGS_PATH = os.environ.get('GAMELOGS_PATH', 'Full_Gamelogs25.csv')
 OUTPUT_PATH = os.environ.get('OUTPUT_PATH', 'PLAYER_UI_CARDS_PERFECT.json')
 
 with open(PP_LINES_PATH, 'r') as f:
-    pp_lines = json.load(f)
+    raw = json.load(f)
+
+# Normalize PP lines structure to a list of dicts
+if isinstance(raw, dict):
+    # Common wrappers: { "lines": [...] } or { "data": [...] }
+    if 'lines' in raw and isinstance(raw['lines'], list):
+        pp_lines = raw['lines']
+    elif 'data' in raw and isinstance(raw['data'], list):
+        pp_lines = raw['data']
+    else:
+        # If dict of items keyed by id/name
+        pp_lines = [v for v in raw.values() if isinstance(v, dict)]
+else:
+    pp_lines = raw if isinstance(raw, list) else []
 
 df_logs = pd.read_csv(GAMELOGS_PATH)
 df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
@@ -44,12 +57,26 @@ STAT_MAP = {
 ui_cards = []
 base_projections = {}
 
+def pick(prop, *keys):
+    for k in keys:
+        if k in prop and prop[k] not in (None, ''):
+            return prop[k]
+    return None
+
 for prop in pp_lines:
-    name = prop['Name']
-    team = prop['Team']
-    stat = prop['Stat']
-    line = prop['Line']
-    opponent = prop.get('Versus', '???')
+    # Skip non-dict entries (some feeds include strings or numbers)
+    if not isinstance(prop, dict):
+        continue
+    # Robust key selection across differing JSON shapes
+    name = pick(prop, 'Name', 'name', 'Player', 'player')
+    team = pick(prop, 'Team', 'team')
+    stat = pick(prop, 'Stat', 'stat', 'Prop', 'prop')
+    line = pick(prop, 'Line', 'line', 'Value', 'value')
+    opponent = pick(prop, 'Versus', 'versus', 'Opponent', 'opponent') or '???'
+
+    # Skip records missing critical fields
+    if name is None or stat is None or line is None:
+        continue
 
     # Skip if stat not supported
     if stat not in STAT_MAP:
