@@ -441,9 +441,16 @@
       }catch(e){ alert('Copy failed'); }
     });
     document.getElementById('openPP').addEventListener('click', ()=>{
-      // Persist and open PP; extension can auto-prefill later
-      localStorage.setItem('ppSlip', JSON.stringify({ version:1, items:selectedProps }));
-      window.open('https://www.prizepicks.com', '_blank');
+      // Persist locally and pass slip via URL hash to PrizePicks (cross-origin safe)
+      const payload = { version:1, items:selectedProps };
+      const raw = JSON.stringify(payload);
+      localStorage.setItem('ppSlip', raw);
+      try{
+        const encoded = btoa(unescape(encodeURIComponent(raw)));
+        window.open('https://www.prizepicks.com/#cgpp='+encoded, '_blank');
+      }catch(e){
+        window.open('https://www.prizepicks.com', '_blank');
+      }
     });
 
     function filterAndSort() {

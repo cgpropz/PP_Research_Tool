@@ -1,9 +1,24 @@
 (function(){
   const LOG_PREFIX = '[CGEDGE-PP]';
 
+  function getSlipFromHash(){
+    try{
+      const h = (window.location.hash||'').replace(/^#/, '');
+      if (!h) return null;
+      const params = new URLSearchParams(h.includes('=') ? h : ('cgpp='+h));
+      const enc = params.get('cgpp');
+      if (!enc) return null;
+      const json = decodeURIComponent(escape(atob(enc)));
+      const parsed = JSON.parse(json);
+      if (!parsed || !Array.isArray(parsed.items)) return null;
+      // Persist to PP origin for refreshes
+      localStorage.setItem('ppSlip', JSON.stringify(parsed));
+      return parsed.items;
+    }catch(e){ console.warn(LOG_PREFIX, 'Hash parse failed', e); return null; }
+  }
+
   function getSlip(){
     try{
-      // Try parent/opener localStorage if available
       const ls = window.localStorage;
       const raw = ls.getItem('ppSlip');
       if (!raw) return null;
@@ -72,7 +87,7 @@
   }
 
   async function run(){
-    const slip = getSlip();
+    const slip = getSlipFromHash() || getSlip();
     if (!slip || !slip.length){ console.log(LOG_PREFIX, 'No slip in localStorage'); return; }
     console.log(LOG_PREFIX, 'Autofilling slip of', slip.length, 'items');
     for (const it of slip){
@@ -85,4 +100,25 @@
   window.addEventListener('load', ()=>{
     setTimeout(run, 2000);
   });
+
+  // Add a small floating manual trigger for debugging
+  function addManualButton(){
+    try{
+      const btn = document.createElement('button');
+      btn.textContent = 'CGEDGE: Run Autofill';
+      btn.style.position = 'fixed';
+      btn.style.bottom = '16px';
+      btn.style.right = '16px';
+      btn.style.zIndex = '999999';
+      btn.style.background = '#003322';
+      btn.style.color = '#39d9a9';
+      btn.style.border = '1px solid #39d9a966';
+      btn.style.borderRadius = '10px';
+      btn.style.padding = '8px 10px';
+      btn.style.cursor = 'pointer';
+      btn.addEventListener('click', run);
+      document.body.appendChild(btn);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded', addManualButton);
 })();
