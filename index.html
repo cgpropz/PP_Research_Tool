@@ -124,6 +124,7 @@
       <div id="slipSummary" style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:12px"></div>
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end">
         <button id="copySlip" style="background:#232832;color:#ffd43b;border:1px solid #ffd43b55;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer">Copy Slip</button>
+        <button id="copyCgpp" style="background:#232832;color:#00ff9d;border:1px solid #00ff9d55;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer">Copy cgpp</button>
         <button id="openPP" style="background:#003322;color:#39d9a9;border:1px solid #39d9a966;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer">Open PrizePicks</button>
       </div>
     </div>
@@ -464,10 +465,25 @@
       localStorage.setItem('ppSlip', raw);
       try{
         const encoded = btoa(unescape(encodeURIComponent(raw)));
-        window.open('https://www.prizepicks.com/#cgpp='+encoded, '_blank');
+        // Store and log cgpp for Playwright usage
+        try{
+          localStorage.setItem('cgppLast', encoded);
+          console.log('[CGEDGE]', 'cgpp payload:', encoded);
+        }catch(e){}
+        window.open('https://app.prizepicks.com/#cgpp='+encoded, '_blank');
       }catch(e){
-        window.open('https://www.prizepicks.com/', '_blank');
+        window.open('https://app.prizepicks.com/', '_blank');
       }
+    });
+
+    // Copy cgpp helper
+    document.getElementById('copyCgpp').addEventListener('click', async ()=>{
+      try{
+        const base64 = localStorage.getItem('cgppLast');
+        if (!base64){ alert('No cgpp found. Click Open PrizePicks first.'); return; }
+        await navigator.clipboard.writeText(base64);
+        alert('cgpp copied to clipboard');
+      }catch(e){ alert('Copy failed'); }
     });
 
     function filterAndSort() {

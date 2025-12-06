@@ -14,7 +14,7 @@ async function main(){
   const context = await browser.newContext();
   const page = await context.newPage();
   console.log('[PP-AUTO]', 'Opening PrizePicks login...');
-  await page.goto('https://www.prizepicks.com/login', { waitUntil: 'load' });
+  await page.goto('https://app.prizepicks.com/', { waitUntil: 'load' });
 
   // Helper: detect logged-in by presence of avatar/menu or lack of Login button
   async function isLoggedIn(){
