@@ -6,11 +6,12 @@
   "permissions": ["storage", "scripting"],
   "host_permissions": [
     "https://www.prizepicks.com/*",
-    "https://*.prizepicks.com/*"
+    "https://*.prizepicks.com/*",
+    "https://app.prizepicks.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.prizepicks.com/*", "https://*.prizepicks.com/*"],
+      "matches": ["https://www.prizepicks.com/*", "https://*.prizepicks.com/*", "https://app.prizepicks.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
