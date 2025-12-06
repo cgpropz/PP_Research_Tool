@@ -151,14 +151,13 @@ for target in targets:
         except Exception:
             line = 0.0
 
-    # Last 30 values (chronological: oldest → newest)
-    last30_raw = values.head(30).tolist()
-    last30_values = last30_raw[::-1]
+    # All available values for the season (chronological: oldest → newest)
+    all_raw = values.astype(float).tolist()
+    last_all_values = all_raw[::-1]
 
-    # Last 30 game dates aligned with last30_values (oldest → newest)
-    last30_dates_series = player_games['GAME DATE'].head(30)
-    # Format as MM/DD and reverse to match chronological ordering
-    last30_dates = [d.strftime('%m/%d') for d in last30_dates_series.iloc[::-1]]
+    # All game dates aligned with last_all_values (oldest → newest)
+    all_dates_series = player_games['GAME DATE']
+    last_all_dates = [d.strftime('%m/%d') for d in all_dates_series.iloc[::-1]]
 
     # Hit rates
     hits_l5 = sum(v > line for v in values.head(5))
@@ -221,8 +220,8 @@ for target in targets:
         .replace('{{PROP}}', display_stat) \
         .replace('{{LINE}}', str(line)) \
         .replace('{{PROJECTION}}', f"{projection:.1f}") \
-        .replace('{{LAST30_DATA}}', json.dumps(last30_values)) \
-        .replace('{{LAST30_DATES}}', json.dumps(last30_dates)) \
+        .replace('{{LASTALL_DATA}}', json.dumps(last_all_values)) \
+        .replace('{{LASTALL_DATES}}', json.dumps(last_all_dates)) \
         .replace('{{HITRATE_L5}}', l5) \
         .replace('{{HITRATE_L10}}', l10) \
         .replace('{{HITRATE_L20}}', l20) \

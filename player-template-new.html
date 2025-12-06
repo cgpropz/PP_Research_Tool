@@ -76,8 +76,8 @@
 
   <script>
     let line = Number('{{LINE}}');
-    let data = JSON.parse('{{LAST30_DATA}}');
-    let dates = JSON.parse('{{LAST30_DATES}}');
+    let data = JSON.parse('{{LASTALL_DATA}}');
+    let dates = JSON.parse('{{LASTALL_DATES}}');
     let lastN = 10;
     let projection = Number('{{PROJECTION}}');
     const playerName = '{{NAME}}';
@@ -232,7 +232,7 @@
 
     function maxRange(){
       const len = Array.isArray(data) ? data.length : 0;
-      return Math.min(30, Math.max(5, len || 30));
+      return Math.max(5, len || 10);
     }
 
     function renderChart(){
