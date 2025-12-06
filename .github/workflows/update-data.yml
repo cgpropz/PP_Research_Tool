@@ -57,10 +57,27 @@ jobs:
         run: |
           python Fetch_Gamelogs.py || python Gamelogs.py || true
 
-      - name: Update DVP data (7 AM only)
+      - name: Update DVP data (daily at 7 AM)
         if: "${{ startsWith(github.event.schedule, '0 7') }}"
         run: |
           python dvp_parser.py || true
+
+      - name: Refresh DVP if missing or stale (>6h) (every run)
+        run: |
+          set -e
+          if [ ! -f nba_dvp_latest.json ]; then
+            echo "DVP file missing → running parser";
+            python dvp_parser.py || true;
+          else
+            AGE_HOURS=$(( ( $(date +%s) - $(date -r nba_dvp_latest.json +%s) ) / 3600 ))
+            echo "DVP file age: ${AGE_HOURS}h";
+            if [ "$AGE_HOURS" -ge 6 ]; then
+              echo "DVP stale → running parser";
+              python dvp_parser.py || true;
+            else
+              echo "DVP fresh (<6h) → keeping current";
+            fi
+          fi
 
       - name: Regenerate player pages
         run: |
