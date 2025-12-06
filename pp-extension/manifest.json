@@ -5,11 +5,12 @@
   "description": "Auto-prefill PrizePicks slip from CGEDGE dashboard saved in localStorage (ppSlip).",
   "permissions": ["storage", "scripting"],
   "host_permissions": [
-    "https://www.prizepicks.com/*"
+    "https://www.prizepicks.com/*",
+    "https://*.prizepicks.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.prizepicks.com/*"],
+      "matches": ["https://www.prizepicks.com/*", "https://*.prizepicks.com/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }

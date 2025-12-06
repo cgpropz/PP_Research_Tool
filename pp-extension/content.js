@@ -31,6 +31,21 @@
     }
   }
 
+  function isPlaybookOrArticles(){
+    const host = location.hostname;
+    const path = location.pathname;
+    return host.includes('playbook.prizepicks.com') || path.startsWith('/category/') || path.startsWith('/playbook/');
+  }
+
+  function redirectToAppWithHash(){
+    const h = location.hash || '';
+    const target = 'https://www.prizepicks.com/' + (h || '');
+    if (location.href !== target) {
+      console.log(LOG_PREFIX, 'Redirecting to app root with hash');
+      location.replace(target);
+    }
+  }
+
   function sleep(ms){ return new Promise(res=>setTimeout(res, ms)); }
 
   async function clickByText(text){
@@ -87,6 +102,7 @@
   }
 
   async function run(){
+    if (isPlaybookOrArticles()) { redirectToAppWithHash(); return; }
     const slip = getSlipFromHash() || getSlip();
     if (!slip || !slip.length){ console.log(LOG_PREFIX, 'No slip in localStorage'); return; }
     console.log(LOG_PREFIX, 'Autofilling slip of', slip.length, 'items');
@@ -100,6 +116,7 @@
   window.addEventListener('load', ()=>{
     setTimeout(run, 2000);
   });
+  window.addEventListener('hashchange', ()=> setTimeout(run, 500));
 
   // Add a small floating manual trigger for debugging
   function addManualButton(){
@@ -118,6 +135,11 @@
       btn.style.cursor = 'pointer';
       btn.addEventListener('click', run);
       document.body.appendChild(btn);
+      // Gentle prompt if not logged in (detect visible Log In button)
+      const loginBtn = Array.from(document.querySelectorAll('a,button')).find(el=>/log\s*in/i.test(el.textContent||''));
+      if (loginBtn) {
+        console.log(LOG_PREFIX, 'Login appears required. Please log in, then click Run Autofill.');
+      }
     }catch(e){}
   }
   document.addEventListener('DOMContentLoaded', addManualButton);
