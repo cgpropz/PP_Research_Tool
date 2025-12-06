@@ -32,10 +32,14 @@
   }
 
   async function setAuthed(flag){
-    try{ await chrome.storage?.local?.set({ ppAuthed: !!flag }); }catch(e){}
+    try{ await chrome.storage?.local?.set({ ppAuthed: !!flag, ppAuthedAt: Date.now() }); }catch(e){}
   }
   async function isAuthed(){
-    try{ const v = await chrome.storage?.local?.get('ppAuthed'); return !!(v && v.ppAuthed); }catch(e){ return false; }
+    try{ const v = await chrome.storage?.local?.get(['ppAuthed','ppAuthedAt']);
+      if (!v || !v.ppAuthed) return false;
+      const ageHrs = (Date.now() - (v.ppAuthedAt||0)) / 3600000;
+      return ageHrs < 24; // trust auth for 24h
+    }catch(e){ return false; }
   }
 
   function detectLoggedIn(){
@@ -43,6 +47,14 @@
     const hasAvatar = !!document.querySelector('[aria-label*="account" i], [data-testid*="avatar" i], [class*="Avatar" i]');
     const loginBtn = Array.from(document.querySelectorAll('a,button')).find(el=>/log\s*in/i.test(el.textContent||''));
     return hasAvatar || !loginBtn;
+  }
+
+  async function checkProfileAuth(){
+    try{
+      const resp = await fetch('https://app.prizepicks.com/p/YSiy5hC4', { credentials: 'include' });
+      if (resp && resp.status === 200) { await setAuthed(true); return true; }
+    }catch(e){}
+    return false;
   }
 
   function routeToLoginPreservingHash(){
@@ -77,14 +89,45 @@
     return location.pathname === '/' || /All your picks\. One app\./i.test(document.body.textContent||'');
   }
 
+  async function selectNBATab(){
+    // Prefer explicit NBA/Basketball tabs or sport filters
+    const selectors = [
+      '[data-testid*="nba" i]', '[aria-label*="NBA" i]', '[data-sport*="nba" i]', '[href*="nba" i]',
+      '[data-testid*="basketball" i]', '[aria-label*="Basketball" i]', '[data-testid*="chip" i]'
+    ];
+    for (const sel of selectors){
+      const el = Array.from(document.querySelectorAll(sel)).find(e=>/\b(NBA|Basketball)\b/i.test((e.textContent||'') + (e.getAttribute('data-testid')||'') + (e.getAttribute('aria-label')||'')));
+      if (el){ el.click(); await sleep(600); return true; }
+    }
+    // Fallback: search buttons/links by text
+    const byText = Array.from(document.querySelectorAll('button, a, [role="tab"], [role="button"]'))
+      .find(el=>/\b(NBA|Basketball)\b/i.test(el.textContent||''));
+    if (byText){ byText.click(); await sleep(600); return true; }
+    // Tablist pattern
+    const tablist = document.querySelector('[role="tablist"]');
+    if (tablist){
+      const nbaTab = Array.from(tablist.querySelectorAll('[role="tab"],[data-testid]'))
+        .find(el=>/nba|basketball/i.test((el.getAttribute('data-testid')||'') + (el.textContent||'')));
+      if (nbaTab){ nbaTab.click(); await sleep(600); return true; }
+    }
+    return false;
+  }
+
   async function enterPicksFromHome(){
     // Try common CTAs on homepage to enter picks
     const ctas = Array.from(document.querySelectorAll('a,button'));
-    const pickNow = ctas.find(el => /pick\s*now/i.test(el.textContent||''));
+    const pickNow = ctas.find(el => /pick\s*now/i.test(el.textContent||'') || el.getAttribute('aria-label')==='Pick Now');
     const playersCta = ctas.find(el => /players/i.test(el.textContent||''));
-    if (pickNow) { pickNow.click(); await sleep(800); return true; }
-    if (playersCta) { playersCta.click(); await sleep(800); return true; }
-    return false;
+    if (pickNow) { pickNow.click(); await sleep(1000); }
+    else if (playersCta) { playersCta.click(); await sleep(1000); }
+    else { try{ location.assign('https://www.prizepicks.com/'); await sleep(1200); }catch(e){} }
+    // Wait for SPA shell to mount
+    for (let i=0;i<10;i++){
+      const shellReady = document.querySelector('[role="tablist"], [data-testid*="chip" i], [data-testid*="players" i]');
+      if (shellReady) return true;
+      await sleep(300);
+    }
+    return true;
   }
 
   async function clickByText(text){
@@ -122,9 +165,8 @@
   async function addPick(item){
     // If on homepage, enter the picks area first
     if (isHome()) { await enterPicksFromHome(); await sleep(600); }
-    // Navigate to sport/NBA if needed
-    try{ await clickByText('NBA'); }catch(e){}
-    await sleep(500);
+    // Ensure NBA/Basketball tab selected
+    await selectNBATab();
 
     // Select prop category
     const tab = mapPropToSelector(item.prop);
@@ -134,13 +176,14 @@
     const card = findPlayerCard(item.name);
     if (!card){ console.warn(LOG_PREFIX, 'Player card not found', item.name); return; }
 
-    // Choose Over explicitly
-    let overBtn = card.querySelector('[data-testid*="over"], [aria-label*="Over"], button');
-    // Try text-based match within card if generic button was selected
-    if (overBtn && !/over/i.test(overBtn.textContent||'')) {
-      overBtn = Array.from(card.querySelectorAll('button, [role="button"]')).find(b=>/\bover\b/i.test(b.textContent||'')) || overBtn;
-    }
-    if (overBtn){ overBtn.click(); await sleep(300); }
+    // Choose side
+    const wantOver = String(item.side||'Over').toLowerCase() === 'over';
+    const overBtnCand = card.querySelector('[data-testid*="over"], [aria-label*="Over"], button');
+    const underBtnCand = card.querySelector('[data-testid*="under"], [aria-label*="Under"], button');
+    const overBtn = (overBtnCand && /over/i.test(overBtnCand.textContent||'')) ? overBtnCand : Array.from(card.querySelectorAll('button,[role="button"]')).find(b=>/\bover\b/i.test(b.textContent||''));
+    const underBtn = (underBtnCand && /under/i.test(underBtnCand.textContent||'')) ? underBtnCand : Array.from(card.querySelectorAll('button,[role="button"]')).find(b=>/\bunder\b/i.test(b.textContent||''));
+    const clickBtn = wantOver ? (overBtn || overBtnCand) : (underBtn || underBtnCand);
+    if (clickBtn){ clickBtn.click(); await sleep(300); }
     else { card.click(); await sleep(300); }
 
     // Note: Exact line matching in PP DOM varies; we rely on default selection.
@@ -154,10 +197,14 @@
     // Persist slip in extension storage to survive navigation/login
     try{ await chrome.storage?.local?.set({ ppSlip: slip }); }catch(e){}
     // If not logged in, route to login once and wait for user
-    const logged = detectLoggedIn() || await isAuthed();
+    const logged = detectLoggedIn() || await isAuthed() || await checkProfileAuth();
     if (!logged){ routeToLoginPreservingHash(); return; }
     // Mark authed for future runs
     await setAuthed(true);
+    // If homepage, try entering picks UI first
+    if (isHome()) { await enterPicksFromHome(); }
+    // Pre-select NBA tab once
+    await selectNBATab();
     console.log(LOG_PREFIX, 'Autofilling slip of', slip.length, 'items');
     for (const it of slip){
       try{ await addPick(it); }catch(e){ console.warn(LOG_PREFIX, 'AddPick failed', it, e); }
