@@ -30,6 +30,7 @@
         <a href="./Team_DVP.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Team DVP</a>
         <a href="./Team_Rankings.html" style="color:#00ff9d;text-decoration:none;font-weight:700">Team Rankings</a>
         <button id="refreshBtn" style="margin-left:12px;background:#002b36;color:#00ff9d;border:1px solid #00ff9d;border-radius:10px;padding:2px 10px;font-size:12px;cursor:pointer">Refresh Data</button>
+        <span id="slipCount" style="margin-left:10px;background:#002b36;color:#00ff9d;border:1px solid #00ff9d;border-radius:10px;padding:2px 8px;font-size:12px;vertical-align:middle;display:none">Slip: 0/6</span>
       </nav>
     </div>
   </div>
@@ -336,6 +337,7 @@
     function updateSlipBar(){
       const bar = document.getElementById('slipBar');
       const items = document.getElementById('slipItems');
+      const countChip = document.getElementById('slipCount');
       if (!bar || !items) return;
       bar.style.display = selectedProps.length ? 'block' : 'none';
       items.innerHTML = selectedProps.map((it,idx)=>
@@ -347,6 +349,17 @@
          </div>`
       ).join('');
       localStorage.setItem('ppSlip', JSON.stringify({ version:1, items: selectedProps }));
+      if (countChip){
+        countChip.style.display = 'inline-block';
+        countChip.textContent = `Slip: ${selectedProps.length}/6`;
+      }
+      // Disable add buttons if at max
+      const addButtons = document.querySelectorAll('.add-to-slip');
+      addButtons.forEach(btn => {
+        btn.disabled = selectedProps.length >= 6;
+        btn.style.opacity = selectedProps.length >= 6 ? '0.6' : '1';
+        btn.title = selectedProps.length >= 6 ? 'Max 6 props reached' : 'Add to slip';
+      });
     }
 
     document.addEventListener('click', (e)=>{
