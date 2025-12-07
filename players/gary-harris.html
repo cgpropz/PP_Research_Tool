@@ -32,17 +32,17 @@
       <div class="name">Gary Harris</div>
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
-        <div class="team"></div>
-        <div class="opponent">vs N/A</div>
+        <div class="team">MIL</div>
+        <div class="opponent">vs DET</div>
       </div>
 
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
+          <option value="Turnovers">Turnovers</option>
         </select>
-        • Line <strong id="lineVal">6.3</strong> 
-        • Projection <strong id="projectionVal">6.0</strong>
+        • Line <strong id="lineVal">0.5</strong> 
+        • Projection <strong id="projectionVal">0.4</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -56,10 +56,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">3/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">6/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">6/14</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">6/14</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">2/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">3/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">4/14</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">4/14</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -75,11 +75,11 @@
   </div>
 
   <script>
-    let line = Number('6.3');
-    let data = JSON.parse('[0.0, 3.0, 3.0, 0.0, 1.0, 11.0, 8.0, 2.0, 7.0, 5.0, 7.0, 8.0, 5.0, 9.0]');
+    let line = Number('0.5');
+    let data = JSON.parse('[0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 2.0, 0.0]');
     let dates = JSON.parse('["10/22", "10/30", "11/04", "11/10", "11/12", "11/14", "11/15", "11/17", "11/20", "11/22", "11/24", "11/26", "11/28", "11/29"]');
     let lastN = 10;
-    let projection = Number('6.0');
+    let projection = Number('0.4');
     const playerName = 'Gary Harris';
 
     (function(){
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -260,10 +263,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '3/5',
-        record.last_10 || '6/10',
-        record.last_20 || '6/14',
-        record.season || '6/14'
+        record.last_5 || '2/5',
+        record.last_10 || '3/10',
+        record.last_20 || '4/14',
+        record.season || '4/14'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'N/A';
+        let oppTeam = 'DET';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;

@@ -33,7 +33,7 @@
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
         <div class="team">LAC</div>
-        <div class="opponent">vs MEM</div>
+        <div class="opponent">vs MIN</div>
       </div>
 
       <!-- Prop line -->
@@ -41,7 +41,7 @@
         <select id="propSelect">
           <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">33.5</strong> 
+        • Line <strong id="lineVal">32.5</strong> 
         • Projection <strong id="projectionVal">35.8</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
@@ -75,7 +75,7 @@
   </div>
 
   <script>
-    let line = Number('33.5');
+    let line = Number('32.5');
     let data = JSON.parse('[16.0, 37.0, 44.0, 25.0, 44.0, 35.0, 25.0, 27.0, 42.0, 41.0, 45.0]');
     let dates = JSON.parse('["10/22", "10/24", "10/26", "10/28", "10/31", "11/03", "11/23", "11/25", "11/28", "11/29", "12/01"]');
     let lastN = 10;
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'MEM';
+        let oppTeam = 'MIN';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;

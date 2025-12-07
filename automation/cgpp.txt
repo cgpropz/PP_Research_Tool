@@ -1,7 +1,0 @@
-kahlilhodge@Kahlils-MacBook-Air automation % cd /Users/kahlilhodge/NBA-UI-Props/automation
-npm run autofill:cgpp -- --headful
-
-> nba-ui-props-automation@0.1.0 autofill:cgpp
-> node pp_autofill.js --cgpp=$CGPP --headful
-
-[PP-AUTO] Failed to parse cgpp Unexpected token '', "" is not valid JSON

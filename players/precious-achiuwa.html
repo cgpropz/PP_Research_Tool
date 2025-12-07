@@ -32,8 +32,8 @@
       <div class="name">Precious Achiuwa</div>
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
-        <div class="team"></div>
-        <div class="opponent">vs N/A</div>
+        <div class="team">SAC</div>
+        <div class="opponent">vs MIA</div>
       </div>
 
       <!-- Prop line -->
@@ -41,7 +41,7 @@
         <select id="propSelect">
           <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">14.0</strong> 
+        • Line <strong id="lineVal">14.5</strong> 
         • Projection <strong id="projectionVal">14.3</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
@@ -75,7 +75,7 @@
   </div>
 
   <script>
-    let line = Number('14.0');
+    let line = Number('14.5');
     let data = JSON.parse('[7.0, 8.0, 22.0, 12.0, 17.0, 7.0, 2.0, 27.0, 9.0, 11.0, 18.0, 22.0, 9.0, 18.0]');
     let dates = JSON.parse('["11/05", "11/07", "11/09", "11/11", "11/12", "11/14", "11/16", "11/19", "11/20", "11/22", "11/24", "11/26", "11/28", "11/30"]');
     let lastN = 10;
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'N/A';
+        let oppTeam = 'MIA';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;

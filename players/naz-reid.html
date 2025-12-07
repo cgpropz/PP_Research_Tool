@@ -32,8 +32,8 @@
       <div class="name">Naz Reid</div>
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
-        <div class="team"></div>
-        <div class="opponent">vs N/A</div>
+        <div class="team">MIN</div>
+        <div class="opponent">vs LAC</div>
       </div>
 
       <!-- Prop line -->
@@ -41,7 +41,7 @@
         <select id="propSelect">
           <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">23.6</strong> 
+        • Line <strong id="lineVal">22.5</strong> 
         • Projection <strong id="projectionVal">21.4</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
@@ -56,10 +56,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">0/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">4/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">7/20</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">7/20</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">1/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">5/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">8/20</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">8/20</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -75,7 +75,7 @@
   </div>
 
   <script>
-    let line = Number('23.6');
+    let line = Number('22.5');
     let data = JSON.parse('[10.0, 12.0, 28.0, 27.0, 11.0, 22.0, 26.0, 12.0, 12.0, 19.0, 15.0, 28.0, 28.0, 36.0, 34.0, 13.0, 22.0, 17.0, 20.0, 23.0]');
     let dates = JSON.parse('["10/22", "10/24", "10/26", "10/27", "10/29", "11/01", "11/03", "11/05", "11/07", "11/09", "11/10", "11/14", "11/15", "11/17", "11/19", "11/21", "11/24", "11/26", "11/29", "11/30"]');
     let lastN = 10;
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -260,10 +263,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '0/5',
-        record.last_10 || '4/10',
-        record.last_20 || '7/20',
-        record.season || '7/20'
+        record.last_5 || '1/5',
+        record.last_10 || '5/10',
+        record.last_20 || '8/20',
+        record.season || '8/20'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'N/A';
+        let oppTeam = 'LAC';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;

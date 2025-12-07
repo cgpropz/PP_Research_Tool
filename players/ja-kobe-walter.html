@@ -32,17 +32,17 @@
       <div class="name">Ja'Kobe Walter</div>
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
-        <div class="team">TOR</div>
-        <div class="opponent">vs CHA</div>
+        <div class="team"></div>
+        <div class="opponent">vs N/A</div>
       </div>
 
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Points">Points</option>
+          <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">8.0</strong> 
-        • Projection <strong id="projectionVal">7.0</strong>
+        • Line <strong id="lineVal">10.2</strong> 
+        • Projection <strong id="projectionVal">10.5</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -56,10 +56,10 @@
       <!-- Hitrates -->
       <div class="hitrates-wrapper">
         <div class="hitrates">
-          <div class="rate-box"><div class="label">Last 5</div><div class="val">2/5</div></div>
-          <div class="rate-box"><div class="label">Last 10</div><div class="val">3/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">3/18</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">3/18</div></div>
+          <div class="rate-box"><div class="label">Last 5</div><div class="val">4/5</div></div>
+          <div class="rate-box"><div class="label">Last 10</div><div class="val">5/10</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">6/18</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">6/18</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -75,11 +75,11 @@
   </div>
 
   <script>
-    let line = Number('8.0');
-    let data = JSON.parse('[3.0, 2.0, 3.0, 0.0, 8.0, 0.0, 3.0, 6.0, 4.0, 3.0, 0.0, 11.0, 3.0, 16.0, 5.0, 13.0, 5.0, 7.0]');
+    let line = Number('10.2');
+    let data = JSON.parse('[5.0, 7.0, 4.0, 2.0, 11.0, 0.0, 3.0, 7.0, 9.0, 3.0, 1.0, 13.0, 8.0, 17.0, 9.0, 18.0, 12.0, 12.0]');
     let dates = JSON.parse('["10/27", "10/29", "10/31", "11/02", "11/04", "11/07", "11/08", "11/11", "11/13", "11/15", "11/17", "11/19", "11/21", "11/23", "11/24", "11/26", "11/29", "11/30"]');
     let lastN = 10;
-    let projection = Number('7.0');
+    let projection = Number('10.5');
     const playerName = 'Ja'Kobe Walter';
 
     (function(){
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -260,10 +263,10 @@
       const boxes = document.querySelectorAll('.hitrates .rate-box .val');
       if(boxes.length < 4) return;
       const vals = [
-        record.last_5 || '2/5',
-        record.last_10 || '3/10',
-        record.last_20 || '3/18',
-        record.season || '3/18'
+        record.last_5 || '4/5',
+        record.last_10 || '5/10',
+        record.last_20 || '6/18',
+        record.season || '6/18'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'CHA';
+        let oppTeam = 'N/A';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;

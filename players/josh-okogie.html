@@ -33,16 +33,16 @@
       <div class="meta-line">
         <div class="position" id="positionChip"></div>
         <div class="team">HOU</div>
-        <div class="opponent">vs PHX</div>
+        <div class="opponent">vs DAL</div>
       </div>
 
       <!-- Prop line -->
       <div class="prop-line">
         <select id="propSelect">
-          <option value="Points">Points</option>
+          <option value="Pts+Rebs+Asts">Pts+Rebs+Asts</option>
         </select>
-        • Line <strong id="lineVal">6.5</strong> 
-        • Projection <strong id="projectionVal">5.3</strong>
+        • Line <strong id="lineVal">11.5</strong> 
+        • Projection <strong id="projectionVal">9.0</strong>
         <!-- Exp Min inline removed; now shown as top-left badge -->
         <span id="edgeBadge"></span>
       </div>
@@ -58,8 +58,8 @@
         <div class="hitrates">
           <div class="rate-box"><div class="label">Last 5</div><div class="val">2/5</div></div>
           <div class="rate-box"><div class="label">Last 10</div><div class="val">4/10</div></div>
-          <div class="rate-box"><div class="label">Last 20</div><div class="val">11/18</div></div>
-          <div class="rate-box"><div class="label">Season</div><div class="val">11/18</div></div>
+          <div class="rate-box"><div class="label">Last 20</div><div class="val">9/18</div></div>
+          <div class="rate-box"><div class="label">Season</div><div class="val">9/18</div></div>
         </div>
         <div class="dots">
           <span class="dot active"></span>
@@ -75,11 +75,11 @@
   </div>
 
   <script>
-    let line = Number('6.5');
-    let data = JSON.parse('[8.0, 10.0, 10.0, 10.0, 12.0, 2.0, 13.0, 12.0, 0.0, 7.0, 11.0, 1.0, 0.0, 6.0, 9.0, 3.0, 7.0, 0.0]');
+    let line = Number('11.5');
+    let data = JSON.parse('[11.0, 15.0, 11.0, 13.0, 14.0, 6.0, 19.0, 15.0, 2.0, 13.0, 15.0, 4.0, 1.0, 9.0, 16.0, 7.0, 12.0, 1.0]');
     let dates = JSON.parse('["10/21", "10/24", "10/27", "10/29", "11/01", "11/03", "11/05", "11/07", "11/09", "11/12", "11/14", "11/16", "11/19", "11/21", "11/24", "11/26", "11/30", "12/01"]');
     let lastN = 10;
-    let projection = Number('5.3');
+    let projection = Number('9.0');
     const playerName = 'Josh Okogie';
 
     (function(){
@@ -123,7 +123,10 @@
         const res = await fetch('../nba_dvp_latest.json');
         if(!res.ok) return [];
         const payload = await res.json();
-        const rankings = (payload && payload.data && payload.data.team_dvp_rankings) || [];
+        const rankings = (payload && payload.data && Array.isArray(payload.data.team_dvp_rankings)) ? payload.data.team_dvp_rankings
+                        : (Array.isArray(payload.team_dvp_rankings) ? payload.team_dvp_rankings
+                        : (Array.isArray(payload) ? payload : []));
+        if (!rankings.length) console.warn('DVP rankings empty; badge will be hidden until data is available');
         return rankings;
       }catch(e){
         console.warn('Failed to fetch DVP', e);
@@ -262,8 +265,8 @@
       const vals = [
         record.last_5 || '2/5',
         record.last_10 || '4/10',
-        record.last_20 || '11/18',
-        record.season || '11/18'
+        record.last_20 || '9/18',
+        record.season || '9/18'
       ];
       vals.forEach((v, i) => {
         const { text, pct } = formatPercentFirstWithPct(v);
@@ -344,7 +347,7 @@
 
       const dvpRankings = await fetchDVP();
       function updateDVPDisplay(currentStat){
-        let oppTeam = 'PHX';
+        let oppTeam = 'DAL';
         try {
           const key = currentStat;
           const rec = (Array.isArray(records) ? records : []).find(r => (r.Stat || r.stat || r.prop) === key) || null;
