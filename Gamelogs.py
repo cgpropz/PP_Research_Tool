@@ -1,75 +1,79 @@
-import requests
+from playwright.sync_api import sync_playwright
 import pandas as pd
 from datetime import datetime
-import time
 import sys
 
-season_start = "10/01/2025"  # Set season start
-today = datetime.now().strftime("%m/%d/%Y")  # Always up to latest date
+# NBA season start and today's date for info only (NBA.com loads all, no filter)
+season_start = "10/01/2025"
+today = datetime.now().strftime("%m/%d/%Y")
+nba_url = "https://www.nba.com/stats/players/boxscores"
 
-url = "https://stats.nba.com/stats/leaguegamelog"
-params = {
-    "Counter": "1000",
-    "DateFrom": season_start,
-    "DateTo": today,
-    "Direction": "DESC",
-    "ISTRound": "",
-    "LeagueID": "00",
-    "PlayerOrTeam": "P",
-    "Season": "2025-26",
-    "SeasonType": "Regular Season",
-    "Sorter": "DATE"
-}
-headers = {
-    "User-Agent": "Mozilla/5.0",
-    "Accept": "application/json, text/plain, */*",
-    "Referer": "https://www.nba.com/",
-    "Origin": "https://www.nba.com"
-}
+def get_boxscores_table(page, timeout=60):
+    """
+    Wait for the player stats table and return its HTML.
+    """
+    selector = 'table[class^="Crom_table"]'
+    page.wait_for_selector(selector, timeout=timeout * 1000)
+    table = page.query_selector(selector)
+    if not table:
+        return None
+    # Get outer HTML for pandas
+    return table.evaluate('node => node.outerHTML')
 
-def fetch_with_retry(url, params, headers, retries=5, timeout=60):
-    for attempt in range(1, retries+1):
+def main():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context()
+        page = context.new_page()
+        print(f"Loading {nba_url} ...")
+        page.goto(nba_url, timeout=90000)
+        page.wait_for_timeout(8000)
+
+        # Click cookie/privacy modal if present
+        for btn_word in ["accept", "agree", "consent"]:
+            try:
+                button = page.query_selector(f'button:has-text("{btn_word}")')
+                if button:
+                    button.click()
+                    print(f"Clicked '{btn_word}' button.")
+                    page.wait_for_timeout(2000)
+                    break
+            except Exception:
+                pass
+
+        page.wait_for_timeout(4000)
+        page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+
         try:
-            print(f"Attempt {attempt} of {retries}: Fetching NBA player gamelogs ({params['DateFrom']}–{params['DateTo']}) with timeout {timeout}s")
-            response = requests.get(url, params=params, headers=headers, timeout=timeout)
-            response.raise_for_status()
-            return response
-        except requests.exceptions.ReadTimeout:
-            print(f"ReadTimeout on attempt {attempt}. Retrying in {2**attempt} seconds...", file=sys.stderr)
-            time.sleep(2 ** attempt)
-        except requests.exceptions.RequestException as e:
-            print(f"Request error on attempt {attempt}: {e}. Retrying in {2**attempt} seconds...", file=sys.stderr)
-            time.sleep(2 ** attempt)
-    return None
+            table_html = get_boxscores_table(page)
+            if not table_html:
+                print("ERROR: Could not find NBA boxscores table.", file=sys.stderr)
+                browser.close()
+                sys.exit(2)
+            df = pd.read_html(table_html)[0]
+        except Exception as e:
+            print("ERROR locating/parsing the NBA boxscores table.", file=sys.stderr)
+            print(e, file=sys.stderr)
+            browser.close()
+            sys.exit(2)
 
-response = fetch_with_retry(url, params, headers)
-if response is None:
-    print(f"ERROR: Failed to fetch NBA gamelogs from {season_start} to {today} after max retries.", file=sys.stderr)
-    sys.exit(2)
+        csv_file = "Full_Gamelogs25.csv"
+        json_file = "Player_Gamelogs25.json"
+        try:
+            df.to_csv(csv_file, index=False)
+            df.to_json(json_file, orient="records")
+            print(f"Saved {len(df)} player-game logs to {csv_file} and {json_file}")
+            if len(df) > 0:
+                print("First game in dataset:")
+                print(df.head(1).to_dict(orient="records")[0])
+            else:
+                print("No player-game logs found!")
+        except Exception as e:
+            print("ERROR writing output file.", file=sys.stderr)
+            print(e, file=sys.stderr)
+            browser.close()
+            sys.exit(2)
+        browser.close()
 
-print("Parsing JSON data...")
-try:
-    data = response.json()
-    columns = data['resultSets'][0]['headers']
-    rows = data['resultSets'][0]['rowSet']
-    df = pd.DataFrame(rows, columns=columns)
-except Exception as e:
-    print("ERROR: Could not parse NBA stats API response.", file=sys.stderr)
-    print(e, file=sys.stderr)
-    sys.exit(2)
-
-csv_file = "Full_Gamelogs25.csv"
-json_file = "Player_Gamelogs25.json"
-try:
-    df.to_csv(csv_file, index=False)
-    df.to_json(json_file, orient="records")
-    print(f"Saved {len(df)} player-game logs to {csv_file} and {json_file}")
-    if len(df) > 0:
-        print("First game in dataset:")
-        print(df.head(1).to_dict(orient="records")[0])
-    else:
-        print("No player-game logs found!")
-except Exception as e:
-    print("ERROR: Failed to write output CSV/JSON.", file=sys.stderr)
-    print(e, file=sys.stderr)
-    sys.exit(2)
+if __name__ == "__main__":
+    main()
