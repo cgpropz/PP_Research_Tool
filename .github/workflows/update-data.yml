@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       run_gamelogs:
-        description: 'Force run full Gamelogs scrape (Selenium)'
+        description: 'Force run full Gamelogs scrape (Playwright)'
         required: true
         default: false
         type: boolean
@@ -39,14 +39,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Python + Chrome
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: |
-          sudo apt-get update && sudo apt-get install -y google-chrome-stable
-          python -m pip install --upgrade pip
-          pip install seleniumbase[undetected] pandas requests beautifulsoup4 lxml
+
+      - name: Install Python dependencies (Playwright)
+        run: |
+          pip install --upgrade pip
+          pip install playwright pandas
+          python -m playwright install
 
       - name: Update PP Odds (always)
         run: python Fetch_PP_Odds.py || true
@@ -55,10 +57,10 @@ jobs:
         run: |
           [ -f data/odds/latest.json ] && cp -f data/odds/latest.json ODDS_LATEST.json || echo "No latest.json"
 
-      # MANUAL + DAILY GAMEL0GS TRIGGER
-      - name: Run Full Gamelogs Scrape
+      # MANUAL + DAILY GAMEL0GS TRIGGER with Playwright
+      - name: Run Full Gamelogs Scrape (Playwright)
         run: |
-          echo "Running full Gamelogs scrape..."
+          echo "Running full Gamelogs scrape (Playwright)..."
           python Gamelogs.py && echo "Gamelogs scraped!" || (
             echo "Gamelogs failed → trying backup"
             python Fetch_Gamelogs.py || true
