@@ -25,6 +25,6 @@ driver.sleep(5)
 table = driver.find_element('xpath','/html/body/div[1]/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[3]/table')
 
 df = pd.read_html(table.get_attribute('outerHTML'))[0]
-df.to_csv('/Users/kahlilhodge/NBA-UI-Props/Full_Gamelogs25.csv', index=False)
+df.to_csv('Full_Gamelogs25.csv', index=False)
 print("FULL GAMELOGS Data Saved...")   
 print(df)
