@@ -3,7 +3,6 @@ name: Update NBA UI Data
 on:
   schedule:
     - cron: '*/5 * * * *'          # PP odds every 5 minutes
-    - cron: '0 7 * * *'            # Legacy daily trigger (kept for safety)
   workflow_dispatch:
     inputs:
       run_gamelogs:
@@ -58,11 +57,9 @@ jobs:
 
       # MANUAL + DAILY GAMEL0GS TRIGGER
       - name: Run Full Gamelogs Scrape
-        if: >
-          github.event_name == 'workflow_dispatch' && inputs.run_gamelogs == 'true' ||
-          (github.event_name == 'schedule' && startsWith(github.event.schedule, '0 7'))
+        if: github.event_name == 'workflow_dispatch' && inputs.run_gamelogs == 'true'
         run: |
-          echo "Forcing full Gamelogs scrape (manual or daily)..."
+          echo "Forcing full Gamelogs scrape (manual only)..."
           python Gamelogs.py && echo "Gamelogs scraped!" || (
             echo "Gamelogs failed → trying backup"
             python Fetch_Gamelogs.py || true
