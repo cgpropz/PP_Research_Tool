@@ -10,6 +10,23 @@ try:
     driver.get(url)
     driver.sleep(5)
 
+    # Attempt to click any cookie/privacy accept buttons if present
+    try:
+        buttons = driver.find_elements('css selector', 'button')
+        for b in buttons:
+            if 'accept' in b.text.lower() or 'agree' in b.text.lower() or 'consent' in b.text.lower():
+                print(f"Clicking cookie/privacy button: \"{b.text}\"")
+                b.click()
+                driver.sleep(2)
+                break
+    except Exception as e:
+        print("No cookie/privacy popup found or error clicking button:", e)
+
+    # Scroll to bottom a couple of times to trigger lazy-load if needed
+    for i in range(2):
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        driver.sleep(2)
+
     # Try multiple selectors in order of preference.
     # 1) Exact Crom class observed
     # 2) Any class that starts with Crom_table (more resilient to suffix changes)
@@ -17,7 +34,6 @@ try:
     selectors = [
         ('css selector', 'table.Crom_table__p1iZz'),
         ('css selector', 'table[class^="Crom_table"]'),
-        # Case-insensitive XPath: looks for a table containing a TH whose text contains "PLAYER"
         ('xpath', '//table[.//th[contains(translate(normalize-space(.), "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "PLAYER")]]'),
     ]
 
@@ -25,7 +41,6 @@ try:
     for kind, sel in selectors:
         try:
             print(f"Trying selector: {kind} -> {sel}")
-            # longer timeout because the table is rendered asynchronously
             driver.wait_for_element(kind, sel, timeout=30)
             table = driver.find_element(kind, sel)
             print(f"Found table using selector: {sel}")
@@ -35,6 +50,9 @@ try:
             # continue to next selector
 
     if table is None:
+        # Print a snippet of page source for debugging
+        print("Unable to find the boxscores table. Dumping first 5000 chars of page source for debug:")
+        print(driver.page_source[:5000])
         raise RuntimeError("Unable to find the boxscores table on the page with any selector.")
 
     # Pull HTML and parse with pandas
@@ -44,15 +62,12 @@ try:
     print(df)
 
 except Exception as exc:
-    # Print full traceback for debugging in CI logs
     print("ERROR during Gamelogs scrape:", file=sys.stderr)
     traceback.print_exc()
-    # Ensure driver is closed, then re-raise to let the caller/fallback handle it
     try:
         driver.quit()
     except Exception:
         pass
-    # Exit non-zero so the workflow can trigger your existing backup fallback
     sys.exit(2)
 finally:
     try:
