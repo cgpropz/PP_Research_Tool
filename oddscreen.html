@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NBA Odds Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #101a13; color: #fff; font-family: 'Inter', Arial, sans-serif; }
+        .oddscreen-container { max-width: 98vw; margin: 32px auto; background: #181f1b; border-radius: 18px; box-shadow: 0 0 32px 8px #7700ff44; padding: 24px 10px; }
+        h1 { text-align: center; color: #00ff7f; margin-bottom: 24px; }
+        .odds-table { width: 100%; border-collapse: collapse; font-size: 1.01em; }
+        .odds-table th, .odds-table td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
+        .odds-table th { background: #222b22; color: #00ff7f; position: sticky; top: 0; z-index: 2; }
+        .odds-table td { background: #181f1b; color: #fff; }
+        .odds-table .player-col { font-weight: bold; color: #ffe066; background: #232b22; }
+        .odds-table .prop-col { color: #00ff7f; background: #232b22; }
+        .odds-table .book-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
+        .odds-table .best-odds { background: #1aff00; color: #181f1b; font-weight: bold; }
+        .odds-table .prizepicks { background: #8000ff; color: #fff; font-weight: bold; }
+        .odds-table .odds-cell { min-width: 60px; }
+        .odds-table .line-cell { min-width: 48px; }
+        .odds-table .prob-cell { min-width: 60px; }
+        .oddscreen-scroll { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;margin-top:24px;">
+        <a href="../props-trend.html" style="text-decoration:none;display:inline-block;">
+            <img src="../Images/CG.jpg" alt="Home" style="height:48px;width:auto;border-radius:12px;box-shadow:0 2px 8px #8000ff44;vertical-align:middle;cursor:pointer;transition:box-shadow 0.2s;">
+        </a>
+    </div>
+    <div class="oddscreen-container">
+        <h1>PrizePicks Optimizer</h1>
+        <div class="oddscreen-scroll">
+            <table class="odds-table" id="optimizer-table">
+                <thead>
+                    <tr>
+                        <th>PLAYER</th>
+                        <th>STAT</th>
+                        <th>O/U</th>
+                        <th>PRIZEPICKS LINE</th>
+                        <th>SHARP % TO HIT</th>
+                        <th>PRIZEPICKS ODDS</th>
+                        <th>BEST SHARP ODDS</th>
+                        <th>BOOK</th>
+                    </tr>
+                </thead>
+                <tbody id="optimizer-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+    // Helper: American odds to implied probability
+    function impliedProb(odds) {
+        if (odds === null || odds === undefined || isNaN(odds)) return '';
+        odds = Number(odds);
+        if (odds > 0) {
+            return (100 / (odds + 100));
+        } else {
+            return (-odds / (-odds + 100));
+        }
+    }
+    // Book logo map (add more as needed)
+    const BOOK_LOGOS = {
+        'FanDuel': 'https://assets.props.cash/odds/fanduel.png',
+        'DraftKings': 'https://assets.props.cash/odds/draftkings.png',
+        'Caesars': 'https://assets.props.cash/odds/caesars.png',
+        'BetMGM': 'https://assets.props.cash/odds/betmgm.png',
+        'Fanatics': 'https://assets.props.cash/odds/fanatics.png',
+        'Sleeper': 'https://assets.props.cash/odds/sleeper.png',
+        'Underdog': 'https://assets.props.cash/odds/underdog.png',
+        'PrizePicks': 'https://assets.props.cash/odds/prizepicks.png',
+        'BetRivers': 'https://assets.props.cash/odds/betrivers.png',
+        'BetOnline.ag': 'https://assets.props.cash/odds/betonline.png',
+        'Pinnacle': 'https://assets.props.cash/odds/pinnacle.png',
+        'theScore Bet': 'https://assets.props.cash/odds/thescore.png',
+        'Bovada': 'https://assets.props.cash/odds/bovada.png',
+        'Hard Rock Bet': 'https://assets.props.cash/odds/hardrock.png',
+        'ProphetX': 'https://assets.props.cash/odds/prophetx.png',
+        // ... add more as needed
+    };
+    async function fetchJson(path) {
+        const res = await fetch(path);
+        return res.json();
+    }
+    function getAllBooks(oddsData) {
+        const books = new Set();
+        oddsData.forEach(player => {
+            if (player.projection) {
+                Object.values(player.projection).forEach(prop => {
+                    if (prop && prop.books) {
+                        prop.books.forEach(b => books.add(b.book));
+                    }
+                });
+            }
+        });
+        return Array.from(books);
+    }
+    function getAllProps(oddsData) {
+        const propSet = new Set();
+        oddsData.forEach(player => {
+            if (player.projection) {
+                Object.keys(player.projection).forEach(k => propSet.add(k));
+            }
+        });
+        return Array.from(propSet);
+    }
+    function propLabel(key) {
+        const map = {
+            points: 'Points', assists: 'Assists', rebounds: 'Rebounds', steals: 'Steals', blocks: 'Blocks', turnovers: 'Turnovers', pointsRebounds: 'Pts+Rebs', pointsAssists: 'Pts+Asts', reboundsAssists: 'Rebs+Asts', pointsReboundsAssists: 'Pts+Rebs+Asts', threes: '3PM', fantasy: 'Fantasy Score'
+        };
+        return map[key] || key;
+    }
+    function getBestOdds(books) {
+        // Return the book with the best (highest) over odds for each line
+        if (!books || books.length === 0) return null;
+        let best = books[0];
+        books.forEach(b => {
+            if (b.overPrice !== undefined && (best.overPrice === undefined || b.overPrice > best.overPrice)) {
+                best = b;
+            }
+        });
+        return best;
+    }
+    async function renderPrizePicksOptimizer() {
+        const oddsData = await fetchJson('nba_player_odds.json');
+        const sharpBooks = [
+            'FanDuel','DraftKings','Caesars','BetMGM','Fanatics','BetRivers','BetOnline.ag','Pinnacle','theScore Bet','Bovada','Hard Rock Bet','ProphetX'
+        ];
+        let rows = [];
+        oddsData.forEach(player => {
+            if (!player.projection) return;
+            Object.entries(player.projection).forEach(([propKey, prop]) => {
+                if (!prop || !prop.books || prop.books.length === 0) return;
+                // Find PrizePicks book for this prop
+                const ppBook = prop.books.find(b => b.book && b.book.toLowerCase().includes('prizepicks'));
+                if (!ppBook) return;
+                const line = ppBook.value;
+                // Get all sharp books for this line
+                const sharpBooksForLine = prop.books.filter(b => sharpBooks.includes(b.book) && b.value === line);
+                if (sharpBooksForLine.length === 0) return;
+                // Calculate sharp probabilities (average of all sharp books)
+                let overProbs = sharpBooksForLine.map(b => impliedProb(b.overPrice)).filter(x => x !== '');
+                let underProbs = sharpBooksForLine.map(b => impliedProb(b.underPrice)).filter(x => x !== '');
+                let sharpOverProb = overProbs.length ? (overProbs.reduce((a,b) => a+b,0)/overProbs.length) : null;
+                let sharpUnderProb = underProbs.length ? (underProbs.reduce((a,b) => a+b,0)/underProbs.length) : null;
+                // Find best sharp odds (highest over, lowest under)
+                let bestOver = sharpBooksForLine.reduce((best, b) => (b.overPrice !== undefined && (best === null || b.overPrice > best.overPrice)) ? b : best, null);
+                let bestUnder = sharpBooksForLine.reduce((best, b) => (b.underPrice !== undefined && (best === null || b.underPrice < best.underPrice)) ? b : best, null);
+                // PrizePicks implied prob (fixed -119 odds for both sides)
+                let ppProb = impliedProb(-119);
+                // Add Over row
+                rows.push({
+                    player: player.name,
+                    stat: propLabel(propKey),
+                    ou: 'Over',
+                    line,
+                    sharpProb: sharpOverProb,
+                    ppOdds: -119,
+                    ppProb,
+                    bestSharpOdds: bestOver ? bestOver.overPrice : '',
+                    bestSharpBook: bestOver ? bestOver.book : '',
+                });
+                // Add Under row
+                rows.push({
+                    player: player.name,
+                    stat: propLabel(propKey),
+                    ou: 'Under',
+                    line,
+                    sharpProb: sharpUnderProb,
+                    ppOdds: -119,
+                    ppProb,
+                    bestSharpOdds: bestUnder ? bestUnder.underPrice : '',
+                    bestSharpBook: bestUnder ? bestUnder.book : '',
+                });
+            });
+        });
+        // Sort by sharpProb descending
+        rows = rows.filter(r => r.sharpProb !== null).sort((a,b) => b.sharpProb - a.sharpProb);
+        // Render table
+        let tbody = '';
+        rows.forEach(row => {
+            let probColor = row.sharpProb >= 0.65 ? '#1aff00' : row.sharpProb >= 0.55 ? '#ffe066' : '#ff2d2d';
+            tbody += `<tr>`;
+            tbody += `<td class='player-col'>${row.player}</td>`;
+            tbody += `<td class='prop-col'>${row.stat}</td>`;
+            tbody += `<td>${row.ou}</td>`;
+            tbody += `<td>${row.line}</td>`;
+            tbody += `<td style='font-weight:bold;background:${probColor};color:#181f1b;'>${row.sharpProb !== null ? (row.sharpProb*100).toFixed(2)+'%' : ''}</td>`;
+            tbody += `<td>${row.ppOdds} <br><span style='color:#00ff7f;font-size:0.95em;'>${(row.ppProb*100).toFixed(1)}%</span></td>`;
+            tbody += `<td>${row.bestSharpOdds !== '' ? row.bestSharpOdds : ''}</td>`;
+            tbody += `<td>${row.bestSharpBook !== '' ? row.bestSharpBook : ''}</td>`;
+            tbody += `</tr>`;
+        });
+        document.getElementById('optimizer-tbody').innerHTML = tbody;
+    }
+    renderPrizePicksOptimizer();
+    </script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>NBA Props Trend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+                                    .hit-rate-chart {
+                                        position: absolute;
+                                        bottom: 10px;
+                                        right: 10px;
+                                        width: 80px;
+                                        height: 80px;
+                                        z-index: 5;
+                                        background: transparent;
+                                    }
+                        .spreads-badge {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            font-size: 1.01rem;
+                            font-weight: 800;
+                            border-radius: 8px;
+                            padding: 4px 14px;
+                            box-shadow: 0 0 10px 2px #00ff7f99;
+                            z-index: 10;
+                            border: 2px solid #8000ff;
+                            letter-spacing: 0.5px;
+                            text-shadow: 0 0 4px #00ff7f99;
+                            background: #222b22;
+                            color: #fff;
+                            transition: background 0.2s, color 0.2s;
+                        }
+            body {
+                font-family: 'Inter', Arial, sans-serif;
+                background: #101a13;
+                margin: 0;
+                color: #fff;
+            }
+            .trend-container {
+                max-width: 1200px;
+                margin: 40px auto;
+                background: #181f1b;
+                border-radius: 18px;
+                box-shadow: 0 0 32px 8px #7700ff44, 0 2px 16px rgba(0,0,0,0.18);
+                padding: 32px 24px;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 32px;
+                font-size: 2.8rem;
+                color: #ffffff;
+                text-shadow: 0 0 10px #e5ff0076;
+                font-family: 'Bebas Neue', 'Inter', Arial, sans-serif;
+                font-weight: 700;
+                letter-spacing: 2px;
+            }
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 28px;
+                margin-top: 24px;
+            }
+            .player-card {
+                
+                border-radius: 16px;
+                box-shadow: 0 0 18px 2px #7700ff44, 0 2px 8px #000a;
+                padding: 24px 20px 20px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+                transition: box-shadow 0.2s;
+            }
+            .player-card:hover {
+                box-shadow: 0 0 32px 8px #7700ff44, 0 2px 16px #000a;
+            }
+            .player-name {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 8px;
+                letter-spacing: 0.5px;
+                width: 100%;
+                text-align: center;
+                display: block;
+                text-decoration: none;
+            }
+            .player-link {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            .prop-type {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: #fff;
+                background: linear-gradient(90deg, #0000007a 0%, #397c58ca 100%);
+                border-radius: 10px;
+                padding: 7px 0;
+                box-shadow: 0 0 16px 2px #8000ff55;
+                margin: 12px 0 14px 0;
+                letter-spacing: 1.2px;
+                text-align: center;
+                display: block;
+                width: 100%;
+                border: 2px solid #00ff7f;
+                text-shadow: 0 0 8px #00ff7f99, 0 0 2px #8000ff;
+                transition: background 0.2s;
+            }
+            .prop-details {
+
+                display: flex;
+                justify-content: space-between;
+                gap: 18px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+         
+            .prop-details-align {
+                display: flex;
+                justify-content: space-between;
+                gap: 18px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            .prop-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 90px;
+                background: #181f2b;
+                border-radius: 8px;
+                padding: 6px 0 4px 0;
+                box-shadow: 0 0 8px 1px #8000ff33;
+                margin: 0 4px;
+            }
+            .prop-label {
+                color: #00ff7f;
+                font-size: 1.01rem;
+                font-weight: 700;
+                margin-bottom: 2px;
+                letter-spacing: 0.5px;
+                text-shadow: 0 0 6px #00ff7f99;
+                text-transform: uppercase;
+            }
+            .prop-value {
+                color: #fff;
+                font-size: 1.13rem;
+                font-weight: 700;
+                text-shadow: 0 0 4px #8000ff99;
+            }
+            .minutes-badge {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: #1aff00;
+                color: #181f1b;
+                font-size: 1.01rem;
+                font-weight: 800;
+                border-radius: 8px;
+                padding: 4px 14px;
+                box-shadow: 0 0 10px 2px #00ff7f99;
+                z-index: 10;
+                border: 2px solid #8000ff;
+                letter-spacing: 0.5px;
+                text-shadow: 0 0 4px #00ff7f99;
+            }
+            .player-card {
+                position: relative;
+            }
+            .score {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 90px;
+                background: #181f2b;
+                border-radius: 8px;
+                padding: 6px 0 4px 0;
+                box-shadow: 0 0 8px 1px #8000ff33;
+                margin: 0 4px;
+                font-weight: 700;
+                color: #00ff7f;
+            }
+        .badges-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            margin-bottom: 0.5em;
+            align-items: center;
+            width: 100%;
+        }
+        .team-badge, .opp-badge {
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 0.1em 0.7em;
+            font-size: 0.95em;
+            margin-right: 0.2em;
+            margin-bottom: 0.1em;
+            display: inline-block;
+        }
+        .search-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+#search-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: #181f2b;
+    border: 2px solid #8000ff;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 16px 2px #7700ff44;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #00ff7f;
+    box-shadow: 0 0 24px 4px #00ff7f66;
+    background: #1e2a24;
+}
+
+#search-input::placeholder {
+    color: #00ff7f88;
+    opacity: 1;
+}
+.controls-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#sort-select {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: #181f2b;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 16px 2px #7700ff44;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 15r0px;
+      
+}
+
+#sort-select:focus {
+    outline: none;
+    border-color: #00ff7f;
+    box-shadow: 0 0 24px 4px #00ff7f66;
+}
+
+#sort-select option {
+    background: #181f2b;
+    color: #fff;
+}
+        </style>
+</head>
+<body>
+    <div class="trend-container">
+        <h1>NBA PrizePicks Edge🏀🔥</h1>
+        <div class="search-container">
+            <input type="text"
+                   id="search-input"
+                   placeholder="Search player..."
+                   autocomplete="off"
+            />
+        <div> <select id="sort-select">
+                <option value="score-desc">Best Score First 🔥</option>
+                <option value="score-asc">Worst Score First</option>
+                <option value="projection-desc">Highest Projection</option>
+                <option value="projection-asc">Lowest Projection</option>
+                <option value="line-desc">Highest Line</option>
+                <option value="line-asc">Lowest Line</option>
+                <option value="minutes-desc">Most Minutes</option>
+                <option value="minutes-asc">Fewest Minutes</option>
+        </select>
+        <button id="oddscreen-btn" style="margin-left:18px;padding:12px 18px;border-radius:10px;border:2px solid #00ff7f;background:#181f1b;color:#00ff7f;font-size:1.1em;outline:none;cursor:pointer;vertical-align:middle;">Odds Screen</button>
+    </div>
+    <div/>    
+    </div>
+        <div class="cards" id="trend-cards">
+            <!-- Player cards will be injected here -->
+        </div>
+    </div>
+    <script>
+            // NBA team color codes (main color, text color)
+            const TEAM_COLORS = {
+                ATL: {bg: '#E03A3E', text: '#fff'}, // Hawks: red/white
+                BOS: {bg: '#007A33', text: '#fff'}, // Celtics: green/white
+                BKN: {bg: '#000000', text: '#fff'}, // Nets: black/white
+                CHA: {bg: '#1D1160', text: '#fff'}, // Hornets: purple/white
+                CHI: {bg: '#CE1141', text: '#fff'}, // Bulls: red/white
+                CLE: {bg: '#6F263D', text: '#fff'}, // Cavs: wine/white
+                DAL: {bg: '#00538C', text: '#fff'}, // Mavs: blue/white
+                DEN: {bg: '#0E2240', text: '#fff'}, // Nuggets: navy/white
+                DET: {bg: '#C8102E', text: '#fff'}, // Pistons: red/white
+                GSW: {bg: '#1D428A', text: '#FFC72C'}, // Warriors: blue/yellow
+                HOU: {bg: '#CE1141', text: '#fff'}, // Rockets: red/white
+                IND: {bg: '#002D62', text: '#FDBB30'}, // Pacers: navy/yellow
+                LAC: {bg: '#C8102E', text: '#fff'}, // Clippers: red/white
+                LAL: {bg: '#552583', text: '#FDB927'}, // Lakers: purple/gold
+                MEM: {bg: '#5D76A9', text: '#fff'}, // Grizzlies: blue/white
+                MIA: {bg: '#98002E', text: '#fff'}, // Heat: red/white
+                MIL: {bg: '#00471B', text: '#fff'}, // Bucks: green/white
+                MIN: {bg: '#0C2340', text: '#fff'}, // Wolves: navy/white
+                NOP: {bg: '#0C2340', text: '#fff'}, // Pelicans: navy/white
+                NYK: {bg: '#006BB6', text: '#fff'}, // Knicks: blue/white
+                OKC: {bg: '#007AC1', text: '#fff'}, // Thunder: blue/white
+                ORL: {bg: '#0077C0', text: '#fff'}, // Magic: blue/white
+                PHI: {bg: '#006BB6', text: '#fff'}, // Sixers: blue/white
+                PHX: {bg: '#1D1160', text: '#fff'}, // Suns: purple/white
+                POR: {bg: '#E03A3E', text: '#fff'}, // Blazers: red/white
+                SAC: {bg: '#5A2D81', text: '#fff'}, // Kings: purple/white
+                SAS: {bg: '#C4CED4', text: '#000'}, // Spurs: silver/black
+                TOR: {bg: '#CE1141', text: '#fff'}, // Raptors: red/white
+                UTA: {bg: '#002B5C', text: '#fff'}, // Jazz: navy/white
+                WAS: {bg: '#002B5C', text: '#fff'}  // Wizards: navy/white
+            };
+    // Paths to JSON files
+    const ppJsonPath = 'PLAYER_UI_CARDS_PERFECT.json'; // Update if needed
+    const playerCardsPath = 'PLAYER_UI_CARDS_PERFECT.json';
+
+    async function fetchJson(path) {
+        const res = await fetch(path);
+        return res.json();
+    }
+
+    function getPlayerProjection(playerName, playerCards) {
+        // Find projection for player (by name or id)
+        const card = playerCards.find(p => p.Name === playerName);
+        return card ? card.Projection : null;
+    }
+
+    async function renderTrendCards() {
+        // (Highcharts/gamelogs removed)
+        // Map team abbreviations to full names for spread lookup
+        const teamNameMap = {
+            ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets', CHI: 'Chicago Bulls', CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets', DET: 'Detroit Pistons', GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers', LAC: 'Los Angeles Clippers', LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat', MIL: 'Milwaukee Bucks', MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks', OKC: 'Oklahoma City Thunder', ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns', POR: 'Portland Trail Blazers', SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors', UTA: 'Utah Jazz', WAS: 'Washington Wizards'
+        };
+        // Load PP JSON (for prop lines and player list)
+        const ppData = await fetchJson(ppJsonPath);
+        console.log('Loaded PP Data:', ppData);
+
+        // Build a name-to-ID map from ppData
+        const nameToId = {};
+        ppData.forEach(pp => {
+            if (pp.name && (pp.id || pp.player_id)) {
+                nameToId[pp.name] = pp.id || pp.player_id;
+            }
+        });
+
+        // Load odds JSON for spreads
+        let oddsData = await fetchJson('data/odds/latest.json');
+        let teamSpreads = {};
+        if (oddsData && Array.isArray(oddsData.events)) {
+            oddsData.events.forEach(event => {
+                if (event.home_team && event.best_spread && event.best_spread.home && typeof event.best_spread.home.point === 'number') {
+                    teamSpreads[event.home_team] = event.best_spread.home.point;
+                }
+                if (event.away_team && event.best_spread && event.best_spread.away && typeof event.best_spread.away.point === 'number') {
+                    teamSpreads[event.away_team] = event.best_spread.away.point;
+                }
+            });
+        }
+
+        let cards = [];
+        ppData.forEach(pp => {
+            const playerName = pp.name;
+            const propType = pp.prop || 'PTS';
+            const line = pp.line;
+            const projection = pp.projection;
+            const score = pp.score;
+            const playerId = nameToId[playerName] || null;
+            const expected_minutes = pp.expected_minutes;
+            let spread = pp.spread;
+            // Assign spread from teamSpreads if null/undefined
+            let fullTeamName = pp.team && teamNameMap[pp.team] ? teamNameMap[pp.team] : null;
+            if ((spread === null || spread === undefined) && fullTeamName && teamSpreads[fullTeamName] !== undefined) {
+                spread = teamSpreads[fullTeamName];
+            }
+            if (projection && line && score !== undefined && playerId) {
+                cards.push({
+                    player: playerName,
+                    propType,
+                    projection,
+                    line,
+                    score,
+                    playerId,
+                    expected_minutes,
+                    spread,
+                    team: pp.team,
+                    position: pp.position || pp.pos || (pp.positions ? pp.positions[0] : ''),
+                    opponent: pp.opponent || ''
+                });
+            }
+        });
+
+        // Filter cards: score <= 70 and 30+ minutes, sorted highest to lowest
+        const filtered = cards
+            .filter(card => card.score <= 70 && card.expected_minutes >= 30)
+            .sort((a, b) => b.score - a.score);
+
+        // Helper functions for badges and images
+        function getPlayerImage(playerId) {
+            return playerId ? `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png` : '';
+        }
+        function getTeamBadge(team) {
+            if (!team) return '';
+            const color = TEAM_COLORS[team] || {bg:'#222', text:'#fff'};
+            return `<span class="team-badge" style="background:${color.bg};color:${color.text};">${team}</span>`;
+        }
+        function getOppBadge(opponent) {
+            if (!opponent) return '';
+            const color = TEAM_COLORS[opponent] || {bg:'#444', text:'#fff'};
+            return `<span class="opp-badge" style="background:${color.bg};color:${color.text};">vs ${opponent}</span>`;
+        }
+        function getSpreadBadge(spread) {
+            if (spread === null || spread === undefined) return '';
+            const absSpread = Math.abs(spread);
+            let badgeColor = '';
+            if (absSpread >= 7) {
+                badgeColor = 'background:#ff2d2d;color:#fff;'; // red
+            } else if (absSpread >= 5) {
+                badgeColor = 'background:#ffe066;color:#181f1b;'; // neutral (yellow)
+            } else if (absSpread <= 3) {
+                badgeColor = 'background:#1aff00;color:#181f1b;'; // green
+            } else {
+                badgeColor = 'background:#222b22;color:#fff;'; // default
+            }
+            return `<span class="spreads-badge" style="${badgeColor}">${spread > 0 ? '+' : ''}${spread} spread</span>`;
+        }
+
+        // Render HTML for filtered cards
+        document.getElementById('trend-cards').innerHTML = filtered.map(card => {
+            const teamBadge = getTeamBadge(card.team);
+            const oppBadge = getOppBadge(card.opponent);
+            const spreadBadge = getSpreadBadge(card.spread);
+                // Create a slug for the player page URL
+                const playerSlug = card.player.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                return `
+                <div class="player-card" 
+                    style="position:relative;"
+                    data-score="${Number(card.score).toFixed(1)}"
+                    data-projection="${Number(card.projection).toFixed(1)}"
+                    data-line="${Number(card.line).toFixed(1)}"
+                    data-minutes="${card.expected_minutes ? Number(card.expected_minutes).toFixed(1) : '0'}">
+                    <div class="minutes-badge">${card.expected_minutes ? Number(card.expected_minutes).toFixed(1) + ' min' : ''}</div>
+                    ${spreadBadge}
+                    <img class="card-img" src="${getPlayerImage(card.playerId)}" alt="${card.player}" style="width:100%;height:120px;object-fit:contain;background:#181f1b;display:block;margin-bottom:0;" onerror="this.style.display='none'">
+                    <div class="player-name"><a href="players-props/${playerSlug}.html" class="player-link">${card.player}</a></div>
+                    <div class="badges-row">${teamBadge}${oppBadge}</div>
+                    <div class="prop-type">${card.propType}</div>
+                    <div class="prop-details-align">
+                        <div class="prop-block">
+                            <span class="prop-label">Line</span>
+                            <span class="prop-value">${Number(card.line).toFixed(1)}</span>
+                        </div>
+                        <div class="prop-block">
+                            <span class="prop-label">Projection</span>
+                            <span class="prop-value">${Number(card.projection).toFixed(1)}</span>
+                        </div>
+                        <div class="score"><span>SCORE:  </span>${Number(card.score).toFixed(1)}</div>
+                    </div>
+                </div>
+                `;
+        }).join('');
+
+        // (Highcharts removed)
+    }
+
+    renderTrendCards();
+    // Live search functionality
+const searchInput = document.getElementById('search-input');
+const trendCards = document.getElementById('trend-cards');
+
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    const playerCards = trendCards.querySelectorAll('.player-card');
+    
+    playerCards.forEach(card => {
+        const playerName = card.querySelector('.player-name').textContent.toLowerCase();
+        const teamBadge = card.querySelector('.team-badge')?.textContent || '';
+        const oppBadge = card.querySelector('.opp-badge')?.textContent || '';
+        const propType = card.querySelector('.prop-type').textContent.toLowerCase();
+        
+        const searchableText = `${playerName}`;
+        
+        if (searchableText.includes(query)) {
+            card.style.display = 'flex';  // show
+        } else {
+            card.style.display = 'none';   // hide
+        }
+    });
+});
+// Sort functionality
+const sortSelect = document.getElementById('sort-select');
+const trendCardsContainer = document.getElementById('trend-cards');
+
+sortSelect.addEventListener('change', function() {
+    const sortValue = this.value;
+    
+    const cards = Array.from(trendCardsContainer.querySelectorAll('.player-card'));
+    
+    // Sort the cards based on selected option
+    cards.sort((a, b) => {
+        let aVal, bVal;
+        
+        switch(sortValue) {
+            case 'score-desc':
+                aVal = parseFloat(a.dataset.score);
+                bVal = parseFloat(b.dataset.score);
+                return bVal - aVal;  // descending
+            case 'score-asc':
+                aVal = parseFloat(a.dataset.score);
+                bVal = parseFloat(b.dataset.score);
+                return aVal - bVal;
+            case 'projection-desc':
+                aVal = parseFloat(a.dataset.projection);
+                bVal = parseFloat(b.dataset.projection);
+                return bVal - aVal;
+            case 'projection-asc':
+                aVal = parseFloat(a.dataset.projection);
+                bVal = parseFloat(b.dataset.projection);
+                return aVal - bVal;
+            case 'line-desc':
+                aVal = parseFloat(a.dataset.line);
+                bVal = parseFloat(b.dataset.line);
+                return bVal - aVal;
+            case 'line-asc':
+                aVal = parseFloat(a.dataset.line);
+                bVal = parseFloat(b.dataset.line);
+                return aVal - bVal;
+            case 'minutes-desc':
+                aVal = parseFloat(a.dataset.minutes);
+                bVal = parseFloat(b.dataset.minutes);
+                return bVal - aVal;
+            case 'minutes-asc':
+                aVal = parseFloat(a.dataset.minutes);
+                bVal = parseFloat(b.dataset.minutes);
+                return aVal - bVal;
+            default:
+                return 0;
+        }
+    });
+    
+    // Re-append cards in new order
+    cards.forEach(card => trendCardsContainer.appendChild(card));
+});
+
+// Odds Screen button handler
+document.getElementById('oddscreen-btn').onclick = function() {
+    window.location.href = 'oddscreen.html';
+};
+    </script>
+</body>
+</html>

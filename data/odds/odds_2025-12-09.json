@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "generated_at": "2025-12-09T17:48:47.214312",
+    "source": "the-odds-api",
+    "count": 2
+  },
+  "events": [
+    {
+      "id": "099fbdb7f4738db6e1f5b7889ab3d707",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-09T23:10:00Z",
+      "home_team": "Orlando Magic",
+      "away_team": "Miami Heat",
+      "logos": {
+        "home": "assets/team-logos/orl.png",
+        "away": "assets/team-logos/mia.png"
+      },
+      "best_h2h": {
+        "home": -111,
+        "away": 100
+      },
+      "best_spread": {
+        "home": {
+          "point": -1.0,
+          "price": -110
+        },
+        "away": {
+          "point": 1.0,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    },
+    {
+      "id": "582a77bcdc5401a29e263ffed5d26609",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-10T01:30:00Z",
+      "home_team": "Toronto Raptors",
+      "away_team": "New York Knicks",
+      "logos": {
+        "home": "assets/team-logos/tor.png",
+        "away": "assets/team-logos/nyk.png"
+      },
+      "best_h2h": {
+        "home": 182,
+        "away": -205
+      },
+      "best_spread": {
+        "home": {
+          "point": 5.0,
+          "price": -110
+        },
+        "away": {
+          "point": -5.0,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    }
+  ]
+}

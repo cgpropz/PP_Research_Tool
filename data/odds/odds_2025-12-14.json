@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "generated_at": "2025-12-14T18:54:38.278646",
+    "source": "the-odds-api",
+    "count": 6
+  },
+  "events": [
+    {
+      "id": "b26645968edf7bf48d50c748e4107fb3",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-14T23:11:00Z",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Philadelphia 76ers",
+      "logos": {
+        "home": "assets/team-logos/atl.png",
+        "away": "assets/team-logos/phi.png"
+      },
+      "best_h2h": {
+        "home": -185,
+        "away": 164
+      },
+      "best_spread": {
+        "home": {
+          "point": -3.5,
+          "price": -120
+        },
+        "away": {
+          "point": 3.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "9d716f72748acc7e1841a6526baebf20",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-14T23:12:00Z",
+      "home_team": "Brooklyn Nets",
+      "away_team": "Milwaukee Bucks",
+      "logos": {
+        "home": "assets/team-logos/bkn.png",
+        "away": "assets/team-logos/mil.png"
+      },
+      "best_h2h": {
+        "home": -525,
+        "away": 520
+      },
+      "best_spread": {
+        "home": {
+          "point": -12.0,
+          "price": -110
+        },
+        "away": {
+          "point": 12.0,
+          "price": -120
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "9a401a5d01d50dd4667da88d3fd2c0d5",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-15T00:10:00Z",
+      "home_team": "Chicago Bulls",
+      "away_team": "New Orleans Pelicans",
+      "logos": {
+        "home": "assets/team-logos/chi.png",
+        "away": ""
+      },
+      "best_h2h": {
+        "home": -178,
+        "away": 170
+      },
+      "best_spread": {
+        "home": {
+          "point": -5.0,
+          "price": -105
+        },
+        "away": {
+          "point": 5.0,
+          "price": -115
+        }
+      },
+      "bookmakers_count": 9
+    },
+    {
+      "id": "787d069f8664c6efc2c87087e15eca28",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-15T00:10:00Z",
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Sacramento Kings",
+      "logos": {
+        "home": "assets/team-logos/min.png",
+        "away": "assets/team-logos/sac.png"
+      },
+      "best_h2h": {
+        "home": -395,
+        "away": 525
+      },
+      "best_spread": {
+        "home": {
+          "point": -9.5,
+          "price": -110
+        },
+        "away": {
+          "point": 9.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    },
+    {
+      "id": "248d1ebfe78ef5cfe690e8d95677bac1",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-15T01:10:00Z",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "logos": {
+        "home": "assets/team-logos/phx.png",
+        "away": "assets/team-logos/lal.png"
+      },
+      "best_h2h": {
+        "home": -105,
+        "away": 100
+      },
+      "best_spread": {
+        "home": {
+          "point": -1.0,
+          "price": -110
+        },
+        "away": {
+          "point": 1.0,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    },
+    {
+      "id": "5c6a0c60d6f983cf2b5e02ae26ce5b40",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-15T02:10:00Z",
+      "home_team": "Portland Trail Blazers",
+      "away_team": "Golden State Warriors",
+      "logos": {
+        "home": "assets/team-logos/por.png",
+        "away": "assets/team-logos/gsw.png"
+      },
+      "best_h2h": {
+        "home": 172,
+        "away": -185
+      },
+      "best_spread": {
+        "home": {
+          "point": 5.0,
+          "price": -110
+        },
+        "away": {
+          "point": -5.0,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    }
+  ]
+}
