@@ -291,11 +291,16 @@ def build_player_cards():
         # Load odds
         odds_path = os.path.join(BASE_DIR, 'NBA_PURE_STANDARD_SINGLE.json')
         if not os.path.exists(odds_path):
-            logger.error("Odds file not found")
-            return False
+            # Try alternate path
+            odds_path = os.path.join(BASE_DIR, 'nba_player_odds.json')
+            if not os.path.exists(odds_path):
+                logger.error("Odds file not found")
+                return False
         
         with open(odds_path) as f:
             raw = json.load(f)
+        
+        logger.info(f"📊 Loaded odds data: type={type(raw).__name__}, len={len(raw) if isinstance(raw, (list, dict)) else 'N/A'}")
         
         # Load spreads
         spreads_path = os.path.join(DATA_DIR, 'latest.json')
@@ -315,17 +320,6 @@ def build_player_cards():
                         team_abbr = TEAM_NAME_TO_ABBR.get(team_full, team_full)
                         team_spreads[team_abbr] = spread
         
-        # Normalize structure
-        if isinstance(raw, dict):
-            if 'lines' in raw and isinstance(raw['lines'], list):
-                pp_lines = raw['lines']
-            elif 'data' in raw and isinstance(raw['data'], list):
-                pp_lines = raw['data']
-            else:
-                pp_lines = [v for v in raw.values() if isinstance(v, dict)]
-        else:
-            pp_lines = raw if isinstance(raw, list) else []
-        
         # Load gamelogs
         gamelogs_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
         if not os.path.exists(gamelogs_path):
@@ -334,74 +328,169 @@ def build_player_cards():
         
         df_logs = pd.read_csv(gamelogs_path)
         df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
+        logger.info(f"📈 Loaded gamelogs: {len(df_logs)} records")
         
-        # Stat mapping
+        # Stat mapping (maps stat names to gamelog columns)
         STAT_MAP = {
+            'points': ['PTS'], 'rebounds': ['REB'], 'assists': ['AST'],
+            'threes': ['3PM'], '3pm': ['3PM'], 'steals': ['STL'], 'blocks': ['BLK'],
+            'pts_rebs_asts': ['PTS', 'REB', 'AST'], 'pra': ['PTS', 'REB', 'AST'],
+            'pts_asts': ['PTS', 'AST'], 'pa': ['PTS', 'AST'],
+            'pts_rebs': ['PTS', 'REB'], 'pr': ['PTS', 'REB'],
+            'rebs_asts': ['REB', 'AST'], 'ra': ['REB', 'AST'],
+            'stls_blks': ['STL', 'BLK'], 'sb': ['STL', 'BLK'],
+            'turnovers': ['TOV'],
+            # Capitalized versions
             'Points': ['PTS'], 'Rebounds': ['REB'], 'Assists': ['AST'],
             'Threes': ['3PM'], '3PM': ['3PM'], 'Steals': ['STL'], 'Blocks': ['BLK'],
-            'Pts+Rebs+Asts': ['PTS', 'REB', 'AST'], 'PRA': ['PTS', 'REB', 'AST'],
-            'Pts+Asts': ['PTS', 'AST'], 'PA': ['PTS', 'AST'],
-            'Pts+Rebs': ['PTS', 'REB'], 'PR': ['PTS', 'REB'],
-            'Rebs+Asts': ['REB', 'AST'], 'RA': ['REB', 'AST'],
-            'Stls+Blks': ['STL', 'BLK'], 'SB': ['STL', 'BLK'],
-            'Turnovers': ['TOV']
         }
         
-        # Build cards
+        # Build cards - handle both flat and nested structures
         cards = []
+        
+        # Normalize structure - props.cash returns a list where each item is a player with nested projections
+        if isinstance(raw, list):
+            pp_lines = raw
+        elif isinstance(raw, dict):
+            if 'lines' in raw:
+                pp_lines = raw['lines']
+            elif 'data' in raw:
+                pp_lines = raw['data']
+            else:
+                pp_lines = list(raw.values())
+        else:
+            pp_lines = []
+        
+        logger.info(f"📋 Processing {len(pp_lines)} player lines")
+        
         for line in pp_lines:
-            player_name = line.get('player_name', line.get('player', ''))
+            # Get player info
+            player_name = line.get('name', line.get('player_name', line.get('player', '')))
             if not player_name:
                 continue
             
-            stat_type = line.get('stat_type', line.get('stat', ''))
-            line_value = line.get('line', line.get('value', 0))
+            team = line.get('team', '')
+            position = line.get('position', '')
             
             # Get player logs
             p_logs = df_logs[df_logs['PLAYER NAME'].str.lower() == player_name.lower()]
             if p_logs.empty:
+                # Try normalized name matching
+                p_logs = df_logs[df_logs['PLAYER NAME'].apply(normalize_name).str.lower() == normalize_name(player_name).lower()]
+            
+            if p_logs.empty:
                 continue
             
-            # Calculate stats
-            cols = STAT_MAP.get(stat_type, [stat_type.upper()])
-            valid_cols = [c for c in cols if c in p_logs.columns]
-            if not valid_cols:
-                continue
-            
-            p_logs = p_logs.copy()
-            p_logs['combined'] = p_logs[valid_cols].sum(axis=1)
-            
-            # Recent games
-            recent = p_logs.nlargest(10, 'GAME DATE')
-            if recent.empty:
-                continue
-            
-            avg = recent['combined'].mean()
-            median = recent['combined'].median()
-            hit_count = (recent['combined'] > line_value).sum()
-            hit_rate = hit_count / len(recent) * 100
-            
-            # Get team
-            team = recent.iloc[0].get('MATCHUP', '')[:3] if len(recent) > 0 else ''
-            spread = team_spreads.get(team, 0)
-            
-            # Build card
-            card = {
-                'player_name': player_name,
-                'player_slug': make_slug(player_name),
-                'team': team,
-                'stat_type': stat_type,
-                'line': line_value,
-                'projection': round(avg, 1),
-                'median': round(median, 1),
-                'hit_rate': round(hit_rate, 1),
-                'hit_count': int(hit_count),
-                'games_played': len(recent),
-                'spread': spread,
-                'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
-                'last_updated': datetime.now().isoformat()
-            }
-            cards.append(card)
+            # Handle nested projection structure from props.cash
+            projection = line.get('projection', {})
+            if isinstance(projection, dict):
+                # Process each stat type in the projection
+                for stat_key, stat_data in projection.items():
+                    if not isinstance(stat_data, dict):
+                        continue
+                    
+                    # Get the line value from summary
+                    summary = stat_data.get('summary', {})
+                    line_value = summary.get('manualOU') or summary.get('line') or summary.get('value')
+                    if line_value is None:
+                        continue
+                    
+                    # Get odds
+                    over_price = summary.get('overPrice', 0)
+                    under_price = summary.get('underPrice', 0)
+                    
+                    # Map stat key to gamelog columns
+                    cols = STAT_MAP.get(stat_key.lower(), [stat_key.upper()])
+                    valid_cols = [c for c in cols if c in p_logs.columns]
+                    if not valid_cols:
+                        continue
+                    
+                    p_logs_copy = p_logs.copy()
+                    p_logs_copy['combined'] = p_logs_copy[valid_cols].sum(axis=1)
+                    
+                    # Recent games
+                    recent = p_logs_copy.nlargest(10, 'GAME DATE')
+                    if recent.empty:
+                        continue
+                    
+                    avg = recent['combined'].mean()
+                    median = recent['combined'].median()
+                    hit_count = (recent['combined'] > line_value).sum()
+                    hit_rate = hit_count / len(recent) * 100
+                    
+                    spread = team_spreads.get(team, 0)
+                    
+                    # Build card
+                    card = {
+                        'name': player_name,
+                        'player_name': player_name,
+                        'player_slug': make_slug(player_name),
+                        'team': team,
+                        'position': position,
+                        'prop': stat_key.replace('_', '+').title(),
+                        'stat_type': stat_key,
+                        'line': float(line_value),
+                        'projection': round(avg, 1),
+                        'avg': round(avg, 1),
+                        'median': round(median, 1),
+                        'hit_rate': round(hit_rate, 1),
+                        'last_10_pct': round(hit_rate, 1),
+                        'hit_count': int(hit_count),
+                        'games_played': len(recent),
+                        'spread': spread,
+                        'over_odds': over_price,
+                        'under_odds': under_price,
+                        'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
+                        'last_updated': datetime.now().isoformat()
+                    }
+                    cards.append(card)
+            else:
+                # Handle flat structure (old format)
+                stat_type = line.get('stat', line.get('stat_type', ''))
+                line_value = line.get('line', line.get('value', 0))
+                
+                if not stat_type or not line_value:
+                    continue
+                
+                cols = STAT_MAP.get(stat_type.lower(), [stat_type.upper()])
+                valid_cols = [c for c in cols if c in p_logs.columns]
+                if not valid_cols:
+                    continue
+                
+                p_logs_copy = p_logs.copy()
+                p_logs_copy['combined'] = p_logs_copy[valid_cols].sum(axis=1)
+                
+                recent = p_logs_copy.nlargest(10, 'GAME DATE')
+                if recent.empty:
+                    continue
+                
+                avg = recent['combined'].mean()
+                median = recent['combined'].median()
+                hit_count = (recent['combined'] > line_value).sum()
+                hit_rate = hit_count / len(recent) * 100
+                spread = team_spreads.get(team, 0)
+                
+                card = {
+                    'name': player_name,
+                    'player_name': player_name,
+                    'player_slug': make_slug(player_name),
+                    'team': team,
+                    'position': position,
+                    'prop': stat_type,
+                    'stat_type': stat_type,
+                    'line': float(line_value),
+                    'projection': round(avg, 1),
+                    'avg': round(avg, 1),
+                    'median': round(median, 1),
+                    'hit_rate': round(hit_rate, 1),
+                    'last_10_pct': round(hit_rate, 1),
+                    'hit_count': int(hit_count),
+                    'games_played': len(recent),
+                    'spread': spread,
+                    'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
+                    'last_updated': datetime.now().isoformat()
+                }
+                cards.append(card)
         
         # Save cards
         cards_path = os.path.join(BASE_DIR, 'PLAYER_UI_CARDS_PERFECT.json')
@@ -412,6 +501,8 @@ def build_player_cards():
         return True
     except Exception as e:
         logger.error(f"❌ Card build failed: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
         return False
 
 
