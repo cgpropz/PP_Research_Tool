@@ -137,9 +137,19 @@ async def lifespan(app: FastAPI):
     logger.info("   - DVP: daily at 6 AM EST")
     logger.info("   - Gamelogs: every 2 hours")
     
-    # Run initial refresh
+    # Run initial full data load (gamelogs + odds + cards)
     logger.info("🔄 Running initial data load...")
-    refresh_odds_job()
+    try:
+        from app.cloud_scheduler import fetch_gamelogs, fetch_odds, fetch_schedule, build_player_cards
+        # Fetch gamelogs first (required for building cards)
+        fetch_gamelogs()
+        fetch_schedule()
+        fetch_odds()
+        build_player_cards()
+        data_service.clear_cache()
+        logger.info("✅ Initial data load completed")
+    except Exception as e:
+        logger.error(f"❌ Initial data load error: {e}")
     
     yield
     
