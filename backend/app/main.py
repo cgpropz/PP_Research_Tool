@@ -7,6 +7,9 @@ from apscheduler.triggers.cron import CronTrigger
 from app.config import settings
 from app.routers import auth, payments, props, data, admin
 from app.data_service import data_service
+from app.database import engine, Base, SessionLocal
+from app.models import User
+from app.auth import get_password_hash
 import logging
 import os
 
@@ -19,6 +22,38 @@ scheduler = BackgroundScheduler(timezone='America/New_York')
 
 # Check if running in cloud
 IS_CLOUD = os.environ.get('RAILWAY_ENVIRONMENT') or os.environ.get('RENDER')
+
+
+def create_initial_user():
+    """Create the initial admin/pro user if it doesn't exist"""
+    logger.info("🔐 Checking for initial user...")
+    db = SessionLocal()
+    try:
+        # Check if user exists
+        user = db.query(User).filter(User.email == settings.pro_user_email).first()
+        if not user:
+            # Create the pro user with the specified password
+            hashed_password = get_password_hash("Kmh050598!")
+            new_user = User(
+                email=settings.pro_user_email,
+                hashed_password=hashed_password,
+                full_name="Pro User",
+                subscription_tier="pro",
+                subscription_status="active",
+                is_active=True,
+                is_verified=True
+            )
+            db.add(new_user)
+            db.commit()
+            logger.info(f"✅ Created initial pro user: {settings.pro_user_email}")
+        else:
+            logger.info(f"✅ Pro user already exists: {settings.pro_user_email}")
+    except Exception as e:
+        logger.error(f"❌ Error creating initial user: {e}")
+        db.rollback()
+    finally:
+        db.close()
+
 
 def refresh_odds_job():
     """Background job to refresh odds every 5 minutes"""
@@ -61,6 +96,13 @@ async def lifespan(app: FastAPI):
     logger.info("🏀 NBA Props API starting up...")
     logger.info(f"📚 Docs available at: {settings.api_url}/docs")
     logger.info(f"☁️ Cloud mode: {IS_CLOUD}")
+    
+    # Create database tables
+    logger.info("📦 Creating database tables...")
+    Base.metadata.create_all(bind=engine)
+    
+    # Create initial admin user
+    create_initial_user()
     
     # Odds refresh every 5 minutes
     scheduler.add_job(
