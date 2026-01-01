@@ -218,6 +218,37 @@ async def scheduler_status():
 
 @app.post("/api/scheduler/trigger")
 async def trigger_refresh():
-    """Manually trigger a card refresh"""
-    refresh_cards_job()
-    return {"message": "Card refresh triggered"}
+    """Manually trigger a full data refresh using cloud_scheduler"""
+    from app.cloud_scheduler import fetch_gamelogs, fetch_odds, fetch_schedule, build_player_cards
+    results = {}
+    
+    try:
+        logger.info("🔄 Manual trigger: fetching gamelogs...")
+        results['gamelogs'] = fetch_gamelogs()
+    except Exception as e:
+        logger.error(f"❌ Gamelogs fetch error: {e}")
+        results['gamelogs'] = str(e)
+    
+    try:
+        logger.info("🔄 Manual trigger: fetching schedule...")
+        results['schedule'] = fetch_schedule()
+    except Exception as e:
+        logger.error(f"❌ Schedule fetch error: {e}")
+        results['schedule'] = str(e)
+    
+    try:
+        logger.info("🔄 Manual trigger: fetching odds...")
+        results['odds'] = fetch_odds()
+    except Exception as e:
+        logger.error(f"❌ Odds fetch error: {e}")
+        results['odds'] = str(e)
+    
+    try:
+        logger.info("🔄 Manual trigger: building cards...")
+        results['cards'] = build_player_cards()
+    except Exception as e:
+        logger.error(f"❌ Card build error: {e}")
+        results['cards'] = str(e)
+    
+    data_service.clear_cache()
+    return {"message": "Manual refresh completed", "results": results}
