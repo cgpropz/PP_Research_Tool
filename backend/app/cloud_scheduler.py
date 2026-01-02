@@ -189,8 +189,31 @@ def fetch_gamelogs():
         }
         
         logger.info(f"📡 Requesting: {url}")
-        response = requests.get(url, headers=headers, params=params, timeout=60)
-        logger.info(f"📡 Response status: {response.status_code}")
+        
+        # Retry logic for NBA API (can be flaky)
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = requests.get(url, headers=headers, params=params, timeout=120)
+                logger.info(f"📡 Response status: {response.status_code}")
+                
+                if response.status_code == 200:
+                    break
+                elif attempt < max_retries - 1:
+                    logger.warning(f"⚠️ Attempt {attempt + 1} failed with status {response.status_code}, retrying...")
+                    import time
+                    time.sleep(2)
+            except requests.exceptions.Timeout:
+                if attempt < max_retries - 1:
+                    logger.warning(f"⚠️ Attempt {attempt + 1} timed out, retrying...")
+                    import time
+                    time.sleep(2)
+                else:
+                    logger.error("❌ All retry attempts timed out")
+                    return False
+            except Exception as e:
+                logger.error(f"❌ Request error: {e}")
+                return False
         
         if response.status_code != 200:
             logger.error(f"❌ NBA API returned status {response.status_code}: {response.text[:500]}")
@@ -410,6 +433,10 @@ def build_player_cards():
         
         logger.info(f"📁 Loading gamelogs from: {gamelogs_path}")
         df_logs = pd.read_csv(gamelogs_path)
+        
+        # Normalize column name for player (CSV may have 'PLAYER' instead of 'PLAYER NAME')
+        if 'PLAYER' in df_logs.columns and 'PLAYER NAME' not in df_logs.columns:
+            df_logs['PLAYER NAME'] = df_logs['PLAYER']
         
         # Build player_id lookup from gamelogs (use normalized names for matching)
         player_ids = {}

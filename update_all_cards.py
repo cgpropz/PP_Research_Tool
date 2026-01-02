@@ -89,6 +89,9 @@ def build_player_cards():
         pp_lines = raw if isinstance(raw, list) else []
     df_logs = pd.read_csv('Full_Gamelogs25.csv')
     df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
+    # Normalize column name for player
+    if 'PLAYER' in df_logs.columns and 'PLAYER NAME' not in df_logs.columns:
+        df_logs['PLAYER NAME'] = df_logs['PLAYER']
     # Stat mapping
     STAT_MAP = {
         'Points': ['PTS'],
