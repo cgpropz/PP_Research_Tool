@@ -37,7 +37,7 @@ export default function PropsPage() {
   
   // Filters
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [minMinutes, setMinMinutes] = useState<number>(30);
+  const [minMinutes, setMinMinutes] = useState<number>(0);  // Default to 0 (no filter)
   const [selectedProp, setSelectedProp] = useState<string>('');
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [sortOption, setSortOption] = useState<string>('score-desc');
