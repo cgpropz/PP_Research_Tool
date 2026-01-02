@@ -402,6 +402,29 @@ def build_player_cards():
             if p_logs.empty:
                 continue
             
+            # Sort by date for proper window calculations
+            p_logs = p_logs.sort_values('GAME DATE', ascending=False)
+            
+            # Calculate expected minutes (weighted average like update_all_cards.py)
+            expected_minutes = 0
+            if 'MIN' in p_logs.columns:
+                min_values = pd.to_numeric(p_logs['MIN'], errors='coerce').dropna().tolist()
+                min_values = [min(max(0, v), 60) for v in min_values]  # Clamp 0-60
+                if min_values:
+                    def minutes_avg(vals, n=None):
+                        slice_vals = vals[:n] if n else vals
+                        return sum(slice_vals) / len(slice_vals) if slice_vals else 0
+                    min_l5 = minutes_avg(min_values, 5)
+                    min_l10 = minutes_avg(min_values, 10)
+                    min_l20 = minutes_avg(min_values, 20)
+                    min_season = minutes_avg(min_values)
+                    expected_minutes = round(
+                        min_l5 * 0.30 +
+                        min_l10 * 0.40 +
+                        min_l20 * 0.20 +
+                        min_season * 0.10, 1
+                    )
+            
             # Handle nested projection structure from props.cash
             projection = line.get('projection', {})
             if isinstance(projection, dict):
@@ -461,6 +484,7 @@ def build_player_cards():
                         'spread': spread,
                         'over_odds': over_price,
                         'under_odds': under_price,
+                        'expected_minutes': expected_minutes,
                         'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
                         'last_updated': datetime.now().isoformat()
                     }
@@ -508,6 +532,7 @@ def build_player_cards():
                     'hit_count': int(hit_count),
                     'games_played': len(recent),
                     'spread': spread,
+                    'expected_minutes': expected_minutes,
                     'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
                     'last_updated': datetime.now().isoformat()
                 }
