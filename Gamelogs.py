@@ -13,13 +13,13 @@ driver.wait_for_element('xpath', '/html/body/div[1]/div[2]/div[2]/div[3]/section
 driver.sleep(6)
 
 driver.wait_for_element('xpath', '/html/body/div[2]/div[2]/div/div[1]/div/div[2]/div/button').click()
-driver.sleep(1)
+driver.sleep(3)
 
 driver.wait_for_element('xpath', '/html/body/div[1]/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div/select').click()
-driver.sleep(1)
+driver.sleep(3)
 
 driver.wait_for_element('xpath', '/html/body/div[1]/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div/select/option[1]').click()
-driver.sleep(2)
+driver.sleep(3)
 
 driver.execute_script("window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });")
 driver.sleep(5)

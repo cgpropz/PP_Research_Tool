@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2025-12-15T21:08:28.755160",
+    "generated_at": "2025-12-15T21:44:21.964682",
     "source": "the-odds-api",
     "count": 5
   },
@@ -16,17 +16,17 @@
         "away": "assets/team-logos/det.png"
       },
       "best_h2h": {
-        "home": 180,
-        "away": -145
+        "home": 1500,
+        "away": 105
       },
       "best_spread": {
         "home": {
-          "point": 2.0,
-          "price": -110
+          "point": -1.5,
+          "price": -115
         },
         "away": {
-          "point": -2.0,
-          "price": -120
+          "point": 1.5,
+          "price": -105
         }
       },
       "bookmakers_count": 6
@@ -42,16 +42,16 @@
         "away": "assets/team-logos/tor.png"
       },
       "best_h2h": {
-        "home": -172,
-        "away": 205
+        "home": 1000,
+        "away": 195
       },
       "best_spread": {
         "home": {
-          "point": -5.0,
+          "point": -6.0,
           "price": -110
         },
         "away": {
-          "point": 5.0,
+          "point": 6.0,
           "price": -110
         }
       },
@@ -60,7 +60,7 @@
     {
       "id": "21aa1ed8a0bb40eb9edb2d5f94ff5457",
       "sport_key": "basketball_nba",
-      "commence_time": "2025-12-16T02:10:00Z",
+      "commence_time": "2025-12-16T02:11:00Z",
       "home_team": "Utah Jazz",
       "away_team": "Dallas Mavericks",
       "logos": {
@@ -68,25 +68,25 @@
         "away": "assets/team-logos/dal.png"
       },
       "best_h2h": {
-        "home": 100,
-        "away": -114
+        "home": 150,
+        "away": -135
       },
       "best_spread": {
         "home": {
-          "point": 1.0,
+          "point": 2.0,
           "price": -110
         },
         "away": {
-          "point": -1.0,
+          "point": -2.0,
           "price": -110
         }
       },
-      "bookmakers_count": 9
+      "bookmakers_count": 6
     },
     {
       "id": "28162f3e97b5e5cf014e7ea0f6958f63",
       "sport_key": "basketball_nba",
-      "commence_time": "2025-12-16T02:40:00Z",
+      "commence_time": "2025-12-16T02:42:00Z",
       "home_team": "Denver Nuggets",
       "away_team": "Houston Rockets",
       "logos": {
@@ -94,8 +94,8 @@
         "away": "assets/team-logos/hou.png"
       },
       "best_h2h": {
-        "home": -101,
-        "away": -107
+        "home": 100,
+        "away": -105
       },
       "best_spread": {
         "home": {
@@ -120,17 +120,17 @@
         "away": "assets/team-logos/mem.png"
       },
       "best_h2h": {
-        "home": -175,
-        "away": 183
+        "home": -170,
+        "away": 184
       },
       "best_spread": {
         "home": {
-          "point": -5.5,
-          "price": -110
+          "point": -6.0,
+          "price": -115
         },
         "away": {
-          "point": 5.5,
-          "price": -110
+          "point": 6.0,
+          "price": -105
         }
       },
       "bookmakers_count": 9

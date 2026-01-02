@@ -71,43 +71,152 @@
         .gamelog-table th, .gamelog-table td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
         .gamelog-table th { background: #222b22; color: #00ff7f; }
         .gamelog-table td { background: #181f1b; color: #fff; }
+        a :hover {
+            box-shadow: 0 4px 12px #8000ff88;
+
+        }
     </style>
 </head>
 <body>
     <div style="text-align:center;margin-top:24px;">
-        <a href="../props-trend.html" style="text-decoration:none;">
-            <button style="background:#00ff7f;color:#181f1b;border:none;border-radius:8px;padding:10px 28px;font-size:1.1em;font-weight:700;cursor:pointer;box-shadow:0 2px 8px #8000ff44;">🏠 Home</button>
+        <a href="../props-trend.html" style="text-decoration:none;display:inline-block;">
+            <img src="../Images/CG.jpg" alt="Home" style="height:48px;width:auto;border-radius:12px;box-shadow:0 2px 8px #8000ff44;vertical-align:middle;cursor:pointer;transition:box-shadow 0.2s;">
         </a>
     </div>
-    <div style="display:flex;justify-content:center;margin:18px 0 0 0;">
+    <div style="display:flex;justify-content:center;margin:18px 0 0 0;gap:18px;">
         <div style="position:relative;width:340px;">
             <input id="player-search" type="text" placeholder="Search player..." autocomplete="off" style="width:100%;padding:10px 14px;border-radius:8px;border:2px solid #00ff7f;background:#181f1b;color:#fff;font-size:1.1em;outline:none;">
             <div id="search-suggestions" style="position:absolute;top:44px;left:0;width:100%;background:#222b22;border-radius:0 0 8px 8px;box-shadow:0 2px 8px #8000ff44;z-index:1000;display:none;"></div>
         </div>
+        <button id="prev-player-btn" style="padding:10px 14px;border-radius:8px;border:2px solid #00ff7f;background:#181f1b;color:#00ff7f;font-size:1.1em;outline:none;cursor:pointer;">&#8592; Prev</button>
+        <select id="player-dropdown" style="padding:10px 14px;border-radius:8px;border:2px solid #00ff7f;background:#181f1b;color:#fff;font-size:1.1em;outline:none;min-width:220px;">
+            <option value="">Select player...</option>
+        </select>
+        <button id="next-player-btn" style="padding:10px 14px;border-radius:8px;border:2px solid #00ff7f;background:#181f1b;color:#00ff7f;font-size:1.1em;outline:none;cursor:pointer;">Next &#8594;</button>
     </div>
     <div class="player-detail-container" style="position:relative;">
         <div id="minutes-badge" class="minutes-badge" style="display:none;"></div>
-        <div id="spread-badge" class="spreads-badge" style="display:none;"></div>
         <img id="player-img" class="player-detail-img" src="" alt="Player Image">
+        <span id="spread-badge" class="spreads-badge" style="position:absolute;top:10px;right:10px;font-size:1.01rem;font-weight:800;border-radius:8px;padding:4px 14px;box-shadow:0 0 10px 2px #00ff7f99;z-index:10;border:2px solid #8000ff;letter-spacing:0.5px;text-shadow:0 0 4px #00ff7f99;background:#222b22;color:#fff;transition:background 0.2s, color 0.2s;display:block;">Loading spread...</span>
         <div class="player-detail-badges" id="player-badges"></div>
         <h2 id="player-name" style="text-align:center;color:#fff;"></h2>
+        <!-- AI Insights Section -->
+        <div id="ai-insights-section" style="margin:18px 0 24px 0;padding:18px 18px 12px 18px;background:#23232b;border-radius:12px;box-shadow:0 0 12px 2px #8000ff33;max-width:800px;margin-left:auto;margin-right:auto;">
+            <h3 style="color:#00ff7f;text-align:center;margin-bottom:10px;">AI-Powered Insights</h3>
+            <div id="ai-insights-content" style="color:#fff;text-align:center;font-size:1.08em;min-height:32px;">Loading insights...</div>
+        </div>
         <div id="prop-summary" style="display:flex;justify-content:center;gap:18px;margin-bottom:10px;"></div>
         <div class="navbar-props" id="prop-navbar"></div>
         <div id="gamelog-section"></div>
+        <div id="odds-section" style="margin-top:32px;"></div>
+        <div id="correlation-section" style="margin-top:32px;"></div>
+    </div>
+    <!-- Gamelog filter dropdown -->
+    <div id="gamelog-filter-container" style="text-align:center;margin:18px 0 0 0;">
+        <label for="gamelog-filter" style="color:#00ff7f;font-weight:700;margin-right:10px;">Show:</label>
+        <select id="gamelog-filter" style="padding:8px 14px;border-radius:8px;border:2px solid #00ff7f;background:#181f1b;color:#fff;font-size:1em;outline:none;">
+            <option value="5">Last 5 Games</option>
+            <option value="10" selected>Last 10 Games</option>
+            <option value="20">Last 20 Games</option>
+            <option value="full">Full Season</option>
+        </select>
     </div>
 <script>
-// All code that uses playerData must be inside the async function after data is loaded
-// Utility: get player slug from URL
+    // --- Spread badge logic from props-trend.html ---
+    // Fetches a JSON file from the given path and returns the parsed object
+    async function fetchJson(path) {
+        const res = await fetch(path);
+        return res.json();
+    }
+
+    // Maps NBA team abbreviations to their full names (must match latest.json exactly)
+    const teamNameMap = {
+        ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets', CHI: 'Chicago Bulls', CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets', DET: 'Detroit Pistons', GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers', LAC: 'LA Clippers', LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat', MIL: 'Milwaukee Bucks', MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks', OKC: 'Oklahoma City Thunder', ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns', POR: 'Portland Trail Blazers', SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors', UTA: 'Utah Jazz', WAS: 'Washington Wizards'
+    };
+
+    /**
+     * Sets the spread badge for a given team abbreviation.
+     * Fetches odds data, finds the spread for the team, and updates the badge color and text accordingly.
+     * @param {string} teamAbbr - NBA team abbreviation (e.g., 'BOS')
+     */
+    async function setSpreadBadge(teamAbbr) {
+        let oddsData;
+        try {
+            oddsData = await fetchJson('../data/odds/latest.json');
+        } catch (err) {
+            const badge = document.getElementById('spread-badge');
+            if (badge) {
+                badge.textContent = 'Error loading spread';
+            }
+            return;
+        }
+        // Build a map of team full names to their spread values
+        let teamSpreads = {};
+        if (oddsData && Array.isArray(oddsData.events)) {
+            oddsData.events.forEach(event => {
+                if (event.home_team && event.best_spread && event.best_spread.home && typeof event.best_spread.home.point === 'number') {
+                    teamSpreads[event.home_team] = event.best_spread.home.point;
+                }
+                if (event.away_team && event.best_spread && event.best_spread.away && typeof event.best_spread.away.point === 'number') {
+                    teamSpreads[event.away_team] = event.best_spread.away.point;
+                }
+            });
+        }
+        // Get the full team name from abbreviation
+        let fullTeamName = teamAbbr && teamNameMap[teamAbbr] ? teamNameMap[teamAbbr] : null;
+        let spread = (fullTeamName && teamSpreads[fullTeamName] !== undefined) ? teamSpreads[fullTeamName] : null;
+        const badge = document.getElementById('spread-badge');
+        if (badge) {
+            badge.style.display = 'block';
+            badge.style.position = 'absolute';
+            badge.style.top = '10px';
+            badge.style.right = '10px';
+            if (spread !== null && spread !== undefined) {
+                // Color code the badge based on the spread value
+                const absSpread = Math.abs(spread);
+                let badgeColor = '';
+                if (absSpread >= 7) {
+                    badgeColor = 'background:#ff2d2d;color:#fff;';
+                } else if (absSpread >= 5) {
+                    badgeColor = 'background:#ffe066;color:#181f1b;';
+                } else if (absSpread <= 3) {
+                    badgeColor = 'background:#1aff00;color:#181f1b;';
+                } else {
+                    badgeColor = 'background:#222b22;color:#fff;';
+                }
+                badge.setAttribute('style', badge.getAttribute('style').replace(/background:[^;]+;color:[^;]+;/, '') + badgeColor + 'position:absolute;top:10px;right:10px;');
+                badge.textContent = `${spread > 0 ? '+' : ''}${spread} spread`;
+            } else {
+                badge.setAttribute('style', badge.getAttribute('style').replace(/background:[^;]+;color:[^;]+;/, '') + 'background:#222b22;color:#fff;position:absolute;top:10px;right:10px;');
+                badge.textContent = 'No spread data';
+            }
+        }
+    }
+
+    /**
+     * Gets the team abbreviation from the badge element in the DOM.
+     * @returns {string|null} - Team abbreviation or null if not found
+     */
+    function getPlayerTeamAbbr() {
+        const teamBadge = document.querySelector('.team-badge');
+        if (teamBadge) {
+            return teamBadge.textContent.trim();
+        }
+        return null;
+    }
+
+    // If a team badge is present, set the spread badge for that team
+    const playerTeamAbbr = getPlayerTeamAbbr();
+    if (playerTeamAbbr) {
+        setSpreadBadge(playerTeamAbbr);
+    }
+// Utility: get player slug from the current URL (e.g., 'tyler-kolek' from 'tyler-kolek.html')
 function getPlayerSlug() {
     const parts = window.location.pathname.split('/');
     return parts[parts.length-1].replace('.html','');
 }
 
-async function fetchJson(path) {
-    const res = await fetch(path);
-    return res.json();
-}
-
+// Utility: get NBA team color and text color for a given abbreviation
 function getTeamColor(team) {
     const TEAM_COLORS = {
       ATL: {bg: '#E03A3E', text: '#fff'}, BOS: {bg: '#007A33', text: '#fff'}, BKN: {bg: '#000', text: '#fff'}, CHA: {bg: '#1D1160', text: '#fff'}, CHI: {bg: '#CE1141', text: '#fff'}, CLE: {bg: '#6F263D', text: '#fff'}, DAL: {bg: '#00538C', text: '#fff'}, DEN: {bg: '#0E2240', text: '#fff'}, DET: {bg: '#C8102E', text: '#fff'}, GSW: {bg: '#1D428A', text: '#FFC72C'}, HOU: {bg: '#CE1141', text: '#fff'}, IND: {bg: '#002D62', text: '#FDBB30'}, LAC: {bg: '#C8102E', text: '#fff'}, LAL: {bg: '#552583', text: '#FDB927'}, MEM: {bg: '#5D76A9', text: '#fff'}, MIA: {bg: '#98002E', text: '#fff'}, MIL: {bg: '#00471B', text: '#fff'}, MIN: {bg: '#0C2340', text: '#fff'}, NOP: {bg: '#0C2340', text: '#fff'}, NYK: {bg: '#006BB6', text: '#fff'}, OKC: {bg: '#007AC1', text: '#fff'}, ORL: {bg: '#0077C0', text: '#fff'}, PHI: {bg: '#006BB6', text: '#fff'}, PHX: {bg: '#1D1160', text: '#fff'}, POR: {bg: '#E03A3E', text: '#fff'}, SAC: {bg: '#5A2D81', text: '#fff'}, SAS: {bg: '#C4CED4', text: '#000'}, TOR: {bg: '#CE1141', text: '#fff'}, UTA: {bg: '#002B5C', text: '#fff'}, WAS: {bg: '#002B5C', text: '#fff'}
@@ -116,17 +225,104 @@ function getTeamColor(team) {
 }
 
 async function renderPlayerPage() {
-    // Utility: create slug from name (same as in generator)
+        // --- Correlation Matrix Helper ---
+        /**
+         * Calculates the Pearson correlation coefficient between two arrays.
+         * Used to measure the relationship between a player's stat and a teammate's stat.
+         * @param {number[]} x - Array of values for player
+         * @param {number[]} y - Array of values for teammate
+         * @returns {number|null} - Correlation coefficient or null if not computable
+         */
+        function pearsonCorrelation(x, y) {
+            const n = x.length;
+            if (n === 0) return null;
+            const avgX = x.reduce((a, b) => a + b, 0) / n;
+            const avgY = y.reduce((a, b) => a + b, 0) / n;
+            let num = 0, denX = 0, denY = 0;
+            for (let i = 0; i < n; i++) {
+                const dx = x[i] - avgX;
+                const dy = y[i] - avgY;
+                num += dx * dy;
+                denX += dx * dx;
+                denY += dy * dy;
+            }
+            if (denX === 0 || denY === 0) return null;
+            return num / Math.sqrt(denX * denY);
+        }
+
+    // Utility: create a URL-friendly slug from a player's name (e.g., 'Tyler Kolek' -> 'tyler-kolek')
     function nameToSlug(name) {
         return name.toLowerCase().replace(/ /g, '-').replace(/[.'é]/g, '').replace(/[^a-z0-9-]/g, '').replace(/^-+|-+$/g, '');
     }
+    // --- Data Loading ---
+    // Get the player slug from the URL
     const slug = getPlayerSlug();
+    // Load all player prop data
     const playerData = await fetchJson('../PLAYER_UI_CARDS_PERFECT.json');
+    // Load all player gamelogs
     const gamelogs = await fetchJson('../Player_Gamelogs25.json');
-    // --- Player Search Setup --- (after playerData is loaded)
+    // Load odds data (try/catch in case file is missing)
+    let oddsData = [];
+    try {
+        oddsData = await fetchJson('../nba_player_odds.json');
+    } catch (e) {
+        oddsData = [];
+    }
+    // Load injury data (try/catch in case file is missing)
+    let injuryData = [];
+    try {
+        injuryData = await fetchJson('../nba_injuries.json');
+        console.log('[InjuryData] Loaded injury data:', injuryData);
+    } catch (e) {
+        console.error('[InjuryData] Failed to load injury data:', e);
+        injuryData = [];
+    }
+    // --- Player Search Setup ---
+    // Set up the player search bar and suggestions dropdown
     const searchInput = document.getElementById('player-search');
     const suggestionsDiv = document.getElementById('search-suggestions');
+    // Get all unique player names, sorted alphabetically
     const allNames = Array.from(new Set(playerData.map(p => p.name))).sort();
+    // Find the player object for the current page by slug
+    const player = playerData.find(p => p.name && p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug);
+
+    // --- Previous/Next player navigation ---
+    // Allows user to go to previous or next player alphabetically
+    const prevBtn = document.getElementById('prev-player-btn');
+    const nextBtn = document.getElementById('next-player-btn');
+    prevBtn.onclick = function() {
+        if (!player) return;
+        const idx = allNames.findIndex(n => nameToSlug(n) === nameToSlug(player.name));
+        const prevIdx = (idx - 1 + allNames.length) % allNames.length;
+        window.location.href = `${nameToSlug(allNames[prevIdx])}.html`;
+    };
+    nextBtn.onclick = function() {
+        if (!player) return;
+        const idx = allNames.findIndex(n => nameToSlug(n) === nameToSlug(player.name));
+        const nextIdx = (idx + 1) % allNames.length;
+        window.location.href = `${nameToSlug(allNames[nextIdx])}.html`;
+    };
+
+    // --- Player dropdown setup ---
+    // Populates the dropdown with all player names and navigates to the selected player
+    const dropdown = document.getElementById('player-dropdown');
+    dropdown.innerHTML = '<option value="">Select player...</option>';
+    allNames.forEach(name => {
+        const opt = document.createElement('option');
+        opt.value = nameToSlug(name);
+        opt.textContent = name;
+        dropdown.appendChild(opt);
+    });
+    // Set dropdown to current player if on a player page
+    if (player) dropdown.value = nameToSlug(player.name);
+    dropdown.addEventListener('change', function() {
+        if (dropdown.value) {
+            window.location.href = `${dropdown.value}.html`;
+        }
+    });
+
+    // --- Player search event listeners ---
+    // Handles input in the search bar and displays suggestions
     searchInput.addEventListener('input', function() {
         const val = searchInput.value.trim().toLowerCase();
         if (!val) {
@@ -155,10 +351,9 @@ async function renderPlayerPage() {
     searchInput.addEventListener('focus', function() {
         if (suggestionsDiv.innerHTML) suggestionsDiv.style.display = '';
     });
-    // Find player by slug
-    const player = playerData.find(p => p.name && p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug);
 
-    // Minutes badge (must be after player is defined)
+    // --- Minutes badge ---
+    // Shows the expected minutes for the player if available
     const minBadge = document.getElementById('minutes-badge');
     if (player && player.expected_minutes) {
         minBadge.textContent = Number(player.expected_minutes).toFixed(1) + ' min';
@@ -166,38 +361,71 @@ async function renderPlayerPage() {
     } else {
         minBadge.style.display = 'none';
     }
-    // Spread badge (color logic from props-trend.html)
-    const spreadBadge = document.getElementById('spread-badge');
-    if (player && player.spread !== undefined && player.spread !== null) {
-        let spread = player.spread;
-        let absSpread = Math.abs(spread);
-        let badgeColor = '';
-        if (absSpread >= 7) {
-            badgeColor = 'background:#ff2d2d;color:#fff;';
-        } else if (absSpread >= 5) {
-            badgeColor = 'background:#ffe066;color:#181f1b;';
-        } else if (absSpread <= 3) {
-            badgeColor = 'background:#1aff00;color:#181f1b;';
-        } else {
-            badgeColor = 'background:#222b22;color:#fff;';
-        }
-        spreadBadge.style = badgeColor + spreadBadge.style.cssText;
-        spreadBadge.textContent = (spread > 0 ? '+' : '') + spread + ' spread';
-        spreadBadge.style.display = '';
-    } else {
-        spreadBadge.style.display = 'none';
-    }
+    // --- Player not found fallback ---
     if (!player) {
         document.getElementById('player-name').textContent = 'Player not found';
+        document.getElementById('ai-insights-content').textContent = 'No insights available.';
         return;
     }
+        // --- AI Insights Section ---
+        function generateAIInsights(player, gamelogs, propData) {
+            if (!player) return 'No insights available.';
+            // Get last 10 games
+            const logs = gamelogs.filter(g => g.PLAYER === player.name).sort((a, b) => {
+                const parse = d => {
+                    if (!d || !d['GAME DATE']) return '';
+                    const [month, day, year] = d['GAME DATE'].split('/');
+                    return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+                };
+                return parse(b) - parse(a);
+            }).slice(0, 10);
+            if (!logs.length) return 'Not enough recent data for insights.';
+            // Calculate averages
+            const avg = col => logs.reduce((a, g) => a + (Number(g[col])||0), 0) / logs.length;
+            const pts = avg('PTS').toFixed(1), reb = avg('REB').toFixed(1), ast = avg('AST').toFixed(1), min = avg('MIN').toFixed(1);
+            const fp = avg('FP').toFixed(1);
+            // Find best and worst games (by FP)
+            const bestGame = logs.reduce((a, b) => (Number(a.FP||0) > Number(b.FP||0) ? a : b));
+            const worstGame = logs.reduce((a, b) => (Number(a.FP||0) < Number(b.FP||0) ? a : b));
+            // Recent trend (last 3 games)
+            const last3 = logs.slice(0,3);
+            const last3avg = avg => (last3.reduce((a,g)=>a+(Number(g[avg])||0),0)/last3.length).toFixed(1);
+            // Find most recent prop line and projection
+            let summary = '';
+            summary += `${player.name} is averaging <b>${pts} pts</b>, <b>${reb} reb</b>, <b>${ast} ast</b> and <b>${fp} fantasy points</b> over the last 10 games, playing about <b>${min} minutes</b> per game.`;
+            summary += `<br>Best recent game: <b>${bestGame['FP']}</b> FP (${bestGame['PTS']} pts, ${bestGame['REB']} reb, ${bestGame['AST']} ast) on ${bestGame['GAME DATE']} vs ${bestGame['MATCH UP']}.`;
+            summary += `<br>Worst recent game: <b>${worstGame['FP']}</b> FP (${worstGame['PTS']} pts, ${worstGame['REB']} reb, ${worstGame['AST']} ast) on ${worstGame['GAME DATE']} vs ${worstGame['MATCH UP']}.`;
+            summary += `<br>Last 3 games: <b>${last3avg('PTS')}</b> pts, <b>${last3avg('REB')}</b> reb, <b>${last3avg('AST')}</b> ast, <b>${last3avg('FP')}</b> FP.`;
+            // Prop line and projection
+            const props = propData.filter(p => p.name === player.name);
+            if (props.length) {
+                const mainProp = props[0];
+                summary += `<br>Current prop line: <b>${mainProp.line}</b> (${mainProp.prop}), projection: <b>${Number(mainProp.projection).toFixed(1)}</b>.`;
+            }
+            // Simple trend
+            if (Number(last3avg('FP')) > Number(fp)) {
+                summary += ` <span style='color:#1aff00;'>Trending up recently.</span>`;
+            } else if (Number(last3avg('FP')) < Number(fp)) {
+                summary += ` <span style='color:#ff2d2d;'>Trending down recently.</span>`;
+            } else {
+                summary += ` <span style='color:#ffe066;'>Holding steady.</span>`;
+            }
+            return summary;
+        }
+        // Render AI insights
+        document.getElementById('ai-insights-content').innerHTML = generateAIInsights(player, gamelogs, playerData);
+    // --- Player image and name ---
     // Use NBA CDN image for consistency with props-trend.html
     function getPlayerImage(playerId) {
         return playerId ? `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png` : '';
     }
     document.getElementById('player-img').src = getPlayerImage(player.player_id);
     document.getElementById('player-name').textContent = player.name;
-    // Badges
+    // Set spread badge using player's team abbreviation
+    if (player.team) {
+        setSpreadBadge(player.team);
+    }
+    // --- Badges (team, opponent, position) ---
     const badgesDiv = document.getElementById('player-badges');
     badgesDiv.innerHTML = '';
     // Team badge
@@ -205,20 +433,72 @@ async function renderPlayerPage() {
         const c = getTeamColor(player.team);
         badgesDiv.innerHTML += `<span class='player-detail-badge' style='background:${c.bg};color:${c.text};'>${player.team}</span>`;
     }
-    // Opponent badge
+    // Opponent badge + position badge (side by side)
     if (player.opponent) {
         const c = getTeamColor(player.opponent);
         badgesDiv.innerHTML += `<span class='player-detail-badge' style='background:${c.bg};color:${c.text};'>vs ${player.opponent}</span>`;
+        let position = player.position;
+        // Fallback: look up position from positions JSON if not present
+        if (!position && player.name) {
+            try {
+                const posJson = await fetchJson('../nba_players_2025_26_positions.json');
+                position = posJson[player.name] || '';
+            } catch (e) {
+                position = '';
+            }
+        }
+        if (position) {
+            badgesDiv.innerHTML += `<span class='player-detail-badge' style='background:#222b22;color:#fff;margin-left:2px;'>${position}</span>`;
+        }
     }
-    // Position badge
-    if (player.position) {
-        badgesDiv.innerHTML += `<span class='player-detail-badge' style='background:#222b22;color:#fff;'>${player.position}</span>`;
+    // --- Injury Badge and Table ---
+    // Helper to normalize player names for matching (removes punctuation, lowercases, trims)
+    function normalizeName(name) {
+        return name
+            .toLowerCase()
+            .replace(/[.'’`´]/g, '')
+            .replace(/[^a-z0-9 ]/g, '')
+            .replace(/ +/g, ' ')
+            .trim();
     }
-    // Prop types navbar
+    if (injuryData && player && player.name) {
+        const normPlayerName = normalizeName(player.name);
+        // Try to find injury info for this player
+        let playerInjury = injuryData.find(p => p.name && normalizeName(p.name) === normPlayerName);
+        // Fallback: try matching by player_id if available
+        if (!playerInjury && player.player_id) {
+            playerInjury = injuryData.find(p => p.id && p.id === player.player_id);
+        }
+        // Fallback: get all team injuries (not just this player)
+        let teamInjuries = [];
+        if (player.team) {
+            teamInjuries = injuryData.filter(p => p.team && p.team === player.team && p.status && p.status !== 'Active');
+        }
+        // If player is injured, show a badge
+        if (playerInjury && playerInjury.status && playerInjury.status !== 'Active') {
+            badgesDiv.innerHTML += `<span class='player-detail-badge' style='background:#ff2d2d;color:#fff;'>${playerInjury.status}${playerInjury.details ? ': ' + playerInjury.details : ''}</span>`;
+        }
+        // Render injury table below correlation section if there are team injuries
+        if (teamInjuries.length > 0) {
+            let injuryHtml = `<h3 style='color:#00ff7f;text-align:center;margin-bottom:10px;'>Injury News (${player.team})</h3>`;
+            injuryHtml += `<table class='gamelog-table' style='margin-bottom:0;'>`;
+            injuryHtml += `<tr><th>PLAYER</th><th>STATUS</th><th>DETAIL</th><th>POS</th><th>REPORTED</th></tr>`;
+            teamInjuries.forEach(inj => {
+                injuryHtml += `<tr><td>${inj.name || ''}</td><td>${inj.status || ''}</td><td>${inj.details || inj.detail || ''}</td><td>${inj.position || ''}</td><td>${inj.reportedAt ? inj.reportedAt.split('T')[0] : ''}</td></tr>`;
+            });
+            injuryHtml += `</table>`;
+            document.getElementById('correlation-section').insertAdjacentHTML('afterend', `<div id='injury-section'>${injuryHtml}</div>`);
+        }
+    }
+    // --- Prop types navbar ---
+    // Get all unique prop types for this player (e.g., Points, Rebounds, etc.)
     const propTypes = Array.from(new Set(playerData.filter(p => p.name === player.name).map(p => p.prop)));
     const navbar = document.getElementById('prop-navbar');
     navbar.innerHTML = '';
-    // Prop summary section (line, projection, score for default prop)
+    /**
+     * Renders the summary for a given prop type (line, projection, DVP, score)
+     * @param {string} propType - The prop type to display (e.g., 'Points')
+     */
     function renderPropSummary(propType) {
         const propRow = playerData.find(p => p.name === player.name && p.prop === propType);
         const summaryDiv = document.getElementById('prop-summary');
@@ -226,48 +506,78 @@ async function renderPlayerPage() {
             summaryDiv.innerHTML = '';
             return;
         }
+        // DVP badge logic (from previous script)
+        let dvpValue = propRow.dvp !== undefined ? propRow.dvp : (propRow.dvp_rank !== undefined ? propRow.dvp_rank : null);
+        let dvpBadge = '';
+        if (dvpValue !== null && dvpValue !== undefined) {
+            let dvpColor = '#222b22', dvpText = '#fff';
+            if (typeof dvpValue === 'number') {
+                if (dvpValue <= 5) { dvpColor = '#1aff00'; dvpText = '#181f1b'; }
+                else if (dvpValue <= 10) { dvpColor = '#ffe066'; dvpText = '#181f1b'; }
+                else if (dvpValue >= 25) { dvpColor = '#ff2d2d'; dvpText = '#fff'; }
+            }
+            dvpBadge = `<span style="background:${dvpColor};color:${dvpText};padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;margin-left:8px;">DVP: <span style='color:${dvpText};'>${dvpValue}</span></span>`;
+        }
         summaryDiv.innerHTML = `
             <span style="background:#222b22;color:#00ff7f;padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;">${propRow.prop} Line: <span style='color:#fff;'>${propRow.line}</span></span>
-                <span style="background:#181f1b;color:#ffe066;padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;">Projection: <span style='color:#fff;'>${Number(propRow.projection).toFixed(1)}</span></span>
-                <span style="background:#181f1b;color:#00ff7f;padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;">Score: <span style='color:#fff;'>${Number(propRow.score).toFixed(1)}</span></span>
+            <span style="background:#181f1b;color:#ffe066;padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;">Projection: <span style='color:#fff;'>${Number(propRow.projection).toFixed(1)}</span></span>
+            ${dvpBadge}
+            <span style="background:#181f1b;color:#00ff7f;padding:6px 18px;border-radius:8px;font-weight:700;font-size:1.1em;">Score: <span style='color:#fff;'>${Number(propRow.score).toFixed(1)}</span></span>
         `;
     }
     // Gamelog rendering function (define before use)
+    // Move propMap outside so it's not redeclared
+    const propMap = {
+        'Points': ['PTS'],
+        'Rebounds': ['REB'],
+        'Assists': ['AST'],
+        'Steals': ['STL'],
+        'Blocks': ['BLK'],
+        'Fantasy Score': ['FP'],
+        'Pts+Rebs+Asts': ['PRA'],
+        'Pts+Rebs': ['PR'],
+        'Pts+Asts': ['PA'],
+        'Rebs+Asts': ['RA']
+    };
     window.showGamelogs = function(propType) {
-            renderPropSummary(propType);
-            // Map propType to gamelog column(s)
-            const propMap = {
-                'Points': ['PTS'],
-                'Rebounds': ['REB'],
-                'Assists': ['AST'],
-                'Steals': ['STL'],
-                'Blocks': ['BLK'],
-                'Fantasy Score': ['FP'],
-                'Pts+Rebs+Asts': ['PRA'],
-                'Pts+Rebs': ['PR'],
-                'Pts+Asts': ['PA'],
-                'Rebs+Asts': ['RA']
-            };
-            const propRow = playerData.find(p => p.name === player.name && p.prop === propType);
-            const line = propRow ? Number(propRow.line) : null;
-            const highlightCols = propMap[propType] || [];
+        renderPropSummary(propType);
+        const propRow = playerData.find(p => p.name === player.name && p.prop === propType);
+        const line = propRow ? Number(propRow.line) : null;
+        const highlightCols = propMap[propType] || [];
         Array.from(navbar.children).forEach(btn => btn.classList.remove('active'));
         Array.from(navbar.children).find(btn => btn.textContent === propType).classList.add('active');
-        // Filter and sort last 10 games for this player (by GAME DATE descending)
-        const logs = gamelogs
-            .filter(g => g.PLAYER === player.name)
-            .sort((a, b) => {
-                // Parse date as YYYY-MM-DD for comparison
-                const parse = d => {
-                    if (!d || !d['GAME DATE']) return '';
-                    const [month, day, year] = d['GAME DATE'].split('/');
-                    return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
-                };
-                return parse(b) - parse(a);
-            })
-            .slice(0, 10);
-        // Expanded columns: standard + combos
+        // Filter and sort games for this player (by GAME DATE descending)
+        let logs = gamelogs.filter(g => g.PLAYER === player.name).sort((a, b) => {
+            const parse = d => {
+                if (!d || !d['GAME DATE']) return '';
+                const [month, day, year] = d['GAME DATE'].split('/');
+                return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+            };
+            return parse(b) - parse(a);
+        });
+        if (currentGamelogFilter !== 'full') {
+            logs = logs.slice(0, Number(currentGamelogFilter));
+        }
         const columns = ['PTS','REB','AST','STL','BLK','FP','PRA','PR','PA','RA'];
+        // Compute color for each cell in highlight columns
+        let colColors = {};
+        highlightCols.forEach(col => {
+            let values = logs.map(g => {
+                if (col === 'PRA') return (Number(g['PTS'])||0)+(Number(g['REB'])||0)+(Number(g['AST'])||0);
+                if (col === 'PR') return (Number(g['PTS'])||0)+(Number(g['REB'])||0);
+                if (col === 'PA') return (Number(g['PTS'])||0)+(Number(g['AST'])||0);
+                if (col === 'RA') return (Number(g['REB'])||0)+(Number(g['AST'])||0);
+                if (col === 'FP') return Number(g['FP'])||0;
+                return Number(g[col])||0;
+            });
+            // Color scale: green for above line, red for below, gray for equal
+            colColors[col] = values.map(val => {
+                if (line === null) return '';
+                if (val > line) return '#1aff00';
+                if (val < line) return '#ff2d2d';
+                return 'gray';
+            });
+        });
         let html = `<table class='gamelog-table'><tr><th>Date</th><th>Matchup</th><th>MIN</th>`;
         columns.forEach(col => {
             if (highlightCols.includes(col)) {
@@ -277,24 +587,22 @@ async function renderPlayerPage() {
             }
         });
         html += `</tr>`;
-        logs.forEach(g => {
-            // Calculate combo values
+        logs.forEach((g, rowIdx) => {
             const PRA = (Number(g['PTS'])||0)+(Number(g['REB'])||0)+(Number(g['AST'])||0);
             const PR = (Number(g['PTS'])||0)+(Number(g['REB'])||0);
             const PA = (Number(g['PTS'])||0)+(Number(g['AST'])||0);
             const RA = (Number(g['REB'])||0)+(Number(g['AST'])||0);
             html += `<tr><td>${g['GAME DATE'] || ''}</td><td>${g['MATCH UP'] || ''}</td><td>${g['MIN'] || ''}</td>`;
-            columns.forEach(col => {
+            columns.forEach((col, colIdx) => {
                 let val = g[col];
                 if (col === 'FP' && val !== undefined) val = Number(val).toFixed(1);
                 if (col === 'PRA') val = PRA.toFixed(1);
                 if (col === 'PR') val = PR.toFixed(1);
                 if (col === 'PA') val = PA.toFixed(1);
                 if (col === 'RA') val = RA.toFixed(1);
-                // Highlight logic for selected prop
                 if (highlightCols.includes(col) && line !== null) {
-                    let compareVal = Number(val);
-                    let color = compareVal > line ? '#1aff00' : (compareVal < line ? '#ff2d2d' : 'gray');
+                    // Use color for this cell in the column
+                    let color = colColors[col][rowIdx];
                     html += `<td style='font-weight:bold;background:#191f1b;color:${color};'>${val}</td>`;
                 } else {
                     html += `<td>${val !== undefined ? val : ''}</td>`;
@@ -304,7 +612,80 @@ async function renderPlayerPage() {
         });
         html += `</table>`;
         document.getElementById('gamelog-section').innerHTML = html;
+
+        // --- Odds Table Rendering (filtered by selected prop and PrizePicks line) ---
+        const oddsSection = document.getElementById('odds-section');
+        const playerOdds = oddsData.find(o => o.name && player && o.name.toLowerCase() === player.name.toLowerCase());
+        if (!playerOdds) {
+            oddsSection.innerHTML = '<div style="color:#888;text-align:center;margin-top:18px;">No odds data available for this player.</div>';
+            return;
+        }
+        // Map propType to odds key
+        const oddsPropMap = {
+            'Points': 'points',
+            'Assists': 'assists',
+            'Rebounds': 'rebounds',
+            'Steals': 'steals',
+            'Blocks': 'blocks',
+            'Turnovers': 'turnovers',
+            'Pts+Rebs': 'pointsRebounds',
+            'Pts+Asts': 'pointsAssists',
+            'Rebs+Asts': 'reboundsAssists',
+            'Pts+Rebs+Asts': 'pointsReboundsAssists',
+            '3PM': 'threes',
+            'Fantasy Score': 'fantasy'
+        };
+        const oddsKey = oddsPropMap[propType];
+        const prop = playerOdds.projection && playerOdds.projection[oddsKey];
+        if (!prop || !prop.books || prop.books.length === 0) {
+            oddsSection.innerHTML = '<div style="color:#888;text-align:center;margin-top:18px;">No odds data for this prop.</div>';
+            return;
+        }
+        // Find PrizePicks line for this prop
+        let prizepicksBook = prop.books.find(b => b.book && b.book.toLowerCase().includes('prizepicks'));
+        let targetLine = prizepicksBook ? prizepicksBook.value : null;
+        // Fallback: use prop.summary.manualOU if PrizePicks not found
+        if (targetLine === null && prop.summary && prop.summary.manualOU !== undefined) {
+            targetLine = prop.summary.manualOU;
+        }
+        // Only show odds that match the PrizePicks line
+        const filteredBooks = prop.books.filter(b => b.value === targetLine);
+        let oddsHtml = `<h3 style=\"color:#00ff7f;text-align:center;margin-bottom:10px;\">${propType} Odds (Line: ${targetLine !== null ? targetLine : 'N/A'})</h3>`;
+        if (filteredBooks.length === 0) {
+            oddsHtml += '<div style=\"color:#888;text-align:center;margin-top:18px;\">No odds at PrizePicks line for this prop.</div>';
+        } else {
+            oddsHtml += `<table class='gamelog-table' style='margin-bottom:0;'>`;
+            oddsHtml += `<tr><th>Book</th><th>Line</th><th>Over</th><th>Under</th><th>Over Prob</th><th>Under Prob</th></tr>`;
+            // Helper to calculate implied probability from American odds
+            function impliedProb(odds) {
+                if (odds === null || odds === undefined || isNaN(odds)) return '';
+                odds = Number(odds);
+                if (odds > 0) {
+                    return (100 / (odds + 100));
+                } else {
+                    return (-odds / (-odds + 100));
+                }
+            }
+            filteredBooks.forEach(book => {
+                let over = book.overPrice, under = book.underPrice;
+                let overProb = over !== undefined && over !== null && over !== '' ? impliedProb(over) : '';
+                let underProb = under !== undefined && under !== null && under !== '' ? impliedProb(under) : '';
+                oddsHtml += `<tr><td>${book.book}</td><td>${book.value !== undefined ? book.value : ''}</td><td>${over !== undefined ? over : ''}</td><td>${under !== undefined ? under : ''}</td><td>${overProb !== '' ? (overProb * 100).toFixed(1) + '%' : ''}</td><td>${underProb !== '' ? (underProb * 100).toFixed(1) + '%' : ''}</td></tr>`;
+            });
+            oddsHtml += `</table>`;
+        }
+        oddsSection.innerHTML = oddsHtml;
     }
+    // --- Gamelog Filter Logic ---
+    let currentGamelogFilter = '10';
+    document.getElementById('gamelog-filter').addEventListener('change', function() {
+        currentGamelogFilter = this.value;
+        // Re-render the gamelog table for the current prop
+        const activeBtn = Array.from(document.getElementById('prop-navbar').children).find(btn => btn.classList.contains('active'));
+        if (activeBtn) {
+            window.showGamelogs(activeBtn.textContent);
+        }
+    });
     // Now render navbar and call showGamelogs
     propTypes.forEach((prop, idx) => {
         navbar.innerHTML += `<button class='${idx===0?'active':''}' onclick='showGamelogs("${prop}")'>${prop}</button>`;

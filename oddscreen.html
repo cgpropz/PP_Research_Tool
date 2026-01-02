@@ -2,200 +2,740 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NBA Odds Screen</title>
+    <title>EV Bets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { background: #101a13; color: #fff; font-family: 'Inter', Arial, sans-serif; }
-        .oddscreen-container { max-width: 98vw; margin: 32px auto; background: #181f1b; border-radius: 18px; box-shadow: 0 0 32px 8px #7700ff44; padding: 24px 10px; }
-        h1 { text-align: center; color: #00ff7f; margin-bottom: 24px; }
-        .odds-table { width: 100%; border-collapse: collapse; font-size: 1.01em; }
-        .odds-table th, .odds-table td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
-        .odds-table th { background: #222b22; color: #00ff7f; position: sticky; top: 0; z-index: 2; }
-        .odds-table td { background: #181f1b; color: #fff; }
-        .odds-table .player-col { font-weight: bold; color: #ffe066; background: #232b22; }
-        .odds-table .prop-col { color: #00ff7f; background: #232b22; }
-        .odds-table .book-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
-        .odds-table .best-odds { background: #1aff00; color: #181f1b; font-weight: bold; }
-        .odds-table .prizepicks { background: #8000ff; color: #fff; font-weight: bold; }
-        .odds-table .odds-cell { min-width: 60px; }
-        .odds-table .line-cell { min-width: 48px; }
-        .odds-table .prob-cell { min-width: 60px; }
-        .oddscreen-scroll { overflow-x: auto; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #101a13;
+            color: #fff;
+            font-size: 1rem;
+        }
+        h1 {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 2.8rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #e5ff0076;
+            font-family: 'Bebas Neue', 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .home-link {
+            text-align: center;
+            margin-top: 24px;
+        }
+        .home-link img {
+            height: 48px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #8000ff44;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .home-link img:hover {
+            box-shadow: 0 4px 16px #8000ff88;
+        }
+        .controls-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto 24px;
+            padding: 0 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .control-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .control-label {
+            color: #00ff7f;
+            font-weight: 700;
+            font-size: 1em;
+        }
+        .control-select, .control-input {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 2px solid #00ff7f;
+            background: #181f1b;
+            color: #fff;
+            font-size: 0.95em;
+            outline: none;
+            cursor: pointer;
+        }
+        .control-select:focus, .control-input:focus {
+            box-shadow: 0 0 8px #00ff7f;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto 32px;
+            padding: 0 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .ev-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1100px;
+            background: #181f1b;
+            border: 2px solid #00ff7f33;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .ev-table th {
+            background: #222b22;
+            color: #00ff7f;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid #00ff7f;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        .ev-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            font-size: 0.95em;
+        }
+        .ev-table tr:hover {
+            background: #1f2a1f;
+        }
+        .player-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-align: left;
+            font-weight: 700;
+            color: #00ff7f;
+            padding: 10px 12px;
+        }
+        .player-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .team-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        .prop-cell {
+            color: #00ff7f;
+            font-weight: 700;
+        }
+        .positive-ev {
+            color: #1aff00;
+            font-weight: 700;
+        }
+        .negative-ev {
+            color: #ff2d2d;
+            font-weight: 700;
+        }
+        .neutral-ev {
+            color: #ffe066;
+            font-weight: 700;
+        }
+        .odds-positive {
+            background: #1a2a1a;
+            color: #1aff00;
+            font-weight: 700;
+        }
+        .odds-negative {
+            background: #2a1a1a;
+            color: #ff2d2d;
+            font-weight: 700;
+        }
+        .prob-cell {
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        .hitrate-cell {
+            font-size: 0.9em;
+            color: #8aa88a;
+        }
+        .best-ev-cell {
+            background: linear-gradient(135deg, #1a3a1a 0%, #223a22 100%);
+            color: #1aff00;
+            font-weight: 700;
+            border: 1px solid #00ff7f;
+        }
+        .loading-message {
+            text-align: center;
+            padding: 32px;
+            color: #00ff7f;
+            font-weight: 700;
+        }
+        .error-message {
+            text-align: center;
+            padding: 32px;
+            color: #ff2d2d;
+            font-weight: 700;
+        }
+        .pagination {
+            text-align: center;
+            margin: 24px 0;
+            color: #00ff7f;
+        }
+        .pagination button {
+            background: #222b22;
+            color: #00ff7f;
+            border: 2px solid #00ff7f;
+            padding: 6px 12px;
+            margin: 0 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .pagination button:hover {
+            background: #00ff7f;
+            color: #181f1b;
+        }
+        .pagination button.active {
+            background: #00ff7f;
+            color: #181f1b;
+        }
     </style>
 </head>
 <body>
-    <div style="text-align:center;margin-top:24px;">
-        <a href="../props-trend.html" style="text-decoration:none;display:inline-block;">
-            <img src="../Images/CG.jpg" alt="Home" style="height:48px;width:auto;border-radius:12px;box-shadow:0 2px 8px #8000ff44;vertical-align:middle;cursor:pointer;transition:box-shadow 0.2s;">
+    <div class="home-link">
+        <a href="props-trend.html" style="text-decoration:none;display:inline-block;">
+            <img src="Images/CG.jpg" alt="Home">
         </a>
     </div>
-    <div class="oddscreen-container">
-        <h1>PrizePicks Optimizer</h1>
-        <div class="oddscreen-scroll">
-            <table class="odds-table" id="optimizer-table">
-                <thead>
-                    <tr>
-                        <th>PLAYER</th>
-                        <th>STAT</th>
-                        <th>O/U</th>
-                        <th>PRIZEPICKS LINE</th>
-                        <th>SHARP % TO HIT</th>
-                        <th>PRIZEPICKS ODDS</th>
-                        <th>BEST SHARP ODDS</th>
-                        <th>BOOK</th>
-                    </tr>
-                </thead>
-                <tbody id="optimizer-tbody"></tbody>
-            </table>
+    <h1>EV Bets</h1>
+    
+    <div class="controls-container">
+        <div class="control-group">
+            <label class="control-label">Position:</label>
+            <select id="position-filter" class="control-select">
+                <option value="">Select a Position</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Prop:</label>
+            <select id="prop-filter" class="control-select">
+                <option value="">Select a Prop</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Game:</label>
+            <select id="game-filter" class="control-select">
+                <option value="">Select a Game</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label">O/U:</label>
+            <select id="ou-filter" class="control-select">
+                <option value="">Select O/U</option>
+                <option value="over">Over</option>
+                <option value="under">Under</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Hit Rates:</label>
+            <select id="hitrate-filter" class="control-select">
+                <option value="">All</option>
+                <option value="80">80%+</option>
+                <option value="70">70%+</option>
+                <option value="60">60%+</option>
+                <option value="40">40%+</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Best EV:</label>
+            <select id="bestev-filter" class="control-select">
+                <option value="">All</option>
+                <option value="positive">Positive Only</option>
+                <option value="negative">Negative Only</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <input type="text" id="search-input" class="control-input" placeholder="Search player..." style="min-width:180px;">
         </div>
     </div>
+
+    <div class="table-container">
+        <table class="ev-table" id="ev-table">
+            <thead id="ev-head">
+                <tr>
+                    <th></th>
+                    <th>TEAM</th>
+                    <th>PROP</th>
+                    <th>GAME</th>
+                    <th>O/U</th>
+                    <th>FP</th>
+                    <th>BOOKS</th>
+                    <th>PROB (%)</th>
+                    <th>HR L15</th>
+                    <th>DVP</th>
+                    <th>Best EV</th>
+                </tr>
+            </thead>
+            <tbody id="ev-tbody">
+                <tr><td colspan="14" class="loading-message">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
     <script>
-    // Helper: American odds to implied probability
-    function impliedProb(odds) {
-        if (odds === null || odds === undefined || isNaN(odds)) return '';
-        odds = Number(odds);
-        if (odds > 0) {
-            return (100 / (odds + 100));
-        } else {
-            return (-odds / (-odds + 100));
+        const EVBets = {};
+        EVBets.itemsPerPage = 20;
+        EVBets.currentPage = 1;
+        EVBets.allRows = [];
+        EVBets.books = [];
+
+        // Fetch helper
+        async function fetchJson(path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`Failed to fetch ${path}`);
+                return await res.json();
+            } catch (err) {
+                console.error('Error fetching', path, err);
+                return null;
+            }
         }
-    }
-    // Book logo map (add more as needed)
-    const BOOK_LOGOS = {
-        'FanDuel': 'https://assets.props.cash/odds/fanduel.png',
-        'DraftKings': 'https://assets.props.cash/odds/draftkings.png',
-        'Caesars': 'https://assets.props.cash/odds/caesars.png',
-        'BetMGM': 'https://assets.props.cash/odds/betmgm.png',
-        'Fanatics': 'https://assets.props.cash/odds/fanatics.png',
-        'Sleeper': 'https://assets.props.cash/odds/sleeper.png',
-        'Underdog': 'https://assets.props.cash/odds/underdog.png',
-        'PrizePicks': 'https://assets.props.cash/odds/prizepicks.png',
-        'BetRivers': 'https://assets.props.cash/odds/betrivers.png',
-        'BetOnline.ag': 'https://assets.props.cash/odds/betonline.png',
-        'Pinnacle': 'https://assets.props.cash/odds/pinnacle.png',
-        'theScore Bet': 'https://assets.props.cash/odds/thescore.png',
-        'Bovada': 'https://assets.props.cash/odds/bovada.png',
-        'Hard Rock Bet': 'https://assets.props.cash/odds/hardrock.png',
-        'ProphetX': 'https://assets.props.cash/odds/prophetx.png',
-        // ... add more as needed
-    };
-    async function fetchJson(path) {
-        const res = await fetch(path);
-        return res.json();
-    }
-    function getAllBooks(oddsData) {
-        const books = new Set();
-        oddsData.forEach(player => {
-            if (player.projection) {
-                Object.values(player.projection).forEach(prop => {
-                    if (prop && prop.books) {
-                        prop.books.forEach(b => books.add(b.book));
+
+        // Team name map
+        const TEAM_NAME_MAP = {
+            ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets',
+            CHI: 'Chicago Bulls', CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets',
+            DET: 'Detroit Pistons', GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers',
+            LAC: 'LA Clippers', LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat',
+            MIL: 'Milwaukee Bucks', MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks',
+            OKC: 'Oklahoma City Thunder', ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns',
+            POR: 'Portland Trail Blazers', SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors',
+            UTA: 'Utah Jazz', WAS: 'Washington Wizards'
+        };
+
+        // Get team logo URL
+        function getTeamLogo(abbr) {
+            return `https://a.espncdn.com/i/teamlogos/nba/500/${abbr.toLowerCase()}.png`;
+        }
+
+        // Get player image
+        function getPlayerImage(playerId) {
+            return playerId ? `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png` : '';
+        }
+
+        // Implied probability from American odds
+        function impliedProb(odds) {
+            if (odds === null || odds === undefined || isNaN(odds)) return null;
+            const n = Number(odds);
+            if (n === 0) return null;
+            
+            if (n > 0) {
+                return 100 / (n + 100);
+            } else {
+                return Math.abs(n) / (Math.abs(n) + 100);
+            }
+        }
+
+        // Calculate EV using OddsJam approach: compare hit rate to book probability
+        // EV = (hit_rate * decimal_odds) - (1 - hit_rate)
+        // where decimal_odds = (100 + odds) / 100 for positive odds
+        //       decimal_odds = 100 / abs(odds) for negative odds
+        function calcEV(hitRate, odds) {
+            if (hitRate === null || hitRate === undefined || odds === null || odds === undefined) return null;
+            const hr = hitRate / 100; // Convert percentage to decimal
+            if (isNaN(hr) || isNaN(odds)) return null;
+            
+            const n = Number(odds);
+            
+            // Convert American odds to decimal odds
+            let decimalOdds;
+            if (n > 0) {
+                decimalOdds = 1 + (n / 100);
+            } else {
+                decimalOdds = 1 + (100 / Math.abs(n));
+            }
+            
+            // EV formula: (probability * (decimal odds - 1)) - (1 - probability)
+            // Simplified: (probability * decimal odds) - 1
+            const ev = (hr * decimalOdds) - 1;
+            
+            // Return as percentage
+            return ev * 100;
+        }
+
+        // Build rows
+        async function buildRows() {
+            const tbody = document.getElementById('ev-tbody');
+            tbody.innerHTML = '<tr><td colspan="14" class="loading-message">Loading odds data...</td></tr>';
+
+            const ppCards = await fetchJson('PLAYER_UI_CARDS_PERFECT.json') || [];
+            const oddsData = await fetchJson('nba_player_odds.json') || [];
+            const positionsData = await fetchJson('nba_players_2025_26_positions.json') || {};
+            const schedule = await fetchJson('nba_schedule.json') || [];
+            const dvpData = await fetchJson('DVP_2025_weighted.json') || {};
+
+            console.log('PP Cards loaded:', ppCards.length, 'Sample:', ppCards[0]);
+            console.log('Odds Data loaded:', oddsData.length, 'Sample:', oddsData[0]);
+            console.log('Positions:', Object.keys(positionsData).length);
+
+            // Build position map
+            const nameToPosition = {};
+            Object.entries(positionsData).forEach(([name, pos]) => {
+                nameToPosition[name] = pos;
+            });
+
+            // Build schedule map
+            const scheduleMap = {};
+            schedule.forEach(game => {
+                scheduleMap[`${game.away} @ ${game.home}`] = game;
+                scheduleMap[`${game.home} vs ${game.away}`] = game;
+            });
+
+            // Build odds map
+            const oddsMap = {};
+            oddsData.forEach(player => {
+                oddsMap[player.name] = player;
+            });
+
+            EVBets.allRows = [];
+
+            let processedCount = 0;
+            let matchedCount = 0;
+            let noPropOddsCount = 0;
+            
+            ppCards.forEach((card, idx) => {
+                processedCount++;
+                const playerOdds = oddsMap[card.name];
+                const position = nameToPosition[card.name] || '';
+
+                if (!playerOdds || !playerOdds.projection) {
+                    if (idx < 3) console.log(`Card "${card.name}" not found in odds or has no projection`);
+                    return;
+                }
+                matchedCount++;
+
+                // Determine prop key for odds lookup
+                const oddsPropMap = {
+                    'Points': 'points', 
+                    'Rebounds': 'rebounds', 
+                    'Assists': 'assists',
+                    'Steals': 'steals', 
+                    'Blocked Shots': 'blocks', 
+                    'Turnovers': 'turnovers',
+                    'Fantasy Score': 'fantasyPts', 
+                    '3PM': 'fg3PtMade',
+                    'Pts+Rebs+Asts': 'pointsReboundsAssists', 
+                    'Pts+Rebs': 'pointsRebounds',
+                    'Pts+Asts': 'pointsAssists', 
+                    'Rebs+Asts': 'reboundsAssists',
+                    'FG Att': 'fgAtt', 
+                    '3PT Att': 'fg3PtAtt', 
+                    '2PT Att': 'twoPtAtt',
+                    'Defensive Rebounds': 'defRebounds', 
+                    'Offensive Rebounds': 'offRebounds'
+                };
+
+                const oddsKey = oddsPropMap[card.prop];
+                if (!oddsKey || !playerOdds.projection[oddsKey]) {
+                    noPropOddsCount++;
+                    if (idx < 5) console.log(`No odds key for "${card.name}" prop "${card.prop}" (mapped to "${oddsKey}")`);
+                    return;
+                }
+
+                const propOdds = playerOdds.projection[oddsKey];
+                const line = card.line || 0;
+
+                // Get all books for this prop
+                if (!propOdds.books || propOdds.books.length === 0) return;
+
+                // Get hit rate
+                const hitRate = card.last_10_pct || 0;
+
+                // Determine DVP position
+                let dvpPos = '';
+                if (['PG', 'SG', 'G'].includes(position)) dvpPos = 'PG';
+                else if (['PF', 'SF', 'F'].includes(position)) dvpPos = 'SF';
+                else if (position === 'C') dvpPos = 'C';
+
+                // Get DVP rank
+                let dvpRank = null;
+                const statMap = {
+                    'Points': 'pts', 'Rebounds': 'reb', 'Assists': 'ast', 'Steals': 'stl',
+                    'Blocks': 'blk', 'Fantasy Score': 'fd', '3PM': '3pm', 'Turnovers': 'to',
+                    'Pts+Rebs+Asts': 'pra', 'Pts+Rebs': 'pr', 'Pts+Asts': 'pa', 'Rebs+Asts': 'ra'
+                };
+                const statKey = statMap[card.prop] || 'pts';
+                if (dvpData[dvpPos] && dvpData[dvpPos][card.opponent] && dvpData[dvpPos][card.opponent][statKey]) {
+                    dvpRank = dvpData[dvpPos][card.opponent][statKey].rank;
+                }
+
+                // Create row for OVER with all books
+                const overBooks = {};
+                propOdds.books.forEach(book => {
+                    if (book.overPrice !== null && book.overPrice !== undefined) {
+                        overBooks[book.book] = {
+                            odds: book.overPrice,
+                            value: book.value
+                        };
                     }
                 });
-            }
-        });
-        return Array.from(books);
-    }
-    function getAllProps(oddsData) {
-        const propSet = new Set();
-        oddsData.forEach(player => {
-            if (player.projection) {
-                Object.keys(player.projection).forEach(k => propSet.add(k));
-            }
-        });
-        return Array.from(propSet);
-    }
-    function propLabel(key) {
-        const map = {
-            points: 'Points', assists: 'Assists', rebounds: 'Rebounds', steals: 'Steals', blocks: 'Blocks', turnovers: 'Turnovers', pointsRebounds: 'Pts+Rebs', pointsAssists: 'Pts+Asts', reboundsAssists: 'Rebs+Asts', pointsReboundsAssists: 'Pts+Rebs+Asts', threes: '3PM', fantasy: 'Fantasy Score'
-        };
-        return map[key] || key;
-    }
-    function getBestOdds(books) {
-        // Return the book with the best (highest) over odds for each line
-        if (!books || books.length === 0) return null;
-        let best = books[0];
-        books.forEach(b => {
-            if (b.overPrice !== undefined && (best.overPrice === undefined || b.overPrice > best.overPrice)) {
-                best = b;
-            }
-        });
-        return best;
-    }
-    async function renderPrizePicksOptimizer() {
-        const oddsData = await fetchJson('nba_player_odds.json');
-        const sharpBooks = [
-            'FanDuel','DraftKings','Caesars','BetMGM','Fanatics','BetRivers','BetOnline.ag','Pinnacle','theScore Bet','Bovada','Hard Rock Bet','ProphetX'
-        ];
-        let rows = [];
-        oddsData.forEach(player => {
-            if (!player.projection) return;
-            Object.entries(player.projection).forEach(([propKey, prop]) => {
-                if (!prop || !prop.books || prop.books.length === 0) return;
-                // Find PrizePicks book for this prop
-                const ppBook = prop.books.find(b => b.book && b.book.toLowerCase().includes('prizepicks'));
-                if (!ppBook) return;
-                const line = ppBook.value;
-                // Get all sharp books for this line
-                const sharpBooksForLine = prop.books.filter(b => sharpBooks.includes(b.book) && b.value === line);
-                if (sharpBooksForLine.length === 0) return;
-                // Calculate sharp probabilities (average of all sharp books)
-                let overProbs = sharpBooksForLine.map(b => impliedProb(b.overPrice)).filter(x => x !== '');
-                let underProbs = sharpBooksForLine.map(b => impliedProb(b.underPrice)).filter(x => x !== '');
-                let sharpOverProb = overProbs.length ? (overProbs.reduce((a,b) => a+b,0)/overProbs.length) : null;
-                let sharpUnderProb = underProbs.length ? (underProbs.reduce((a,b) => a+b,0)/underProbs.length) : null;
-                // Find best sharp odds (highest over, lowest under)
-                let bestOver = sharpBooksForLine.reduce((best, b) => (b.overPrice !== undefined && (best === null || b.overPrice > best.overPrice)) ? b : best, null);
-                let bestUnder = sharpBooksForLine.reduce((best, b) => (b.underPrice !== undefined && (best === null || b.underPrice < best.underPrice)) ? b : best, null);
-                // PrizePicks implied prob (fixed -119 odds for both sides)
-                let ppProb = impliedProb(-119);
-                // Add Over row
-                rows.push({
-                    player: player.name,
-                    stat: propLabel(propKey),
-                    ou: 'Over',
-                    line,
-                    sharpProb: sharpOverProb,
-                    ppOdds: -119,
-                    ppProb,
-                    bestSharpOdds: bestOver ? bestOver.overPrice : '',
-                    bestSharpBook: bestOver ? bestOver.book : '',
+                if (Object.keys(overBooks).length > 0) {
+                    EVBets.allRows.push({
+                        name: card.name,
+                        playerId: card.player_id,
+                        team: card.team,
+                        position,
+                        prop: card.prop,
+                        game: `${card.opponent} @ ${card.team}`,
+                        line,
+                        books: overBooks,
+                        hitRate,
+                        dvpRank,
+                        opponent: card.opponent,
+                        ou: 'Over'
+                    });
+                }
+
+                // Create row for UNDER with all books
+                const underBooks = {};
+                propOdds.books.forEach(book => {
+                    if (book.underPrice !== null && book.underPrice !== undefined) {
+                        underBooks[book.book] = {
+                            odds: book.underPrice,
+                            value: book.value
+                        };
+                    }
                 });
-                // Add Under row
-                rows.push({
-                    player: player.name,
-                    stat: propLabel(propKey),
-                    ou: 'Under',
-                    line,
-                    sharpProb: sharpUnderProb,
-                    ppOdds: -119,
-                    ppProb,
-                    bestSharpOdds: bestUnder ? bestUnder.underPrice : '',
-                    bestSharpBook: bestUnder ? bestUnder.book : '',
-                });
+                if (Object.keys(underBooks).length > 0) {
+                    EVBets.allRows.push({
+                        name: card.name,
+                        playerId: card.player_id,
+                        team: card.team,
+                        position,
+                        prop: card.prop,
+                        game: `${card.opponent} @ ${card.team}`,
+                        line,
+                        books: underBooks,
+                        hitRate,
+                        dvpRank,
+                        opponent: card.opponent,
+                        ou: 'Under'
+                    });
+                }
             });
+
+            // Sort by EV descending
+            EVBets.allRows.sort((a, b) => (b.ev || 0) - (a.ev || 0));
+            
+            console.log(`Cards processed: ${processedCount}`);
+            console.log(`Cards matched to odds: ${matchedCount}`);
+            console.log(`Cards with no prop odds: ${noPropOddsCount}`);
+            console.log(`Final rows created: ${EVBets.allRows.length}`);
+            if (EVBets.allRows.length > 0) {
+                console.log('Sample row:', EVBets.allRows[0]);
+            }
+
+            // Extract unique books for table headers
+            const uniqueBooks = new Set();
+            EVBets.allRows.forEach(row => {
+                if (row.books) {
+                    Object.keys(row.books).forEach(book => uniqueBooks.add(book));
+                }
+            });
+            EVBets.books = Array.from(uniqueBooks).sort();
+
+            renderPage();
+        }
+
+        // Render current page
+        function renderPage() {
+            const filtered = applyFilters();
+            const start = (EVBets.currentPage - 1) * EVBets.itemsPerPage;
+            const end = start + EVBets.itemsPerPage;
+            const pageRows = filtered.slice(start, end);
+
+            // Update header with book columns
+            const thead = document.getElementById('ev-head');
+            let headerHtml = `<tr>
+                <th></th>
+                <th>TEAM</th>
+                <th>PROP</th>
+                <th>GAME</th>
+                <th>O/U</th>
+                <th>FP</th>`;
+            
+            EVBets.books.forEach(book => {
+                headerHtml += `<th style="text-align:center;">${book}</th>`;
+            });
+            
+            headerHtml += `<th>HR L15</th>
+                <th>DVP</th>
+            </tr>`;
+            thead.innerHTML = headerHtml;
+
+            const tbody = document.getElementById('ev-tbody');
+            if (pageRows.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="' + (EVBets.books.length + 8) + '" class="error-message">No results found.</td></tr>';
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            tbody.innerHTML = pageRows.map(row => {
+                const img = getPlayerImage(row.playerId);
+                const teamLogo = getTeamLogo(row.team);
+
+                let rowHtml = `
+                    <tr>
+                        <td class="player-cell">
+                            ${img ? `<img src="${img}" class="player-img" onerror="this.style.display='none'" alt="${row.name}">` : ''}
+                            <a href="players-props/${row.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.html" style="color:#00ff7f;text-decoration:none;">${row.name}</a>
+                        </td>
+                        <td><img src="${teamLogo}" class="team-logo" alt="${row.team}"></td>
+                        <td class="prop-cell">${row.prop}</td>
+                        <td style="font-size:0.9em;color:#bbb;">${row.game}</td>
+                        <td style="font-weight:700;">${row.ou}</td>
+                        <td style="font-weight:700;color:#ffe066;">${row.line.toFixed(1)}</td>`;
+                
+                // Add columns for each book
+                EVBets.books.forEach(book => {
+                    if (row.books && row.books[book]) {
+                        const bookData = row.books[book];
+                        const odds = bookData.odds;
+                        const prob = impliedProb(odds);
+                        const ev = calcEV(row.hitRate, odds); // Use hit rate as true probability
+                        
+                        const oddsColor = odds > 0 ? 'odds-positive' : 'odds-negative';
+                        
+                        // Color code EV based on value
+                        let evBgColor = '#333';
+                        let evTextColor = '#aaa';
+                        if (ev > 10) {
+                            evBgColor = '#0a3a0a'; // Dark green
+                            evTextColor = '#00ff00'; // Bright green
+                        } else if (ev > 5) {
+                            evBgColor = '#1a4a1a'; // Medium green
+                            evTextColor = '#55ff55'; // Light green
+                        } else if (ev > 0) {
+                            evBgColor = '#2a5a2a'; // Light green
+                            evTextColor = '#88ff88'; // Pale green
+                        } else if (ev > -5) {
+                            evBgColor = '#4a3a1a'; // Orange
+                            evTextColor = '#ffaa00'; // Orange text
+                        } else {
+                            evBgColor = '#3a1a1a'; // Dark red
+                            evTextColor = '#ff6666'; // Light red
+                        }
+                        
+                        rowHtml += `<td style="text-align:center;">
+                            <div style="font-weight:700;color:#ffe066;">${bookData.value}</div>
+                            <div class="${oddsColor}" style="font-weight:700;">${odds}</div>
+                            <div class="prob-cell">${prob ? (prob * 100).toFixed(0) : 'N/A'}%</div>
+                            <div style="font-weight:700;background:${evBgColor};color:${evTextColor};padding:4px;border-radius:3px;border:1px solid ${evTextColor}50;">${ev ? ev.toFixed(1) : 'N/A'}</div>
+                        </td>`;
+                    } else {
+                        rowHtml += `<td style="text-align:center;color:#666;">N/A</td>`;
+                    }
+                });
+                
+                rowHtml += `<td class="hitrate-cell">${row.hitRate}%</td>
+                        <td class="hitrate-cell">${row.dvpRank || 'N/A'}</td>
+                    </tr>`;
+                
+                return rowHtml;
+            }).join('');
+
+            // Render pagination
+            const totalPages = Math.ceil(filtered.length / EVBets.itemsPerPage);
+            let paginationHtml = '';
+            if (totalPages > 1) {
+                if (EVBets.currentPage > 1) {
+                    paginationHtml += `<button onclick="EVBets.currentPage = 1; renderPage();">« First</button>`;
+                    paginationHtml += `<button onclick="EVBets.currentPage = ${EVBets.currentPage - 1}; renderPage();">‹ Prev</button>`;
+                }
+                for (let i = Math.max(1, EVBets.currentPage - 2); i <= Math.min(totalPages, EVBets.currentPage + 2); i++) {
+                    const active = i === EVBets.currentPage ? 'active' : '';
+                    paginationHtml += `<button class="${active}" onclick="EVBets.currentPage = ${i}; renderPage();">${i}</button>`;
+                }
+                if (EVBets.currentPage < totalPages) {
+                    paginationHtml += `<button onclick="EVBets.currentPage = ${EVBets.currentPage + 1}; renderPage();">Next ›</button>`;
+                    paginationHtml += `<button onclick="EVBets.currentPage = ${totalPages}; renderPage();">Last »</button>`;
+                }
+            }
+            document.getElementById('pagination').innerHTML = paginationHtml;
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const posFilter = document.getElementById('position-filter').value;
+            const propFilter = document.getElementById('prop-filter').value;
+            const gameFilter = document.getElementById('game-filter').value;
+            const ouFilter = document.getElementById('ou-filter').value;
+            const hitRateFilter = parseFloat(document.getElementById('hitrate-filter').value) || 0;
+            const bestEvFilter = document.getElementById('bestev-filter').value;
+            const searchFilter = document.getElementById('search-input').value.toLowerCase();
+
+            return EVBets.allRows.filter(row => {
+                if (posFilter && row.position !== posFilter) return false;
+                if (propFilter && row.prop !== propFilter) return false;
+                if (gameFilter && !row.game.includes(gameFilter)) return false;
+                if (ouFilter === 'over' && row.ou !== 'Over') return false;
+                if (ouFilter === 'under' && row.ou !== 'Under') return false;
+                if (hitRateFilter && row.hitRate < hitRateFilter) return false;
+                if (bestEvFilter === 'positive' && row.ev < 0) return false;
+                if (bestEvFilter === 'negative' && row.ev > 0) return false;
+                if (searchFilter && !row.name.toLowerCase().includes(searchFilter)) return false;
+                return true;
+            });
+        }
+
+        // Populate filter dropdowns
+        async function populateFilters() {
+            const posSet = new Set();
+            const propSet = new Set();
+            const gameSet = new Set();
+
+            EVBets.allRows.forEach(row => {
+                if (row.position) posSet.add(row.position);
+                if (row.prop) propSet.add(row.prop);
+                if (row.game) gameSet.add(row.game);
+            });
+
+            const posSelect = document.getElementById('position-filter');
+            posSelect.innerHTML = '<option value="">Select a Position</option>' +
+                Array.from(posSet).sort().map(p => `<option value="${p}">${p}</option>`).join('');
+
+            const propSelect = document.getElementById('prop-filter');
+            propSelect.innerHTML = '<option value="">Select a Prop</option>' +
+                Array.from(propSet).sort().map(p => `<option value="${p}">${p}</option>`).join('');
+
+            const gameSelect = document.getElementById('game-filter');
+            gameSelect.innerHTML = '<option value="">Select a Game</option>' +
+                Array.from(gameSet).sort().map(g => `<option value="${g}">${g}</option>`).join('');
+        }
+
+        // Event listeners
+        document.getElementById('position-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('prop-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('game-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('ou-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('hitrate-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('bestev-filter').addEventListener('change', () => { EVBets.currentPage = 1; renderPage(); });
+        document.getElementById('search-input').addEventListener('input', () => { EVBets.currentPage = 1; renderPage(); });
+
+        // Initialize
+        buildRows().then(() => {
+            populateFilters();
+            renderPage();
         });
-        // Sort by sharpProb descending
-        rows = rows.filter(r => r.sharpProb !== null).sort((a,b) => b.sharpProb - a.sharpProb);
-        // Render table
-        let tbody = '';
-        rows.forEach(row => {
-            let probColor = row.sharpProb >= 0.65 ? '#1aff00' : row.sharpProb >= 0.55 ? '#ffe066' : '#ff2d2d';
-            tbody += `<tr>`;
-            tbody += `<td class='player-col'>${row.player}</td>`;
-            tbody += `<td class='prop-col'>${row.stat}</td>`;
-            tbody += `<td>${row.ou}</td>`;
-            tbody += `<td>${row.line}</td>`;
-            tbody += `<td style='font-weight:bold;background:${probColor};color:#181f1b;'>${row.sharpProb !== null ? (row.sharpProb*100).toFixed(2)+'%' : ''}</td>`;
-            tbody += `<td>${row.ppOdds} <br><span style='color:#00ff7f;font-size:0.95em;'>${(row.ppProb*100).toFixed(1)}%</span></td>`;
-            tbody += `<td>${row.bestSharpOdds !== '' ? row.bestSharpOdds : ''}</td>`;
-            tbody += `<td>${row.bestSharpBook !== '' ? row.bestSharpBook : ''}</td>`;
-            tbody += `</tr>`;
-        });
-        document.getElementById('optimizer-tbody').innerHTML = tbody;
-    }
-    renderPrizePicksOptimizer();
     </script>
 </body>
 </html>

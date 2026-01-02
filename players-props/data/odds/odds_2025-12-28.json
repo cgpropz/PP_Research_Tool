@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "generated_at": "2025-12-28T21:48:12.023421",
+    "source": "the-odds-api",
+    "count": 2
+  },
+  "events": [
+    {
+      "id": "81f37d4274076247e0a49787f852af4d",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-29T02:11:00Z",
+      "home_team": "Los Angeles Clippers",
+      "away_team": "Detroit Pistons",
+      "logos": {
+        "home": "assets/team-logos/lac.png",
+        "away": "assets/team-logos/det.png"
+      },
+      "best_h2h": {
+        "home": 130,
+        "away": 146
+      },
+      "best_spread": {
+        "home": {
+          "point": -3.5,
+          "price": -110
+        },
+        "away": {
+          "point": 3.5,
+          "price": -118
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "acc8dfaa22df3823017412f5b8f16239",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-29T02:41:00Z",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Sacramento Kings",
+      "logos": {
+        "home": "assets/team-logos/lal.png",
+        "away": "assets/team-logos/sac.png"
+      },
+      "best_h2h": {
+        "home": -450,
+        "away": 550
+      },
+      "best_spread": {
+        "home": {
+          "point": -10.5,
+          "price": -115
+        },
+        "away": {
+          "point": 10.5,
+          "price": -115
+        }
+      },
+      "bookmakers_count": 9
+    }
+  ]
+}

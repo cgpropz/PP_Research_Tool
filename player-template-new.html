@@ -236,10 +236,9 @@
       minutesEl.className = cls;
       minutesEl.style.display = 'block';
 
-      // --- Spread badge logic ---
+      // --- Spread badge logic with detailed logging ---
       const spreadEl = document.getElementById('spreadBadge');
-      if (!spreadEl) return;
-      // Helper for color class
+      if (!spreadEl) { console.error('[SpreadBadge] Element not found'); return; }
       function spreadClassByValue(val) {
         if (typeof val !== 'number') val = Number(val);
         if (isNaN(val)) return '';
@@ -247,51 +246,63 @@
         return 'spread-green';
       }
       // Fetch odds and show spread for opponent
-      fetch('../data/odds/latest.json').then(r => r.ok ? r.json() : { events: [] }).then(oddsData => {
-        const TEAM_ABBR_TO_FULL = {
-          'ATL': 'Atlanta Hawks', 'BOS': 'Boston Celtics', 'BKN': 'Brooklyn Nets', 'BRK': 'Brooklyn Nets',
-          'CHA': 'Charlotte Hornets', 'CHO': 'Charlotte Hornets', 'CHI': 'Chicago Bulls', 'CLE': 'Cleveland Cavaliers',
-          'DAL': 'Dallas Mavericks', 'DEN': 'Denver Nuggets', 'DET': 'Detroit Pistons', 'GSW': 'Golden State Warriors',
-          'HOU': 'Houston Rockets', 'IND': 'Indiana Pacers', 'LAC': 'Los Angeles Clippers', 'LAL': 'Los Angeles Lakers',
-          'MEM': 'Memphis Grizzlies', 'MIA': 'Miami Heat', 'MIL': 'Milwaukee Bucks', 'MIN': 'Minnesota Timberwolves',
-          'NOP': 'New Orleans Pelicans', 'NO': 'New Orleans Pelicans', 'NYK': 'New York Knicks', 'NY': 'New York Knicks',
-          'OKC': 'Oklahoma City Thunder', 'ORL': 'Orlando Magic', 'PHI': 'Philadelphia 76ers', 'PHX': 'Phoenix Suns',
-          'PHO': 'Phoenix Suns', 'POR': 'Portland Trail Blazers', 'SAC': 'Sacramento Kings', 'SAS': 'San Antonio Spurs',
-          'TOR': 'Toronto Raptors', 'UTA': 'Utah Jazz', 'UTH': 'Utah Jazz', 'WAS': 'Washington Wizards'
-        };
-        // Try to get opponent from record or template
-        let oppAbbr = record?.Opp || record?.opponent || record?.OppTeam || record?.Versus || record?.versus || record?.Opp || '{{OPPONENT}}';
-        oppAbbr = String(oppAbbr).toUpperCase();
-        const fullName = TEAM_ABBR_TO_FULL[oppAbbr] || oppAbbr;
-        let spread = null;
-        if (oddsData && Array.isArray(oddsData.events)) {
-          for (const event of oddsData.events) {
-            if (event.home_team === fullName && event.best_spread && event.best_spread.home && typeof event.best_spread.home.point === 'number') {
-              spread = event.best_spread.home.point;
-              break;
+      fetch('../data/odds/latest.json')
+        .then(r => {
+          console.log('[SpreadBadge] Fetching odds:', r);
+          return r.ok ? r.json() : { events: [] };
+        })
+        .then(oddsData => {
+          console.log('[SpreadBadge] Odds data:', oddsData);
+          const TEAM_ABBR_TO_FULL = {
+            'ATL': 'Atlanta Hawks', 'BOS': 'Boston Celtics', 'BKN': 'Brooklyn Nets', 'BRK': 'Brooklyn Nets',
+            'CHA': 'Charlotte Hornets', 'CHO': 'Charlotte Hornets', 'CHI': 'Chicago Bulls', 'CLE': 'Cleveland Cavaliers',
+            'DAL': 'Dallas Mavericks', 'DEN': 'Denver Nuggets', 'DET': 'Detroit Pistons', 'GSW': 'Golden State Warriors',
+            'HOU': 'Houston Rockets', 'IND': 'Indiana Pacers', 'LAC': 'Los Angeles Clippers', 'LAL': 'Los Angeles Lakers',
+            'MEM': 'Memphis Grizzlies', 'MIA': 'Miami Heat', 'MIL': 'Milwaukee Bucks', 'MIN': 'Minnesota Timberwolves',
+            'NOP': 'New Orleans Pelicans', 'NO': 'New Orleans Pelicans', 'NYK': 'New York Knicks', 'NY': 'New York Knicks',
+            'OKC': 'Oklahoma City Thunder', 'ORL': 'Orlando Magic', 'PHI': 'Philadelphia 76ers', 'PHX': 'Phoenix Suns',
+            'PHO': 'Phoenix Suns', 'POR': 'Portland Trail Blazers', 'SAC': 'Sacramento Kings', 'SAS': 'San Antonio Spurs',
+            'TOR': 'Toronto Raptors', 'UTA': 'Utah Jazz', 'UTH': 'Utah Jazz', 'WAS': 'Washington Wizards'
+          };
+          let oppAbbr = record?.Opp || record?.opponent || record?.OppTeam || record?.Versus || record?.versus || record?.Opp || '{{OPPONENT}}';
+          oppAbbr = String(oppAbbr).toUpperCase();
+          const fullName = TEAM_ABBR_TO_FULL[oppAbbr] || oppAbbr;
+          console.log('[SpreadBadge] Opponent abbr:', oppAbbr, '| Full name:', fullName);
+          let spread = null;
+          if (oddsData && Array.isArray(oddsData.events)) {
+            for (const event of oddsData.events) {
+              if (event.home_team === fullName && event.best_spread && event.best_spread.home && typeof event.best_spread.home.point === 'number') {
+                spread = event.best_spread.home.point;
+                break;
+              }
+              if (event.away_team === fullName && event.best_spread && event.best_spread.away && typeof event.best_spread.away.point === 'number') {
+                spread = event.best_spread.away.point;
+                break;
+              }
             }
-            if (event.away_team === fullName && event.best_spread && event.best_spread.away && typeof event.best_spread.away.point === 'number') {
-              spread = event.best_spread.away.point;
-              break;
-            }
+          } else {
+            console.warn('[SpreadBadge] Odds data missing or malformed:', oddsData);
           }
-        }
-        if (spread !== null && spread !== undefined && spread !== '') {
-          const spreadVal = Number(spread);
-          const sign = spreadVal > 0 ? '+' : '';
-          const spreadClass = spreadClassByValue(spreadVal);
-          spreadEl.textContent = `Spread: ${sign}${spreadVal}`;
-          spreadEl.className = `spread-badge ${spreadClass}`;
-          spreadEl.style.display = 'block';
-        } else {
-          spreadEl.style.display = 'none';
-          spreadEl.textContent = '';
-          spreadEl.className = 'spread-badge';
-        }
-      }).catch(() => {
-        const spreadEl = document.getElementById('spreadBadge');
-        if (spreadEl) { spreadEl.style.display = 'none'; spreadEl.textContent = ''; spreadEl.className = 'spread-badge'; }
-      });
+          if (spread !== null && spread !== undefined && spread !== '') {
+            const spreadVal = Number(spread);
+            const sign = spreadVal > 0 ? '+' : '';
+            const spreadClass = spreadClassByValue(spreadVal);
+            spreadEl.textContent = `Spread: ${sign}${spreadVal}`;
+            spreadEl.className = `spread-badge ${spreadClass}`;
+            spreadEl.style.display = 'block';
+            console.log('[SpreadBadge] Spread found:', spreadVal);
+          } else {
+            spreadEl.style.display = 'none';
+            spreadEl.textContent = '';
+            spreadEl.className = 'spread-badge';
+            console.warn('[SpreadBadge] No spread found for team:', fullName);
+          }
+        })
+        .catch((err) => {
+          console.error('[SpreadBadge] Error fetching or processing odds:', err);
+          const spreadEl = document.getElementById('spreadBadge');
+          if (spreadEl) { spreadEl.style.display = 'none'; spreadEl.textContent = ''; spreadEl.className = 'spread-badge'; }
+        });
     }
 
     function maxRange(){

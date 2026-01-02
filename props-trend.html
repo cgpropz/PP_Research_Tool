@@ -1,192 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+        function renderBarChart(mode) {
     <meta charset="UTF-8">
     <title>NBA Props Trend</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            const max = Math.max(...vals, 1);
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
-                                    .hit-rate-chart {
-                                        position: absolute;
-                                        bottom: 10px;
-                                        right: 10px;
-                                        width: 80px;
-                                        height: 80px;
-                                        z-index: 5;
-                                        background: transparent;
-                                    }
-                        .spreads-badge {
-                            position: absolute;
-                            top: 10px;
-                            right: 10px;
-                            font-size: 1.01rem;
-                            font-weight: 800;
-                            border-radius: 8px;
-                            padding: 4px 14px;
-                            box-shadow: 0 0 10px 2px #00ff7f99;
-                            z-index: 10;
-                            border: 2px solid #8000ff;
-                            letter-spacing: 0.5px;
-                            text-shadow: 0 0 4px #00ff7f99;
-                            background: #222b22;
-                            color: #fff;
-                            transition: background 0.2s, color 0.2s;
-                        }
-            body {
-                font-family: 'Inter', Arial, sans-serif;
-                background: #101a13;
-                margin: 0;
-                color: #fff;
-            }
-            .trend-container {
-                max-width: 1200px;
-                margin: 40px auto;
-                background: #181f1b;
-                border-radius: 18px;
-                box-shadow: 0 0 32px 8px #7700ff44, 0 2px 16px rgba(0,0,0,0.18);
-                padding: 32px 24px;
-            }
-            h1 {
-                text-align: center;
-                margin-bottom: 32px;
-                font-size: 2.8rem;
-                color: #ffffff;
-                text-shadow: 0 0 10px #e5ff0076;
-                font-family: 'Bebas Neue', 'Inter', Arial, sans-serif;
-                font-weight: 700;
-                letter-spacing: 2px;
-            }
-            .cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 28px;
-                margin-top: 24px;
-            }
-            .player-card {
-                
-                border-radius: 16px;
-                box-shadow: 0 0 18px 2px #7700ff44, 0 2px 8px #000a;
-                padding: 24px 20px 20px 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                position: relative;
-                transition: box-shadow 0.2s;
-            }
-            .player-card:hover {
-                box-shadow: 0 0 32px 8px #7700ff44, 0 2px 16px #000a;
-            }
-            .player-name {
-                font-size: 1.2rem;
-                font-weight: 700;
-                color: #fff;
-                margin-bottom: 8px;
-                letter-spacing: 0.5px;
-                width: 100%;
-                text-align: center;
-                display: block;
-                text-decoration: none;
-            }
-            .player-link {
-                color: #ffffff;
-                text-decoration: none;
-                transition: color 0.2s;
-            }
-            .prop-type {
-                font-size: 1.3rem;
-                font-weight: 700;
-                color: #fff;
-                background: linear-gradient(90deg, #0000007a 0%, #397c58ca 100%);
-                border-radius: 10px;
-                padding: 7px 0;
-                box-shadow: 0 0 16px 2px #8000ff55;
-                margin: 12px 0 14px 0;
-                letter-spacing: 1.2px;
-                text-align: center;
-                display: block;
-                width: 100%;
-                border: 2px solid #00ff7f;
-                text-shadow: 0 0 8px #00ff7f99, 0 0 2px #8000ff;
-                transition: background 0.2s;
-            }
-            .prop-details {
-
-                display: flex;
-                justify-content: space-between;
-                gap: 18px;
-                margin-bottom: 10px;
-                width: 100%;
-            }
-         
-            .prop-details-align {
-                display: flex;
-                justify-content: space-between;
-                gap: 18px;
-                margin-bottom: 10px;
-                width: 100%;
-            }
-            .prop-block {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                min-width: 90px;
-                background: #181f2b;
-                border-radius: 8px;
-                padding: 6px 0 4px 0;
-                box-shadow: 0 0 8px 1px #8000ff33;
-                margin: 0 4px;
-            }
-            .prop-label {
-                color: #00ff7f;
-                font-size: 1.01rem;
-                font-weight: 700;
-                margin-bottom: 2px;
-                letter-spacing: 0.5px;
-                text-shadow: 0 0 6px #00ff7f99;
-                text-transform: uppercase;
-            }
-            .prop-value {
-                color: #fff;
-                font-size: 1.13rem;
-                font-weight: 700;
-                text-shadow: 0 0 4px #8000ff99;
-            }
-            .minutes-badge {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                background: #1aff00;
-                color: #181f1b;
-                font-size: 1.01rem;
-                font-weight: 800;
-                border-radius: 8px;
-                padding: 4px 14px;
-                box-shadow: 0 0 10px 2px #00ff7f99;
-                z-index: 10;
-                border: 2px solid #8000ff;
-                letter-spacing: 0.5px;
-                text-shadow: 0 0 4px #00ff7f99;
-            }
-            .player-card {
-                position: relative;
-            }
-            .score {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                min-width: 90px;
-                background: #181f2b;
-                border-radius: 8px;
-                padding: 6px 0 4px 0;
-                box-shadow: 0 0 8px 1px #8000ff33;
-                margin: 0 4px;
-                font-weight: 700;
-                color: #00ff7f;
-            }
+        /* ────────────────────────────────────────
+           Enhanced Hit Rate Panel Styles
+        ───────────────────────────────────────── */
+        .hitrate-panel {
+            background: #181f1b;
+            border-radius: 18px;
+            padding: 18px 16px 12px 16px;
+            margin: 0 0 8px 0;
+            box-shadow: 0 2px 12px #00ff7f22;
+        }
+        .hitrate-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25em;
+            color: #00ff7f;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .progress-blocks {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+        .progress-bar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #232b23;
+            margin-bottom: 4px;
+            position: relative;
+            box-shadow: 0 0 0 2px #00ff7f22;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #181f1b;
+            overflow: hidden;
+        }
+        .progress-bar::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0; top: 0; bottom: 0; right: 0;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 0.18;
+        }
+        .progress-label {
+            font-size: 0.95em;
+            color: #ffe066;
+            margin-bottom: 2px;
+        }
+        .progress-value {
+            font-size: 1.1em;
+            color: #fff;
+            font-weight: 700;
+        }
+        .mini-bar-chart {
+            margin-top: 8px;
+        }
+        .bars-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 38px;
+            margin-bottom: 4px;
+        }
+        .bar {
+            width: 14px;
+            border-radius: 6px 6px 0 0;
+            background: #ffe066;
+            transition: background 0.2s, height 0.2s;
+            height: calc(var(--height, 0) * 1%);
+            box-shadow: 0 2px 8px #00ff7f22;
+        }
+        .dates {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #aaa;
+            margin-top: 2px;
+        }
+        .controls-row {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        .input-base {
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 2px solid #00ff7f;
+            background: #232b23;
+            color: #00ff7f;
+            font-size: 1em;
+            outline: none;
+            box-shadow: 0 0 0 2px #00ff7f22;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .select-base {
+            min-width: 180px;
+            max-width: 220px;
+            padding: 12px 10px;
+            border-radius: 10px;
+            border: 2px solid #00ff7f;
+            background: #232b23;
+            color: #00ff7f;
+            font-size: 1.1em;
+            outline: none;
+            cursor: pointer;
+            vertical-align: middle;
+            box-shadow: 0 0 0 2px #00ff7f22;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .odds-btn {
+            margin-left: 18px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 2px solid #00ff7f;
+            background: #181f1b;
+            color: #00ff7f;
+            font-size: 1.1em;
+            outline: none;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: background 0.2s, color 0.2s;
+        }
+        .odds-btn:focus, .input-base:focus, .select-base:focus {
+            outline: 2px solid #00ff7f;
+            box-shadow: 0 0 8px #00ff7f;
+        }
+        #search-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: #181f2b;
+            border: 2px solid #12b42d99;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 0 16px 2px #7700ff44;
+            transition: all 0.2s;
+            letter-spacing: 0.5px;
+        }
+        #search-input:focus {
+            outline: none;
+            border-color: #00ff7f;
+            box-shadow: 0 0 24px 4px #00ff7f66;
+            background: #1e2a24;
+        }
+        #search-input::placeholder {
+            color: #00ff7f88;
+            opacity: 1;
+        }
+        #sort-select {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: #181f2b;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 0 16px 2px #7700ff44;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 15px;
+        }
+        #sort-select:focus {
+            outline: none;
+            border-color: #00ff7f;
+            box-shadow: 0 0 24px 4px #00ff7f66;
+        }
+        #sort-select option {
+            background: #181f2b;
+            color: #fff;
+        }
+        .search-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
+        .trend-container {
+            width: 98vw;
+            max-width: 1800px;
+            min-height: 90vh;
+            margin: 24px auto;
+            background: #181f1b;
+            border-radius: 18px;
+            box-shadow: 0 0 16px 2px #00ff7f33, 0 2px 12px rgba(0,0,0,0.15);
+            padding: 40px 2vw 40px 2vw;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 36px 24px;
+            margin-top: 28px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .player-name {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: 0.7px;
+            width: 100%;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            text-shadow: 0 0 8px #00ff7f33;
+        }
+        .player-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+        .player-link:hover, .player-link:focus {
+            color: #00ff7f;
+            text-decoration: underline;
+            outline: none;
+        }
         .badges-row {
             display: flex;
             justify-content: center;
@@ -197,381 +252,1181 @@
         }
         .team-badge, .opp-badge {
             font-weight: bold;
-            border-radius: 6px;
-            padding: 0.1em 0.7em;
-            font-size: 0.95em;
+            border-radius: 7px;
+            padding: 3px 12px;
+            font-size: 1rem;
             margin-right: 0.2em;
             margin-bottom: 0.1em;
             display: inline-block;
+            background: #222;
+            color: #f7f7f7;
+            min-width: 70px;
+            text-align: center;
         }
-        .search-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-}
+        .position-badge {
+            font-weight: bold;
+            border-radius: 7px;
+            padding: 3px 12px;
+            font-size: 1rem;
+            margin-right: 0.2em;
+            margin-bottom: 0.1em;
+            display: inline-block;
+            background: #8000ff;
+            color: #fff;
+            min-width: 40px;
+            text-align: center;
+        }
+        .spreads-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.01rem;
+            font-weight: 800;
+            border-radius: 8px;
+            padding: 4px 14px;
+            box-shadow: 0 0 10px 2px #00ff7f99;
+            z-index: 10;
+            border: 2px solid #8000ff;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 4px #00ff7f99;
+            background: #222b22;
+            color: #f7f7f7;
+            transition: background 0.2s, color 0.2s;
+        }
+        .minutes-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #1aff00;
+            color: #181f1b;
+            font-size: 1rem;
+            font-weight: 800;
+            border-radius: 8px;
+            padding: 4px 14px;
+            box-shadow: 0 0 10px 2px #00ff7f99;
+            z-index: 10;
+            border: 2px solid #8000ff;
+            letter-spacing: 0.5px;
+            text-shadow: none;
+            min-width: 70px;
+            text-align: center;
+        }
+        .prop-type {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #00ff7f;
+            background: linear-gradient(90deg, #000000e0 0%, #397c58e0 100%);
+            border-radius: 10px;
+            padding: 9px 0;
+            box-shadow: 0 0 16px 2px #8000ff55;
+            margin: 14px 0 16px 0;
+            letter-spacing: 1.3px;
+            text-align: center;
+            display: block;
+            width: 100%;
+            border: 2px solid #00ff7f;
+            text-shadow: 0 0 8px #00ff7f55, 0 0 2px #8000ff;
+            transition: background 0.2s;
+        }
+        .prop-details-align {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .prop-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 90px;
+            background: #181f2b;
+            border-radius: 8px;
+            padding: 6px 0 4px 0;
+            box-shadow: 0 0 8px 1px #8000ff33;
+            margin: 0 4px;
+        }
+        .prop-label {
+            color: #00ff7f;
+            font-size: 1.01rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 6px #00ff7f99;
+            text-transform: uppercase;
+        }
+        .prop-value {
+            color: #fff;
+            font-size: 1.13rem;
+            font-weight: 700;
+            text-shadow: 0 0 4px #8000ff99;
+        }
+        .score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            min-width: 90px;
+            background: #181f2b;
+            border-radius: 8px;
+            padding: 6px 0 4px 0;
+            box-shadow: 0 0 8px 1px #8000ff33;
+            margin: 0 4px;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #101a13;
+            margin: 0;
+            color: #fff;
+            font-size: 1rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 2.8rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #e5ff0076;
+            font-family: 'Bebas Neue', 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .card-img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background: #181f1b;
+            display: block;
+            margin-bottom: 0;
+        }
+        .loading-message {
+            color: #00ff7f;
+            font-weight: 700;
+            padding: 24px;
+            text-align: center;
+        }
+        .error-message {
+            color: #ff2d2d;
+            font-weight: 700;
+            padding: 24px;
+            text-align: center;
+        }
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px; width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
 
-#search-input {
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: #181f2b;
-    border: 2px solid #8000ff;
-    border-radius: 12px;
-    color: #fff;
-    box-shadow: 0 0 16px 2px #7700ff44;
-    transition: all 0.2s;
-    letter-spacing: 0.5px;
-}
+        /* ────────────────────────────────────────
+           NEW: Carousel for player cards (two-panel swipe)
+        ───────────────────────────────────────── */
+        .player-card {
+                        box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            height: 600px; /* Increased height for full chart visibility */
+            min-width: 420px;
+            max-width: 500px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #181f1b 70%, #1a2e22 100%);
+            box-shadow: 0 0 8px 1px #00ff7f22, 0 2px 6px #000a;
+            border: 1.5px solid rgba(0,255,127,0.18);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .player-card:hover {
+            box-shadow: 0 0 16px 4px #00ff7f44, 0 2px 12px #000a;
+        }
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 15;
+            pointer-events: none;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff7f44;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            background: #00ff7f;
+            transform: scale(1.4);
+            box-shadow: 0 0 8px #00ff7f88;
+        }
+        .carousel-scroll {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            touch-action: pan-x;
+        }
+        .carousel-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-panel {
+            min-width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .hitrate-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a2e22 30%, #181f1b 100%);
+        }
+        .hitrate-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #00ff7f;
+            margin-bottom: 24px;
+            text-align: center;
+            text-shadow: 0 0 8px #00ff7f44;
+        }
+        .progress-blocks {
+            display: flex;
+            gap: 14px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 28px;
+        }
+        .progress-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 62px;
+            background: #0f1a14;
+            border: 2px solid #00ff7f33;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #00ff7f, #33ff99);
+            width: var(--progress, 0%);
+            transition: width 0.6s ease;
+        }
+        .progress-label {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #00ff7f;
+        }
+        .progress-value {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: white;
+            margin-top: 2px;
+        }
+        .mini-bar-chart {
+            width: 100%;
+            max-width: 380px;
+        }
+        .bars-container {
+            display: flex;
+            gap: 8px;
+            height: 110px;
+            align-items: flex-end;
+            padding: 0 4px;
+            width: 100%;
+            justify-content: center;
+        }
+        .bar {
+            flex: 1;
+            height: calc(var(--height, 0) * 1%);
+            background: linear-gradient(to top, #00ff7f, #66ffaa);
+            border-radius: 6px 6px 0 0;
+            min-width: 18px;
+            max-width: 32px;
+            position: relative;
+        }
+        .bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.82rem;
+            color: #00ff7f;
+            font-weight: 600;
+        }
+        .dates {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            font-size: 0.86rem;
+            color: #00ff7f88;
+            letter-spacing: 0.4px;
+            gap: 1px;
+            flex-wrap: wrap;
+        }
+            .dates span {
+                min-width: 28px;
+                text-align: center;
+                white-space: nowrap;
+                font-size: 0.82em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transform: rotate(-28deg);
+                display: inline-block;
+            }
+        .bars-container {
+            margin-bottom: 6px;
+        }
+        .hitrate-toggle {
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 2px 8px 2px 8px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .hitrate-toggle.active, .hitrate-toggle:focus {
+            background: #00ff7f33;
+            outline: 2px solid #00ff7f;
+        }
 
-#search-input:focus {
-    outline: none;
-    border-color: #00ff7f;
-    box-shadow: 0 0 24px 4px #00ff7f66;
-    background: #1e2a24;
-}
-
-#search-input::placeholder {
-    color: #00ff7f88;
-    opacity: 1;
-}
-.controls-row {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-#sort-select {
-    font-size: 1.1rem;
-    font-weight: 700;
-    background: #181f2b;
-    border-radius: 12px;
-    color: #fff;
-    box-shadow: 0 0 16px 2px #7700ff44;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-    text-align: center;
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 15r0px;
-      
-}
-
-#sort-select:focus {
-    outline: none;
-    border-color: #00ff7f;
-    box-shadow: 0 0 24px 4px #00ff7f66;
-}
-
-#sort-select option {
-    background: #181f2b;
-    color: #fff;
-}
-        </style>
+        @media (max-width: 700px) {
+            .trend-container {
+                width: 100vw;
+                max-width: 100vw;
+                min-height: 90vh;
+                padding: 8px 0 32px 0;
+                margin: 0;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-top: 12px;
+            }
+            .player-card {
+                padding: 0;
+                font-size: 0.97rem;
+                height: 650px; /* even taller on mobile */
+                min-width: 340px;
+            }
+            .player-name {
+                font-size: 1.1rem;
+            }
+            .prop-type {
+                font-size: 1.05rem;
+                padding: 7px 0;
+            }
+            .controls-row {
+                gap: 10px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="trend-container">
-        <h1>NBA PrizePicks Edge🏀🔥</h1>
-        <div class="search-container">
-            <input type="text"
-                   id="search-input"
-                   placeholder="Search player..."
-                   autocomplete="off"
-            />
-        <div> <select id="sort-select">
-                <option value="score-desc">Best Score First 🔥</option>
-                <option value="score-asc">Worst Score First</option>
-                <option value="projection-desc">Highest Projection</option>
-                <option value="projection-asc">Lowest Projection</option>
-                <option value="line-desc">Highest Line</option>
-                <option value="line-asc">Lowest Line</option>
-                <option value="minutes-desc">Most Minutes</option>
-                <option value="minutes-asc">Fewest Minutes</option>
-        </select>
-        <button id="oddscreen-btn" style="margin-left:18px;padding:12px 18px;border-radius:10px;border:2px solid #00ff7f;background:#181f1b;color:#00ff7f;font-size:1.1em;outline:none;cursor:pointer;vertical-align:middle;">Odds Screen</button>
-    </div>
-    <div/>    
-    </div>
-        <div class="cards" id="trend-cards">
-            <!-- Player cards will be injected here -->
-        </div>
-    </div>
+    <main class="trend-container" aria-label="NBA Props Trend Main Content">
+        <h1 id="main-title">NBA PrizePicks Edge🏀🔥</h1>
+        <section class="search-container" aria-label="Filters and Search">
+            <form class="controls-row" role="search" aria-label="Player search and filters" onsubmit="return false;">
+                <label for="search-input" class="visually-hidden">Search player</label>
+                <input type="text" id="search-input" placeholder="Search player..." autocomplete="off" aria-label="Search player" class="input-base" style="flex:1 1 220px;min-width:180px;max-width:320px;"/>
+                <label for="min-minutes" style="color:#00ff7f;font-weight:700;">Min Minutes:</label>
+                <input type="number" id="min-minutes" min="0" max="48" value="30" aria-label="Minimum Minutes" class="input-base" style="width:70px;" />
+                <label for="prop-type-filter" class="visually-hidden">Prop Type</label>
+                <select id="prop-type-filter" aria-label="Prop Type Filter" class="select-base"></select>
+                <label for="sort-select" class="visually-hidden">Sort By</label>
+                <select id="sort-select" aria-label="Sort By" class="select-base">
+                    <option value="score-desc">Best Score🔥</option>
+                    <option value="score-asc">Worst Score</option>
+                    <option value="projection-desc">Highest Projection</option>
+                    <option value="projection-asc">Lowest Projection</option>
+                    <option value="line-desc">Highest Line</option>
+                    <option value="line-asc">Lowest Line</option>
+                    <option value="minutes-desc">Most Minutes</option>
+                    <option value="minutes-asc">Fewest Minutes</option>
+                </select>
+                <label for="matchup-filter" class="visually-hidden">Matchup Filter</label>
+                <select id="matchup-filter" aria-label="Matchup Filter" class="select-base">
+                    <option value="all">All Games</option>
+                </select>
+                <label for="hit-rate-filter" style="color:#00ff7f;font-weight:700;">Hit Rate:</label>
+                <select id="hit-rate-filter" aria-label="Hit Rate Filter" class="select-base">
+                    <option value="all" selected>All</option>
+                    <option value="80">80%+</option>
+                    <option value="70">70%+</option>
+                    <option value="60">60%+</option>
+                    <option value="40">40%+</option>
+                    <option value="miss">Misses Only</option>
+                </select>
+                <button id="oddscreen-btn" aria-label="Go to Odds Screen" class="odds-btn">Odds Screen</button>
+            </form>
+        </section>
+        <section aria-label="Player Cards">
+            <div class="cards" id="trend-cards" role="list">
+                <!-- Player cards will be injected here -->
+            </div>
+        </section>
+    </main>
+
     <script>
-            // NBA team color codes (main color, text color)
-            const TEAM_COLORS = {
-                ATL: {bg: '#E03A3E', text: '#fff'}, // Hawks: red/white
-                BOS: {bg: '#007A33', text: '#fff'}, // Celtics: green/white
-                BKN: {bg: '#000000', text: '#fff'}, // Nets: black/white
-                CHA: {bg: '#1D1160', text: '#fff'}, // Hornets: purple/white
-                CHI: {bg: '#CE1141', text: '#fff'}, // Bulls: red/white
-                CLE: {bg: '#6F263D', text: '#fff'}, // Cavs: wine/white
-                DAL: {bg: '#00538C', text: '#fff'}, // Mavs: blue/white
-                DEN: {bg: '#0E2240', text: '#fff'}, // Nuggets: navy/white
-                DET: {bg: '#C8102E', text: '#fff'}, // Pistons: red/white
-                GSW: {bg: '#1D428A', text: '#FFC72C'}, // Warriors: blue/yellow
-                HOU: {bg: '#CE1141', text: '#fff'}, // Rockets: red/white
-                IND: {bg: '#002D62', text: '#FDBB30'}, // Pacers: navy/yellow
-                LAC: {bg: '#C8102E', text: '#fff'}, // Clippers: red/white
-                LAL: {bg: '#552583', text: '#FDB927'}, // Lakers: purple/gold
-                MEM: {bg: '#5D76A9', text: '#fff'}, // Grizzlies: blue/white
-                MIA: {bg: '#98002E', text: '#fff'}, // Heat: red/white
-                MIL: {bg: '#00471B', text: '#fff'}, // Bucks: green/white
-                MIN: {bg: '#0C2340', text: '#fff'}, // Wolves: navy/white
-                NOP: {bg: '#0C2340', text: '#fff'}, // Pelicans: navy/white
-                NYK: {bg: '#006BB6', text: '#fff'}, // Knicks: blue/white
-                OKC: {bg: '#007AC1', text: '#fff'}, // Thunder: blue/white
-                ORL: {bg: '#0077C0', text: '#fff'}, // Magic: blue/white
-                PHI: {bg: '#006BB6', text: '#fff'}, // Sixers: blue/white
-                PHX: {bg: '#1D1160', text: '#fff'}, // Suns: purple/white
-                POR: {bg: '#E03A3E', text: '#fff'}, // Blazers: red/white
-                SAC: {bg: '#5A2D81', text: '#fff'}, // Kings: purple/white
-                SAS: {bg: '#C4CED4', text: '#000'}, // Spurs: silver/black
-                TOR: {bg: '#CE1141', text: '#fff'}, // Raptors: red/white
-                UTA: {bg: '#002B5C', text: '#fff'}, // Jazz: navy/white
-                WAS: {bg: '#002B5C', text: '#fff'}  // Wizards: navy/white
-            };
-    // Paths to JSON files
-    const ppJsonPath = 'PLAYER_UI_CARDS_PERFECT.json'; // Update if needed
-    const playerCardsPath = 'PLAYER_UI_CARDS_PERFECT.json';
-
-    async function fetchJson(path) {
-        const res = await fetch(path);
-        return res.json();
-    }
-
-    function getPlayerProjection(playerName, playerCards) {
-        // Find projection for player (by name or id)
-        const card = playerCards.find(p => p.Name === playerName);
-        return card ? card.Projection : null;
-    }
-
-    async function renderTrendCards() {
-        // (Highcharts/gamelogs removed)
-        // Map team abbreviations to full names for spread lookup
-        const teamNameMap = {
-            ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets', CHI: 'Chicago Bulls', CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets', DET: 'Detroit Pistons', GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers', LAC: 'Los Angeles Clippers', LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat', MIL: 'Milwaukee Bucks', MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks', OKC: 'Oklahoma City Thunder', ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns', POR: 'Portland Trail Blazers', SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors', UTA: 'Utah Jazz', WAS: 'Washington Wizards'
-        };
-        // Load PP JSON (for prop lines and player list)
-        const ppData = await fetchJson(ppJsonPath);
-        console.log('Loaded PP Data:', ppData);
-
-        // Build a name-to-ID map from ppData
-        const nameToId = {};
-        ppData.forEach(pp => {
-            if (pp.name && (pp.id || pp.player_id)) {
-                nameToId[pp.name] = pp.id || pp.player_id;
-            }
+    // Load player gamelogs for date mapping
+    window._playerGamelogs = {};
+    fetch('Player_Gamelogs25.json').then(r => r.json()).then(data => {
+        // Group by player name
+        data.forEach(g => {
+            if (!window._playerGamelogs[g.PLAYER]) window._playerGamelogs[g.PLAYER] = [];
+            window._playerGamelogs[g.PLAYER].push(g);
         });
+        // Sort each player's logs by date ascending
+        Object.values(window._playerGamelogs).forEach(arr => arr.sort((a,b) => new Date(a['GAME DATE']) - new Date(b['GAME DATE'])));
+    });
+        // Encapsulate all logic in NBAPropsApp namespace
+        const NBAPropsApp = {};
 
-        // Load odds JSON for spreads
-        let oddsData = await fetchJson('data/odds/latest.json');
-        let teamSpreads = {};
-        if (oddsData && Array.isArray(oddsData.events)) {
+        // NBA team color codes (main color, text color)
+        NBAPropsApp.TEAM_COLORS = {
+            ATL: {bg: '#E03A3E', text: '#fff'},
+            BOS: {bg: '#007A33', text: '#fff'},
+            BKN: {bg: '#000000', text: '#fff'},
+            CHA: {bg: '#1D1160', text: '#fff'},
+            CHI: {bg: '#CE1141', text: '#fff'},
+            CLE: {bg: '#6F263D', text: '#fff'},
+            DAL: {bg: '#00538C', text: '#fff'},
+            DEN: {bg: '#0E2240', text: '#fff'},
+            DET: {bg: '#C8102E', text: '#fff'},
+            GSW: {bg: '#1D428A', text: '#FFC72C'},
+            HOU: {bg: '#CE1141', text: '#fff'},
+            IND: {bg: '#002D62', text: '#FDBB30'},
+            LAC: {bg: '#C8102E', text: '#fff'},
+            LAL: {bg: '#552583', text: '#FDB927'},
+            MEM: {bg: '#5D76A9', text: '#fff'},
+            MIA: {bg: '#98002E', text: '#fff'},
+            MIL: {bg: '#00471B', text: '#fff'},
+            MIN: {bg: '#0C2340', text: '#fff'},
+            NOP: {bg: '#0C2340', text: '#fff'},
+            NYK: {bg: '#006BB6', text: '#fff'},
+            OKC: {bg: '#007AC1', text: '#fff'},
+            ORL: {bg: '#0077C0', text: '#fff'},
+            PHI: {bg: '#006BB6', text: '#fff'},
+            PHX: {bg: '#1D1160', text: '#fff'},
+            POR: {bg: '#E03A3E', text: '#fff'},
+            SAC: {bg: '#5A2D81', text: '#fff'},
+            SAS: {bg: '#C4CED4', text: '#000'},
+            TOR: {bg: '#CE1141', text: '#fff'},
+            UTA: {bg: '#002B5C', text: '#fff'},
+            WAS: {bg: '#002B5C', text: '#fff'}
+        };
+
+        NBAPropsApp.ppJsonPath = 'PLAYER_UI_CARDS_PERFECT.json';
+        NBAPropsApp.playerCardsPath = 'PLAYER_UI_CARDS_PERFECT.json';
+
+        NBAPropsApp.fetchJson = async function(path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
+                return await res.json();
+            } catch (err) {
+                console.error('Error fetching JSON:', path, err);
+                const cardsDiv = document.getElementById('trend-cards');
+                if (cardsDiv) cardsDiv.innerHTML = `<div class="error-message">Error loading data: ${path}<br>${err.message}</div>`;
+                return null;
+            }
+        };
+
+        NBAPropsApp.renderTrendCards = async function() {
+            const cardsDiv = document.getElementById('trend-cards');
+            if (cardsDiv) cardsDiv.innerHTML = '<div class="loading-message">Loading...</div>';
+
+            let schedule = await NBAPropsApp.fetchJson('nba_schedule.json') || [];
+            let dvpData = null;
+            try {
+                dvpData = await NBAPropsApp.fetchJson('DVP_2025_weighted.json');
+                console.log('DVP data loaded:', dvpData ? Object.keys(dvpData) : 'null');
+            } catch(e) {
+                console.log('DVP data not available:', e);
+            }
+
+            const matchupFilter = document.getElementById('matchup-filter');
+            if (schedule.length) {
+                const byDate = {};
+                schedule.forEach(game => {
+                    const schedDate = game.date;
+                    if (!byDate[schedDate]) byDate[schedDate] = [];
+                    byDate[schedDate].push(game);
+                });
+                matchupFilter.innerHTML = '<option value="all">All Games</option>';
+                Object.keys(byDate).sort().forEach(date => {
+                    const games = byDate[date];
+                    let label = new Date(date + 'T00:00:00').toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric', year:'numeric'});
+                    let group = `<optgroup label="${label}">`;
+                    group += `<option value="date:${date}">All Games on ${label}</option>`;
+                    games.forEach(g => {
+                        group += `<option value="${g.id}">${g.away} @ ${g.home}</option>`;
+                    });
+                    group += '</optgroup>';
+                    matchupFilter.innerHTML += group;
+                });
+            }
+
+            const teamNameMap = {
+                ATL: 'Atlanta Hawks', BOS: 'Boston Celtics', BKN: 'Brooklyn Nets', CHA: 'Charlotte Hornets',
+                CHI: 'Chicago Bulls', CLE: 'Cleveland Cavaliers', DAL: 'Dallas Mavericks', DEN: 'Denver Nuggets',
+                DET: 'Detroit Pistons', GSW: 'Golden State Warriors', HOU: 'Houston Rockets', IND: 'Indiana Pacers',
+                LAC: 'Los Angeles Clippers', LAL: 'Los Angeles Lakers', MEM: 'Memphis Grizzlies', MIA: 'Miami Heat',
+                MIL: 'Milwaukee Bucks', MIN: 'Minnesota Timberwolves', NOP: 'New Orleans Pelicans', NYK: 'New York Knicks',
+                OKC: 'Oklahoma City Thunder', ORL: 'Orlando Magic', PHI: 'Philadelphia 76ers', PHX: 'Phoenix Suns',
+                POR: 'Portland Trail Blazers', SAC: 'Sacramento Kings', SAS: 'San Antonio Spurs', TOR: 'Toronto Raptors',
+                UTA: 'Utah Jazz', WAS: 'Washington Wizards'
+            };
+
+            const ppData = await NBAPropsApp.fetchJson(NBAPropsApp.ppJsonPath) || [];
+            
+            // Load positions separately
+            const positionsData = await NBAPropsApp.fetchJson('nba_players_2025_26_positions.json') || {};
+            console.log('Positions data loaded:', Object.keys(positionsData).length, 'players');
+
+            const nameToId = {};
+            const nameToPosition = {};
+            ppData.forEach(pp => {
+                if (pp.name && (pp.id || pp.player_id)) nameToId[pp.name] = pp.id || pp.player_id;
+                if (pp.name && pp.position) nameToPosition[pp.name] = pp.position;
+            });
+            
+            // Add positions from positions file
+            Object.entries(positionsData).forEach(([name, pos]) => {
+                if (!nameToPosition[name]) nameToPosition[name] = pos;
+            });
+            
+            console.log('Position mapping sample:', Object.entries(nameToPosition).slice(0, 5));
+
+            let oddsData = await NBAPropsApp.fetchJson('data/odds/latest.json') || {events:[]};
+            let teamSpreads = {};
             oddsData.events.forEach(event => {
-                if (event.home_team && event.best_spread && event.best_spread.home && typeof event.best_spread.home.point === 'number') {
+                if (event.home_team && event.best_spread?.home?.point != null) {
                     teamSpreads[event.home_team] = event.best_spread.home.point;
                 }
-                if (event.away_team && event.best_spread && event.best_spread.away && typeof event.best_spread.away.point === 'number') {
+                if (event.away_team && event.best_spread?.away?.point != null) {
                     teamSpreads[event.away_team] = event.best_spread.away.point;
                 }
             });
-        }
+            console.log('Team spreads loaded:', teamSpreads);
 
-        let cards = [];
-        ppData.forEach(pp => {
-            const playerName = pp.name;
-            const propType = pp.prop || 'PTS';
-            const line = pp.line;
-            const projection = pp.projection;
-            const score = pp.score;
-            const playerId = nameToId[playerName] || null;
-            const expected_minutes = pp.expected_minutes;
-            let spread = pp.spread;
-            // Assign spread from teamSpreads if null/undefined
-            let fullTeamName = pp.team && teamNameMap[pp.team] ? teamNameMap[pp.team] : null;
-            if ((spread === null || spread === undefined) && fullTeamName && teamSpreads[fullTeamName] !== undefined) {
-                spread = teamSpreads[fullTeamName];
-            }
-            if (projection && line && score !== undefined && playerId) {
+            let cards = [];
+            ppData.forEach(pp => {
+                const playerName = pp.name || pp.Name || 'Unknown Player';
+                const prop = pp.prop || pp.Stat || 'PTS';
+                const line = Number(pp.line || pp.Line) || 0;
+                const projection = Number(pp.projection) || 0;
+                const score = Number(pp.score) || 0;
+                const playerId = nameToId[playerName];
+                const expected_minutes = Number(pp.expected_minutes) || 0;
+                
+                // Get spread - first check player data, then lookup from odds data
+                let spread = pp.spread != null ? Number(pp.spread) : null;
+                if (spread == null && pp.team) {
+                    const fullTeamName = teamNameMap[pp.team];
+                    if (fullTeamName && teamSpreads[fullTeamName] != null) {
+                        spread = teamSpreads[fullTeamName];
+                    }
+                }
+                
+                // Debug logging for first few entries
+                if (cards.length < 5) {
+                    console.log(`Player: ${playerName}, Team: ${pp.team}, Full: ${teamNameMap[pp.team]}, Spread: ${spread}, TeamSpreads has it: ${teamSpreads[teamNameMap[pp.team]]}`);
+                }
+                
+                const position = nameToPosition[playerName] || pp.position || pp.pos || (pp.positions ? pp.positions[0] : '');
+                const opponent = pp.opponent || pp.Versus || '';
+                
                 cards.push({
                     player: playerName,
-                    propType,
+                    prop,
                     projection,
                     line,
                     score,
                     playerId,
                     expected_minutes,
                     spread,
-                    team: pp.team,
-                    position: pp.position || pp.pos || (pp.positions ? pp.positions[0] : ''),
-                    opponent: pp.opponent || ''
+                    team: pp.team || pp.Team || '',
+                    position,
+                    opponent
+                });
+            });
+
+            const filtered = cards
+                .filter(card => card.score <= 70 && card.expected_minutes >= 30)
+                .sort((a, b) => b.score - a.score);
+
+            function getPlayerImage(playerId) {
+                return playerId ? `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png` : '';
+            }
+            
+            function getTeamBadge(team) {
+                if (!team) return '';
+                const color = NBAPropsApp.TEAM_COLORS[team] || {bg:'#222', text:'#fff'};
+                return `<span class="team-badge" style="background:${color.bg};color:${color.text};">${team}</span>`;
+            }
+            
+            function getOppBadge(opponent) {
+                if (!opponent) return '';
+                const color = NBAPropsApp.TEAM_COLORS[opponent] || {bg:'#444', text:'#fff'};
+                return `<span class="opp-badge" style="background:${color.bg};color:${color.text};">vs ${opponent}</span>`;
+            }
+            
+            function getPositionBadge(position) {
+                if (!position) return '';
+                return `<span class="position-badge">${position}</span>`;
+            }
+            
+            function getSpreadBadge(spread) {
+                if (spread == null) return '';
+                const abs = Math.abs(spread);
+                let style = '';
+                if (abs >= 7) style = 'background:#ff2d2d;color:#fff;';
+                else if (abs >= 5) style = 'background:#ffe066;color:#181f1b;';
+                else if (abs <= 3) style = 'background:#1aff00;color:#181f1b;';
+                else style = 'background:#222b22;color:#fff;';
+                return `<span class="spreads-badge" style="${style}">${spread > 0 ? '+' : ''}${spread} spread</span>`;
+            }
+            
+            function getDvpBadge(position, opponent, propType, dvpData) {
+                if (!dvpData || !position || !opponent) return '';
+                let dvpPosition = '';
+                if (['PG','SG','G'].includes(position)) dvpPosition = 'PG';
+                else if (['PF','SF','F'].includes(position)) dvpPosition = 'SF';
+                else if (position === 'C') dvpPosition = 'C';
+                else return '';
+                
+                const dvpStatMap = {
+                    'Points': 'pts', 'Rebounds': 'reb', 'Assists': 'ast', 'Steals': 'stl', 'Blocks': 'blk',
+                    'Fantasy Score': 'fd', 'Pts+Rebs+Asts': 'pra', 'Pts+Rebs': 'pr', 'Pts+Asts': 'pa',
+                    'Rebs+Asts': 'ra', '3PM': '3pm', 'Turnovers': 'to', 'PTS': 'pts', 'REB': 'reb',
+                    'AST': 'ast', 'STL': 'stl', 'BLK': 'blk'
+                };
+                const dvpStatKey = dvpStatMap[propType] || 'pts';
+                
+                if (!dvpData[dvpPosition] || !dvpData[dvpPosition][opponent]) return '';
+                const dvpValue = dvpData[dvpPosition][opponent];
+                if (!dvpValue[dvpStatKey] || dvpValue[dvpStatKey].rank === undefined) return '';
+                
+                let rank = Number(dvpValue[dvpStatKey].rank);
+                let color = '#ffe066';
+                if (rank <= 1) color = '#ff2d2d';
+                else if (rank >= 30) color = '#1aff00';
+                else if (rank < 15) {
+                    let percent = (rank - 1) / 14;
+                    let r = 255, g = Math.round(45 + percent * 179), b = Math.round(45 + percent * 57);
+                    color = `rgb(${r},${g},${b})`;
+                } else {
+                    let percent = (rank - 15) / 15;
+                    let r = Math.round(255 - percent * 229), g = Math.round(224 + percent * 31), b = Math.round(102 - percent * 102);
+                    color = `rgb(${r},${g},${b})`;
+                }
+                return `<span class="prop-label">DVP:</span><span class="prop-value" style="color:${color};">${rank}</span>`;
+            }
+            
+            function getScoreColor(score) {
+                // Color scale: 30 = red, 50 = yellow, 70 = green
+                let color = '#ffe066';
+                if (score <= 30) {
+                    color = '#ff2d2d';
+                } else if (score >= 70) {
+                    color = '#1aff00';
+                } else if (score < 50) {
+                    // Red to Yellow: 30-50
+                    let percent = (score - 30) / 20;
+                    let r = 255, g = Math.round(45 + percent * 179), b = Math.round(45 + percent * 57);
+                    color = `rgb(${r},${g},${b})`;
+                } else {
+                    // Yellow to Green: 50-70
+                    let percent = (score - 50) / 20;
+                    let r = Math.round(255 - percent * 229), g = Math.round(224 + percent * 31), b = Math.round(102 - percent * 102);
+                    color = `rgb(${r},${g},${b})`;
+                }
+                return color;
+            }
+            
+            console.log(`Total cards: ${cards.length}, Filtered cards: ${filtered.length}`);
+
+            window._trendCardsData = filtered;
+            window._trendSchedule = schedule;
+
+            // --- Carousel swipe override moved up ---
+            const origRenderCards = function(cardsToRender) {
+                if (!cardsToRender || cardsToRender.length === 0) {
+                    cardsDiv.innerHTML = '<div class="error-message">No players found for this filter.</div>';
+                    return;
+                }
+                cardsDiv.innerHTML = cardsToRender.map(card => {
+                    const teamBadge = getTeamBadge(card.team);
+                    const oppBadge = getOppBadge(card.opponent);
+                    const positionBadge = getPositionBadge(card.position);
+                    const spreadBadge = getSpreadBadge(card.spread);
+                    const dvpBadge = getDvpBadge(card.position, card.opponent, card.prop, dvpData);
+                    const playerSlug = card.player.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    let hit = null;
+                    if (Array.isArray(NBAPropsApp._ppData)) {
+                        hit = NBAPropsApp._ppData.find(pp => pp.name === card.player && pp.prop === card.prop);
+                    }
+                    function getHitColor(pct) {
+                        if (pct >= 70) return '#1aff00';
+                        if (pct <= 40) return '#ff2d2d';
+                        return '#ffe066';
+                    }
+                    let hitBlocks = '';
+                    if (hit) {
+                        hitBlocks = `
+                            <div class="progress-item hitrate-toggle" data-hitrate-toggle="L5" tabindex="0">
+                                <span class="progress-label">L5</span>
+                                <span class="progress-value" style="color:${getHitColor(hit.last_5_pct)}">${hit.last_5_pct != null ? hit.last_5_pct + '%' : 'N/A'}</span>
+                            </div>
+                            <div class="progress-item hitrate-toggle" data-hitrate-toggle="L10" tabindex="0">
+                                <span class="progress-label">L10</span>
+                                <span class="progress-value" style="color:${getHitColor(hit.last_10_pct)}">${hit.last_10_pct != null ? hit.last_10_pct + '%' : 'N/A'}</span>
+                            </div>
+                            <div class="progress-item hitrate-toggle" data-hitrate-toggle="Full" tabindex="0">
+                                <span class="progress-label">Full</span>
+                                <span class="progress-value" style="color:${getHitColor(hit.season_pct)}">${hit.season_pct != null ? hit.season_pct + '%' : 'N/A'}</span>
+                            </div>
+                        `;
+                    } else {
+                        hitBlocks = `<div style='color:#ff2d2d;font-weight:700;'>No hit rate data</div>`;
+                    }
+                    function renderBarChart(mode) {
+                        let vals = [];
+                        if (hit) {
+                            if (mode === 'L5') vals = hit.last_5_values || (hit.last_10_values ? hit.last_10_values.slice(-5) : []);
+                            else if (mode === 'L10') {
+                                vals = hit.last_10_values || [];
+                                if (vals.length < 10 && hit.season_values && hit.season_values.length >= 10) {
+                                    vals = hit.season_values.slice(-10);
+                                } else if (vals.length < 10) {
+                                    vals = Array(10 - vals.length).fill(0).concat(vals);
+                                }
+                            } else if (mode === 'Full') vals = hit.season_values || hit.last_10_values || [];
+                        }
+                        let barCount = mode === 'L5' ? 5 : (mode === 'L10' ? 10 : vals.length);
+                        if (mode === 'L5' && vals.length < 5) vals = Array(5 - vals.length).fill(0).concat(vals);
+                        if (mode === 'L10' && vals.length < 10) vals = Array(10 - vals.length).fill(0).concat(vals);
+                        const max = Math.max(...vals, 1);
+                        let dates = [];
+                        if (window._playerGamelogs && window._playerGamelogs[card.player]) {
+                            const logs = window._playerGamelogs[card.player];
+                            let lastGames = logs.slice(-barCount);
+                            dates = lastGames.map(g => g['GAME DATE']);
+                        }
+                        // Color logic: green = over, red = under, gray = tie
+                        function getBarColor(v, line) {
+                            if (v > line) return '#1aff00';
+                            if (v < line) return '#ff2d2d';
+                            return '#888'; // gray for tie
+                        }
+                        return `
+                            <div class="bars-container" style="gap:${Math.max(2, 16 - barCount)}px;">
+                                ${vals.map((v,i) => `<div class="bar" style="flex:1; min-width:0; --height: ${(v/max*100).toFixed(0)}; background:${getBarColor(v, card.line)}" data-value="${v}"></div>`).join('')}
+                            </div>
+                            <div class="dates">${dates.length ? dates.map(d => {
+                                const parts = d.split('/');
+                                const m = parts[0].replace(/^0/, '');
+                                const day = parts[1].replace(/^0/, '');
+                                return `<span>${m}/${day}</span>`;
+                            }).join('') : Array(barCount).fill('').map((_,i) => `<span>G${i+1}</span>`).join('')}</div>
+                        `;
+                    }
+                    let defaultMode = 'L10';
+                    return `
+                    <div class="player-card"
+                         data-score="${card.score.toFixed(1)}"
+                         data-projection="${card.projection.toFixed(1)}"
+                         data-line="${card.line.toFixed(1)}"
+                         data-minutes="${card.expected_minutes ? card.expected_minutes.toFixed(1) : '0'}"
+                         data-team="${card.team}"
+                         data-opponent="${card.opponent}">
+                        <div class="minutes-badge">${card.expected_minutes ? card.expected_minutes.toFixed(1) + ' min' : ''}</div>
+                        ${spreadBadge}
+                        <img class="card-img" src="${getPlayerImage(card.playerId)}" alt="${card.player}" onerror="this.style.display='none'">
+                        <div class="player-name"><a href="players-props/${playerSlug}.html" class="player-link">${card.player}</a></div>
+                        <div class="badges-row">${positionBadge}${teamBadge}${oppBadge}</div>
+                        <div class="prop-type">${card.prop}</div>
+                        <div class="prop-details-align">
+                            <div class="prop-block">
+                                <span class="prop-label">Line</span>
+                                <span class="prop-value">${card.line.toFixed(1)}</span>
+                            </div>
+                            <div class="prop-block">
+                                <span class="prop-label">Projection</span>
+                                <span class="prop-value">${card.projection.toFixed(1)}</span>
+                            </div>
+                            <div class="prop-block">
+                                <span class="prop-label">SCORE:</span>
+                                <span class="prop-value" style="color:${getScoreColor(card.score)};">${card.score.toFixed(1)}</span>
+                            </div>
+                            <div class="prop-block dvp-block">${dvpBadge}</div>
+                        </div>
+                        <div class="hitrate-panel" style="margin-top:18px;">
+                            <div class="progress-blocks">${hitBlocks}</div>
+                            <div class="bars-dynamic" data-bar-mode="${defaultMode}">${renderBarChart(defaultMode)}</div>
+                        </div>
+                    </div>`;
+                }).join('');
+
+                // Attach hitrate-toggle click events for each card
+                document.querySelectorAll('.player-card .hitrate-panel').forEach(panel => {
+                    const toggles = panel.querySelectorAll('.hitrate-toggle');
+                    const barDiv = panel.querySelector('.bars-dynamic');
+                    toggles.forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const mode = toggle.getAttribute('data-hitrate-toggle');
+                            // Find the card's hit data
+                            const cardName = panel.closest('.player-card').querySelector('.player-name').textContent.trim();
+                            const propType = panel.closest('.player-card').querySelector('.prop-type').textContent.trim();
+                            let hit = null;
+                            if (Array.isArray(NBAPropsApp._ppData)) {
+                                hit = NBAPropsApp._ppData.find(pp => pp.name === cardName && pp.prop === propType);
+                            }
+                            function getHitColor(pct) {
+                                if (pct >= 70) return '#1aff00';
+                                if (pct <= 40) return '#ff2d2d';
+                                return '#ffe066';
+                            }
+                            function renderBarChart(mode) {
+                                let vals = [];
+                                if (hit) {
+                                    if (mode === 'L5') vals = hit.last_5_values || (hit.last_10_values ? hit.last_10_values.slice(-5) : []);
+                                    else if (mode === 'L10') vals = hit.last_10_values || [];
+                                    else if (mode === 'Full') vals = hit.season_values || hit.last_10_values || [];
+                                }
+                                const max = Math.max(...vals, 1);
+                                let dates = [];
+                                if (window._playerGamelogs && window._playerGamelogs[cardName]) {
+                                    const logs = window._playerGamelogs[cardName];
+                                    let lastGames = logs.slice(-vals.length);
+                                    dates = lastGames.map(g => g['GAME DATE']);
+                                }
+                                function getBarColor(v, line) {
+                                    if (v > hit.line) return '#1aff00';
+                                    if (v < hit.line) return '#ff2d2d';
+                                    return '#888';
+                                }
+                                return `
+                                    <div class="bars-container">
+                                        ${vals.map((v,i) => `<div class="bar" style="--height: ${(v/max*100).toFixed(0)}; background:${getBarColor(v, hit.line)}" data-value="${v}"></div>`).join('')}
+                                    </div>
+                                    <div class="dates">${dates.length ? dates.map(d => {
+                                        const parts = d.split('/');
+                                        const m = parts[0].replace(/^0/, '');
+                                        const day = parts[1].replace(/^0/, '');
+                                        return `<span>${m}/${day}</span>`;
+                                    }).join('') : Array(vals.length).fill('').map((_,i) => `<span>G${i+1}</span>`).join('')}</div>
+                                `;
+                            }
+                            if (barDiv) {
+                                barDiv.innerHTML = renderBarChart(mode);
+                                barDiv.setAttribute('data-bar-mode', mode);
+                            }
+                            toggles.forEach(tg => tg.classList.remove('active'));
+                            toggle.classList.add('active');
+                            toggles.forEach(tg => {
+                                const val = tg.querySelector('.progress-value');
+                                if (val) {
+                                    if (tg === toggle) {
+                                        val.style.opacity = '1';
+                                        val.style.fontWeight = 'bold';
+                                    } else {
+                                        val.style.opacity = '0.5';
+                                        val.style.fontWeight = 'normal';
+                                    }
+                                }
+                            });
+                        });
+                        toggle.addEventListener('keydown', e => {
+                            if (e.key === 'Enter' || e.key === ' ') toggle.click();
+                        });
+                    });
+                    // On initial render, highlight the default (L10) hit rate block
+                    if (toggles.length > 0) {
+                        toggles.forEach((tg) => {
+                            tg.classList.remove('active');
+                            const val = tg.querySelector('.progress-value');
+                            if (val) {
+                                val.style.opacity = '0.5';
+                                val.style.fontWeight = 'normal';
+                            }
+                        });
+                        // Find the L10 toggle and activate it
+                        const l10Toggle = Array.from(toggles).find(tg => tg.getAttribute('data-hitrate-toggle') === 'L10');
+                        if (l10Toggle) {
+                            l10Toggle.classList.add('active');
+                            const val = l10Toggle.querySelector('.progress-value');
+                            if (val) {
+                                val.style.opacity = '1';
+                                val.style.fontWeight = 'bold';
+                            }
+                        }
+                    }
+                });
+            };
+
+
+
+
+            NBAPropsApp._allTrendCards = cards;
+            NBAPropsApp._ppData = ppData;
+
+            // --- Override before first render ---
+            const setupCarouselSwipe = function() {
+                document.querySelectorAll('.carousel-scroll').forEach(scrollEl => {
+                    let startX = 0, scrollStart = 0, isTouch = false;
+                    // Touch events
+                    scrollEl.addEventListener('touchstart', e => {
+                        isTouch = true;
+                        startX = e.touches[0].clientX;
+                        scrollStart = scrollEl.scrollLeft;
+                    }, { passive: false });
+                    scrollEl.addEventListener('touchmove', e => {
+                        if (!isTouch) return;
+                        const dx = startX - e.touches[0].clientX;
+                        scrollEl.scrollLeft = scrollStart + dx;
+                        e.preventDefault();
+                    }, { passive: false });
+                    scrollEl.addEventListener('touchend', e => {
+                        isTouch = false;
+                        const half = scrollEl.clientWidth / 2;
+                        if (scrollEl.scrollLeft > half * 0.6) {
+                            scrollEl.scrollTo({left: scrollEl.clientWidth, behavior: 'smooth'});
+                        } else {
+                            scrollEl.scrollTo({left: 0, behavior: 'smooth'});
+                        }
+                    }, { passive: false });
+                    // Mouse drag (desktop)
+                    let mouseDown = false, mouseStartX = 0, mouseScrollStart = 0;
+                    scrollEl.addEventListener('mousedown', e => {
+                        mouseDown = true;
+                        mouseStartX = e.clientX;
+                        mouseScrollStart = scrollEl.scrollLeft;
+                    });
+                    scrollEl.addEventListener('mousemove', e => {
+                        if (!mouseDown) return;
+                        const dx = mouseStartX - e.clientX;
+                        scrollEl.scrollLeft = mouseScrollStart + dx;
+                    });
+                    scrollEl.addEventListener('mouseup', e => {
+                        mouseDown = false;
+                        const half = scrollEl.clientWidth / 2;
+                        if (scrollEl.scrollLeft > half * 0.6) {
+                            scrollEl.scrollTo({left: scrollEl.clientWidth, behavior: 'smooth'});
+                        } else {
+                            scrollEl.scrollTo({left: 0, behavior: 'smooth'});
+                        }
+                    });
+                    scrollEl.addEventListener('mouseleave', e => { mouseDown = false; });
+                    // Dots update
+                    scrollEl.addEventListener('scroll', () => {
+                        const dots = scrollEl.closest('.player-card')?.querySelectorAll('.dot');
+                        if (!dots) return;
+                        const half = scrollEl.clientWidth / 2;
+                        const pos = scrollEl.scrollLeft;
+                        dots[0].classList.toggle('active', pos < half * 0.6);
+                        dots[1].classList.toggle('active', pos >= half * 0.6);
+                    });
+                });
+            };
+            const prevRenderCards = NBAPropsApp.renderCards;
+            NBAPropsApp.renderCards = function(cardsToRender) {
+                origRenderCards(cardsToRender);
+                setupCarouselSwipe();
+            };
+
+            NBAPropsApp.renderCards(filtered);
+        };
+
+        // --- Unified Filter State and Logic ---
+        const filterState = {
+            search: '',
+            minMinutes: 30,
+            propType: 'all',
+            sort: 'score-desc',
+            matchup: 'all',
+            hitRate: 'all'
+        };
+
+        function applyAllFilters() {
+            let filtered = NBAPropsApp._allTrendCards || [];
+            // Search
+            if (filterState.search) {
+                filtered = filtered.filter(card =>
+                    card.player.toLowerCase().includes(filterState.search.toLowerCase())
+                );
+            }
+            // Min Minutes
+            if (filterState.minMinutes) {
+                filtered = filtered.filter(card => card.expected_minutes >= filterState.minMinutes);
+            }
+            // Prop Type
+            if (filterState.propType !== 'all') {
+                filtered = filtered.filter(card => card.prop === filterState.propType);
+            }
+            // Matchup
+            if (filterState.matchup !== 'all') {
+                if (filterState.matchup.startsWith('date:')) {
+                    const date = filterState.matchup.split(':')[1];
+                    const games = window._trendSchedule.filter(g => g.date === date);
+                    const teams = new Set(games.flatMap(g => [g.home, g.away]));
+                    filtered = filtered.filter(c => teams.has(c.team) || teams.has(c.opponent));
+                } else {
+                    const game = window._trendSchedule.find(g => g.id === filterState.matchup);
+                    if (game) {
+                        filtered = filtered.filter(c => [game.home, game.away].includes(c.team) || [game.home, game.away].includes(c.opponent));
+                    }
+                }
+            }
+            // Hit Rate
+            if (filterState.hitRate !== 'all') {
+                filtered = filtered.filter(card => {
+                    const hit = (NBAPropsApp._ppData || []).find(pp => pp.name === card.player && pp.prop === card.prop);
+                    if (!hit) return false;
+                    if (filterState.hitRate === 'miss') {
+                        return hit.last_10_pct != null && hit.last_10_pct < 50;
+                    } else {
+                        return hit.last_10_pct != null && hit.last_10_pct >= Number(filterState.hitRate);
+                    }
                 });
             }
-        });
-
-        // Filter cards: score <= 70 and 30+ minutes, sorted highest to lowest
-        const filtered = cards
-            .filter(card => card.score <= 70 && card.expected_minutes >= 30)
-            .sort((a, b) => b.score - a.score);
-
-        // Helper functions for badges and images
-        function getPlayerImage(playerId) {
-            return playerId ? `https://cdn.nba.com/headshots/nba/latest/260x190/${playerId}.png` : '';
-        }
-        function getTeamBadge(team) {
-            if (!team) return '';
-            const color = TEAM_COLORS[team] || {bg:'#222', text:'#fff'};
-            return `<span class="team-badge" style="background:${color.bg};color:${color.text};">${team}</span>`;
-        }
-        function getOppBadge(opponent) {
-            if (!opponent) return '';
-            const color = TEAM_COLORS[opponent] || {bg:'#444', text:'#fff'};
-            return `<span class="opp-badge" style="background:${color.bg};color:${color.text};">vs ${opponent}</span>`;
-        }
-        function getSpreadBadge(spread) {
-            if (spread === null || spread === undefined) return '';
-            const absSpread = Math.abs(spread);
-            let badgeColor = '';
-            if (absSpread >= 7) {
-                badgeColor = 'background:#ff2d2d;color:#fff;'; // red
-            } else if (absSpread >= 5) {
-                badgeColor = 'background:#ffe066;color:#181f1b;'; // neutral (yellow)
-            } else if (absSpread <= 3) {
-                badgeColor = 'background:#1aff00;color:#181f1b;'; // green
-            } else {
-                badgeColor = 'background:#222b22;color:#fff;'; // default
+            // Sort
+            switch (filterState.sort) {
+                case 'score-desc': filtered.sort((a, b) => b.score - a.score); break;
+                case 'score-asc': filtered.sort((a, b) => a.score - b.score); break;
+                case 'projection-desc': filtered.sort((a, b) => b.projection - a.projection); break;
+                case 'projection-asc': filtered.sort((a, b) => a.projection - b.projection); break;
+                case 'line-desc': filtered.sort((a, b) => b.line - a.line); break;
+                case 'line-asc': filtered.sort((a, b) => a.line - b.line); break;
+                case 'minutes-desc': filtered.sort((a, b) => b.expected_minutes - a.expected_minutes); break;
+                case 'minutes-asc': filtered.sort((a, b) => a.expected_minutes - b.expected_minutes); break;
             }
-            return `<span class="spreads-badge" style="${badgeColor}">${spread > 0 ? '+' : ''}${spread} spread</span>`;
+            NBAPropsApp.renderCards(filtered);
         }
 
-        // Render HTML for filtered cards
-        document.getElementById('trend-cards').innerHTML = filtered.map(card => {
-            const teamBadge = getTeamBadge(card.team);
-            const oppBadge = getOppBadge(card.opponent);
-            const spreadBadge = getSpreadBadge(card.spread);
-                // Create a slug for the player page URL
-                const playerSlug = card.player.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                return `
-                <div class="player-card" 
-                    style="position:relative;"
-                    data-score="${Number(card.score).toFixed(1)}"
-                    data-projection="${Number(card.projection).toFixed(1)}"
-                    data-line="${Number(card.line).toFixed(1)}"
-                    data-minutes="${card.expected_minutes ? Number(card.expected_minutes).toFixed(1) : '0'}">
-                    <div class="minutes-badge">${card.expected_minutes ? Number(card.expected_minutes).toFixed(1) + ' min' : ''}</div>
-                    ${spreadBadge}
-                    <img class="card-img" src="${getPlayerImage(card.playerId)}" alt="${card.player}" style="width:100%;height:120px;object-fit:contain;background:#181f1b;display:block;margin-bottom:0;" onerror="this.style.display='none'">
-                    <div class="player-name"><a href="players-props/${playerSlug}.html" class="player-link">${card.player}</a></div>
-                    <div class="badges-row">${teamBadge}${oppBadge}</div>
-                    <div class="prop-type">${card.propType}</div>
-                    <div class="prop-details-align">
-                        <div class="prop-block">
-                            <span class="prop-label">Line</span>
-                            <span class="prop-value">${Number(card.line).toFixed(1)}</span>
-                        </div>
-                        <div class="prop-block">
-                            <span class="prop-label">Projection</span>
-                            <span class="prop-value">${Number(card.projection).toFixed(1)}</span>
-                        </div>
-                        <div class="score"><span>SCORE:  </span>${Number(card.score).toFixed(1)}</div>
-                    </div>
-                </div>
-                `;
-        }).join('');
-
-        // (Highcharts removed)
-    }
-
-    renderTrendCards();
-    // Live search functionality
-const searchInput = document.getElementById('search-input');
-const trendCards = document.getElementById('trend-cards');
-
-searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    
-    const playerCards = trendCards.querySelectorAll('.player-card');
-    
-    playerCards.forEach(card => {
-        const playerName = card.querySelector('.player-name').textContent.toLowerCase();
-        const teamBadge = card.querySelector('.team-badge')?.textContent || '';
-        const oppBadge = card.querySelector('.opp-badge')?.textContent || '';
-        const propType = card.querySelector('.prop-type').textContent.toLowerCase();
-        
-        const searchableText = `${playerName}`;
-        
-        if (searchableText.includes(query)) {
-            card.style.display = 'flex';  // show
-        } else {
-            card.style.display = 'none';   // hide
+        // Debounce helper
+        function debounce(fn, delay) {
+            let timer = null;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn.apply(this, args), delay);
+            };
         }
-    });
-});
-// Sort functionality
-const sortSelect = document.getElementById('sort-select');
-const trendCardsContainer = document.getElementById('trend-cards');
 
-sortSelect.addEventListener('change', function() {
-    const sortValue = this.value;
-    
-    const cards = Array.from(trendCardsContainer.querySelectorAll('.player-card'));
-    
-    // Sort the cards based on selected option
-    cards.sort((a, b) => {
-        let aVal, bVal;
-        
-        switch(sortValue) {
-            case 'score-desc':
-                aVal = parseFloat(a.dataset.score);
-                bVal = parseFloat(b.dataset.score);
-                return bVal - aVal;  // descending
-            case 'score-asc':
-                aVal = parseFloat(a.dataset.score);
-                bVal = parseFloat(b.dataset.score);
-                return aVal - bVal;
-            case 'projection-desc':
-                aVal = parseFloat(a.dataset.projection);
-                bVal = parseFloat(b.dataset.projection);
-                return bVal - aVal;
-            case 'projection-asc':
-                aVal = parseFloat(a.dataset.projection);
-                bVal = parseFloat(b.dataset.projection);
-                return aVal - bVal;
-            case 'line-desc':
-                aVal = parseFloat(a.dataset.line);
-                bVal = parseFloat(b.dataset.line);
-                return bVal - aVal;
-            case 'line-asc':
-                aVal = parseFloat(a.dataset.line);
-                bVal = parseFloat(b.dataset.line);
-                return aVal - bVal;
-            case 'minutes-desc':
-                aVal = parseFloat(a.dataset.minutes);
-                bVal = parseFloat(b.dataset.minutes);
-                return bVal - aVal;
-            case 'minutes-asc':
-                aVal = parseFloat(a.dataset.minutes);
-                bVal = parseFloat(b.dataset.minutes);
-                return aVal - bVal;
-            default:
-                return 0;
+        // Setup prop type dropdown
+        async function setupPropTypeDropdown() {
+            const ppData = await NBAPropsApp.fetchJson(NBAPropsApp.ppJsonPath) || [];
+            const propTypes = [...new Set(ppData.map(pp => pp.prop || 'PTS'))].sort();
+            const select = document.getElementById('prop-type-filter');
+            select.innerHTML = '<option value="all">All Props</option>' + propTypes.map(t => `<option value="${t}">${t}</option>`).join('');
         }
-    });
-    
-    // Re-append cards in new order
-    cards.forEach(card => trendCardsContainer.appendChild(card));
-});
+        setupPropTypeDropdown();
 
-// Odds Screen button handler
-document.getElementById('oddscreen-btn').onclick = function() {
-    window.location.href = 'oddscreen.html';
-};
+        NBAPropsApp.renderTrendCards();
+
+        // --- Unified Event Handlers ---
+        document.getElementById('search-input').addEventListener('input', debounce(function(e) {
+            filterState.search = e.target.value;
+            applyAllFilters();
+        }, 200));
+        document.getElementById('min-minutes').addEventListener('input', function(e) {
+            filterState.minMinutes = parseFloat(e.target.value) || 0;
+            applyAllFilters();
+        });
+        document.getElementById('prop-type-filter').addEventListener('change', function(e) {
+            filterState.propType = e.target.value;
+            applyAllFilters();
+        });
+        document.getElementById('sort-select').addEventListener('change', function(e) {
+            filterState.sort = e.target.value;
+            applyAllFilters();
+        });
+        document.getElementById('matchup-filter').addEventListener('change', function(e) {
+            filterState.matchup = e.target.value;
+            applyAllFilters();
+        });
+        document.getElementById('hit-rate-filter').addEventListener('change', function(e) {
+            filterState.hitRate = e.target.value;
+            applyAllFilters();
+        });
+        document.getElementById('oddscreen-btn').onclick = () => window.location.href = 'oddscreen.html';
+
+        // Carousel swipe logic (unchanged)
+        function setupCarouselSwipe() {
+            document.querySelectorAll('.carousel-scroll').forEach(scrollEl => {
+                let startX = 0, scrollStart = 0, isTouch = false;
+                scrollEl.addEventListener('touchstart', e => {
+                    isTouch = true;
+                    startX = e.touches[0].clientX;
+                    scrollStart = scrollEl.scrollLeft;
+                });
+                scrollEl.addEventListener('touchmove', e => {
+                    if (!isTouch) return;
+                    const dx = startX - e.touches[0].clientX;
+                    scrollEl.scrollLeft = scrollStart + dx;
+                });
+                scrollEl.addEventListener('touchend', e => {
+                    isTouch = false;
+                    const half = scrollEl.clientWidth / 2;
+                    if (scrollEl.scrollLeft > half * 0.6) {
+                        scrollEl.scrollTo({left: scrollEl.clientWidth, behavior: 'smooth'});
+                    } else {
+                        scrollEl.scrollTo({left: 0, behavior: 'smooth'});
+                    }
+                });
+                let mouseDown = false, mouseStartX = 0, mouseScrollStart = 0;
+                scrollEl.addEventListener('mousedown', e => {
+                    mouseDown = true;
+                    mouseStartX = e.clientX;
+                    mouseScrollStart = scrollEl.scrollLeft;
+                });
+                scrollEl.addEventListener('mousemove', e => {
+                    if (!mouseDown) return;
+                    const dx = mouseStartX - e.clientX;
+                    scrollEl.scrollLeft = mouseScrollStart + dx;
+                });
+                scrollEl.addEventListener('mouseup', e => {
+                    mouseDown = false;
+                    const half = scrollEl.clientWidth / 2;
+                    if (scrollEl.scrollLeft > half * 0.6) {
+                        scrollEl.scrollTo({left: scrollEl.clientWidth, behavior: 'smooth'});
+                    } else {
+                        scrollEl.scrollTo({left: 0, behavior: 'smooth'});
+                    }
+                });
+                scrollEl.addEventListener('mouseleave', e => { mouseDown = false; });
+                scrollEl.addEventListener('scroll', () => {
+                    const dots = scrollEl.closest('.player-card')?.querySelectorAll('.dot');
+                    if (!dots) return;
+                    const half = scrollEl.clientWidth / 2;
+                    const pos = scrollEl.scrollLeft;
+                    dots[0].classList.toggle('active', pos < half * 0.6);
+                    dots[1].classList.toggle('active', pos >= half * 0.6);
+                });
+            });
+        }
+        const origRenderCards = NBAPropsApp.renderCards;
+        NBAPropsApp.renderCards = function(cardsToRender) {
+            origRenderCards(cardsToRender);
+            setupCarouselSwipe();
+        };
     </script>
 </body>
 </html>

@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "generated_at": "2025-12-22T23:30:32.412416",
+    "source": "the-odds-api",
+    "count": 4
+  },
+  "events": [
+    {
+      "id": "2d23d2b9708959b7c5860abd491ebf81",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-23T02:11:42Z",
+      "home_team": "Denver Nuggets",
+      "away_team": "Utah Jazz",
+      "logos": {
+        "home": "assets/team-logos/den.png",
+        "away": ""
+      },
+      "best_h2h": {
+        "home": null,
+        "away": null
+      },
+      "best_spread": {
+        "home": {
+          "point": -24.0,
+          "price": -115
+        },
+        "away": {
+          "point": 24.0,
+          "price": -115
+        }
+      },
+      "bookmakers_count": 5
+    },
+    {
+      "id": "0b90d514df504b11dc74b7e961b9e277",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-23T02:42:56Z",
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Memphis Grizzlies",
+      "logos": {
+        "home": "assets/team-logos/okc.png",
+        "away": "assets/team-logos/mem.png"
+      },
+      "best_h2h": {
+        "home": -1100,
+        "away": 3300
+      },
+      "best_spread": {
+        "home": {
+          "point": -19.5,
+          "price": 100
+        },
+        "away": {
+          "point": 19.5,
+          "price": -133
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "3681cef1ff8c7de872f8f52134b3d101",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-23T03:10:39Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "Orlando Magic",
+      "logos": {
+        "home": "assets/team-logos/gsw.png",
+        "away": "assets/team-logos/orl.png"
+      },
+      "best_h2h": {
+        "home": -105,
+        "away": 165
+      },
+      "best_spread": {
+        "home": {
+          "point": 1.5,
+          "price": -118
+        },
+        "away": {
+          "point": -1.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "51fa4ffc93b967c919ecd4700bb36ba1",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-23T03:11:49Z",
+      "home_team": "Portland Trail Blazers",
+      "away_team": "Detroit Pistons",
+      "logos": {
+        "home": "assets/team-logos/por.png",
+        "away": "assets/team-logos/det.png"
+      },
+      "best_h2h": {
+        "home": 700,
+        "away": -285
+      },
+      "best_spread": {
+        "home": {
+          "point": 12.5,
+          "price": -125
+        },
+        "away": {
+          "point": -12.5,
+          "price": -105
+        }
+      },
+      "bookmakers_count": 6
+    }
+  ]
+}

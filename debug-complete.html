@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Debug - EV Bets Data Flow</title>
+    <style>
+        body { font-family: monospace; background: #000; color: #0f0; padding: 20px; }
+        .section { background: #111; padding: 15px; margin: 15px 0; border: 1px solid #0f0; }
+        .error { color: #f00; font-weight: bold; }
+        .success { color: #0f0; }
+        .warning { color: #ff0; }
+        .data { background: #000; padding: 10px; border: 1px solid #0f0; margin: 10px 0; max-height: 400px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #0f0; padding: 5px; text-align: left; }
+        th { background: #1a1a1a; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Complete EV Bets Debug</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        let html = '';
+        
+        async function fetchJson(path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`Status ${res.status}`);
+                return await res.json();
+            } catch (err) {
+                throw err;
+            }
+        }
+        
+        function impliedProb(odds) {
+            if (odds === null || odds === undefined || isNaN(odds)) return null;
+            const n = Number(odds);
+            if (n === 0) return null;
+            if (n > 0) {
+                return 100 / (n + 100);
+            } else {
+                return Math.abs(n) / (Math.abs(n) + 100);
+            }
+        }
+
+        function calcEV(hitRate, odds) {
+            if (hitRate === null || hitRate === undefined || odds === null || odds === undefined) return null;
+            const hr = hitRate / 100;
+            if (isNaN(hr) || isNaN(odds)) return null;
+            
+            const n = Number(odds);
+            let decimalOdds;
+            if (n > 0) {
+                decimalOdds = 1 + (n / 100);
+            } else {
+                decimalOdds = 1 + (100 / Math.abs(n));
+            }
+            
+            const ev = (hr * decimalOdds) - 1;
+            return ev * 100;
+        }
+        
+        async function debug() {
+            try {
+                // ===== STEP 1: Load all data =====
+                html += '<div class="section"><h2>STEP 1: Load Data Files</h2>';
+                const ppCards = await fetchJson('PLAYER_UI_CARDS_PERFECT.json');
+                const oddsData = await fetchJson('nba_player_odds.json');
+                const positionsData = await fetchJson('nba_players_2025_26_positions.json');
+                
+                html += `<div class="success">✓ Cards: ${ppCards.length}</div>`;
+                html += `<div class="success">✓ Odds Players: ${oddsData.length}</div>`;
+                html += `<div class="success">✓ Positions: ${Object.keys(positionsData).length}</div></div>`;
+                
+                // ===== STEP 2: Check a specific player =====
+                html += '<div class="section"><h2>STEP 2: Test Specific Player - Naji Marshall / Points</h2>';
+                
+                const testCard = ppCards.find(c => c.name === 'Naji Marshall' && c.prop === 'Points');
+                if (!testCard) {
+                    html += '<div class="error">❌ Card not found!</div>';
+                } else {
+                    html += '<div class="success">✓ Card found</div>';
+                    html += '<div class="data">Card data:<br>' + JSON.stringify(testCard, null, 2) + '</div>';
+                    
+                    const oddsMap = {};
+                    oddsData.forEach(o => { oddsMap[o.name] = o; });
+                    
+                    const playerOdds = oddsMap[testCard.name];
+                    if (!playerOdds) {
+                        html += '<div class="error">❌ Player not in odds map!</div>';
+                    } else {
+                        html += '<div class="success">✓ Player found in odds</div>';
+                        html += `<div class="success">Team: ${playerOdds.team}, Position: ${playerOdds.position}</div>`;
+                        
+                        const oddsPropMap = {
+                            'Points': 'points', 'Rebounds': 'rebounds', 'Assists': 'assists',
+                            'Steals': 'steals', 'Blocked Shots': 'blocks', 'Turnovers': 'turnovers',
+                            'Fantasy Score': 'fantasyPts', '3PM': 'fg3PtMade',
+                            'Pts+Rebs+Asts': 'pointsReboundsAssists', 'Pts+Rebs': 'pointsRebounds',
+                            'Pts+Asts': 'pointsAssists', 'Rebs+Asts': 'reboundsAssists',
+                            'FG Att': 'fgAtt', '3PT Att': 'fg3PtAtt', '2PT Att': 'twoPtAtt',
+                            'Defensive Rebounds': 'defRebounds', 'Offensive Rebounds': 'offRebounds'
+                        };
+                        
+                        const oddsKey = oddsPropMap[testCard.prop];
+                        html += `<div class="success">Prop "${testCard.prop}" maps to "${oddsKey}"</div>`;
+                        
+                        if (!playerOdds.projection[oddsKey]) {
+                            html += `<div class="error">❌ No "${oddsKey}" in projection!</div>`;
+                            html += `<div>Available keys: ${Object.keys(playerOdds.projection).join(', ')}</div>`;
+                        } else {
+                            const propOdds = playerOdds.projection[oddsKey];
+                            html += `<div class="success">✓ Found projection data</div>`;
+                            html += `<div class="success">Books available: ${propOdds.books.length}</div>`;
+                            
+                            // Show book details
+                            html += '<table>';
+                            html += '<tr><th>Book</th><th>Value</th><th>Over Odds</th><th>Over Prob</th><th>Over EV</th><th>Under Odds</th><th>Under Prob</th><th>Under EV</th></tr>';
+                            
+                            propOdds.books.forEach(book => {
+                                const overProb = impliedProb(book.overPrice);
+                                const underProb = impliedProb(book.underPrice);
+                                
+                                // Use test hit rate for demo (normally comes from card.last_10_pct)
+                                const testHitRate = 55; // 55% hit rate example
+                                const overEV = calcEV(testHitRate, book.overPrice);
+                                const underEV = calcEV(testHitRate, book.underPrice);
+                                
+                                html += '<tr>';
+                                html += `<td>${book.book}</td>`;
+                                html += `<td>${book.value}</td>`;
+                                html += `<td>${book.overPrice}</td>`;
+                                html += `<td>${overProb ? (overProb * 100).toFixed(1) : 'N/A'}%</td>`;
+                                html += `<td>${overEV ? overEV.toFixed(2) : 'N/A'}</td>`;
+                                html += `<td>${book.underPrice}</td>`;
+                                html += `<td>${underProb ? (underProb * 100).toFixed(1) : 'N/A'}%</td>`;
+                                html += `<td>${underEV ? underEV.toFixed(2) : 'N/A'}</td>`;
+                                html += '</tr>';
+                            });
+                            html += '</table>';
+                        }
+                    }
+                }
+                html += '</div>';
+                
+                // ===== STEP 3: Count total rows that should be created =====
+                html += '<div class="section"><h2>STEP 3: Row Count Analysis</h2>';
+                
+                const oddsMap = {};
+                oddsData.forEach(o => { oddsMap[o.name] = o; });
+                
+                const oddsPropMap = {
+                    'Points': 'points', 'Rebounds': 'rebounds', 'Assists': 'assists',
+                    'Steals': 'steals', 'Blocked Shots': 'blocks', 'Turnovers': 'turnovers',
+                    'Fantasy Score': 'fantasyPts', '3PM': 'fg3PtMade',
+                    'Pts+Rebs+Asts': 'pointsReboundsAssists', 'Pts+Rebs': 'pointsRebounds',
+                    'Pts+Asts': 'pointsAssists', 'Rebs+Asts': 'reboundsAssists',
+                    'FG Att': 'fgAtt', '3PT Att': 'fg3PtAtt', '2PT Att': 'twoPtAtt',
+                    'Defensive Rebounds': 'defRebounds', 'Offensive Rebounds': 'offRebounds'
+                };
+                
+                let processedCount = 0;
+                let matchedCount = 0;
+                let noPropCount = 0;
+                let noBookCount = 0;
+                let totalRows = 0;
+                const bookSet = new Set();
+                
+                ppCards.forEach(card => {
+                    processedCount++;
+                    const playerOdds = oddsMap[card.name];
+                    if (!playerOdds || !playerOdds.projection) return;
+                    matchedCount++;
+                    
+                    const oddsKey = oddsPropMap[card.prop];
+                    if (!oddsKey || !playerOdds.projection[oddsKey]) {
+                        noPropCount++;
+                        return;
+                    }
+                    
+                    const propOdds = playerOdds.projection[oddsKey];
+                    const books = propOdds.books || [];
+                    
+                    if (!books || books.length === 0) {
+                        noBookCount++;
+                        return;
+                    }
+                    
+                    books.forEach(book => bookSet.add(book.book));
+                    totalRows += 2; // Over and Under
+                });
+                
+                html += `<div class="success">Cards processed: ${processedCount}</div>`;
+                html += `<div class="success">Matched to odds: ${matchedCount}</div>`;
+                html += `<div class="warning">No prop odds: ${noPropCount}</div>`;
+                html += `<div class="warning">No books: ${noBookCount}</div>`;
+                html += `<div class="success">Total rows (O/U): ${totalRows}</div>`;
+                html += `<div class="success">Unique books: ${bookSet.size} - ${Array.from(bookSet).sort().join(', ')}</div>`;
+                html += '</div>';
+                
+                // ===== STEP 4: Sample rows from each category =====
+                html += '<div class="section"><h2>STEP 4: Sample Props and Coverage</h2>';
+                
+                const propCounts = {};
+                ppCards.forEach(card => {
+                    const playerOdds = oddsMap[card.name];
+                    if (!playerOdds || !playerOdds.projection) return;
+                    
+                    const oddsKey = oddsPropMap[card.prop];
+                    if (!oddsKey || !playerOdds.projection[oddsKey]) return;
+                    
+                    const propOdds = playerOdds.projection[oddsKey];
+                    const books = propOdds.books || [];
+                    if (books.length === 0) return;
+                    
+                    if (!propCounts[card.prop]) propCounts[card.prop] = 0;
+                    propCounts[card.prop]++;
+                });
+                
+                html += '<table>';
+                html += '<tr><th>Prop</th><th>Card Count</th></tr>';
+                Object.entries(propCounts).sort((a, b) => b[1] - a[1]).forEach(([prop, count]) => {
+                    html += `<tr><td>${prop}</td><td>${count}</td></tr>`;
+                });
+                html += '</table>';
+                html += '</div>';
+                
+            } catch (err) {
+                html += `<div class="error">ERROR: ${err.message}</div>`;
+                html += `<div>${err.stack}</div>`;
+            }
+            
+            output.innerHTML = html;
+        }
+        
+        debug();
+    </script>
+</body>
+</html>

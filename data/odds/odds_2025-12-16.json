@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "generated_at": "2025-12-16T19:56:55.847266",
+    "source": "the-odds-api",
+    "count": 1
+  },
+  "events": [
+    {
+      "id": "42db7e7ed193f516e561773b04b56eca",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-17T01:40:00Z",
+      "home_team": "New York Knicks",
+      "away_team": "San Antonio Spurs",
+      "logos": {
+        "home": "assets/team-logos/nyk.png",
+        "away": "assets/team-logos/sas.png"
+      },
+      "best_h2h": {
+        "home": -133,
+        "away": 120
+      },
+      "best_spread": {
+        "home": {
+          "point": -2.5,
+          "price": -110
+        },
+        "away": {
+          "point": 2.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 8
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "generated_at": "2025-12-31T20:27:08.560155",
+    "source": "the-odds-api",
+    "count": 5
+  },
+  "events": [
+    {
+      "id": "b0362ad1064234a482e1672ab3d1c4eb",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-01-01T00:11:00Z",
+      "home_team": "Chicago Bulls",
+      "away_team": "New Orleans Pelicans",
+      "logos": {
+        "home": "assets/team-logos/chi.png",
+        "away": ""
+      },
+      "best_h2h": {
+        "home": -136,
+        "away": 180
+      },
+      "best_spread": {
+        "home": {
+          "point": -3.5,
+          "price": -110
+        },
+        "away": {
+          "point": 3.5,
+          "price": -115
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "da1f30e39aa879eeca4dcc42cde3cfbe",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-01-01T00:11:00Z",
+      "home_team": "San Antonio Spurs",
+      "away_team": "New York Knicks",
+      "logos": {
+        "home": "assets/team-logos/sas.png",
+        "away": "assets/team-logos/nyk.png"
+      },
+      "best_h2h": {
+        "home": 154,
+        "away": 140
+      },
+      "best_spread": {
+        "home": {
+          "point": 4.5,
+          "price": -125
+        },
+        "away": {
+          "point": -4.5,
+          "price": -105
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "95fe64ebf512b70546be9938007b1a8c",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-01-01T00:42:00Z",
+      "home_team": "Toronto Raptors",
+      "away_team": "Denver Nuggets",
+      "logos": {
+        "home": "assets/team-logos/tor.png",
+        "away": "assets/team-logos/den.png"
+      },
+      "best_h2h": {
+        "home": 130,
+        "away": 110
+      },
+      "best_spread": {
+        "home": {
+          "point": 2.5,
+          "price": -110
+        },
+        "away": {
+          "point": -2.5,
+          "price": -118
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "3267add7bc04a110d6596463f7c8a495",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-01-01T01:11:00Z",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Washington Wizards",
+      "logos": {
+        "home": "assets/team-logos/mil.png",
+        "away": "assets/team-logos/was.png"
+      },
+      "best_h2h": {
+        "home": -625,
+        "away": 500
+      },
+      "best_spread": {
+        "home": {
+          "point": -11.5,
+          "price": -115
+        },
+        "away": {
+          "point": 11.5,
+          "price": -115
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "08d7e57dd2b795455b1abb447f608705",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-01-01T01:11:00Z",
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Portland Trail Blazers",
+      "logos": {
+        "home": "assets/team-logos/okc.png",
+        "away": "assets/team-logos/por.png"
+      },
+      "best_h2h": {
+        "home": -1400,
+        "away": 950
+      },
+      "best_spread": {
+        "home": {
+          "point": -16.5,
+          "price": -118
+        },
+        "away": {
+          "point": 16.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 6
+    }
+  ]
+}

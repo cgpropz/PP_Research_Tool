@@ -44,6 +44,7 @@ STAT_MAP = {
     'Rebounds': ['REB'],
     'Assists': ['AST'],
     'Threes': ['3PM'],
+    '3PM': ['3PM'],
     'Steals': ['STL'],
     'Blocks': ['BLK'],
     'Turnovers': ['TOV'],
@@ -52,6 +53,14 @@ STAT_MAP = {
     'Three Pointers Made': ['3PM'],
     'Blocked Shots': ['BLK'],
     'Steals + Blocks': ['STL','BLK'],
+    '2PT Att': ['FGA','3PA'],
+    '3PT Att': ['3PA'],
+    'FG Att': ['FGA'],
+    'Two Point Attempts': ['FGA','3PA'],
+    'Three Point Attempts': ['3PA'],
+    'Field Goal Attempts': ['FGA'],
+    'Defensive Rebounds': ['DREB'],
+    'Offensive Rebounds': ['OREB'],
     # Combo props (support both legacy and PrizePicks naming)
     'PRA': ['PTS','REB','AST'],              # legacy key
     'Pts+Rebs+Asts': ['PTS','REB','AST'],    # PrizePicks displayed key
@@ -128,6 +137,11 @@ for prop in pp_lines:
         min_season * 0.10, 1
     )
     # Build per-game values (sum for combos)
+    # Special handling for 2PT attempts (FGA - 3PA) across naming variants
+    if stat in ('2PT Att','Two Point Attempts'):
+        fga_vals = player_df['FGA'].astype(float).tolist()
+        three_pa_vals = player_df['3PA'].astype(float).tolist()
+        values = [max(0, fga - three_pa) for fga, three_pa in zip(fga_vals, three_pa_vals)]
     if len(cols) == 1:
         values = player_df[cols[0]].astype(float).tolist()
     else:
@@ -179,6 +193,14 @@ for prop in pp_lines:
     # Normalize display: if PRA legacy key encountered, show modern label
     if stat == 'PRA':
         display_stat = 'Pts+Rebs+Asts'
+    elif stat in ('Threes','Threes Made','Three Pointers Made','3PM'):
+        display_stat = '3PM'
+    elif stat in ('Field Goal Attempts','FG Att'):
+        display_stat = 'FG Att'
+    elif stat in ('Three Point Attempts','3PT Att'):
+        display_stat = '3PT Att'
+    elif stat in ('Two Point Attempts','2PT Att'):
+        display_stat = '2PT Att'
     else:
         display_stat = stat
 

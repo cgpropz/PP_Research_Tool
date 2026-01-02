@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "generated_at": "2025-12-25T18:14:52.980928",
+    "source": "the-odds-api",
+    "count": 3
+  },
+  "events": [
+    {
+      "id": "9010f7d8f26d5880c63b67355800f997",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-25T22:17:54Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "Dallas Mavericks",
+      "logos": {
+        "home": "assets/team-logos/gsw.png",
+        "away": "assets/team-logos/dal.png"
+      },
+      "best_h2h": {
+        "home": -360,
+        "away": 700
+      },
+      "best_spread": {
+        "home": {
+          "point": -13.5,
+          "price": -118
+        },
+        "away": {
+          "point": 13.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 6
+    },
+    {
+      "id": "d54afb5b752a199f93e39afc2b39d091",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-26T01:00:00Z",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Houston Rockets",
+      "logos": {
+        "home": "assets/team-logos/lal.png",
+        "away": "assets/team-logos/hou.png"
+      },
+      "best_h2h": {
+        "home": 118,
+        "away": -133
+      },
+      "best_spread": {
+        "home": {
+          "point": 2.5,
+          "price": -110
+        },
+        "away": {
+          "point": -2.5,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    },
+    {
+      "id": "6b9d46fb1b22af30b771b5f6b8a4c6f8",
+      "sport_key": "basketball_nba",
+      "commence_time": "2025-12-26T03:30:00Z",
+      "home_team": "Denver Nuggets",
+      "away_team": "Minnesota Timberwolves",
+      "logos": {
+        "home": "assets/team-logos/den.png",
+        "away": "assets/team-logos/min.png"
+      },
+      "best_h2h": {
+        "home": -108,
+        "away": 105
+      },
+      "best_spread": {
+        "home": {
+          "point": -1.0,
+          "price": -110
+        },
+        "away": {
+          "point": 1.0,
+          "price": -110
+        }
+      },
+      "bookmakers_count": 9
+    }
+  ]
+}

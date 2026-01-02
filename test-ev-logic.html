@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test EV Logic</title>
+    <style>
+        body { font-family: monospace; background: #000; color: #0f0; padding: 20px; }
+        pre { background: #111; padding: 10px; border: 1px solid #0f0; overflow-x: auto; margin: 10px 0; max-height: 500px; overflow-y: auto; }
+        .error { color: #f00; }
+        .success { color: #0f0; }
+        .warning { color: #ff0; }
+    </style>
+</head>
+<body>
+    <h1>EV Logic Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        async function fetchJson(path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`Failed to fetch ${path} - Status ${res.status}`);
+                const data = await res.json();
+                return data;
+            } catch (err) {
+                console.error('Error fetching', path, err);
+                throw err;
+            }
+        }
+        
+        function impliedProb(odds) {
+            if (!odds || isNaN(odds)) return null;
+            const n = Number(odds);
+            return n > 0 ? 100 / (n + 100) : Math.abs(n) / (Math.abs(n) + 100);
+        }
+
+        function calcEV(prob, odds) {
+            if (!prob || !odds || isNaN(prob) || isNaN(odds)) return null;
+            const p = prob / 100;
+            const n = Number(odds);
+            const payout = n > 0 ? n / 100 : 100 / Math.abs(n);
+            return ((p * payout) - (1 - p)) * 100;
+        }
+        
+        async function test() {
+            let html = '';
+            
+            try {
+                html += '<h2>Loading Data...</h2>';
+                
+                const ppCards = await fetchJson('PLAYER_UI_CARDS_PERFECT.json');
+                const oddsData = await fetchJson('nba_player_odds.json');
+                const positionsData = await fetchJson('nba_players_2025_26_positions.json');
+                
+                html += `<pre class="success">✓ Cards loaded: ${ppCards.length}
+✓ Odds players loaded: ${oddsData.length}
+✓ Positions loaded: ${Object.keys(positionsData).length}</pre>`;
+                
+                const oddsMap = {};
+                oddsData.forEach(player => {
+                    oddsMap[player.name] = player;
+                });
+                
+                const oddsPropMap = {
+                    'Points': 'points', 
+                    'Rebounds': 'rebounds', 
+                    'Assists': 'assists',
+                    'Steals': 'steals', 
+                    'Blocked Shots': 'blocks', 
+                    'Turnovers': 'turnovers',
+                    'Fantasy Score': 'fantasyPts', 
+                    '3PM': 'fg3PtMade',
+                    'Pts+Rebs+Asts': 'pointsReboundsAssists', 
+                    'Pts+Rebs': 'pointsRebounds',
+                    'Pts+Asts': 'pointsAssists', 
+                    'Rebs+Asts': 'reboundsAssists',
+                    'FG Att': 'fgAtt', 
+                    '3PT Att': 'fg3PtAtt', 
+                    '2PT Att': 'twoPtAtt',
+                    'Defensive Rebounds': 'defRebounds', 
+                    'Offensive Rebounds': 'offRebounds'
+                };
+                
+                html += '<h2>Testing First 20 Cards</h2>';
+                html += '<pre>';
+                
+                let rowCount = 0;
+                let matchedCount = 0;
+                let noPropOddsCount = 0;
+                const testRows = [];
+                
+                for (let i = 0; i < Math.min(20, ppCards.length); i++) {
+                    const card = ppCards[i];
+                    const playerOdds = oddsMap[card.name];
+                    
+                    if (!playerOdds || !playerOdds.projection) {
+                        html += `<span class="error">❌ ${card.name} - no odds</span>\n`;
+                        continue;
+                    }
+                    matchedCount++;
+                    
+                    const oddsKey = oddsPropMap[card.prop];
+                    if (!oddsKey) {
+                        html += `<span class="warning">⚠ ${card.name} - ${card.prop} - no mapping</span>\n`;
+                        noPropOddsCount++;
+                        continue;
+                    }
+                    
+                    if (!playerOdds.projection[oddsKey]) {
+                        html += `<span class="warning">⚠ ${card.name} - ${card.prop} (${oddsKey}) - not in projection</span>\n`;
+                        noPropOddsCount++;
+                        continue;
+                    }
+                    
+                    const propOdds = playerOdds.projection[oddsKey];
+                    const books = propOdds.books || [];
+                    
+                    if (books.length > 0) {
+                        rowCount += books.length * 2; // Over and Under
+                        html += `<span class="success">✓ ${card.name} - ${card.prop}: ${books.length} books → ${books.length * 2} rows</span>\n`;
+                        
+                        // Show sample row
+                        const book = books[0];
+                        if (book.overPrice) {
+                            const prob = impliedProb(book.overPrice);
+                            const ev = calcEV(prob, book.overPrice);
+                            testRows.push({
+                                player: card.name,
+                                prop: card.prop,
+                                book: book.book,
+                                odds: book.overPrice,
+                                prob: prob ? (prob * 100).toFixed(1) : 'N/A',
+                                ev: ev ? ev.toFixed(2) : 'N/A'
+                            });
+                        }
+                    } else {
+                        html += `<span class="warning">⚠ ${card.name} - ${card.prop} - no books</span>\n`;
+                    }
+                }
+                
+                html += '</pre>';
+                html += `<pre class="success">Cards processed: ${Math.min(20, ppCards.length)}
+Matched: ${matchedCount}
+No prop odds: ${noPropOddsCount}
+Total rows created: ${rowCount}</pre>`;
+                
+                if (rowCount > 0) {
+                    html += '<h3>Sample Rows</h3>';
+                    html += '<pre>';
+                    testRows.slice(0, 5).forEach(row => {
+                        html += `${row.player} | ${row.prop} | ${row.book} | Odds: ${row.odds} | Prob: ${row.prob}% | EV: ${row.ev}\n`;
+                    });
+                    html += '</pre>';
+                } else {
+                    html += '<pre class="error">⚠ WARNING: NO ROWS CREATED! Check mappings above.</pre>';
+                }
+                
+            } catch (err) {
+                html += `<pre class="error">ERROR: ${err.message}\n${err.stack}</pre>`;
+            }
+            
+            output.innerHTML = html;
+        }
+        
+        test();
+    </script>
+</body>
+</html>

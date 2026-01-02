@@ -379,11 +379,16 @@ def build_player_cards():
         # Load DVP data for rankings
         dvp_data = {}
         dvp_path = os.path.join(BACKEND_DATA_DIR, 'DVP_2025_weighted.json')
+        logger.info(f"📊 Looking for DVP at BACKEND_DATA_DIR: {dvp_path}, exists={os.path.exists(dvp_path)}")
         if not os.path.exists(dvp_path):
             dvp_path = os.path.join(BASE_DIR, 'DVP_2025_weighted.json')
+            logger.info(f"📊 Looking for DVP at BASE_DIR: {dvp_path}, exists={os.path.exists(dvp_path)}")
         if os.path.exists(dvp_path):
             with open(dvp_path) as f:
                 dvp_data = json.load(f)
+            logger.info(f"📊 Loaded DVP data with {len(dvp_data)} positions")
+        else:
+            logger.warning(f"⚠️ DVP file not found at any path!")
         
         # Load player positions
         positions_data = {}
