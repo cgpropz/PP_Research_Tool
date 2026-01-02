@@ -168,10 +168,16 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware - allow all origins for mobile access
+# CORS middleware - explicitly list allowed origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for mobile access
+    allow_origins=[
+        "https://pp-research-tool.vercel.app",
+        "https://pp-research-tool-*.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
