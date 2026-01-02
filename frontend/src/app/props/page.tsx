@@ -130,7 +130,7 @@ export default function PropsPage() {
           teamsPlaying.add(g.home);
           teamsPlaying.add(g.away);
         });
-        result = result.filter(c => teamsPlaying.has(c.team) || teamsPlaying.has(c.opponent));
+        result = result.filter(c => teamsPlaying.has(c.team) || (c.opponent && teamsPlaying.has(c.opponent)));
       } else {
         // Specific game id
         const game = games.find(g => g.id === selectedMatchup);

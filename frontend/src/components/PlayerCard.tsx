@@ -260,7 +260,7 @@ export default function PlayerCardComponent({ card, showDetails = true }: Props)
               <span className="progress-label">{item.label}</span>
               <span 
                 className="progress-value text-lg font-bold"
-                style={{ color: getHitRateColor(item.value) }}
+                style={{ color: getHitRateColor(item.value ?? 0) }}
               >
                 {item.value?.toFixed(0) || 0}%
               </span>
