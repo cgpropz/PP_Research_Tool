@@ -5,6 +5,7 @@ import unicodedata
 import re
 from datetime import datetime
 import subprocess
+import sys
 import math
 # Import the odds fetcher
 import fetch_nba_props_cash_odds
@@ -17,6 +18,40 @@ def make_slug(name):
     base = normalize_name(name.lower())
     return re.sub(r'[^a-z0-9]+', '-', base).strip('-')
 
+# Map full team names to abbreviations
+TEAM_NAME_TO_ABBR = {
+    "Atlanta Hawks": "ATL",
+    "Boston Celtics": "BOS",
+    "Brooklyn Nets": "BKN",
+    "Charlotte Hornets": "CHA",
+    "Chicago Bulls": "CHI",
+    "Cleveland Cavaliers": "CLE",
+    "Dallas Mavericks": "DAL",
+    "Denver Nuggets": "DEN",
+    "Detroit Pistons": "DET",
+    "Golden State Warriors": "GSW",
+    "Houston Rockets": "HOU",
+    "Indiana Pacers": "IND",
+    "Los Angeles Clippers": "LAC",
+    "Los Angeles Lakers": "LAL",
+    "Memphis Grizzlies": "MEM",
+    "Miami Heat": "MIA",
+    "Milwaukee Bucks": "MIL",
+    "Minnesota Timberwolves": "MIN",
+    "New Orleans Pelicans": "NOP",
+    "New York Knicks": "NYK",
+    "Oklahoma City Thunder": "OKC",
+    "Orlando Magic": "ORL",
+    "Philadelphia 76ers": "PHI",
+    "Phoenix Suns": "PHX",
+    "Portland Trail Blazers": "POR",
+    "Sacramento Kings": "SAC",
+    "San Antonio Spurs": "SAS",
+    "Toronto Raptors": "TOR",
+    "Utah Jazz": "UTA",
+    "Washington Wizards": "WAS",
+}
+
 def build_player_cards():
     # Load odds and gamelogs
     with open('NBA_PURE_STANDARD_SINGLE.json') as f:
@@ -27,17 +62,19 @@ def build_player_cards():
         with open(odds_path) as f:
             odds_data = json.load(f)
         events = odds_data.get('events', [])
-        # Build team to spread map
+        # Build team to spread map (using abbreviations)
         team_spreads = {}
         for ev in events:
             for side in ['home', 'away']:
-                team = ev.get(f'{side}_team')
+                team_full = ev.get(f'{side}_team')
                 spread = None
                 spread_obj = ev.get('best_spread', {}).get(side)
                 if spread_obj and 'point' in spread_obj:
                     spread = spread_obj['point']
-                if team and spread is not None:
-                    team_spreads[team] = spread
+                if team_full and spread is not None:
+                    # Convert full name to abbreviation
+                    team_abbr = TEAM_NAME_TO_ABBR.get(team_full, team_full)
+                    team_spreads[team_abbr] = spread
     else:
         team_spreads = {}
     # Normalize structure to list of dicts
@@ -58,14 +95,21 @@ def build_player_cards():
         'Rebounds': ['REB'],
         'Assists': ['AST'],
         'Threes': ['3PM'],
+        '3PM': ['3PM'],
         'Steals': ['STL'],
         'Blocks': ['BLK'],
         'Turnovers': ['TOV'],
-        'Fantasy Score': ['FP'],
+        'Fantasy Score': ['FANTASY_PTS'],
         'Threes Made': ['3PM'],
         'Three Pointers Made': ['3PM'],
         'Blocked Shots': ['BLK'],
         'Steals + Blocks': ['STL','BLK'],
+        # Attempts and granular rebounds
+        '2PT Att': ['FGA','3PA'],
+        '3PT Att': ['3PA'],
+        'FG Att': ['FGA'],
+        'Defensive Rebounds': ['DREB'],
+        'Offensive Rebounds': ['OREB'],
         'PRA': ['PTS','REB','AST'],
         'Pts+Rebs+Asts': ['PTS','REB','AST'],
         'Pts+Rebs': ['PTS','REB'],
@@ -99,7 +143,7 @@ def build_player_cards():
         if stat not in STAT_MAP:
             continue
         cols = STAT_MAP[stat]
-        player_df = df_logs[df_logs['PLAYER'] == name].copy()
+        player_df = df_logs[df_logs['PLAYER NAME'] == name].copy()
         if player_df.empty or len(player_df) < 5:
             continue
         player_df = player_df.sort_values('GAME DATE', ascending=False)
@@ -131,7 +175,12 @@ def build_player_cards():
             min_l20 * 0.20 +
             min_season * 0.10, 1
         )
-        if len(cols) == 1:
+        # Special handling for derived props
+        if stat == '2PT Att':
+            fga_vals = player_df['FGA'].astype(float).tolist()
+            three_pa_vals = player_df['3PA'].astype(float).tolist()
+            values = [max(0, fga - three_pa) for fga, three_pa in zip(fga_vals, three_pa_vals)]
+        elif len(cols) == 1:
             values = player_df[cols[0]].astype(float).tolist()
         else:
             values = (player_df[cols].astype(float).sum(axis=1)).tolist()
@@ -166,6 +215,8 @@ def build_player_cards():
             base_projections[(name, stat)] = weighted_projection
         if stat == 'PRA':
             display_stat = 'Pts+Rebs+Asts'
+        elif stat in ['Threes','Threes Made','Three Pointers Made']:
+            display_stat = '3PM'
         else:
             display_stat = stat
         combo_projection = None
@@ -244,14 +295,17 @@ def update_html_timestamp():
         f.write(html)
 
 if __name__ == '__main__':
+    # Run the NBA schedule and injuries fetchers first
+    subprocess.run([sys.executable, 'fetch_nba_schedule.py'], check=True)
+    subprocess.run([sys.executable, 'fetch_nba_injuries.py'], check=True)
     # Run the NBA props.cash odds fetcher
     fetch_nba_props_cash_odds.run()
     # Run the PrizePicks odds fetch script to update NBA_PURE_STANDARD_SINGLE.json
-    subprocess.run(['python', 'Fetch_PP_Odds.py'], check=True)
+    subprocess.run([sys.executable, 'Fetch_PP_Odds.py'], check=True)
     # Run the odds fetcher for spreads
-    subprocess.run(['python', os.path.join('scripts', 'fetch_odds_daily.py')], check=True)
+    subprocess.run([sys.executable, os.path.join('players-props','scripts', 'fetch_odds_daily.py')], check=True)  # Removed as requested
     build_player_cards()
     update_html_timestamp()
     # Generate player detail pages for props dashboard
-    subprocess.run(['python3', os.path.join('scripts', 'generate_player_pages_props.py')], check=True)
+    subprocess.run([sys.executable, os.path.join('players-props', 'scripts', 'generate_player_pages_props.py')], check=True)
     print('All data, HTML, and player pages updated!')

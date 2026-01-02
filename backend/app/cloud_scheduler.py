@@ -337,6 +337,34 @@ def build_player_cards():
                         team_abbr = TEAM_NAME_TO_ABBR.get(team_full, team_full)
                         team_spreads[team_abbr] = spread
         
+        # Load schedule to get opponents
+        schedule_path = os.path.join(BASE_DIR, 'nba_schedule.json')
+        team_opponents = {}
+        if os.path.exists(schedule_path):
+            with open(schedule_path) as f:
+                schedule = json.load(f)
+            # Build team->opponent map for today's games
+            for game in schedule:
+                home = game.get('home', '')
+                away = game.get('away', '')
+                if home and away:
+                    team_opponents[home] = away
+                    team_opponents[away] = home
+        
+        # Load DVP data for rankings
+        dvp_data = {}
+        dvp_path = os.path.join(BASE_DIR, 'DVP_2025_weighted.json')
+        if os.path.exists(dvp_path):
+            with open(dvp_path) as f:
+                dvp_data = json.load(f)
+        
+        # Load player positions
+        positions_data = {}
+        positions_path = os.path.join(BASE_DIR, 'nba_players_2025_26_positions.json')
+        if os.path.exists(positions_path):
+            with open(positions_path) as f:
+                positions_data = json.load(f)
+        
         # Load gamelogs - try multiple paths
         gamelogs_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
         if not os.path.exists(gamelogs_path):
@@ -348,6 +376,12 @@ def build_player_cards():
         
         logger.info(f"📁 Loading gamelogs from: {gamelogs_path}")
         df_logs = pd.read_csv(gamelogs_path)
+        
+        # Build player_id lookup from gamelogs
+        player_ids = {}
+        if 'PLAYER_ID' in df_logs.columns:
+            for _, row in df_logs[['PLAYER NAME', 'PLAYER_ID']].drop_duplicates().iterrows():
+                player_ids[row['PLAYER NAME']] = int(row['PLAYER_ID'])
         df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
         logger.info(f"📈 Loaded gamelogs: {len(df_logs)} records")
         
@@ -384,6 +418,54 @@ def build_player_cards():
         
         logger.info(f"📋 Processing {len(pp_lines)} player lines")
         
+        # DVP stat key mapping
+        DVP_STAT_MAP = {
+            'points': 'pts', 'rebounds': 'reb', 'assists': 'ast',
+            'steals': 'stl', 'blocks': 'blk', 'turnovers': 'to',
+            'threes': '3pm', '3pm': '3pm',
+            'pts_rebs_asts': 'pra', 'pra': 'pra',
+            'pts_asts': 'pa', 'pa': 'pa',
+            'pts_rebs': 'pr', 'pr': 'pr',
+            'rebs_asts': 'ra', 'ra': 'ra',
+        }
+        
+        def get_dvp_rank(opponent, position, stat_key):
+            """Get DVP rank for a stat against a position"""
+            if not opponent or not position or not dvp_data:
+                return None
+            dvp_stat = DVP_STAT_MAP.get(stat_key.lower(), stat_key.lower())
+            pos_data = dvp_data.get(position, {})
+            team_data = pos_data.get(opponent, {})
+            stat_data = team_data.get(dvp_stat, {})
+            return stat_data.get('rank')
+        
+        def calculate_hit_rates(p_logs_copy, line_value):
+            """Calculate hit rates for L5, L10, L20, season"""
+            l5 = p_logs_copy.head(5)
+            l10 = p_logs_copy.head(10)
+            l20 = p_logs_copy.head(20)
+            season = p_logs_copy
+            
+            def calc(df, line_val):
+                if len(df) == 0:
+                    return 0, 0, "0-0"
+                hits = (df['combined'] > line_val).sum()
+                pct = (hits / len(df)) * 100
+                record = f"{hits}-{len(df)}"
+                return round(pct, 1), hits, record
+            
+            l5_pct, l5_hits, l5_rec = calc(l5, line_value)
+            l10_pct, l10_hits, l10_rec = calc(l10, line_value)
+            l20_pct, l20_hits, l20_rec = calc(l20, line_value)
+            season_pct, season_hits, season_rec = calc(season, line_value)
+            
+            return {
+                'last_5_pct': l5_pct, 'last_5': l5_rec,
+                'last_10_pct': l10_pct, 'last_10': l10_rec,
+                'last_20_pct': l20_pct, 'last_20': l20_rec,
+                'season_pct': season_pct, 'season': season_rec,
+            }
+        
         for line in pp_lines:
             # Get player info
             player_name = line.get('name', line.get('player_name', line.get('player', '')))
@@ -391,7 +473,13 @@ def build_player_cards():
                 continue
             
             team = line.get('team', '')
-            position = line.get('position', '')
+            position = line.get('position', '') or positions_data.get(player_name, '')
+            
+            # Get opponent from schedule
+            opponent = team_opponents.get(team, '')
+            
+            # Get player_id from gamelogs
+            player_id = player_ids.get(player_name)
             
             # Get player logs
             p_logs = df_logs[df_logs['PLAYER NAME'].str.lower() == player_name.lower()]
@@ -452,6 +540,9 @@ def build_player_cards():
                     p_logs_copy = p_logs.copy()
                     p_logs_copy['combined'] = p_logs_copy[valid_cols].sum(axis=1)
                     
+                    # Get last 10 values for bar chart (oldest to newest)
+                    last_10_values = p_logs_copy.head(10)['combined'].tolist()[::-1]
+                    
                     # Recent games
                     recent = p_logs_copy.nlargest(10, 'GAME DATE')
                     if recent.empty:
@@ -464,13 +555,21 @@ def build_player_cards():
                     
                     spread = team_spreads.get(team, 0)
                     
+                    # Get DVP rank
+                    dvp_rank = get_dvp_rank(opponent, position, stat_key)
+                    
+                    # Calculate all hit rates
+                    hit_rates = calculate_hit_rates(p_logs_copy, line_value)
+                    
                     # Build card
                     card = {
                         'name': player_name,
                         'player_name': player_name,
                         'player_slug': make_slug(player_name),
                         'team': team,
+                        'opponent': opponent,
                         'position': position,
+                        'player_id': player_id,
                         'prop': stat_key.replace('_', '+').title(),
                         'stat_type': stat_key,
                         'line': float(line_value),
@@ -478,10 +577,20 @@ def build_player_cards():
                         'avg': round(avg, 1),
                         'median': round(median, 1),
                         'hit_rate': round(hit_rate, 1),
-                        'last_10_pct': round(hit_rate, 1),
+                        'last_5_pct': hit_rates['last_5_pct'],
+                        'last_5': hit_rates['last_5'],
+                        'last_10_pct': hit_rates['last_10_pct'],
+                        'last_10': hit_rates['last_10'],
+                        'last_20_pct': hit_rates['last_20_pct'],
+                        'last_20': hit_rates['last_20'],
+                        'season_pct': hit_rates['season_pct'],
+                        'season': hit_rates['season'],
+                        'last_10_values': last_10_values,
                         'hit_count': int(hit_count),
-                        'games_played': len(recent),
+                        'games_played': len(p_logs_copy),
+                        'games': len(p_logs_copy),
                         'spread': spread,
+                        'dvp_rank': dvp_rank,
                         'over_odds': over_price,
                         'under_odds': under_price,
                         'expected_minutes': expected_minutes,
@@ -505,6 +614,9 @@ def build_player_cards():
                 p_logs_copy = p_logs.copy()
                 p_logs_copy['combined'] = p_logs_copy[valid_cols].sum(axis=1)
                 
+                # Get last 10 values for bar chart (oldest to newest)
+                last_10_values = p_logs_copy.head(10)['combined'].tolist()[::-1]
+                
                 recent = p_logs_copy.nlargest(10, 'GAME DATE')
                 if recent.empty:
                     continue
@@ -515,12 +627,20 @@ def build_player_cards():
                 hit_rate = hit_count / len(recent) * 100
                 spread = team_spreads.get(team, 0)
                 
+                # Get DVP rank
+                dvp_rank = get_dvp_rank(opponent, position, stat_type)
+                
+                # Calculate all hit rates
+                hit_rates = calculate_hit_rates(p_logs_copy, line_value)
+                
                 card = {
                     'name': player_name,
                     'player_name': player_name,
                     'player_slug': make_slug(player_name),
                     'team': team,
+                    'opponent': opponent,
                     'position': position,
+                    'player_id': player_id,
                     'prop': stat_type,
                     'stat_type': stat_type,
                     'line': float(line_value),
@@ -528,10 +648,20 @@ def build_player_cards():
                     'avg': round(avg, 1),
                     'median': round(median, 1),
                     'hit_rate': round(hit_rate, 1),
-                    'last_10_pct': round(hit_rate, 1),
+                    'last_5_pct': hit_rates['last_5_pct'],
+                    'last_5': hit_rates['last_5'],
+                    'last_10_pct': hit_rates['last_10_pct'],
+                    'last_10': hit_rates['last_10'],
+                    'last_20_pct': hit_rates['last_20_pct'],
+                    'last_20': hit_rates['last_20'],
+                    'season_pct': hit_rates['season_pct'],
+                    'season': hit_rates['season'],
+                    'last_10_values': last_10_values,
                     'hit_count': int(hit_count),
-                    'games_played': len(recent),
+                    'games_played': len(p_logs_copy),
+                    'games': len(p_logs_copy),
                     'spread': spread,
+                    'dvp_rank': dvp_rank,
                     'expected_minutes': expected_minutes,
                     'score': round((hit_rate * 0.4) + (min(avg / max(line_value, 1), 1.5) * 40) + (20 if spread < -3 else 10 if spread < 0 else 0), 1),
                     'last_updated': datetime.now().isoformat()

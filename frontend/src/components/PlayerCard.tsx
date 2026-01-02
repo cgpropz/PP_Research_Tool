@@ -118,7 +118,7 @@ function slugify(name: string): string {
 
 export default function PlayerCardComponent({ card, showDetails = true }: Props) {
   const teamColor = TEAM_COLORS[card.team] || { bg: '#222', text: '#fff' };
-  const oppColor = TEAM_COLORS[card.opponent] || { bg: '#444', text: '#fff' };
+  const oppColor = card.opponent ? (TEAM_COLORS[card.opponent] || { bg: '#444', text: '#fff' }) : null;
   const playerSlug = slugify(card.name);
   const playerImageUrl = card.player_id 
     ? `https://cdn.nba.com/headshots/nba/latest/260x190/${card.player_id}.png`
@@ -155,11 +155,11 @@ export default function PlayerCardComponent({ card, showDetails = true }: Props)
 
       {/* Player Image */}
       {playerImageUrl && (
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center mb-3 mt-8">
           <img 
             src={playerImageUrl} 
             alt={card.name}
-            className="w-28 h-20 object-contain"
+            className="w-32 h-24 object-contain"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
@@ -191,12 +191,14 @@ export default function PlayerCardComponent({ card, showDetails = true }: Props)
         >
           {card.team}
         </span>
-        <span 
-          className="opp-badge" 
-          style={{ background: oppColor.bg, color: oppColor.text }}
-        >
-          vs {card.opponent}
-        </span>
+        {card.opponent && oppColor && (
+          <span 
+            className="opp-badge" 
+            style={{ background: oppColor.bg, color: oppColor.text }}
+          >
+            vs {card.opponent}
+          </span>
+        )}
       </div>
 
       {/* Prop Type */}
@@ -269,31 +271,47 @@ export default function PlayerCardComponent({ card, showDetails = true }: Props)
         {/* Last 10 Games Bar Chart */}
         {showDetails && card.last_10_values && card.last_10_values.length > 0 && (
           <div className="mt-4">
-            <div className="bars-container justify-center">
+            <div className="bars-container justify-center" style={{ height: '80px' }}>
               {card.last_10_values.map((value, idx) => {
-                const max = Math.max(...card.last_10_values, card.line);
+                const max = Math.max(...(card.last_10_values || []), card.line);
                 const height = (value / max) * 100;
                 const isOver = value > card.line;
                 return (
-                  <div
+                  <div 
                     key={idx}
-                    className="bar"
-                    style={{ 
-                      height: `${height}%`,
-                      background: isOver ? '#1aff00' : '#ff2d2d',
-                      minWidth: '12px',
-                      maxWidth: '24px',
-                      flex: 1,
-                      borderRadius: '4px 4px 0 0',
-                    }}
-                    title={`Game ${idx + 1}: ${value}`}
-                  />
+                    className="flex flex-col items-center"
+                    style={{ flex: 1, minWidth: '20px', maxWidth: '30px' }}
+                  >
+                    <div
+                      className="bar relative"
+                      style={{ 
+                        height: `${Math.max(height, 10)}%`,
+                        width: '100%',
+                        background: isOver ? '#1aff00' : '#ff2d2d',
+                        borderRadius: '4px 4px 0 0',
+                      }}
+                    >
+                      <span 
+                        className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-bold"
+                        style={{ color: isOver ? '#1aff00' : '#ff4444' }}
+                      >
+                        {value}
+                      </span>
+                    </div>
+                  </div>
                 );
               })}
             </div>
-            <div className="flex justify-between mt-1 text-xs text-gray-500">
-              <span>10 games ago</span>
-              <span>Latest</span>
+            <div className="flex justify-between mt-1">
+              {card.last_10_values.map((_, idx) => (
+                <span 
+                  key={idx}
+                  className="text-xs text-gray-500"
+                  style={{ flex: 1, minWidth: '20px', maxWidth: '30px', textAlign: 'center' }}
+                >
+                  G{idx + 1}
+                </span>
+              ))}
             </div>
           </div>
         )}
