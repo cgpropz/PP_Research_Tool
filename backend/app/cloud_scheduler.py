@@ -338,7 +338,9 @@ def build_player_cards():
                         team_spreads[team_abbr] = spread
         
         # Load schedule to get opponents
-        schedule_path = os.path.join(BASE_DIR, 'nba_schedule.json')
+        schedule_path = os.path.join(BACKEND_DATA_DIR, 'nba_schedule.json')
+        if not os.path.exists(schedule_path):
+            schedule_path = os.path.join(BASE_DIR, 'nba_schedule.json')
         team_opponents = {}
         if os.path.exists(schedule_path):
             with open(schedule_path) as f:
@@ -353,14 +355,18 @@ def build_player_cards():
         
         # Load DVP data for rankings
         dvp_data = {}
-        dvp_path = os.path.join(BASE_DIR, 'DVP_2025_weighted.json')
+        dvp_path = os.path.join(BACKEND_DATA_DIR, 'DVP_2025_weighted.json')
+        if not os.path.exists(dvp_path):
+            dvp_path = os.path.join(BASE_DIR, 'DVP_2025_weighted.json')
         if os.path.exists(dvp_path):
             with open(dvp_path) as f:
                 dvp_data = json.load(f)
         
         # Load player positions
         positions_data = {}
-        positions_path = os.path.join(BASE_DIR, 'nba_players_2025_26_positions.json')
+        positions_path = os.path.join(BACKEND_DATA_DIR, 'nba_players_2025_26_positions.json')
+        if not os.path.exists(positions_path):
+            positions_path = os.path.join(BASE_DIR, 'nba_players_2025_26_positions.json')
         if os.path.exists(positions_path):
             with open(positions_path) as f:
                 positions_data = json.load(f)

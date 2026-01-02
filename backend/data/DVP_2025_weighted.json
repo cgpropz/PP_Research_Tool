@@ -1,0 +1,7512 @@
+{
+  "PG": {
+    "ATL": {
+      "pts": {
+        "score": 1.07,
+        "rank": 26
+      },
+      "reb": {
+        "score": 1.08,
+        "rank": 25
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "stl": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "blk": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "to": {
+        "score": 1.23,
+        "rank": 30
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 19
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 1
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 28
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "pa": {
+        "score": 1.08,
+        "rank": 29
+      },
+      "ra": {
+        "score": 1.08,
+        "rank": 24
+      }
+    },
+    "BKN": {
+      "pts": {
+        "score": 0.87,
+        "rank": 1
+      },
+      "reb": {
+        "score": 0.93,
+        "rank": 7
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 21
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "blk": {
+        "score": 0.47,
+        "rank": 1
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 9
+      },
+      "3pm": {
+        "score": 0.82,
+        "rank": 2
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 2
+      },
+      "pra": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "pr": {
+        "score": 0.9,
+        "rank": 2
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 16
+      }
+    },
+    "BOS": {
+      "pts": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "reb": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "ast": {
+        "score": 1.05,
+        "rank": 19
+      },
+      "stl": {
+        "score": 0.73,
+        "rank": 1
+      },
+      "blk": {
+        "score": 0.82,
+        "rank": 9
+      },
+      "to": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 25
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 3
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 17
+      }
+    },
+    "CHA": {
+      "pts": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "reb": {
+        "score": 0.94,
+        "rank": 9
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "stl": {
+        "score": 0.92,
+        "rank": 9
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 4
+      },
+      "to": {
+        "score": 0.84,
+        "rank": 4
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 4
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 13
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 10
+      }
+    },
+    "CHI": {
+      "pts": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "reb": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "ast": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "stl": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "blk": {
+        "score": 0.87,
+        "rank": 11
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 5
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 26
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 5
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ra": {
+        "score": 0.93,
+        "rank": 6
+      }
+    },
+    "CLE": {
+      "pts": {
+        "score": 1.03,
+        "rank": 22
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "stl": {
+        "score": 0.94,
+        "rank": 11
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 5
+      },
+      "to": {
+        "score": 0.91,
+        "rank": 8
+      },
+      "3pm": {
+        "score": 1.11,
+        "rank": 22
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 6
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "pa": {
+        "score": 1.05,
+        "rank": 23
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 18
+      }
+    },
+    "DAL": {
+      "pts": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "reb": {
+        "score": 1.25,
+        "rank": 30
+      },
+      "ast": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 13
+      },
+      "blk": {
+        "score": 1.29,
+        "rank": 24
+      },
+      "to": {
+        "score": 1.09,
+        "rank": 20
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 6
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 7
+      },
+      "pra": {
+        "score": 1.11,
+        "rank": 30
+      },
+      "pr": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 20
+      },
+      "ra": {
+        "score": 1.15,
+        "rank": 30
+      }
+    },
+    "DEN": {
+      "pts": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 10
+      },
+      "ast": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "stl": {
+        "score": 0.73,
+        "rank": 2
+      },
+      "blk": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "to": {
+        "score": 0.62,
+        "rank": 1
+      },
+      "3pm": {
+        "score": 0.81,
+        "rank": 1
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 8
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "pr": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "ra": {
+        "score": 0.98,
+        "rank": 14
+      }
+    },
+    "DET": {
+      "pts": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "reb": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "ast": {
+        "score": 0.86,
+        "rank": 4
+      },
+      "stl": {
+        "score": 1.12,
+        "rank": 26
+      },
+      "blk": {
+        "score": 1.12,
+        "rank": 21
+      },
+      "to": {
+        "score": 1.16,
+        "rank": 27
+      },
+      "3pm": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 9
+      },
+      "pra": {
+        "score": 0.91,
+        "rank": 2
+      },
+      "pr": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "pa": {
+        "score": 0.92,
+        "rank": 3
+      },
+      "ra": {
+        "score": 0.89,
+        "rank": 3
+      }
+    },
+    "GSW": {
+      "pts": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "reb": {
+        "score": 0.9,
+        "rank": 3
+      },
+      "ast": {
+        "score": 0.79,
+        "rank": 1
+      },
+      "stl": {
+        "score": 1.13,
+        "rank": 27
+      },
+      "blk": {
+        "score": 1.41,
+        "rank": 29
+      },
+      "to": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "3pm": {
+        "score": 1.1,
+        "rank": 21
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 10
+      },
+      "pra": {
+        "score": 0.91,
+        "rank": 3
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "pa": {
+        "score": 0.92,
+        "rank": 4
+      },
+      "ra": {
+        "score": 0.84,
+        "rank": 1
+      }
+    },
+    "HOU": {
+      "pts": {
+        "score": 0.9,
+        "rank": 3
+      },
+      "reb": {
+        "score": 0.92,
+        "rank": 6
+      },
+      "ast": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 21
+      },
+      "blk": {
+        "score": 1.14,
+        "rank": 22
+      },
+      "to": {
+        "score": 1.14,
+        "rank": 26
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 4
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 11
+      },
+      "pra": {
+        "score": 0.93,
+        "rank": 6
+      },
+      "pr": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 8
+      }
+    },
+    "IND": {
+      "pts": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "reb": {
+        "score": 1.2,
+        "rank": 29
+      },
+      "ast": {
+        "score": 0.9,
+        "rank": 6
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 14
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 6
+      },
+      "to": {
+        "score": 0.93,
+        "rank": 11
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 7
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 12
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "pr": {
+        "score": 1.09,
+        "rank": 29
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "ra": {
+        "score": 1.05,
+        "rank": 20
+      }
+    },
+    "LAC": {
+      "pts": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "ast": {
+        "score": 1.03,
+        "rank": 17
+      },
+      "stl": {
+        "score": 0.91,
+        "rank": 8
+      },
+      "blk": {
+        "score": 1.38,
+        "rank": 27
+      },
+      "to": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "3pm": {
+        "score": 0.95,
+        "rank": 13
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 13
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 20
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "ra": {
+        "score": 1.05,
+        "rank": 21
+      }
+    },
+    "LAL": {
+      "pts": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "reb": {
+        "score": 0.78,
+        "rank": 1
+      },
+      "ast": {
+        "score": 1.1,
+        "rank": 26
+      },
+      "stl": {
+        "score": 1.29,
+        "rank": 28
+      },
+      "blk": {
+        "score": 0.69,
+        "rank": 3
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 22
+      },
+      "3pm": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 14
+      },
+      "pra": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "pr": {
+        "score": 0.9,
+        "rank": 3
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 26
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 9
+      }
+    },
+    "MEM": {
+      "pts": {
+        "score": 1.13,
+        "rank": 29
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "ast": {
+        "score": 0.92,
+        "rank": 7
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 15
+      },
+      "blk": {
+        "score": 0.58,
+        "rank": 2
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 23
+      },
+      "3pm": {
+        "score": 1.3,
+        "rank": 30
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 15
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 15
+      },
+      "pr": {
+        "score": 1.07,
+        "rank": 25
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 11
+      }
+    },
+    "MIA": {
+      "pts": {
+        "score": 1.01,
+        "rank": 20
+      },
+      "reb": {
+        "score": 1.15,
+        "rank": 27
+      },
+      "ast": {
+        "score": 1.11,
+        "rank": 27
+      },
+      "stl": {
+        "score": 1.0,
+        "rank": 18
+      },
+      "blk": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "to": {
+        "score": 1.17,
+        "rank": 28
+      },
+      "3pm": {
+        "score": 1.11,
+        "rank": 23
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 16
+      },
+      "pra": {
+        "score": 1.09,
+        "rank": 29
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 27
+      },
+      "ra": {
+        "score": 1.13,
+        "rank": 29
+      }
+    },
+    "MIL": {
+      "pts": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "ast": {
+        "score": 1.14,
+        "rank": 28
+      },
+      "stl": {
+        "score": 0.92,
+        "rank": 10
+      },
+      "blk": {
+        "score": 0.94,
+        "rank": 13
+      },
+      "to": {
+        "score": 1.08,
+        "rank": 17
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 17
+      },
+      "pra": {
+        "score": 1.06,
+        "rank": 25
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "pa": {
+        "score": 1.07,
+        "rank": 28
+      },
+      "ra": {
+        "score": 1.08,
+        "rank": 25
+      }
+    },
+    "MIN": {
+      "pts": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "ast": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "stl": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "blk": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "to": {
+        "score": 1.09,
+        "rank": 21
+      },
+      "3pm": {
+        "score": 0.87,
+        "rank": 9
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 18
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "pr": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 19
+      }
+    },
+    "NOP": {
+      "pts": {
+        "score": 0.94,
+        "rank": 5
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 18
+      },
+      "ast": {
+        "score": 1.17,
+        "rank": 30
+      },
+      "stl": {
+        "score": 0.88,
+        "rank": 4
+      },
+      "blk": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "to": {
+        "score": 1.08,
+        "rank": 18
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 19
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "pa": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "ra": {
+        "score": 1.08,
+        "rank": 26
+      }
+    },
+    "NYK": {
+      "pts": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "reb": {
+        "score": 0.78,
+        "rank": 2
+      },
+      "ast": {
+        "score": 0.93,
+        "rank": 9
+      },
+      "stl": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "blk": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "to": {
+        "score": 0.9,
+        "rank": 7
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 20
+      },
+      "pra": {
+        "score": 0.89,
+        "rank": 1
+      },
+      "pr": {
+        "score": 0.87,
+        "rank": 1
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "ra": {
+        "score": 0.85,
+        "rank": 2
+      }
+    },
+    "OKC": {
+      "pts": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "ast": {
+        "score": 0.82,
+        "rank": 2
+      },
+      "stl": {
+        "score": 0.87,
+        "rank": 3
+      },
+      "blk": {
+        "score": 0.76,
+        "rank": 8
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "3pm": {
+        "score": 1.11,
+        "rank": 24
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 21
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "pa": {
+        "score": 0.89,
+        "rank": 1
+      },
+      "ra": {
+        "score": 0.91,
+        "rank": 5
+      }
+    },
+    "ORL": {
+      "pts": {
+        "score": 1.1,
+        "rank": 28
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "stl": {
+        "score": 0.9,
+        "rank": 7
+      },
+      "blk": {
+        "score": 0.87,
+        "rank": 12
+      },
+      "to": {
+        "score": 1.21,
+        "rank": 29
+      },
+      "3pm": {
+        "score": 0.91,
+        "rank": 11
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 22
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "pr": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 12
+      }
+    },
+    "PHI": {
+      "pts": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "reb": {
+        "score": 1.17,
+        "rank": 28
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "stl": {
+        "score": 0.89,
+        "rank": 6
+      },
+      "blk": {
+        "score": 1.21,
+        "rank": 23
+      },
+      "to": {
+        "score": 1.08,
+        "rank": 19
+      },
+      "3pm": {
+        "score": 0.83,
+        "rank": 3
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 23
+      },
+      "pra": {
+        "score": 1.06,
+        "rank": 26
+      },
+      "pr": {
+        "score": 1.06,
+        "rank": 24
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "ra": {
+        "score": 1.12,
+        "rank": 28
+      }
+    },
+    "PHO": {
+      "pts": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "ast": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 7
+      },
+      "to": {
+        "score": 1.11,
+        "rank": 25
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 10
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 24
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 7
+      },
+      "ra": {
+        "score": 0.93,
+        "rank": 7
+      }
+    },
+    "POR": {
+      "pts": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "reb": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "ast": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "stl": {
+        "score": 1.4,
+        "rank": 30
+      },
+      "blk": {
+        "score": 0.83,
+        "rank": 10
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 10
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 8
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 25
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 13
+      }
+    },
+    "SAC": {
+      "pts": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "reb": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "stl": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "blk": {
+        "score": 1.36,
+        "rank": 26
+      },
+      "to": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 5
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 26
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "ra": {
+        "score": 1.07,
+        "rank": 23
+      }
+    },
+    "SAS": {
+      "pts": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "ast": {
+        "score": 0.95,
+        "rank": 10
+      },
+      "stl": {
+        "score": 0.97,
+        "rank": 16
+      },
+      "blk": {
+        "score": 1.07,
+        "rank": 20
+      },
+      "to": {
+        "score": 0.8,
+        "rank": 3
+      },
+      "3pm": {
+        "score": 1.19,
+        "rank": 28
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 27
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 28
+      },
+      "pa": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "ra": {
+        "score": 0.98,
+        "rank": 15
+      }
+    },
+    "TOR": {
+      "pts": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 12
+      },
+      "ast": {
+        "score": 0.82,
+        "rank": 3
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 17
+      },
+      "blk": {
+        "score": 1.52,
+        "rank": 30
+      },
+      "to": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "3pm": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 28
+      },
+      "pra": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "pa": {
+        "score": 0.89,
+        "rank": 2
+      },
+      "ra": {
+        "score": 0.89,
+        "rank": 4
+      }
+    },
+    "UTA": {
+      "pts": {
+        "score": 1.09,
+        "rank": 27
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "ast": {
+        "score": 1.14,
+        "rank": 29
+      },
+      "stl": {
+        "score": 1.1,
+        "rank": 25
+      },
+      "blk": {
+        "score": 1.38,
+        "rank": 28
+      },
+      "to": {
+        "score": 0.88,
+        "rank": 6
+      },
+      "3pm": {
+        "score": 1.24,
+        "rank": 29
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 29
+      },
+      "pra": {
+        "score": 1.07,
+        "rank": 27
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "pa": {
+        "score": 1.11,
+        "rank": 30
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 22
+      }
+    },
+    "WAS": {
+      "pts": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 24
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 25
+      },
+      "stl": {
+        "score": 1.29,
+        "rank": 29
+      },
+      "blk": {
+        "score": 1.29,
+        "rank": 25
+      },
+      "to": {
+        "score": 0.72,
+        "rank": 2
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 27
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 30
+      },
+      "pra": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "ra": {
+        "score": 1.08,
+        "rank": 27
+      }
+    }
+  },
+  "SG": {
+    "ATL": {
+      "pts": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "reb": {
+        "score": 0.92,
+        "rank": 7
+      },
+      "ast": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "stl": {
+        "score": 1.21,
+        "rank": 29
+      },
+      "blk": {
+        "score": 0.71,
+        "rank": 5
+      },
+      "to": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "3pm": {
+        "score": 1.1,
+        "rank": 25
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 1
+      },
+      "pra": {
+        "score": 0.97,
+        "rank": 8
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 5
+      }
+    },
+    "BKN": {
+      "pts": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "reb": {
+        "score": 0.9,
+        "rank": 4
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 22
+      },
+      "stl": {
+        "score": 1.15,
+        "rank": 27
+      },
+      "blk": {
+        "score": 1.17,
+        "rank": 21
+      },
+      "to": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "3pm": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 2
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "ra": {
+        "score": 0.99,
+        "rank": 10
+      }
+    },
+    "BOS": {
+      "pts": {
+        "score": 0.9,
+        "rank": 2
+      },
+      "reb": {
+        "score": 0.9,
+        "rank": 5
+      },
+      "ast": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "stl": {
+        "score": 0.68,
+        "rank": 1
+      },
+      "blk": {
+        "score": 0.78,
+        "rank": 8
+      },
+      "to": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "3pm": {
+        "score": 0.88,
+        "rank": 6
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 3
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 4
+      },
+      "pr": {
+        "score": 0.9,
+        "rank": 2
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 5
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 6
+      }
+    },
+    "CHA": {
+      "pts": {
+        "score": 0.94,
+        "rank": 4
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "ast": {
+        "score": 1.05,
+        "rank": 19
+      },
+      "stl": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "blk": {
+        "score": 0.67,
+        "rank": 4
+      },
+      "to": {
+        "score": 0.76,
+        "rank": 2
+      },
+      "3pm": {
+        "score": 0.85,
+        "rank": 4
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 4
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 10
+      },
+      "pr": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 12
+      }
+    },
+    "CHI": {
+      "pts": {
+        "score": 1.06,
+        "rank": 27
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "stl": {
+        "score": 1.17,
+        "rank": 28
+      },
+      "blk": {
+        "score": 1.29,
+        "rank": 27
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 4
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 5
+      },
+      "pra": {
+        "score": 1.06,
+        "rank": 25
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "pa": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 23
+      }
+    },
+    "CLE": {
+      "pts": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "stl": {
+        "score": 1.02,
+        "rank": 15
+      },
+      "blk": {
+        "score": 0.75,
+        "rank": 6
+      },
+      "to": {
+        "score": 1.19,
+        "rank": 28
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 6
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 13
+      }
+    },
+    "DAL": {
+      "pts": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "reb": {
+        "score": 1.16,
+        "rank": 30
+      },
+      "ast": {
+        "score": 0.8,
+        "rank": 2
+      },
+      "stl": {
+        "score": 1.13,
+        "rank": 25
+      },
+      "blk": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "to": {
+        "score": 0.7,
+        "rank": 1
+      },
+      "3pm": {
+        "score": 0.93,
+        "rank": 10
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 7
+      },
+      "pra": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "pr": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "pa": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "ra": {
+        "score": 0.98,
+        "rank": 9
+      }
+    },
+    "DEN": {
+      "pts": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "reb": {
+        "score": 0.81,
+        "rank": 1
+      },
+      "ast": {
+        "score": 0.87,
+        "rank": 4
+      },
+      "stl": {
+        "score": 0.94,
+        "rank": 10
+      },
+      "blk": {
+        "score": 0.66,
+        "rank": 1
+      },
+      "to": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "3pm": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 8
+      },
+      "pra": {
+        "score": 0.91,
+        "rank": 3
+      },
+      "pr": {
+        "score": 0.93,
+        "rank": 3
+      },
+      "pa": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "ra": {
+        "score": 0.84,
+        "rank": 2
+      }
+    },
+    "DET": {
+      "pts": {
+        "score": 0.98,
+        "rank": 11
+      },
+      "reb": {
+        "score": 0.9,
+        "rank": 6
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "blk": {
+        "score": 0.86,
+        "rank": 11
+      },
+      "to": {
+        "score": 1.18,
+        "rank": 27
+      },
+      "3pm": {
+        "score": 0.81,
+        "rank": 1
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 9
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "pr": {
+        "score": 0.94,
+        "rank": 7
+      },
+      "pa": {
+        "score": 0.98,
+        "rank": 11
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 7
+      }
+    },
+    "GSW": {
+      "pts": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "reb": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "ast": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "blk": {
+        "score": 0.66,
+        "rank": 2
+      },
+      "to": {
+        "score": 1.16,
+        "rank": 26
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 2
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 10
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 15
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 21
+      }
+    },
+    "HOU": {
+      "pts": {
+        "score": 0.89,
+        "rank": 1
+      },
+      "reb": {
+        "score": 0.85,
+        "rank": 2
+      },
+      "ast": {
+        "score": 0.75,
+        "rank": 1
+      },
+      "stl": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "blk": {
+        "score": 1.09,
+        "rank": 17
+      },
+      "to": {
+        "score": 0.79,
+        "rank": 3
+      },
+      "3pm": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 11
+      },
+      "pra": {
+        "score": 0.83,
+        "rank": 1
+      },
+      "pr": {
+        "score": 0.87,
+        "rank": 1
+      },
+      "pa": {
+        "score": 0.82,
+        "rank": 1
+      },
+      "ra": {
+        "score": 0.8,
+        "rank": 1
+      }
+    },
+    "IND": {
+      "pts": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "reb": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "ast": {
+        "score": 0.92,
+        "rank": 7
+      },
+      "stl": {
+        "score": 0.93,
+        "rank": 9
+      },
+      "blk": {
+        "score": 0.96,
+        "rank": 14
+      },
+      "to": {
+        "score": 0.94,
+        "rank": 9
+      },
+      "3pm": {
+        "score": 0.9,
+        "rank": 8
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 12
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "pr": {
+        "score": 1.05,
+        "rank": 26
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "ra": {
+        "score": 1.03,
+        "rank": 19
+      }
+    },
+    "LAC": {
+      "pts": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "stl": {
+        "score": 1.08,
+        "rank": 23
+      },
+      "blk": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "to": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "3pm": {
+        "score": 1.11,
+        "rank": 27
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 13
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "ra": {
+        "score": 1.01,
+        "rank": 15
+      }
+    },
+    "LAL": {
+      "pts": {
+        "score": 1.03,
+        "rank": 23
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 14
+      },
+      "ast": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "blk": {
+        "score": 0.76,
+        "rank": 7
+      },
+      "to": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 14
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 22
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 17
+      }
+    },
+    "MEM": {
+      "pts": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 24
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "stl": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "blk": {
+        "score": 1.22,
+        "rank": 26
+      },
+      "to": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "3pm": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 15
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "pr": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "ra": {
+        "score": 1.03,
+        "rank": 20
+      }
+    },
+    "MIA": {
+      "pts": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "reb": {
+        "score": 1.11,
+        "rank": 27
+      },
+      "ast": {
+        "score": 0.94,
+        "rank": 9
+      },
+      "stl": {
+        "score": 0.88,
+        "rank": 6
+      },
+      "blk": {
+        "score": 1.37,
+        "rank": 29
+      },
+      "to": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "3pm": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 16
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 13
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 18
+      }
+    },
+    "MIL": {
+      "pts": {
+        "score": 1.05,
+        "rank": 26
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "ast": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "blk": {
+        "score": 1.15,
+        "rank": 20
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 8
+      },
+      "3pm": {
+        "score": 1.27,
+        "rank": 29
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 17
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "ra": {
+        "score": 0.99,
+        "rank": 11
+      }
+    },
+    "MIN": {
+      "pts": {
+        "score": 0.93,
+        "rank": 3
+      },
+      "reb": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "ast": {
+        "score": 0.83,
+        "rank": 3
+      },
+      "stl": {
+        "score": 0.89,
+        "rank": 7
+      },
+      "blk": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 5
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 7
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 18
+      },
+      "pra": {
+        "score": 0.9,
+        "rank": 2
+      },
+      "pr": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "pa": {
+        "score": 0.88,
+        "rank": 3
+      },
+      "ra": {
+        "score": 0.88,
+        "rank": 3
+      }
+    },
+    "NOP": {
+      "pts": {
+        "score": 1.2,
+        "rank": 30
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 25
+      },
+      "ast": {
+        "score": 1.13,
+        "rank": 27
+      },
+      "stl": {
+        "score": 0.92,
+        "rank": 8
+      },
+      "blk": {
+        "score": 1.18,
+        "rank": 23
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "3pm": {
+        "score": 1.13,
+        "rank": 28
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 19
+      },
+      "pra": {
+        "score": 1.13,
+        "rank": 30
+      },
+      "pr": {
+        "score": 1.14,
+        "rank": 30
+      },
+      "pa": {
+        "score": 1.17,
+        "rank": 30
+      },
+      "ra": {
+        "score": 1.1,
+        "rank": 29
+      }
+    },
+    "NYK": {
+      "pts": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "ast": {
+        "score": 1.22,
+        "rank": 30
+      },
+      "stl": {
+        "score": 0.74,
+        "rank": 3
+      },
+      "blk": {
+        "score": 1.13,
+        "rank": 18
+      },
+      "to": {
+        "score": 1.11,
+        "rank": 25
+      },
+      "3pm": {
+        "score": 1.05,
+        "rank": 21
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 20
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 28
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pa": {
+        "score": 1.12,
+        "rank": 28
+      },
+      "ra": {
+        "score": 1.11,
+        "rank": 30
+      }
+    },
+    "OKC": {
+      "pts": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "reb": {
+        "score": 1.11,
+        "rank": 28
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 21
+      },
+      "stl": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "blk": {
+        "score": 0.84,
+        "rank": 9
+      },
+      "to": {
+        "score": 1.37,
+        "rank": 30
+      },
+      "3pm": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 21
+      },
+      "pra": {
+        "score": 1.06,
+        "rank": 26
+      },
+      "pr": {
+        "score": 1.05,
+        "rank": 27
+      },
+      "pa": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "ra": {
+        "score": 1.09,
+        "rank": 27
+      }
+    },
+    "ORL": {
+      "pts": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "reb": {
+        "score": 0.89,
+        "rank": 3
+      },
+      "ast": {
+        "score": 0.91,
+        "rank": 6
+      },
+      "stl": {
+        "score": 0.73,
+        "rank": 2
+      },
+      "blk": {
+        "score": 1.18,
+        "rank": 24
+      },
+      "to": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 22
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "pr": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 7
+      },
+      "ra": {
+        "score": 0.9,
+        "rank": 4
+      }
+    },
+    "PHI": {
+      "pts": {
+        "score": 1.02,
+        "rank": 22
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ast": {
+        "score": 1.1,
+        "rank": 26
+      },
+      "stl": {
+        "score": 0.83,
+        "rank": 5
+      },
+      "blk": {
+        "score": 0.84,
+        "rank": 10
+      },
+      "to": {
+        "score": 0.87,
+        "rank": 6
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 23
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 23
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 25
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 22
+      }
+    },
+    "PHO": {
+      "pts": {
+        "score": 0.99,
+        "rank": 17
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 12
+      },
+      "ast": {
+        "score": 0.9,
+        "rank": 5
+      },
+      "stl": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "blk": {
+        "score": 1.17,
+        "rank": 22
+      },
+      "to": {
+        "score": 1.31,
+        "rank": 29
+      },
+      "3pm": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 24
+      },
+      "pra": {
+        "score": 0.96,
+        "rank": 7
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "ra": {
+        "score": 0.95,
+        "rank": 8
+      }
+    },
+    "POR": {
+      "pts": {
+        "score": 1.0,
+        "rank": 18
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 10
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "stl": {
+        "score": 1.46,
+        "rank": 30
+      },
+      "blk": {
+        "score": 0.66,
+        "rank": 3
+      },
+      "to": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "3pm": {
+        "score": 0.92,
+        "rank": 9
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 25
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "pa": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 14
+      }
+    },
+    "SAC": {
+      "pts": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "ast": {
+        "score": 1.13,
+        "rank": 28
+      },
+      "stl": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "blk": {
+        "score": 0.96,
+        "rank": 15
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 23
+      },
+      "3pm": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 26
+      },
+      "pra": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 14
+      },
+      "pa": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "ra": {
+        "score": 1.08,
+        "rank": 26
+      }
+    },
+    "SAS": {
+      "pts": {
+        "score": 0.94,
+        "rank": 5
+      },
+      "reb": {
+        "score": 1.09,
+        "rank": 26
+      },
+      "ast": {
+        "score": 0.92,
+        "rank": 8
+      },
+      "stl": {
+        "score": 0.79,
+        "rank": 4
+      },
+      "blk": {
+        "score": 1.13,
+        "rank": 19
+      },
+      "to": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 27
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 11
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "ra": {
+        "score": 1.01,
+        "rank": 16
+      }
+    },
+    "TOR": {
+      "pts": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 25
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "blk": {
+        "score": 1.31,
+        "rank": 28
+      },
+      "to": {
+        "score": 1.08,
+        "rank": 24
+      },
+      "3pm": {
+        "score": 0.85,
+        "rank": 5
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 28
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 11
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 24
+      }
+    },
+    "UTA": {
+      "pts": {
+        "score": 1.07,
+        "rank": 28
+      },
+      "reb": {
+        "score": 1.05,
+        "rank": 23
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 23
+      },
+      "stl": {
+        "score": 1.03,
+        "rank": 17
+      },
+      "blk": {
+        "score": 1.4,
+        "rank": 30
+      },
+      "to": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "3pm": {
+        "score": 1.27,
+        "rank": 30
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 29
+      },
+      "pra": {
+        "score": 1.07,
+        "rank": 27
+      },
+      "pr": {
+        "score": 1.06,
+        "rank": 28
+      },
+      "pa": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 25
+      }
+    },
+    "WAS": {
+      "pts": {
+        "score": 1.11,
+        "rank": 29
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 13
+      },
+      "ast": {
+        "score": 1.19,
+        "rank": 29
+      },
+      "stl": {
+        "score": 1.14,
+        "rank": 26
+      },
+      "blk": {
+        "score": 1.18,
+        "rank": 25
+      },
+      "to": {
+        "score": 0.87,
+        "rank": 7
+      },
+      "3pm": {
+        "score": 1.1,
+        "rank": 26
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 30
+      },
+      "pra": {
+        "score": 1.1,
+        "rank": 29
+      },
+      "pr": {
+        "score": 1.06,
+        "rank": 29
+      },
+      "pa": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "ra": {
+        "score": 1.09,
+        "rank": 28
+      }
+    }
+  },
+  "SF": {
+    "ATL": {
+      "pts": {
+        "score": 1.07,
+        "rank": 25
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "ast": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "stl": {
+        "score": 1.46,
+        "rank": 30
+      },
+      "blk": {
+        "score": 1.23,
+        "rank": 24
+      },
+      "to": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "3pm": {
+        "score": 1.26,
+        "rank": 30
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 1
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 26
+      },
+      "ra": {
+        "score": 1.03,
+        "rank": 21
+      }
+    },
+    "BKN": {
+      "pts": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "ast": {
+        "score": 1.04,
+        "rank": 20
+      },
+      "stl": {
+        "score": 1.09,
+        "rank": 22
+      },
+      "blk": {
+        "score": 0.81,
+        "rank": 7
+      },
+      "to": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 19
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 2
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 16
+      }
+    },
+    "BOS": {
+      "pts": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "ast": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "stl": {
+        "score": 0.77,
+        "rank": 3
+      },
+      "blk": {
+        "score": 0.81,
+        "rank": 8
+      },
+      "to": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 23
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 3
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 5
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 11
+      },
+      "pa": {
+        "score": 0.91,
+        "rank": 2
+      },
+      "ra": {
+        "score": 0.92,
+        "rank": 5
+      }
+    },
+    "CHA": {
+      "pts": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 25
+      },
+      "stl": {
+        "score": 1.11,
+        "rank": 24
+      },
+      "blk": {
+        "score": 1.12,
+        "rank": 20
+      },
+      "to": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "3pm": {
+        "score": 0.87,
+        "rank": 6
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 4
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 7
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 17
+      }
+    },
+    "CHI": {
+      "pts": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "reb": {
+        "score": 1.11,
+        "rank": 27
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "stl": {
+        "score": 0.83,
+        "rank": 5
+      },
+      "blk": {
+        "score": 0.91,
+        "rank": 13
+      },
+      "to": {
+        "score": 0.96,
+        "rank": 14
+      },
+      "3pm": {
+        "score": 1.21,
+        "rank": 28
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 5
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 7
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 23
+      }
+    },
+    "CLE": {
+      "pts": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 18
+      },
+      "ast": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "stl": {
+        "score": 0.91,
+        "rank": 8
+      },
+      "blk": {
+        "score": 1.0,
+        "rank": 18
+      },
+      "to": {
+        "score": 0.95,
+        "rank": 11
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 6
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 10
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 8
+      },
+      "ra": {
+        "score": 0.98,
+        "rank": 12
+      }
+    },
+    "DAL": {
+      "pts": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ast": {
+        "score": 1.17,
+        "rank": 29
+      },
+      "stl": {
+        "score": 1.17,
+        "rank": 26
+      },
+      "blk": {
+        "score": 0.84,
+        "rank": 10
+      },
+      "to": {
+        "score": 0.85,
+        "rank": 4
+      },
+      "3pm": {
+        "score": 0.77,
+        "rank": 1
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 7
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "pr": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "ra": {
+        "score": 1.07,
+        "rank": 27
+      }
+    },
+    "DEN": {
+      "pts": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "reb": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 24
+      },
+      "stl": {
+        "score": 0.89,
+        "rank": 6
+      },
+      "blk": {
+        "score": 1.48,
+        "rank": 30
+      },
+      "to": {
+        "score": 0.82,
+        "rank": 3
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 8
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 27
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 18
+      }
+    },
+    "DET": {
+      "pts": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 5
+      },
+      "ast": {
+        "score": 0.82,
+        "rank": 2
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "blk": {
+        "score": 1.43,
+        "rank": 28
+      },
+      "to": {
+        "score": 1.23,
+        "rank": 29
+      },
+      "3pm": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 9
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 2
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "pa": {
+        "score": 0.91,
+        "rank": 3
+      },
+      "ra": {
+        "score": 0.89,
+        "rank": 2
+      }
+    },
+    "GSW": {
+      "pts": {
+        "score": 0.85,
+        "rank": 1
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "ast": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "stl": {
+        "score": 1.12,
+        "rank": 25
+      },
+      "blk": {
+        "score": 0.75,
+        "rank": 5
+      },
+      "to": {
+        "score": 1.14,
+        "rank": 26
+      },
+      "3pm": {
+        "score": 0.8,
+        "rank": 2
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 10
+      },
+      "pra": {
+        "score": 0.93,
+        "rank": 3
+      },
+      "pr": {
+        "score": 0.9,
+        "rank": 2
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 11
+      }
+    },
+    "HOU": {
+      "pts": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "reb": {
+        "score": 0.89,
+        "rank": 3
+      },
+      "ast": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "stl": {
+        "score": 1.27,
+        "rank": 29
+      },
+      "blk": {
+        "score": 1.12,
+        "rank": 21
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 5
+      },
+      "3pm": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 11
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "pa": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "ra": {
+        "score": 0.93,
+        "rank": 7
+      }
+    },
+    "IND": {
+      "pts": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "ast": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "stl": {
+        "score": 0.91,
+        "rank": 9
+      },
+      "blk": {
+        "score": 1.07,
+        "rank": 19
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "3pm": {
+        "score": 0.88,
+        "rank": 7
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 12
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 13
+      }
+    },
+    "LAC": {
+      "pts": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "reb": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "ast": {
+        "score": 0.91,
+        "rank": 7
+      },
+      "stl": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "blk": {
+        "score": 0.91,
+        "rank": 14
+      },
+      "to": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 13
+      },
+      "pra": {
+        "score": 0.93,
+        "rank": 4
+      },
+      "pr": {
+        "score": 0.94,
+        "rank": 5
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "ra": {
+        "score": 0.92,
+        "rank": 6
+      }
+    },
+    "LAL": {
+      "pts": {
+        "score": 1.11,
+        "rank": 29
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "ast": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "stl": {
+        "score": 1.03,
+        "rank": 17
+      },
+      "blk": {
+        "score": 0.96,
+        "rank": 16
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 23
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 14
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 25
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 25
+      },
+      "pa": {
+        "score": 1.07,
+        "rank": 29
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 14
+      }
+    },
+    "MEM": {
+      "pts": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 27
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 19
+      },
+      "blk": {
+        "score": 1.4,
+        "rank": 27
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 8
+      },
+      "3pm": {
+        "score": 0.88,
+        "rank": 8
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 15
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 22
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 25
+      }
+    },
+    "MIA": {
+      "pts": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "reb": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "ast": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "stl": {
+        "score": 1.19,
+        "rank": 28
+      },
+      "blk": {
+        "score": 1.45,
+        "rank": 29
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 9
+      },
+      "3pm": {
+        "score": 1.25,
+        "rank": 29
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 16
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "pr": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 9
+      }
+    },
+    "MIL": {
+      "pts": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "ast": {
+        "score": 1.09,
+        "rank": 28
+      },
+      "stl": {
+        "score": 1.07,
+        "rank": 20
+      },
+      "blk": {
+        "score": 0.97,
+        "rank": 17
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 6
+      },
+      "3pm": {
+        "score": 0.81,
+        "rank": 3
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 17
+      },
+      "pra": {
+        "score": 1.04,
+        "rank": 26
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 26
+      }
+    },
+    "MIN": {
+      "pts": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "reb": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "stl": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "blk": {
+        "score": 0.88,
+        "rank": 12
+      },
+      "to": {
+        "score": 1.13,
+        "rank": 25
+      },
+      "3pm": {
+        "score": 0.85,
+        "rank": 4
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 18
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 24
+      }
+    },
+    "NOP": {
+      "pts": {
+        "score": 1.1,
+        "rank": 28
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "ast": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 14
+      },
+      "blk": {
+        "score": 1.3,
+        "rank": 26
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 7
+      },
+      "3pm": {
+        "score": 1.14,
+        "rank": 25
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 19
+      },
+      "pra": {
+        "score": 1.05,
+        "rank": 27
+      },
+      "pr": {
+        "score": 1.06,
+        "rank": 27
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 28
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 19
+      }
+    },
+    "NYK": {
+      "pts": {
+        "score": 1.07,
+        "rank": 26
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "ast": {
+        "score": 0.86,
+        "rank": 4
+      },
+      "stl": {
+        "score": 0.69,
+        "rank": 2
+      },
+      "blk": {
+        "score": 0.51,
+        "rank": 1
+      },
+      "to": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "3pm": {
+        "score": 1.19,
+        "rank": 27
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 20
+      },
+      "pra": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "ra": {
+        "score": 0.91,
+        "rank": 4
+      }
+    },
+    "OKC": {
+      "pts": {
+        "score": 0.88,
+        "rank": 3
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "ast": {
+        "score": 0.81,
+        "rank": 1
+      },
+      "stl": {
+        "score": 0.65,
+        "rank": 1
+      },
+      "blk": {
+        "score": 0.75,
+        "rank": 6
+      },
+      "to": {
+        "score": 1.28,
+        "rank": 30
+      },
+      "3pm": {
+        "score": 1.14,
+        "rank": 26
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 21
+      },
+      "pra": {
+        "score": 0.88,
+        "rank": 1
+      },
+      "pr": {
+        "score": 0.92,
+        "rank": 3
+      },
+      "pa": {
+        "score": 0.84,
+        "rank": 1
+      },
+      "ra": {
+        "score": 0.88,
+        "rank": 1
+      }
+    },
+    "ORL": {
+      "pts": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "ast": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "stl": {
+        "score": 0.9,
+        "rank": 7
+      },
+      "blk": {
+        "score": 1.21,
+        "rank": 23
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "3pm": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 22
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 11
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 26
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 10
+      }
+    },
+    "PHI": {
+      "pts": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "reb": {
+        "score": 0.77,
+        "rank": 1
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "stl": {
+        "score": 0.92,
+        "rank": 10
+      },
+      "blk": {
+        "score": 0.81,
+        "rank": 9
+      },
+      "to": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "3pm": {
+        "score": 0.9,
+        "rank": 10
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 23
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "pr": {
+        "score": 0.87,
+        "rank": 1
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "ra": {
+        "score": 0.93,
+        "rank": 8
+      }
+    },
+    "PHO": {
+      "pts": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "ast": {
+        "score": 1.05,
+        "rank": 21
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 11
+      },
+      "blk": {
+        "score": 0.6,
+        "rank": 2
+      },
+      "to": {
+        "score": 1.18,
+        "rank": 28
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 24
+      },
+      "pra": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "pa": {
+        "score": 1.03,
+        "rank": 22
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 15
+      }
+    },
+    "POR": {
+      "pts": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "reb": {
+        "score": 1.16,
+        "rank": 29
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "stl": {
+        "score": 1.18,
+        "rank": 27
+      },
+      "blk": {
+        "score": 1.28,
+        "rank": 25
+      },
+      "to": {
+        "score": 0.81,
+        "rank": 2
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 5
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 25
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 29
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 28
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 25
+      },
+      "ra": {
+        "score": 1.11,
+        "rank": 29
+      }
+    },
+    "SAC": {
+      "pts": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "reb": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "ast": {
+        "score": 0.9,
+        "rank": 6
+      },
+      "stl": {
+        "score": 0.79,
+        "rank": 4
+      },
+      "blk": {
+        "score": 0.73,
+        "rank": 3
+      },
+      "to": {
+        "score": 0.94,
+        "rank": 10
+      },
+      "3pm": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 26
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 7
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "ra": {
+        "score": 0.89,
+        "rank": 3
+      }
+    },
+    "SAS": {
+      "pts": {
+        "score": 0.94,
+        "rank": 7
+      },
+      "reb": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "ast": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "stl": {
+        "score": 1.09,
+        "rank": 23
+      },
+      "blk": {
+        "score": 0.73,
+        "rank": 4
+      },
+      "to": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "3pm": {
+        "score": 0.92,
+        "rank": 11
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 27
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 9
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 20
+      }
+    },
+    "TOR": {
+      "pts": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "reb": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "ast": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "blk": {
+        "score": 1.17,
+        "rank": 22
+      },
+      "to": {
+        "score": 1.16,
+        "rank": 27
+      },
+      "3pm": {
+        "score": 0.93,
+        "rank": 12
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 28
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "pr": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "pa": {
+        "score": 0.96,
+        "rank": 6
+      },
+      "ra": {
+        "score": 1.03,
+        "rank": 22
+      }
+    },
+    "UTA": {
+      "pts": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "reb": {
+        "score": 1.16,
+        "rank": 30
+      },
+      "ast": {
+        "score": 1.29,
+        "rank": 30
+      },
+      "stl": {
+        "score": 1.08,
+        "rank": 21
+      },
+      "blk": {
+        "score": 0.85,
+        "rank": 11
+      },
+      "to": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 29
+      },
+      "pra": {
+        "score": 1.2,
+        "rank": 30
+      },
+      "pr": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "pa": {
+        "score": 1.22,
+        "rank": 30
+      },
+      "ra": {
+        "score": 1.23,
+        "rank": 30
+      }
+    },
+    "WAS": {
+      "pts": {
+        "score": 1.06,
+        "rank": 24
+      },
+      "reb": {
+        "score": 1.15,
+        "rank": 28
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "blk": {
+        "score": 0.92,
+        "rank": 15
+      },
+      "to": {
+        "score": 0.79,
+        "rank": 1
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 24
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 30
+      },
+      "pra": {
+        "score": 1.07,
+        "rank": 28
+      },
+      "pr": {
+        "score": 1.1,
+        "rank": 29
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "ra": {
+        "score": 1.07,
+        "rank": 28
+      }
+    }
+  },
+  "PF": {
+    "ATL": {
+      "pts": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "reb": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 23
+      },
+      "stl": {
+        "score": 0.9,
+        "rank": 6
+      },
+      "blk": {
+        "score": 1.18,
+        "rank": 24
+      },
+      "to": {
+        "score": 0.77,
+        "rank": 2
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 1
+      },
+      "pra": {
+        "score": 1.05,
+        "rank": 21
+      },
+      "pr": {
+        "score": 1.03,
+        "rank": 22
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "ra": {
+        "score": 1.11,
+        "rank": 25
+      }
+    },
+    "BKN": {
+      "pts": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "reb": {
+        "score": 1.14,
+        "rank": 28
+      },
+      "ast": {
+        "score": 1.08,
+        "rank": 24
+      },
+      "stl": {
+        "score": 0.99,
+        "rank": 11
+      },
+      "blk": {
+        "score": 0.79,
+        "rank": 6
+      },
+      "to": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "3pm": {
+        "score": 0.8,
+        "rank": 1
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 2
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 24
+      },
+      "pr": {
+        "score": 1.07,
+        "rank": 25
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "ra": {
+        "score": 1.11,
+        "rank": 26
+      }
+    },
+    "BOS": {
+      "pts": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ast": {
+        "score": 0.91,
+        "rank": 10
+      },
+      "stl": {
+        "score": 0.49,
+        "rank": 1
+      },
+      "blk": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "to": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "3pm": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 3
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 11
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 9
+      }
+    },
+    "CHA": {
+      "pts": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "reb": {
+        "score": 0.89,
+        "rank": 4
+      },
+      "ast": {
+        "score": 1.31,
+        "rank": 29
+      },
+      "stl": {
+        "score": 0.92,
+        "rank": 8
+      },
+      "blk": {
+        "score": 0.9,
+        "rank": 10
+      },
+      "to": {
+        "score": 0.88,
+        "rank": 7
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 25
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 4
+      },
+      "pra": {
+        "score": 1.12,
+        "rank": 27
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "pa": {
+        "score": 1.23,
+        "rank": 30
+      },
+      "ra": {
+        "score": 1.1,
+        "rank": 24
+      }
+    },
+    "CHI": {
+      "pts": {
+        "score": 1.22,
+        "rank": 30
+      },
+      "reb": {
+        "score": 1.08,
+        "rank": 24
+      },
+      "ast": {
+        "score": 1.17,
+        "rank": 26
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 10
+      },
+      "blk": {
+        "score": 1.26,
+        "rank": 26
+      },
+      "to": {
+        "score": 0.93,
+        "rank": 12
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 4
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 5
+      },
+      "pra": {
+        "score": 1.16,
+        "rank": 30
+      },
+      "pr": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "pa": {
+        "score": 1.19,
+        "rank": 28
+      },
+      "ra": {
+        "score": 1.12,
+        "rank": 27
+      }
+    },
+    "CLE": {
+      "pts": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "reb": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "ast": {
+        "score": 1.18,
+        "rank": 27
+      },
+      "stl": {
+        "score": 0.73,
+        "rank": 2
+      },
+      "blk": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "to": {
+        "score": 1.25,
+        "rank": 29
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 2
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 6
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 25
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pa": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "ra": {
+        "score": 1.12,
+        "rank": 28
+      }
+    },
+    "DAL": {
+      "pts": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "ast": {
+        "score": 0.81,
+        "rank": 5
+      },
+      "stl": {
+        "score": 1.01,
+        "rank": 13
+      },
+      "blk": {
+        "score": 0.97,
+        "rank": 14
+      },
+      "to": {
+        "score": 0.88,
+        "rank": 8
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 6
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 7
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 6
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "pa": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "ra": {
+        "score": 0.89,
+        "rank": 5
+      }
+    },
+    "DEN": {
+      "pts": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "ast": {
+        "score": 1.38,
+        "rank": 30
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 18
+      },
+      "blk": {
+        "score": 0.78,
+        "rank": 4
+      },
+      "to": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 7
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 8
+      },
+      "pra": {
+        "score": 1.14,
+        "rank": 29
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "pa": {
+        "score": 1.21,
+        "rank": 29
+      },
+      "ra": {
+        "score": 1.19,
+        "rank": 30
+      }
+    },
+    "DET": {
+      "pts": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "stl": {
+        "score": 1.11,
+        "rank": 23
+      },
+      "blk": {
+        "score": 1.3,
+        "rank": 28
+      },
+      "to": {
+        "score": 1.24,
+        "rank": 28
+      },
+      "3pm": {
+        "score": 1.17,
+        "rank": 26
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 9
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 14
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "ra": {
+        "score": 0.99,
+        "rank": 15
+      }
+    },
+    "GSW": {
+      "pts": {
+        "score": 0.91,
+        "rank": 3
+      },
+      "reb": {
+        "score": 1.12,
+        "rank": 26
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "stl": {
+        "score": 1.1,
+        "rank": 22
+      },
+      "blk": {
+        "score": 0.76,
+        "rank": 3
+      },
+      "to": {
+        "score": 1.11,
+        "rank": 25
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 8
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 10
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pa": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "ra": {
+        "score": 1.05,
+        "rank": 21
+      }
+    },
+    "HOU": {
+      "pts": {
+        "score": 0.93,
+        "rank": 6
+      },
+      "reb": {
+        "score": 0.79,
+        "rank": 1
+      },
+      "ast": {
+        "score": 0.79,
+        "rank": 4
+      },
+      "stl": {
+        "score": 1.13,
+        "rank": 25
+      },
+      "blk": {
+        "score": 0.81,
+        "rank": 7
+      },
+      "to": {
+        "score": 0.87,
+        "rank": 6
+      },
+      "3pm": {
+        "score": 0.97,
+        "rank": 14
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 11
+      },
+      "pra": {
+        "score": 0.84,
+        "rank": 1
+      },
+      "pr": {
+        "score": 0.86,
+        "rank": 1
+      },
+      "pa": {
+        "score": 0.86,
+        "rank": 3
+      },
+      "ra": {
+        "score": 0.79,
+        "rank": 1
+      }
+    },
+    "IND": {
+      "pts": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "ast": {
+        "score": 0.85,
+        "rank": 7
+      },
+      "stl": {
+        "score": 0.9,
+        "rank": 7
+      },
+      "blk": {
+        "score": 1.27,
+        "rank": 27
+      },
+      "to": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "3pm": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 12
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "pa": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 11
+      }
+    },
+    "LAC": {
+      "pts": {
+        "score": 0.94,
+        "rank": 8
+      },
+      "reb": {
+        "score": 0.81,
+        "rank": 2
+      },
+      "ast": {
+        "score": 0.93,
+        "rank": 11
+      },
+      "stl": {
+        "score": 1.19,
+        "rank": 30
+      },
+      "blk": {
+        "score": 0.84,
+        "rank": 9
+      },
+      "to": {
+        "score": 0.76,
+        "rank": 1
+      },
+      "3pm": {
+        "score": 0.9,
+        "rank": 10
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 13
+      },
+      "pra": {
+        "score": 0.89,
+        "rank": 2
+      },
+      "pr": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "pa": {
+        "score": 0.94,
+        "rank": 10
+      },
+      "ra": {
+        "score": 0.87,
+        "rank": 3
+      }
+    },
+    "LAL": {
+      "pts": {
+        "score": 1.05,
+        "rank": 23
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "ast": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "stl": {
+        "score": 1.09,
+        "rank": 20
+      },
+      "blk": {
+        "score": 0.78,
+        "rank": 5
+      },
+      "to": {
+        "score": 0.85,
+        "rank": 4
+      },
+      "3pm": {
+        "score": 1.39,
+        "rank": 30
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 14
+      },
+      "pra": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 14
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 13
+      }
+    },
+    "MEM": {
+      "pts": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "ast": {
+        "score": 0.84,
+        "rank": 6
+      },
+      "stl": {
+        "score": 1.17,
+        "rank": 29
+      },
+      "blk": {
+        "score": 1.3,
+        "rank": 29
+      },
+      "to": {
+        "score": 0.91,
+        "rank": 10
+      },
+      "3pm": {
+        "score": 1.09,
+        "rank": 23
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 15
+      },
+      "pra": {
+        "score": 0.95,
+        "rank": 10
+      },
+      "pr": {
+        "score": 1.0,
+        "rank": 13
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "ra": {
+        "score": 0.92,
+        "rank": 8
+      }
+    },
+    "MIA": {
+      "pts": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "reb": {
+        "score": 1.11,
+        "rank": 25
+      },
+      "ast": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "stl": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "blk": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "to": {
+        "score": 1.18,
+        "rank": 27
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 16
+      },
+      "pra": {
+        "score": 1.05,
+        "rank": 22
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 22
+      }
+    },
+    "MIL": {
+      "pts": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "reb": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "ast": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "stl": {
+        "score": 1.09,
+        "rank": 21
+      },
+      "blk": {
+        "score": 0.94,
+        "rank": 12
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 19
+      },
+      "3pm": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 17
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 19
+      }
+    },
+    "MIN": {
+      "pts": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "ast": {
+        "score": 0.75,
+        "rank": 1
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "blk": {
+        "score": 0.9,
+        "rank": 11
+      },
+      "to": {
+        "score": 0.93,
+        "rank": 13
+      },
+      "3pm": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 18
+      },
+      "pra": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "pa": {
+        "score": 0.85,
+        "rank": 2
+      },
+      "ra": {
+        "score": 0.91,
+        "rank": 7
+      }
+    },
+    "NOP": {
+      "pts": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "reb": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "ast": {
+        "score": 0.87,
+        "rank": 8
+      },
+      "stl": {
+        "score": 0.87,
+        "rank": 5
+      },
+      "blk": {
+        "score": 1.13,
+        "rank": 22
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "3pm": {
+        "score": 1.29,
+        "rank": 29
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 19
+      },
+      "pra": {
+        "score": 0.89,
+        "rank": 3
+      },
+      "pr": {
+        "score": 0.9,
+        "rank": 3
+      },
+      "pa": {
+        "score": 0.89,
+        "rank": 6
+      },
+      "ra": {
+        "score": 0.88,
+        "rank": 4
+      }
+    },
+    "NYK": {
+      "pts": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "reb": {
+        "score": 0.89,
+        "rank": 6
+      },
+      "ast": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "stl": {
+        "score": 0.79,
+        "rank": 4
+      },
+      "blk": {
+        "score": 0.72,
+        "rank": 1
+      },
+      "to": {
+        "score": 1.04,
+        "rank": 18
+      },
+      "3pm": {
+        "score": 0.97,
+        "rank": 15
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 20
+      },
+      "pra": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 12
+      }
+    },
+    "OKC": {
+      "pts": {
+        "score": 0.93,
+        "rank": 7
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 19
+      },
+      "stl": {
+        "score": 1.04,
+        "rank": 15
+      },
+      "blk": {
+        "score": 0.75,
+        "rank": 2
+      },
+      "to": {
+        "score": 1.33,
+        "rank": 30
+      },
+      "3pm": {
+        "score": 1.18,
+        "rank": 28
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 21
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "ra": {
+        "score": 1.01,
+        "rank": 16
+      }
+    },
+    "ORL": {
+      "pts": {
+        "score": 0.89,
+        "rank": 2
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "ast": {
+        "score": 0.76,
+        "rank": 2
+      },
+      "stl": {
+        "score": 1.13,
+        "rank": 26
+      },
+      "blk": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "to": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "3pm": {
+        "score": 0.97,
+        "rank": 16
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 22
+      },
+      "pra": {
+        "score": 0.9,
+        "rank": 4
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "pa": {
+        "score": 0.82,
+        "rank": 1
+      },
+      "ra": {
+        "score": 0.9,
+        "rank": 6
+      }
+    },
+    "PHI": {
+      "pts": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "reb": {
+        "score": 1.19,
+        "rank": 30
+      },
+      "ast": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "stl": {
+        "score": 0.78,
+        "rank": 3
+      },
+      "blk": {
+        "score": 1.44,
+        "rank": 30
+      },
+      "to": {
+        "score": 1.16,
+        "rank": 26
+      },
+      "3pm": {
+        "score": 0.92,
+        "rank": 12
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 23
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 28
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 9
+      },
+      "ra": {
+        "score": 1.04,
+        "rank": 20
+      }
+    },
+    "PHO": {
+      "pts": {
+        "score": 0.87,
+        "rank": 1
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 8
+      },
+      "ast": {
+        "score": 0.94,
+        "rank": 12
+      },
+      "stl": {
+        "score": 1.03,
+        "rank": 14
+      },
+      "blk": {
+        "score": 1.14,
+        "rank": 23
+      },
+      "to": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 24
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 7
+      },
+      "pr": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "pa": {
+        "score": 0.91,
+        "rank": 7
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 10
+      }
+    },
+    "POR": {
+      "pts": {
+        "score": 1.02,
+        "rank": 21
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "stl": {
+        "score": 1.16,
+        "rank": 28
+      },
+      "blk": {
+        "score": 1.25,
+        "rank": 25
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "3pm": {
+        "score": 0.98,
+        "rank": 17
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 25
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 15
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "ra": {
+        "score": 1.03,
+        "rank": 18
+      }
+    },
+    "SAC": {
+      "pts": {
+        "score": 1.12,
+        "rank": 28
+      },
+      "reb": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "stl": {
+        "score": 1.14,
+        "rank": 27
+      },
+      "blk": {
+        "score": 0.95,
+        "rank": 13
+      },
+      "to": {
+        "score": 1.03,
+        "rank": 17
+      },
+      "3pm": {
+        "score": 1.17,
+        "rank": 27
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 26
+      },
+      "pra": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "pr": {
+        "score": 1.05,
+        "rank": 24
+      },
+      "pa": {
+        "score": 1.1,
+        "rank": 25
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 17
+      }
+    },
+    "SAS": {
+      "pts": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "reb": {
+        "score": 0.88,
+        "rank": 3
+      },
+      "ast": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 16
+      },
+      "blk": {
+        "score": 0.82,
+        "rank": 8
+      },
+      "to": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "3pm": {
+        "score": 0.91,
+        "rank": 11
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 27
+      },
+      "pra": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "pr": {
+        "score": 0.92,
+        "rank": 5
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 14
+      }
+    },
+    "TOR": {
+      "pts": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 9
+      },
+      "ast": {
+        "score": 0.77,
+        "rank": 3
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 19
+      },
+      "blk": {
+        "score": 0.98,
+        "rank": 16
+      },
+      "to": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 28
+      },
+      "pra": {
+        "score": 0.9,
+        "rank": 5
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "pa": {
+        "score": 0.88,
+        "rank": 4
+      },
+      "ra": {
+        "score": 0.86,
+        "rank": 2
+      }
+    },
+    "UTA": {
+      "pts": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "reb": {
+        "score": 0.92,
+        "rank": 7
+      },
+      "ast": {
+        "score": 1.26,
+        "rank": 28
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 17
+      },
+      "blk": {
+        "score": 1.01,
+        "rank": 19
+      },
+      "to": {
+        "score": 0.91,
+        "rank": 11
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 18
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 29
+      },
+      "pra": {
+        "score": 1.08,
+        "rank": 26
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "pa": {
+        "score": 1.16,
+        "rank": 27
+      },
+      "ra": {
+        "score": 1.09,
+        "rank": 23
+      }
+    },
+    "WAS": {
+      "pts": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "reb": {
+        "score": 1.12,
+        "rank": 27
+      },
+      "ast": {
+        "score": 1.15,
+        "rank": 25
+      },
+      "stl": {
+        "score": 1.11,
+        "rank": 24
+      },
+      "blk": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "to": {
+        "score": 0.85,
+        "rank": 5
+      },
+      "3pm": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 30
+      },
+      "pra": {
+        "score": 1.12,
+        "rank": 28
+      },
+      "pr": {
+        "score": 1.1,
+        "rank": 29
+      },
+      "pa": {
+        "score": 1.11,
+        "rank": 26
+      },
+      "ra": {
+        "score": 1.14,
+        "rank": 29
+      }
+    }
+  },
+  "C": {
+    "ATL": {
+      "pts": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "ast": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "stl": {
+        "score": 0.93,
+        "rank": 10
+      },
+      "blk": {
+        "score": 0.88,
+        "rank": 10
+      },
+      "to": {
+        "score": 1.12,
+        "rank": 25
+      },
+      "3pm": {
+        "score": 0.65,
+        "rank": 3
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 1
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "pa": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "ra": {
+        "score": 1.0,
+        "rank": 18
+      }
+    },
+    "BKN": {
+      "pts": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "reb": {
+        "score": 0.95,
+        "rank": 6
+      },
+      "ast": {
+        "score": 0.77,
+        "rank": 2
+      },
+      "stl": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "blk": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "to": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 14
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 2
+      },
+      "pra": {
+        "score": 0.92,
+        "rank": 6
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 11
+      },
+      "pa": {
+        "score": 0.9,
+        "rank": 7
+      },
+      "ra": {
+        "score": 0.86,
+        "rank": 2
+      }
+    },
+    "BOS": {
+      "pts": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "ast": {
+        "score": 0.83,
+        "rank": 6
+      },
+      "stl": {
+        "score": 0.66,
+        "rank": 1
+      },
+      "blk": {
+        "score": 0.87,
+        "rank": 9
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 22
+      },
+      "3pm": {
+        "score": 1.29,
+        "rank": 26
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 3
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 8
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 12
+      },
+      "pa": {
+        "score": 0.93,
+        "rank": 10
+      },
+      "ra": {
+        "score": 0.9,
+        "rank": 4
+      }
+    },
+    "CHA": {
+      "pts": {
+        "score": 0.98,
+        "rank": 12
+      },
+      "reb": {
+        "score": 0.9,
+        "rank": 4
+      },
+      "ast": {
+        "score": 1.07,
+        "rank": 21
+      },
+      "stl": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "blk": {
+        "score": 0.94,
+        "rank": 15
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 10
+      },
+      "3pm": {
+        "score": 1.52,
+        "rank": 30
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 4
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "pr": {
+        "score": 0.94,
+        "rank": 6
+      },
+      "pa": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "ra": {
+        "score": 0.99,
+        "rank": 16
+      }
+    },
+    "CHI": {
+      "pts": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "ast": {
+        "score": 1.17,
+        "rank": 26
+      },
+      "stl": {
+        "score": 1.24,
+        "rank": 28
+      },
+      "blk": {
+        "score": 1.4,
+        "rank": 29
+      },
+      "to": {
+        "score": 0.8,
+        "rank": 3
+      },
+      "3pm": {
+        "score": 1.28,
+        "rank": 25
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 5
+      },
+      "pra": {
+        "score": 1.09,
+        "rank": 24
+      },
+      "pr": {
+        "score": 1.05,
+        "rank": 25
+      },
+      "pa": {
+        "score": 1.11,
+        "rank": 24
+      },
+      "ra": {
+        "score": 1.1,
+        "rank": 24
+      }
+    },
+    "CLE": {
+      "pts": {
+        "score": 0.94,
+        "rank": 9
+      },
+      "reb": {
+        "score": 1.11,
+        "rank": 28
+      },
+      "ast": {
+        "score": 0.85,
+        "rank": 7
+      },
+      "stl": {
+        "score": 1.4,
+        "rank": 30
+      },
+      "blk": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "to": {
+        "score": 1.16,
+        "rank": 26
+      },
+      "3pm": {
+        "score": 0.86,
+        "rank": 11
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 6
+      },
+      "pra": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pa": {
+        "score": 0.9,
+        "rank": 8
+      },
+      "ra": {
+        "score": 0.98,
+        "rank": 15
+      }
+    },
+    "DAL": {
+      "pts": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "reb": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "ast": {
+        "score": 1.16,
+        "rank": 24
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "blk": {
+        "score": 0.9,
+        "rank": 11
+      },
+      "to": {
+        "score": 0.95,
+        "rank": 12
+      },
+      "3pm": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 7
+      },
+      "pra": {
+        "score": 1.12,
+        "rank": 28
+      },
+      "pr": {
+        "score": 1.09,
+        "rank": 28
+      },
+      "pa": {
+        "score": 1.15,
+        "rank": 27
+      },
+      "ra": {
+        "score": 1.1,
+        "rank": 25
+      }
+    },
+    "DEN": {
+      "pts": {
+        "score": 1.04,
+        "rank": 20
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "ast": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "stl": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 3
+      },
+      "to": {
+        "score": 0.71,
+        "rank": 1
+      },
+      "3pm": {
+        "score": 1.29,
+        "rank": 27
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 8
+      },
+      "pra": {
+        "score": 0.99,
+        "rank": 16
+      },
+      "pr": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "pa": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "ra": {
+        "score": 0.96,
+        "rank": 12
+      }
+    },
+    "DET": {
+      "pts": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "reb": {
+        "score": 0.88,
+        "rank": 2
+      },
+      "ast": {
+        "score": 0.79,
+        "rank": 3
+      },
+      "stl": {
+        "score": 1.14,
+        "rank": 25
+      },
+      "blk": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 23
+      },
+      "3pm": {
+        "score": 1.06,
+        "rank": 19
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 9
+      },
+      "pra": {
+        "score": 0.84,
+        "rank": 1
+      },
+      "pr": {
+        "score": 0.86,
+        "rank": 2
+      },
+      "pa": {
+        "score": 0.81,
+        "rank": 1
+      },
+      "ra": {
+        "score": 0.83,
+        "rank": 1
+      }
+    },
+    "GSW": {
+      "pts": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "reb": {
+        "score": 1.09,
+        "rank": 26
+      },
+      "ast": {
+        "score": 1.12,
+        "rank": 23
+      },
+      "stl": {
+        "score": 0.87,
+        "rank": 7
+      },
+      "blk": {
+        "score": 0.82,
+        "rank": 6
+      },
+      "to": {
+        "score": 0.98,
+        "rank": 13
+      },
+      "3pm": {
+        "score": 0.73,
+        "rank": 5
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 10
+      },
+      "pra": {
+        "score": 1.07,
+        "rank": 22
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 22
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 20
+      },
+      "ra": {
+        "score": 1.1,
+        "rank": 26
+      }
+    },
+    "HOU": {
+      "pts": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "reb": {
+        "score": 0.8,
+        "rank": 1
+      },
+      "ast": {
+        "score": 1.0,
+        "rank": 17
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 12
+      },
+      "blk": {
+        "score": 0.93,
+        "rank": 14
+      },
+      "to": {
+        "score": 0.92,
+        "rank": 11
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 15
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 11
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 9
+      },
+      "pr": {
+        "score": 0.91,
+        "rank": 4
+      },
+      "pa": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "ra": {
+        "score": 0.9,
+        "rank": 5
+      }
+    },
+    "IND": {
+      "pts": {
+        "score": 1.1,
+        "rank": 25
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "ast": {
+        "score": 1.16,
+        "rank": 25
+      },
+      "stl": {
+        "score": 0.69,
+        "rank": 2
+      },
+      "blk": {
+        "score": 0.82,
+        "rank": 7
+      },
+      "to": {
+        "score": 1.03,
+        "rank": 16
+      },
+      "3pm": {
+        "score": 0.82,
+        "rank": 8
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 12
+      },
+      "pra": {
+        "score": 1.1,
+        "rank": 26
+      },
+      "pr": {
+        "score": 1.06,
+        "rank": 26
+      },
+      "pa": {
+        "score": 1.13,
+        "rank": 26
+      },
+      "ra": {
+        "score": 1.09,
+        "rank": 23
+      }
+    },
+    "LAC": {
+      "pts": {
+        "score": 0.96,
+        "rank": 10
+      },
+      "reb": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "ast": {
+        "score": 0.88,
+        "rank": 9
+      },
+      "stl": {
+        "score": 1.23,
+        "rank": 27
+      },
+      "blk": {
+        "score": 0.74,
+        "rank": 4
+      },
+      "to": {
+        "score": 0.82,
+        "rank": 5
+      },
+      "3pm": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 13
+      },
+      "pra": {
+        "score": 0.94,
+        "rank": 10
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 9
+      },
+      "pa": {
+        "score": 0.92,
+        "rank": 9
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 9
+      }
+    },
+    "LAL": {
+      "pts": {
+        "score": 0.8,
+        "rank": 1
+      },
+      "reb": {
+        "score": 0.88,
+        "rank": 3
+      },
+      "ast": {
+        "score": 0.93,
+        "rank": 11
+      },
+      "stl": {
+        "score": 1.21,
+        "rank": 26
+      },
+      "blk": {
+        "score": 0.78,
+        "rank": 5
+      },
+      "to": {
+        "score": 1.21,
+        "rank": 28
+      },
+      "3pm": {
+        "score": 0.48,
+        "rank": 1
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 14
+      },
+      "pra": {
+        "score": 0.87,
+        "rank": 2
+      },
+      "pr": {
+        "score": 0.84,
+        "rank": 1
+      },
+      "pa": {
+        "score": 0.86,
+        "rank": 5
+      },
+      "ra": {
+        "score": 0.91,
+        "rank": 7
+      }
+    },
+    "MEM": {
+      "pts": {
+        "score": 0.89,
+        "rank": 4
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 11
+      },
+      "ast": {
+        "score": 1.35,
+        "rank": 30
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "blk": {
+        "score": 0.91,
+        "rank": 12
+      },
+      "to": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "3pm": {
+        "score": 0.85,
+        "rank": 10
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 15
+      },
+      "pra": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "pr": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "pa": {
+        "score": 1.12,
+        "rank": 25
+      },
+      "ra": {
+        "score": 1.16,
+        "rank": 27
+      }
+    },
+    "MIA": {
+      "pts": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "reb": {
+        "score": 1.09,
+        "rank": 27
+      },
+      "ast": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "stl": {
+        "score": 0.82,
+        "rank": 5
+      },
+      "blk": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "to": {
+        "score": 1.03,
+        "rank": 17
+      },
+      "3pm": {
+        "score": 0.76,
+        "rank": 6
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 16
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 18
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pa": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "ra": {
+        "score": 1.06,
+        "rank": 21
+      }
+    },
+    "MIL": {
+      "pts": {
+        "score": 0.93,
+        "rank": 7
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "ast": {
+        "score": 0.82,
+        "rank": 5
+      },
+      "stl": {
+        "score": 1.01,
+        "rank": 16
+      },
+      "blk": {
+        "score": 0.71,
+        "rank": 1
+      },
+      "to": {
+        "score": 0.88,
+        "rank": 7
+      },
+      "3pm": {
+        "score": 0.7,
+        "rank": 4
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 17
+      },
+      "pra": {
+        "score": 0.91,
+        "rank": 5
+      },
+      "pr": {
+        "score": 0.95,
+        "rank": 7
+      },
+      "pa": {
+        "score": 0.88,
+        "rank": 6
+      },
+      "ra": {
+        "score": 0.9,
+        "rank": 6
+      }
+    },
+    "MIN": {
+      "pts": {
+        "score": 1.04,
+        "rank": 21
+      },
+      "reb": {
+        "score": 0.93,
+        "rank": 5
+      },
+      "ast": {
+        "score": 1.1,
+        "rank": 22
+      },
+      "stl": {
+        "score": 0.89,
+        "rank": 9
+      },
+      "blk": {
+        "score": 0.72,
+        "rank": 2
+      },
+      "to": {
+        "score": 1.05,
+        "rank": 20
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 16
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 18
+      },
+      "pra": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 13
+      },
+      "pa": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 19
+      }
+    },
+    "NOP": {
+      "pts": {
+        "score": 1.08,
+        "rank": 24
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 24
+      },
+      "ast": {
+        "score": 1.28,
+        "rank": 28
+      },
+      "stl": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "blk": {
+        "score": 1.07,
+        "rank": 23
+      },
+      "to": {
+        "score": 1.09,
+        "rank": 21
+      },
+      "3pm": {
+        "score": 1.13,
+        "rank": 21
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 19
+      },
+      "pra": {
+        "score": 1.14,
+        "rank": 29
+      },
+      "pr": {
+        "score": 1.08,
+        "rank": 27
+      },
+      "pa": {
+        "score": 1.18,
+        "rank": 29
+      },
+      "ra": {
+        "score": 1.18,
+        "rank": 30
+      }
+    },
+    "NYK": {
+      "pts": {
+        "score": 0.91,
+        "rank": 6
+      },
+      "reb": {
+        "score": 1.07,
+        "rank": 25
+      },
+      "ast": {
+        "score": 0.8,
+        "rank": 4
+      },
+      "stl": {
+        "score": 0.83,
+        "rank": 6
+      },
+      "blk": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "to": {
+        "score": 0.81,
+        "rank": 4
+      },
+      "3pm": {
+        "score": 1.33,
+        "rank": 28
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 20
+      },
+      "pra": {
+        "score": 0.93,
+        "rank": 7
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "pa": {
+        "score": 0.85,
+        "rank": 4
+      },
+      "ra": {
+        "score": 0.94,
+        "rank": 10
+      }
+    },
+    "OKC": {
+      "pts": {
+        "score": 0.82,
+        "rank": 2
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 7
+      },
+      "ast": {
+        "score": 0.85,
+        "rank": 8
+      },
+      "stl": {
+        "score": 0.88,
+        "rank": 8
+      },
+      "blk": {
+        "score": 0.84,
+        "rank": 8
+      },
+      "to": {
+        "score": 1.29,
+        "rank": 30
+      },
+      "3pm": {
+        "score": 1.12,
+        "rank": 20
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 21
+      },
+      "pra": {
+        "score": 0.88,
+        "rank": 3
+      },
+      "pr": {
+        "score": 0.89,
+        "rank": 3
+      },
+      "pa": {
+        "score": 0.83,
+        "rank": 2
+      },
+      "ra": {
+        "score": 0.91,
+        "rank": 8
+      }
+    },
+    "ORL": {
+      "pts": {
+        "score": 0.89,
+        "rank": 5
+      },
+      "reb": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "ast": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "stl": {
+        "score": 0.81,
+        "rank": 4
+      },
+      "blk": {
+        "score": 1.16,
+        "rank": 24
+      },
+      "to": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "3pm": {
+        "score": 0.49,
+        "rank": 2
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 22
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "pr": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "pa": {
+        "score": 0.96,
+        "rank": 11
+      },
+      "ra": {
+        "score": 1.02,
+        "rank": 20
+      }
+    },
+    "PHI": {
+      "pts": {
+        "score": 1.03,
+        "rank": 19
+      },
+      "reb": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "ast": {
+        "score": 0.88,
+        "rank": 10
+      },
+      "stl": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "blk": {
+        "score": 1.02,
+        "rank": 19
+      },
+      "to": {
+        "score": 0.88,
+        "rank": 8
+      },
+      "3pm": {
+        "score": 1.13,
+        "rank": 22
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 23
+      },
+      "pra": {
+        "score": 0.97,
+        "rank": 12
+      },
+      "pr": {
+        "score": 1.02,
+        "rank": 20
+      },
+      "pa": {
+        "score": 0.96,
+        "rank": 12
+      },
+      "ra": {
+        "score": 0.95,
+        "rank": 11
+      }
+    },
+    "PHO": {
+      "pts": {
+        "score": 0.99,
+        "rank": 14
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 15
+      },
+      "ast": {
+        "score": 0.94,
+        "rank": 12
+      },
+      "stl": {
+        "score": 1.03,
+        "rank": 18
+      },
+      "blk": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "to": {
+        "score": 1.28,
+        "rank": 29
+      },
+      "3pm": {
+        "score": 0.93,
+        "rank": 12
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 24
+      },
+      "pra": {
+        "score": 0.98,
+        "rank": 15
+      },
+      "pr": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "pa": {
+        "score": 0.96,
+        "rank": 13
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 13
+      }
+    },
+    "POR": {
+      "pts": {
+        "score": 1.13,
+        "rank": 28
+      },
+      "reb": {
+        "score": 0.96,
+        "rank": 8
+      },
+      "ast": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "stl": {
+        "score": 1.1,
+        "rank": 24
+      },
+      "blk": {
+        "score": 1.69,
+        "rank": 30
+      },
+      "to": {
+        "score": 1.2,
+        "rank": 27
+      },
+      "3pm": {
+        "score": 1.34,
+        "rank": 29
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 25
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 20
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 23
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 21
+      },
+      "ra": {
+        "score": 0.97,
+        "rank": 14
+      }
+    },
+    "SAC": {
+      "pts": {
+        "score": 1.18,
+        "rank": 30
+      },
+      "reb": {
+        "score": 1.12,
+        "rank": 29
+      },
+      "ast": {
+        "score": 1.19,
+        "rank": 27
+      },
+      "stl": {
+        "score": 1.33,
+        "rank": 29
+      },
+      "blk": {
+        "score": 1.18,
+        "rank": 26
+      },
+      "to": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "3pm": {
+        "score": 1.02,
+        "rank": 17
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 26
+      },
+      "pra": {
+        "score": 1.16,
+        "rank": 30
+      },
+      "pr": {
+        "score": 1.15,
+        "rank": 29
+      },
+      "pa": {
+        "score": 1.19,
+        "rank": 30
+      },
+      "ra": {
+        "score": 1.16,
+        "rank": 28
+      }
+    },
+    "SAS": {
+      "pts": {
+        "score": 0.99,
+        "rank": 15
+      },
+      "reb": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "ast": {
+        "score": 1.3,
+        "rank": 29
+      },
+      "stl": {
+        "score": 0.95,
+        "rank": 11
+      },
+      "blk": {
+        "score": 0.91,
+        "rank": 13
+      },
+      "to": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "3pm": {
+        "score": 0.84,
+        "rank": 9
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 27
+      },
+      "pra": {
+        "score": 1.11,
+        "rank": 27
+      },
+      "pr": {
+        "score": 1.01,
+        "rank": 17
+      },
+      "pa": {
+        "score": 1.15,
+        "rank": 28
+      },
+      "ra": {
+        "score": 1.17,
+        "rank": 29
+      }
+    },
+    "TOR": {
+      "pts": {
+        "score": 0.93,
+        "rank": 8
+      },
+      "reb": {
+        "score": 1.0,
+        "rank": 16
+      },
+      "ast": {
+        "score": 0.76,
+        "rank": 1
+      },
+      "stl": {
+        "score": 0.8,
+        "rank": 3
+      },
+      "blk": {
+        "score": 1.16,
+        "rank": 25
+      },
+      "to": {
+        "score": 0.98,
+        "rank": 14
+      },
+      "3pm": {
+        "score": 0.76,
+        "rank": 7
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 28
+      },
+      "pra": {
+        "score": 0.9,
+        "rank": 4
+      },
+      "pr": {
+        "score": 0.97,
+        "rank": 10
+      },
+      "pa": {
+        "score": 0.84,
+        "rank": 3
+      },
+      "ra": {
+        "score": 0.88,
+        "rank": 3
+      }
+    },
+    "UTA": {
+      "pts": {
+        "score": 1.11,
+        "rank": 26
+      },
+      "reb": {
+        "score": 0.97,
+        "rank": 13
+      },
+      "ast": {
+        "score": 1.01,
+        "rank": 18
+      },
+      "stl": {
+        "score": 1.05,
+        "rank": 21
+      },
+      "blk": {
+        "score": 1.28,
+        "rank": 27
+      },
+      "to": {
+        "score": 0.76,
+        "rank": 2
+      },
+      "3pm": {
+        "score": 1.27,
+        "rank": 24
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 29
+      },
+      "pra": {
+        "score": 1.03,
+        "rank": 21
+      },
+      "pr": {
+        "score": 1.04,
+        "rank": 24
+      },
+      "pa": {
+        "score": 1.06,
+        "rank": 22
+      },
+      "ra": {
+        "score": 0.99,
+        "rank": 17
+      }
+    },
+    "WAS": {
+      "pts": {
+        "score": 1.12,
+        "rank": 27
+      },
+      "reb": {
+        "score": 1.18,
+        "rank": 30
+      },
+      "ast": {
+        "score": 0.97,
+        "rank": 14
+      },
+      "stl": {
+        "score": 1.06,
+        "rank": 23
+      },
+      "blk": {
+        "score": 1.37,
+        "rank": 28
+      },
+      "to": {
+        "score": 0.86,
+        "rank": 6
+      },
+      "3pm": {
+        "score": 1.26,
+        "rank": 23
+      },
+      "fd": {
+        "score": 0.0,
+        "rank": 30
+      },
+      "pra": {
+        "score": 1.09,
+        "rank": 25
+      },
+      "pr": {
+        "score": 1.15,
+        "rank": 30
+      },
+      "pa": {
+        "score": 1.04,
+        "rank": 19
+      },
+      "ra": {
+        "score": 1.07,
+        "rank": 22
+      }
+    }
+  }
+}
