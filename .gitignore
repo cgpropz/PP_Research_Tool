@@ -8,9 +8,14 @@ __pycache__/
 venv/
 .env/
 .venv/
+*_venv/
+backend_venv/
 
 # Node modules
 node_modules/
+
+# Next.js build artifacts
+.next/
 
 # Local debug snapshots
 /downloaded_files/
@@ -19,5 +24,8 @@ node_modules/
 # OS files
 .DS_Store
 
+# Database files
+*.db
+
 # Not ignoring generated site/data files we intentionally commit
-# (e.g., NBA_PURE_STANDARD_SINGLE.csv, .json, players/, index.html)Full_Gamelogs25.csv
+# (e.g., NBA_PURE_STANDARD_SINGLE.csv, .json, players/, index.html)
