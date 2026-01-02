@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-01-02T12:07:44.500743",
+    "generated_at": "2026-01-02T12:37:18.595912",
     "source": "the-odds-api",
     "count": 10
   },
@@ -42,17 +42,17 @@
         "away": "assets/team-logos/sas.png"
       },
       "best_h2h": {
-        "home": 203,
+        "home": 210,
         "away": -218
       },
       "best_spread": {
         "home": {
           "point": 6.0,
-          "price": -112
+          "price": -113
         },
         "away": {
           "point": -6.0,
-          "price": -114
+          "price": -113
         }
       },
       "bookmakers_count": 9
@@ -73,12 +73,12 @@
       },
       "best_spread": {
         "home": {
-          "point": -7.0,
-          "price": -109
+          "point": -6.5,
+          "price": -117
         },
         "away": {
-          "point": 7.0,
-          "price": -117
+          "point": 6.5,
+          "price": -109
         }
       },
       "bookmakers_count": 9
@@ -94,8 +94,8 @@
         "away": "assets/team-logos/den.png"
       },
       "best_h2h": {
-        "home": -765,
-        "away": 575
+        "home": -800,
+        "away": 590
       },
       "best_spread": {
         "home": {
@@ -126,11 +126,11 @@
       "best_spread": {
         "home": {
           "point": -6.0,
-          "price": -112
+          "price": -113
         },
         "away": {
           "point": 6.0,
-          "price": -114
+          "price": -113
         }
       },
       "bookmakers_count": 9
@@ -147,7 +147,7 @@
       },
       "best_h2h": {
         "home": 175,
-        "away": -185
+        "away": -195
       },
       "best_spread": {
         "home": {
@@ -172,16 +172,16 @@
         "away": "assets/team-logos/por.png"
       },
       "best_h2h": {
-        "home": -102,
-        "away": -110
+        "home": 124,
+        "away": -105
       },
       "best_spread": {
         "home": {
-          "point": 1.0,
+          "point": 3.0,
           "price": -112
         },
         "away": {
-          "point": -1.0,
+          "point": -3.0,
           "price": -114
         }
       },
@@ -198,17 +198,17 @@
         "away": "assets/team-logos/sac.png"
       },
       "best_h2h": {
-        "home": -700,
-        "away": 533
+        "home": -713,
+        "away": 550
       },
       "best_spread": {
         "home": {
           "point": -12.5,
-          "price": -113
+          "price": -114
         },
         "away": {
           "point": 12.5,
-          "price": -113
+          "price": -112
         }
       },
       "bookmakers_count": 9
@@ -251,7 +251,7 @@
       },
       "best_h2h": {
         "home": -164,
-        "away": 150
+        "away": 146
       },
       "best_spread": {
         "home": {

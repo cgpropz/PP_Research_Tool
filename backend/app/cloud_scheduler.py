@@ -159,140 +159,46 @@ def fetch_dvp():
         return False
 
 
-# ============ GAMELOGS FETCHER (API-based for cloud) ============
+# ============ GAMELOGS (Using committed JSON file - updated via GitHub Actions) ============
 def fetch_gamelogs():
-    """Fetch game logs from NBA Stats API (no Selenium needed)"""
-    logger.info("📈 Fetching game logs...")
-    try:
-        # NBA Stats API endpoint
-        url = "https://stats.nba.com/stats/leaguegamelog"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "application/json, text/plain, */*",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Origin": "https://www.nba.com",
-            "Referer": "https://www.nba.com/",
-            "x-nba-stats-origin": "stats",
-            "x-nba-stats-token": "true",
-            "Connection": "keep-alive"
-        }
-        params = {
-            "Counter": 0,
-            "DateFrom": "",
-            "DateTo": "",
-            "Direction": "DESC",
-            "LeagueID": "00",
-            "PlayerOrTeam": "P",  # Player logs
-            "Season": "2025-26",
-            "SeasonType": "Regular Season",
-            "Sorter": "DATE"
-        }
-        
-        logger.info(f"📡 Requesting: {url}")
-        
-        # Retry logic for NBA API (can be flaky)
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                response = requests.get(url, headers=headers, params=params, timeout=120)
-                logger.info(f"📡 Response status: {response.status_code}")
-                
-                if response.status_code == 200:
-                    break
-                elif attempt < max_retries - 1:
-                    logger.warning(f"⚠️ Attempt {attempt + 1} failed with status {response.status_code}, retrying...")
-                    import time
-                    time.sleep(2)
-            except requests.exceptions.Timeout:
-                if attempt < max_retries - 1:
-                    logger.warning(f"⚠️ Attempt {attempt + 1} timed out, retrying...")
-                    import time
-                    time.sleep(2)
-                else:
-                    logger.error("❌ All retry attempts timed out")
-                    return False
-            except Exception as e:
-                logger.error(f"❌ Request error: {e}")
-                return False
-        
-        if response.status_code != 200:
-            logger.error(f"❌ NBA API returned status {response.status_code}: {response.text[:500]}")
+    """
+    Gamelogs are fetched via GitHub Actions using Selenium (Gamelogs.py).
+    The JSON file is committed to the repo and used here.
+    This function just verifies the file exists.
+    """
+    logger.info("📈 Checking gamelogs file...")
+    
+    # Check for JSON file first
+    json_path = os.path.join(BASE_DIR, 'Player_Gamelogs25.json')
+    if not os.path.exists(json_path):
+        json_path = os.path.join(BACKEND_DATA_DIR, 'Player_Gamelogs25.json')
+    
+    if os.path.exists(json_path):
+        try:
+            with open(json_path) as f:
+                data = json.load(f)
+            logger.info(f"✅ Gamelogs file found: {len(data)} records")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Error reading gamelogs: {e}")
             return False
-            
-        response.raise_for_status()
-        data = response.json()
-        
-        # Parse the response
-        result_set = data.get('resultSets', [{}])[0]
-        headers_list = result_set.get('headers', [])
-        rows = result_set.get('rowSet', [])
-        
-        if not rows:
-            logger.warning("No gamelog data returned from API")
+    
+    # Fallback to CSV
+    csv_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
+    if not os.path.exists(csv_path):
+        csv_path = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
+    
+    if os.path.exists(csv_path):
+        try:
+            df = pd.read_csv(csv_path)
+            logger.info(f"✅ Gamelogs CSV found: {len(df)} records")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Error reading gamelogs CSV: {e}")
             return False
-        
-        # Create DataFrame
-        df = pd.DataFrame(rows, columns=headers_list)
-        
-        # Rename columns to match existing format
-        column_mapping = {
-            'PLAYER_NAME': 'PLAYER NAME',
-            'GAME_DATE': 'GAME DATE',
-            'MATCHUP': 'MATCHUP',
-            'WL': 'W/L',
-            'MIN': 'MIN',
-            'PTS': 'PTS',
-            'REB': 'REB',
-            'AST': 'AST',
-            'STL': 'STL',
-            'BLK': 'BLK',
-            'TOV': 'TOV',
-            'FGM': 'FGM',
-            'FGA': 'FGA',
-            'FG_PCT': 'FG%',
-            'FG3M': '3PM',
-            'FG3A': '3PA',
-            'FG3_PCT': '3P%',
-            'FTM': 'FTM',
-            'FTA': 'FTA',
-            'FT_PCT': 'FT%',
-            'OREB': 'OREB',
-            'DREB': 'DREB',
-            'PLUS_MINUS': '+/-',
-        }
-        df = df.rename(columns=column_mapping)
-        
-        # Save CSV to both locations
-        csv_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
-        df.to_csv(csv_path, index=False)
-        logger.info(f"📁 Saved gamelogs to: {csv_path}")
-        
-        # Also save to backend data dir
-        csv_path_backend = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
-        df.to_csv(csv_path_backend, index=False)
-        logger.info(f"📁 Also saved to: {csv_path_backend}")
-        
-        # Save JSON
-        def replace_nan(obj):
-            if isinstance(obj, dict):
-                return {k: replace_nan(v) for k, v in obj.items()}
-            elif isinstance(obj, list):
-                return [replace_nan(v) for v in obj]
-            elif isinstance(obj, float) and (math.isnan(obj) if obj == obj else True):
-                return None
-            else:
-                return obj
-        
-        json_path = os.path.join(BASE_DIR, 'Player_Gamelogs25.json')
-        gamelogs = df.to_dict(orient='records')
-        with open(json_path, 'w') as f:
-            json.dump(replace_nan(gamelogs), f, indent=2)
-        
-        logger.info(f"✅ Gamelogs saved: {len(df)} records")
-        return True
-    except Exception as e:
-        logger.error(f"❌ Gamelogs fetch failed: {e}")
-        return False
+    
+    logger.warning("⚠️ No gamelogs file found - cards will have limited data")
+    return False
 
 
 # ============ SCHEDULE FETCHER ============
@@ -422,21 +328,34 @@ def build_player_cards():
             with open(positions_path) as f:
                 positions_data = json.load(f)
         
-        # Load gamelogs - try multiple paths
-        gamelogs_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
+        # Load gamelogs - try JSON first, then CSV
+        gamelogs_path = os.path.join(BASE_DIR, 'Player_Gamelogs25.json')
         if not os.path.exists(gamelogs_path):
-            gamelogs_path = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
-        if not os.path.exists(gamelogs_path):
-            logger.error(f"Gamelogs file not found at BASE_DIR or BACKEND_DATA_DIR")
-            logger.error(f"Checked paths: {os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')}, {os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')}")
-            return False
+            gamelogs_path = os.path.join(BACKEND_DATA_DIR, 'Player_Gamelogs25.json')
         
-        logger.info(f"📁 Loading gamelogs from: {gamelogs_path}")
-        df_logs = pd.read_csv(gamelogs_path)
+        if os.path.exists(gamelogs_path):
+            logger.info(f"📁 Loading gamelogs from JSON: {gamelogs_path}")
+            with open(gamelogs_path) as f:
+                gamelogs_data = json.load(f)
+            df_logs = pd.DataFrame(gamelogs_data)
+        else:
+            # Fallback to CSV
+            csv_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
+            if not os.path.exists(csv_path):
+                csv_path = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
+            if not os.path.exists(csv_path):
+                logger.error(f"Gamelogs file not found at BASE_DIR or BACKEND_DATA_DIR")
+                logger.error(f"Checked JSON: {os.path.join(BASE_DIR, 'Player_Gamelogs25.json')}")
+                logger.error(f"Checked CSV: {os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')}")
+                return False
+            logger.info(f"📁 Loading gamelogs from CSV: {csv_path}")
+            df_logs = pd.read_csv(csv_path)
         
-        # Normalize column name for player (CSV may have 'PLAYER' instead of 'PLAYER NAME')
+        # Normalize column name for player (may have 'PLAYER' instead of 'PLAYER NAME')
         if 'PLAYER' in df_logs.columns and 'PLAYER NAME' not in df_logs.columns:
             df_logs['PLAYER NAME'] = df_logs['PLAYER']
+        
+        logger.info(f"📈 Loaded gamelogs: {len(df_logs)} records")
         
         # Build player_id lookup from gamelogs (use normalized names for matching)
         player_ids = {}

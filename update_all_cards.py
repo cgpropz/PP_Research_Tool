@@ -87,7 +87,11 @@ def build_player_cards():
             pp_lines = [v for v in raw.values() if isinstance(v, dict)]
     else:
         pp_lines = raw if isinstance(raw, list) else []
-    df_logs = pd.read_csv('Full_Gamelogs25.csv')
+    
+    # Load gamelogs from JSON
+    with open('Player_Gamelogs25.json') as f:
+        gamelogs_data = json.load(f)
+    df_logs = pd.DataFrame(gamelogs_data)
     df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
     # Normalize column name for player
     if 'PLAYER' in df_logs.columns and 'PLAYER NAME' not in df_logs.columns:
@@ -102,7 +106,7 @@ def build_player_cards():
         'Steals': ['STL'],
         'Blocks': ['BLK'],
         'Turnovers': ['TOV'],
-        'Fantasy Score': ['FANTASY_PTS'],
+        'Fantasy Score': ['FP'],
         'Threes Made': ['3PM'],
         'Three Pointers Made': ['3PM'],
         'Blocked Shots': ['BLK'],

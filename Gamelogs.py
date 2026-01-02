@@ -42,7 +42,8 @@ def replace_nan(obj):
     else:
         return obj
 
-# If you ever export to JSON, use this:
-# gamelogs = df.to_dict(orient='records')
-# with open('Player_Gamelogs25.json', 'w') as f:
-#     json.dump(replace_nan(gamelogs), f, indent=2)
+# Export to JSON as well
+gamelogs = df.to_dict(orient='records')
+with open('Player_Gamelogs25.json', 'w') as f:
+    json.dump(replace_nan(gamelogs), f, indent=2)
+print("JSON gamelogs saved to Player_Gamelogs25.json")

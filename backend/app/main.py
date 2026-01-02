@@ -79,16 +79,15 @@ def daily_update_job():
         logger.error(f"❌ Daily update error: {e}")
 
 def gamelog_update_job():
-    """Gamelog update every 2 hours"""
-    logger.info("📈 Updating gamelogs...")
+    """Rebuild cards (gamelogs are updated via GitHub Actions)"""
+    logger.info("📈 Rebuilding player cards...")
     try:
-        from app.cloud_scheduler import fetch_gamelogs, build_player_cards
-        fetch_gamelogs()
+        from app.cloud_scheduler import build_player_cards
         build_player_cards()
         data_service.clear_cache('player_cards')
-        logger.info("✅ Gamelog update completed")
+        logger.info("✅ Card rebuild completed")
     except Exception as e:
-        logger.error(f"❌ Gamelog update error: {e}")
+        logger.error(f"❌ Card rebuild error: {e}")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -137,12 +136,12 @@ async def lifespan(app: FastAPI):
     logger.info("   - DVP: daily at 6 AM EST")
     logger.info("   - Gamelogs: every 2 hours")
     
-    # Run initial full data load (gamelogs + odds + cards)
+    # Run initial data load (skip gamelogs fetch - use local file, fetch is slow/unreliable)
     logger.info("🔄 Running initial data load...")
     try:
-        from app.cloud_scheduler import fetch_gamelogs, fetch_odds, fetch_schedule, build_player_cards
-        # Fetch gamelogs first (required for building cards)
-        fetch_gamelogs()
+        from app.cloud_scheduler import fetch_odds, fetch_schedule, build_player_cards
+        # Don't fetch gamelogs on startup - it times out frequently
+        # Use the local JSON/CSV file instead, and let the 2-hour job update it
         fetch_schedule()
         fetch_odds()
         build_player_cards()
@@ -150,6 +149,8 @@ async def lifespan(app: FastAPI):
         logger.info("✅ Initial data load completed")
     except Exception as e:
         logger.error(f"❌ Initial data load error: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
     
     yield
     
@@ -173,7 +174,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://pp-research-tool.vercel.app",
-        "https://pp-research-tool-*.vercel.app",
+        "https://pp-research-tool-46mppmaqb-cgpropzs-projects-b48486d7.vercel.app",
+        "https://*.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
         "http://127.0.0.1:3000",
