@@ -1,11 +1,19 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-// Use Railway production URL, fall back to env var, then localhost for dev
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 
-  (typeof window !== 'undefined' && window.location.hostname !== 'localhost' 
-    ? 'https://ppresearchtool-production.up.railway.app' 
-    : 'http://localhost:8000');
+// Production Railway URL - hardcoded for reliability
+const PRODUCTION_API_URL = 'https://ppresearchtool-production.up.railway.app';
+const DEV_API_URL = 'http://localhost:8000';
+
+// Determine if we're in production (browser and not localhost)
+const isProduction = typeof window !== 'undefined' && 
+  !window.location.hostname.includes('localhost') && 
+  !window.location.hostname.includes('127.0.0.1');
+
+// Always use production URL in production, localhost for dev
+const API_URL = isProduction ? PRODUCTION_API_URL : DEV_API_URL;
+
+console.log('[API] Using URL:', API_URL, 'isProduction:', isProduction);
 
 // Create axios instance
 const api = axios.create({
