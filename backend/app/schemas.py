@@ -46,19 +46,19 @@ class TokenData(BaseModel):
 
 class PlayerCardBase(BaseModel):
     name: str
-    team: str
-    opponent: str
-    prop: str
-    line: float
+    team: Optional[str] = None
+    opponent: Optional[str] = None
+    prop: Optional[str] = None
+    line: Optional[float] = None
     last_5: Optional[str] = None
-    last_5_pct: float
+    last_5_pct: Optional[float] = None
     last_10: Optional[str] = None
-    last_10_pct: float
+    last_10_pct: Optional[float] = None
     last_20: Optional[str] = None
-    last_20_pct: float
+    last_20_pct: Optional[float] = None
     season: Optional[str] = None
-    season_pct: float
-    avg: float
+    season_pct: Optional[float] = None
+    avg: Optional[float] = None
     games: Optional[int] = None
     last_10_values: Optional[List[float]] = None
     projection: Optional[float] = None
@@ -66,6 +66,19 @@ class PlayerCardBase(BaseModel):
     player_id: Optional[int] = None
     score: Optional[float] = None
     spread: Optional[float] = None
+    # New fields from cloud_scheduler
+    player_name: Optional[str] = None
+    player_slug: Optional[str] = None
+    position: Optional[str] = None
+    stat_type: Optional[str] = None
+    median: Optional[float] = None
+    hit_rate: Optional[float] = None
+    hit_count: Optional[int] = None
+    games_played: Optional[int] = None
+    over_odds: Optional[int] = None
+    under_odds: Optional[int] = None
+    last_updated: Optional[str] = None
+    dvp_rank: Optional[int] = None
 
 
 class PlayerCardResponse(PlayerCardBase):
