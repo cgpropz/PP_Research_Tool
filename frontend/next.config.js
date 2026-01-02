@@ -5,7 +5,8 @@ const nextConfig = {
     domains: ['cdn.nba.com'],
   },
   async rewrites() {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+    // Use environment variable, or Railway production URL if in production
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://ppresearchtool-production.up.railway.app';
     return [
       {
         source: '/api/:path*',

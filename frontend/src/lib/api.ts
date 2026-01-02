@@ -1,7 +1,11 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Use Railway production URL, fall back to env var, then localhost for dev
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname !== 'localhost' 
+    ? 'https://ppresearchtool-production.up.railway.app' 
+    : 'http://localhost:8000');
 
 // Create axios instance
 const api = axios.create({
@@ -9,6 +13,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: false,  // Don't send cookies cross-origin
 });
 
 // Add auth token to requests
