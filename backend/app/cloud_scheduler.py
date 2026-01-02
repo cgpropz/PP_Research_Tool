@@ -343,15 +343,38 @@ def build_player_cards():
             schedule_path = os.path.join(BASE_DIR, 'nba_schedule.json')
         team_opponents = {}
         if os.path.exists(schedule_path):
-            with open(schedule_path) as f:
-                schedule = json.load(f)
-            # Build team->opponent map for today's games
-            for game in schedule:
-                home = game.get('home', '')
-                away = game.get('away', '')
-                if home and away:
-                    team_opponents[home] = away
-                    team_opponents[away] = home
+            try:
+                with open(schedule_path) as f:
+                    schedule_raw = json.load(f)
+                # Handle NBA's complex schedule format
+                if isinstance(schedule_raw, dict) and 'leagueSchedule' in schedule_raw:
+                    # NBA Stats format - need to parse gameDates
+                    from datetime import date
+                    today_str = date.today().strftime("%m/%d/%Y")
+                    game_dates = schedule_raw.get('leagueSchedule', {}).get('gameDates', [])
+                    for gd in game_dates:
+                        game_date = gd.get('gameDate', '')
+                        if not game_date.startswith(today_str.split(' ')[0][:5]):
+                            continue
+                        for game in gd.get('games', []):
+                            home_team = game.get('homeTeam', {})
+                            away_team = game.get('awayTeam', {})
+                            home = home_team.get('teamTricode', '')
+                            away = away_team.get('teamTricode', '')
+                            if home and away:
+                                team_opponents[home] = away
+                                team_opponents[away] = home
+                elif isinstance(schedule_raw, list):
+                    # Simple list format from backend/data
+                    for game in schedule_raw:
+                        if isinstance(game, dict):
+                            home = game.get('home', '')
+                            away = game.get('away', '')
+                            if home and away:
+                                team_opponents[home] = away
+                                team_opponents[away] = home
+            except Exception as e:
+                logger.warning(f"⚠️ Schedule parsing failed: {e} - continuing without opponent data")
         
         # Load DVP data for rankings
         dvp_data = {}
@@ -383,11 +406,15 @@ def build_player_cards():
         logger.info(f"📁 Loading gamelogs from: {gamelogs_path}")
         df_logs = pd.read_csv(gamelogs_path)
         
-        # Build player_id lookup from gamelogs
+        # Build player_id lookup from gamelogs (use normalized names for matching)
         player_ids = {}
         if 'PLAYER_ID' in df_logs.columns:
             for _, row in df_logs[['PLAYER NAME', 'PLAYER_ID']].drop_duplicates().iterrows():
-                player_ids[row['PLAYER NAME']] = int(row['PLAYER_ID'])
+                # Store with both original and normalized name for flexible matching
+                original_name = row['PLAYER NAME']
+                normalized_key = normalize_name(original_name).lower()
+                player_ids[original_name] = int(row['PLAYER_ID'])
+                player_ids[normalized_key] = int(row['PLAYER_ID'])
         df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
         logger.info(f"📈 Loaded gamelogs: {len(df_logs)} records")
         
@@ -484,8 +511,10 @@ def build_player_cards():
             # Get opponent from schedule
             opponent = team_opponents.get(team, '')
             
-            # Get player_id from gamelogs
+            # Get player_id from gamelogs (try exact match first, then normalized)
             player_id = player_ids.get(player_name)
+            if player_id is None:
+                player_id = player_ids.get(normalize_name(player_name).lower())
             
             # Get player logs
             p_logs = df_logs[df_logs['PLAYER NAME'].str.lower() == player_name.lower()]
