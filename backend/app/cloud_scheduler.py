@@ -21,10 +21,13 @@ logger = logging.getLogger(__name__)
 
 # File paths (relative to backend directory)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data', 'odds')
+BACKEND_DATA_DIR = os.path.join(BACKEND_DIR, 'data')
 
-# Ensure data directory exists
+# Ensure data directories exist
 os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(BACKEND_DATA_DIR, exist_ok=True)
 
 TEAM_NAME_TO_ABBR = {
     "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN",
@@ -164,13 +167,14 @@ def fetch_gamelogs():
         # NBA Stats API endpoint
         url = "https://stats.nba.com/stats/leaguegamelog"
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             "Accept": "application/json, text/plain, */*",
             "Accept-Language": "en-US,en;q=0.9",
             "Origin": "https://www.nba.com",
             "Referer": "https://www.nba.com/",
             "x-nba-stats-origin": "stats",
-            "x-nba-stats-token": "true"
+            "x-nba-stats-token": "true",
+            "Connection": "keep-alive"
         }
         params = {
             "Counter": 0,
@@ -184,7 +188,14 @@ def fetch_gamelogs():
             "Sorter": "DATE"
         }
         
+        logger.info(f"📡 Requesting: {url}")
         response = requests.get(url, headers=headers, params=params, timeout=60)
+        logger.info(f"📡 Response status: {response.status_code}")
+        
+        if response.status_code != 200:
+            logger.error(f"❌ NBA API returned status {response.status_code}: {response.text[:500]}")
+            return False
+            
         response.raise_for_status()
         data = response.json()
         
@@ -228,9 +239,15 @@ def fetch_gamelogs():
         }
         df = df.rename(columns=column_mapping)
         
-        # Save CSV
+        # Save CSV to both locations
         csv_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
         df.to_csv(csv_path, index=False)
+        logger.info(f"📁 Saved gamelogs to: {csv_path}")
+        
+        # Also save to backend data dir
+        csv_path_backend = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
+        df.to_csv(csv_path_backend, index=False)
+        logger.info(f"📁 Also saved to: {csv_path_backend}")
         
         # Save JSON
         def replace_nan(obj):
@@ -320,12 +337,16 @@ def build_player_cards():
                         team_abbr = TEAM_NAME_TO_ABBR.get(team_full, team_full)
                         team_spreads[team_abbr] = spread
         
-        # Load gamelogs
+        # Load gamelogs - try multiple paths
         gamelogs_path = os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')
         if not os.path.exists(gamelogs_path):
-            logger.error("Gamelogs file not found")
+            gamelogs_path = os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')
+        if not os.path.exists(gamelogs_path):
+            logger.error(f"Gamelogs file not found at BASE_DIR or BACKEND_DATA_DIR")
+            logger.error(f"Checked paths: {os.path.join(BASE_DIR, 'Full_Gamelogs25.csv')}, {os.path.join(BACKEND_DATA_DIR, 'Full_Gamelogs25.csv')}")
             return False
         
+        logger.info(f"📁 Loading gamelogs from: {gamelogs_path}")
         df_logs = pd.read_csv(gamelogs_path)
         df_logs['GAME DATE'] = pd.to_datetime(df_logs['GAME DATE'])
         logger.info(f"📈 Loaded gamelogs: {len(df_logs)} records")
