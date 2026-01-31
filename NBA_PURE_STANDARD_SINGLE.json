@@ -6,7 +6,7 @@
     "Line": 42.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jalen Johnson",
@@ -15,7 +15,7 @@
     "Line": 41.0,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Victor Wembanyama",
@@ -24,25 +24,16 @@
     "Line": 39.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tyrese Maxey",
     "Team": "PHI",
     "Stat": "Pts+Rebs+Asts",
-    "Line": 39.5,
+    "Line": 38.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Anthony Edwards",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 37.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Joel Embiid",
@@ -51,7 +42,16 @@
     "Line": 37.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Anthony Edwards",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 37.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kevin Durant",
@@ -60,7 +60,7 @@
     "Line": 36.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pascal Siakam",
@@ -69,7 +69,7 @@
     "Line": 36.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Victor Wembanyama",
@@ -78,7 +78,7 @@
     "Line": 36.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Bam Adebayo",
@@ -87,7 +87,7 @@
     "Line": 36.0,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Alperen Sengun",
@@ -96,7 +96,7 @@
     "Line": 35.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tyrese Maxey",
@@ -105,34 +105,7 @@
     "Line": 35.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Anthony Edwards",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs",
-    "Line": 33.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Josh Giddey",
-    "Team": "CHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 33.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Johnson",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs",
-    "Line": 33.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Bam Adebayo",
@@ -141,25 +114,34 @@
     "Line": 33.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Zion Williamson",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 32.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Pascal Siakam",
-    "Team": "IND",
+    "Name": "Jalen Johnson",
+    "Team": "ATL",
     "Stat": "Pts+Rebs",
-    "Line": 32.5,
-    "Versus": "ATL",
+    "Line": 33.5,
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Anthony Edwards",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs",
+    "Line": 33.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Josh Giddey",
+    "Team": "CHI",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 33.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Joel Embiid",
@@ -168,7 +150,16 @@
     "Line": 32.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Zion Williamson",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 32.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Julius Randle",
@@ -177,7 +168,7 @@
     "Line": 32.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Anthony Edwards",
@@ -186,16 +177,7 @@
     "Line": 31.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kevin Durant",
-    "Team": "HOU",
-    "Stat": "Pts+Rebs",
-    "Line": 31.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tyrese Maxey",
@@ -204,34 +186,25 @@
     "Line": 31.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Amen Thompson",
+    "Name": "Pascal Siakam",
+    "Team": "IND",
+    "Stat": "Pts+Rebs",
+    "Line": 31.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kevin Durant",
     "Team": "HOU",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 30.5,
+    "Stat": "Pts+Rebs",
+    "Line": 31.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cooper Flagg",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 30.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Coby White",
-    "Team": "CHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 30.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kevin Durant",
@@ -240,16 +213,34 @@
     "Line": 30.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jalen Johnson",
-    "Team": "ATL",
-    "Stat": "Pts+Asts",
+    "Name": "Amen Thompson",
+    "Team": "HOU",
+    "Stat": "Pts+Rebs+Asts",
     "Line": 30.5,
-    "Versus": "IND",
+    "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cooper Flagg",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 30.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Coby White",
+    "Team": "CHI",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 30.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "LaMelo Ball",
@@ -258,7 +249,16 @@
     "Line": 30.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Johnson",
+    "Team": "ATL",
+    "Stat": "Pts+Asts",
+    "Line": 30.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Trey Murphy",
@@ -267,7 +267,16 @@
     "Line": 30.0,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaren Jackson",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 29.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Alperen Sengun",
@@ -276,34 +285,7 @@
     "Line": 29.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaren Jackson",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 29.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Joel Embiid",
-    "Team": "PHI",
-    "Stat": "Points",
-    "Line": 28.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Zion Williamson",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs",
-    "Line": 28.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jaime Jaquez",
@@ -312,7 +294,7 @@
     "Line": 28.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pascal Siakam",
@@ -321,16 +303,7 @@
     "Line": 28.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 28.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Andrew Nembhard",
@@ -339,7 +312,34 @@
     "Line": 28.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Joel Embiid",
+    "Team": "PHI",
+    "Stat": "Points",
+    "Line": 28.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Zion Williamson",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs",
+    "Line": 28.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Miller",
+    "Team": "CHA",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 28.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Stephon Castle",
@@ -348,7 +348,7 @@
     "Line": 28.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Victor Wembanyama",
@@ -357,25 +357,7 @@
     "Line": 28.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaren Jackson",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 27.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Anthony Edwards",
-    "Team": "MIN",
-    "Stat": "Points",
-    "Line": 27.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Matas Buzelis",
@@ -384,7 +366,16 @@
     "Line": 27.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "De'Aaron Fox",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 27.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tyrese Maxey",
@@ -393,16 +384,7 @@
     "Line": 27.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 27.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Nickeil Alexander-Walker",
@@ -411,16 +393,34 @@
     "Line": 27.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "De'Aaron Fox",
-    "Team": "SAS",
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
     "Stat": "Pts+Rebs+Asts",
     "Line": 27.5,
-    "Versus": "CHA",
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Anthony Edwards",
+    "Team": "MIN",
+    "Stat": "Points",
+    "Line": 27.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaren Jackson",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs",
+    "Line": 27.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Coby White",
@@ -429,7 +429,16 @@
     "Line": 27.0,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julius Randle",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs",
+    "Line": 26.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Alperen Sengun",
@@ -438,7 +447,7 @@
     "Line": 26.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jalen Smith",
@@ -447,16 +456,7 @@
     "Line": 26.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julius Randle",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs",
-    "Line": 26.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kevin Durant",
@@ -465,7 +465,7 @@
     "Line": 26.0,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "LaMelo Ball",
@@ -474,124 +474,7 @@
     "Line": 26.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Bam Adebayo",
-    "Team": "MIA",
-    "Stat": "Pts+Asts",
-    "Line": 25.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julius Randle",
-    "Team": "MIN",
-    "Stat": "Pts+Asts",
-    "Line": 25.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Josh Giddey",
-    "Team": "CHI",
-    "Stat": "Pts+Asts",
-    "Line": 25.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Josh Giddey",
-    "Team": "CHI",
-    "Stat": "Pts+Rebs",
-    "Line": 25.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Trey Murphy",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs",
-    "Line": 25.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Amen Thompson",
-    "Team": "HOU",
-    "Stat": "Pts+Rebs",
-    "Line": 25.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cooper Flagg",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs",
-    "Line": 25.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 25.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kon Knueppel",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 25.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Miles Bridges",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 25.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs",
-    "Line": 25.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Nembhard",
-    "Team": "IND",
-    "Stat": "Pts+Asts",
-    "Line": 25.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Paul George",
-    "Team": "PHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 25.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Victor Wembanyama",
@@ -600,16 +483,61 @@
     "Line": 25.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "CJ McCollum",
-    "Team": "ATL",
+    "Name": "Kon Knueppel",
+    "Team": "CHA",
     "Stat": "Pts+Rebs+Asts",
     "Line": 25.5,
-    "Versus": "IND",
+    "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Miles Bridges",
+    "Team": "CHA",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 25.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Paul George",
+    "Team": "PHI",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 25.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Trey Murphy",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs",
+    "Line": 25.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Josh Giddey",
+    "Team": "CHI",
+    "Stat": "Pts+Rebs",
+    "Line": 25.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Josh Giddey",
+    "Team": "CHI",
+    "Stat": "Pts+Asts",
+    "Line": 25.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Zion Williamson",
@@ -618,16 +546,79 @@
     "Line": 25.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Andrew Wiggins",
+    "Name": "Bam Adebayo",
     "Team": "MIA",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 24.5,
+    "Stat": "Pts+Asts",
+    "Line": 25.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "Pts+Asts",
+    "Line": 25.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cooper Flagg",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs",
+    "Line": 25.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julius Randle",
+    "Team": "MIN",
+    "Stat": "Pts+Asts",
+    "Line": 25.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 25.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Amen Thompson",
+    "Team": "HOU",
+    "Stat": "Pts+Rebs",
+    "Line": 25.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "CJ McCollum",
+    "Team": "ATL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 25.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Miller",
+    "Team": "CHA",
+    "Stat": "Pts+Rebs",
+    "Line": 25.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Coby White",
@@ -636,25 +627,7 @@
     "Line": 24.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Smith",
-    "Team": "CHI",
-    "Stat": "Pts+Rebs",
-    "Line": 24.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cooper Flagg",
-    "Team": "DAL",
-    "Stat": "Pts+Asts",
-    "Line": 24.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pascal Siakam",
@@ -663,16 +636,34 @@
     "Line": 24.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Saddiq Bey",
-    "Team": "NOP",
+    "Name": "Cooper Flagg",
+    "Team": "DAL",
+    "Stat": "Pts+Asts",
+    "Line": 24.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Smith",
+    "Team": "CHI",
+    "Stat": "Pts+Rebs",
+    "Line": 24.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
     "Stat": "Pts+Rebs+Asts",
     "Line": 24.5,
-    "Versus": "PHI",
+    "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Trey Murphy",
@@ -681,16 +672,25 @@
     "Line": 24.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
-    "Stat": "Pts+Asts",
+    "Name": "Saddiq Bey",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs+Asts",
     "Line": 24.5,
-    "Versus": "SAS",
+    "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Nickeil Alexander-Walker",
+    "Team": "ATL",
+    "Stat": "Pts+Rebs",
+    "Line": 24.0,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Nickeil Alexander-Walker",
@@ -699,7 +699,7 @@
     "Line": 24.0,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Matas Buzelis",
@@ -708,70 +708,7 @@
     "Line": 24.0,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Nickeil Alexander-Walker",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs",
-    "Line": 24.0,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaren Jackson",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 23.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Rudy Gobert",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 23.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaime Jaquez",
-    "Team": "MIA",
-    "Stat": "Pts+Rebs",
-    "Line": 23.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 23.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "De'Aaron Fox",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 23.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Stephon Castle",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 23.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jabari Smith",
@@ -780,7 +717,7 @@
     "Line": 23.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jalen Johnson",
@@ -789,7 +726,7 @@
     "Line": 23.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Bennedict Mathurin",
@@ -798,7 +735,70 @@
     "Line": 23.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaime Jaquez",
+    "Team": "MIA",
+    "Stat": "Pts+Rebs",
+    "Line": 23.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Stephon Castle",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 23.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Miller",
+    "Team": "CHA",
+    "Stat": "Pts+Asts",
+    "Line": 23.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaren Jackson",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
+    "Line": 23.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Rudy Gobert",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 23.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 23.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "De'Aaron Fox",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 23.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Naz Reid",
@@ -807,7 +807,7 @@
     "Line": 23.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "LaMelo Ball",
@@ -816,25 +816,7 @@
     "Line": 23.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Bennedict Mathurin",
-    "Team": "IND",
-    "Stat": "Pts+Rebs",
-    "Line": 22.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Derik Queen",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 22.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Amen Thompson",
@@ -843,7 +825,7 @@
     "Line": 22.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Saddiq Bey",
@@ -852,16 +834,25 @@
     "Line": 22.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaime Jaquez",
-    "Team": "MIA",
-    "Stat": "Pts+Asts",
+    "Name": "Bennedict Mathurin",
+    "Team": "IND",
+    "Stat": "Pts+Rebs",
     "Line": 22.5,
-    "Versus": "CHI",
+    "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jock Landale",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 22.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Donte DiVincenzo",
@@ -870,25 +861,7 @@
     "Line": 22.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Santi Aldama",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 22.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 22.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cam Spencer",
@@ -897,7 +870,7 @@
     "Line": 22.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jock Landale",
@@ -906,7 +879,25 @@
     "Line": 22.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 22.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaime Jaquez",
+    "Team": "MIA",
+    "Stat": "Pts+Asts",
+    "Line": 22.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cedric Coward",
@@ -915,16 +906,16 @@
     "Line": 22.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Miles Bridges",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs",
-    "Line": 22.0,
-    "Versus": "SAS",
+    "Name": "Derik Queen",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 22.5,
+    "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kon Knueppel",
@@ -933,25 +924,16 @@
     "Line": 22.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaren Jackson",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 21.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "De'Aaron Fox",
-    "Team": "SAS",
+    "Name": "Miles Bridges",
+    "Team": "CHA",
     "Stat": "Pts+Rebs",
-    "Line": 21.5,
-    "Versus": "CHA",
+    "Line": 22.0,
+    "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Rudy Gobert",
@@ -960,25 +942,25 @@
     "Line": 21.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "CJ McCollum",
-    "Team": "ATL",
+    "Name": "Naji Marshall",
+    "Team": "DAL",
     "Stat": "Pts+Rebs",
     "Line": 21.5,
-    "Versus": "IND",
+    "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Coby White",
-    "Team": "CHI",
-    "Stat": "Points",
+    "Name": "De'Aaron Fox",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs",
     "Line": 21.5,
-    "Versus": "MIA",
+    "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Bam Adebayo",
@@ -987,7 +969,16 @@
     "Line": 21.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaren Jackson",
+    "Team": "MEM",
+    "Stat": "Points",
+    "Line": 21.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Andrew Wiggins",
@@ -996,16 +987,25 @@
     "Line": 21.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Paul George",
-    "Team": "PHI",
+    "Name": "CJ McCollum",
+    "Team": "ATL",
     "Stat": "Pts+Rebs",
     "Line": 21.5,
-    "Versus": "NOP",
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "CJ McCollum",
+    "Team": "ATL",
+    "Stat": "Pts+Asts",
+    "Line": 21.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Zion Williamson",
@@ -1014,25 +1014,25 @@
     "Line": 21.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "CJ McCollum",
-    "Team": "ATL",
-    "Stat": "Pts+Asts",
-    "Line": 21.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
+    "Name": "Paul George",
+    "Team": "PHI",
     "Stat": "Pts+Rebs",
     "Line": 21.5,
-    "Versus": "HOU",
+    "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Coby White",
+    "Team": "CHI",
+    "Stat": "Points",
+    "Line": 21.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Trey Murphy",
@@ -1041,7 +1041,7 @@
     "Line": 21.0,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Aaron Nesmith",
@@ -1050,43 +1050,7 @@
     "Line": 21.0,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cooper Flagg",
-    "Team": "DAL",
-    "Stat": "Points",
-    "Line": 20.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Stephon Castle",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs",
-    "Line": 20.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
-    "Stat": "Points",
-    "Line": 20.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kon Knueppel",
-    "Team": "CHA",
-    "Stat": "Pts+Asts",
-    "Line": 20.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Alperen Sengun",
@@ -1095,79 +1059,16 @@
     "Line": 20.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaden McDaniels",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 20.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julius Randle",
-    "Team": "MIN",
-    "Stat": "Points",
-    "Line": 20.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
+    "Name": "Cooper Flagg",
     "Team": "DAL",
-    "Stat": "Pts+Asts",
+    "Stat": "Points",
     "Line": 20.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Nickeil Alexander-Walker",
-    "Team": "ATL",
-    "Stat": "Points",
-    "Line": 20.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Pelle Larsson",
-    "Team": "MIA",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 20.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naz Reid",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs",
-    "Line": 20.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Pts+Asts",
-    "Line": 20.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Matas Buzelis",
-    "Team": "CHI",
-    "Stat": "Pts+Asts",
-    "Line": 20.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jabari Smith",
@@ -1176,7 +1077,34 @@
     "Line": 20.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaden McDaniels",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 20.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naz Reid",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs",
+    "Line": 20.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julius Randle",
+    "Team": "MIN",
+    "Stat": "Points",
+    "Line": 20.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Brandon Williams",
@@ -1185,7 +1113,79 @@
     "Line": 20.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Pts+Asts",
+    "Line": 20.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Pelle Larsson",
+    "Team": "MIA",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 20.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Nickeil Alexander-Walker",
+    "Team": "ATL",
+    "Stat": "Points",
+    "Line": 20.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Pts+Asts",
+    "Line": 20.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Matas Buzelis",
+    "Team": "CHI",
+    "Stat": "Pts+Asts",
+    "Line": 20.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kon Knueppel",
+    "Team": "CHA",
+    "Stat": "Pts+Asts",
+    "Line": 20.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Stephon Castle",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs",
+    "Line": 20.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Miller",
+    "Team": "CHA",
+    "Stat": "Points",
+    "Line": 20.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Andrew Nembhard",
@@ -1194,52 +1194,7 @@
     "Line": 20.0,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs",
-    "Line": 19.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Santi Aldama",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 19.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cedric Coward",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 19.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Wiggins",
-    "Team": "MIA",
-    "Stat": "Pts+Asts",
-    "Line": 19.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Paul George",
-    "Team": "PHI",
-    "Stat": "Pts+Asts",
-    "Line": 19.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Saddiq Bey",
@@ -1248,7 +1203,52 @@
     "Line": 19.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs",
+    "Line": 19.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
+    "Stat": "Pts+Asts",
+    "Line": 19.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Pts+Rebs",
+    "Line": 19.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cedric Coward",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs",
+    "Line": 19.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Paul George",
+    "Team": "PHI",
+    "Stat": "Pts+Asts",
+    "Line": 19.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "VJ Edgecombe",
@@ -1257,25 +1257,34 @@
     "Line": 19.0,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Miles Bridges",
-    "Team": "CHA",
-    "Stat": "Pts+Asts",
+    "Name": "Max Christie",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs+Asts",
     "Line": 18.5,
-    "Versus": "SAS",
+    "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "LaMelo Ball",
-    "Team": "CHA",
-    "Stat": "Points",
+    "Name": "P.J. Washington",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs+Asts",
     "Line": 18.5,
-    "Versus": "SAS",
+    "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "P.J. Washington",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs",
+    "Line": 18.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jarace Walker",
@@ -1284,34 +1293,7 @@
     "Line": 18.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Aaron Nesmith",
-    "Team": "IND",
-    "Stat": "Pts+Rebs",
-    "Line": 18.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Max Christie",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 18.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs",
-    "Line": 18.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Bennedict Mathurin",
@@ -1320,7 +1302,16 @@
     "Line": 18.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Aaron Nesmith",
+    "Team": "IND",
+    "Stat": "Pts+Rebs",
+    "Line": 18.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "CJ McCollum",
@@ -1329,16 +1320,7 @@
     "Line": 18.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Donte DiVincenzo",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs",
-    "Line": 18.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Josh Giddey",
@@ -1347,25 +1329,7 @@
     "Line": 18.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 18.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Tari Eason",
-    "Team": "HOU",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 18.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cam Spencer",
@@ -1374,52 +1338,52 @@
     "Line": 18.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jalen Johnson",
-    "Team": "ATL",
-    "Stat": "Rebs+Asts",
-    "Line": 17.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaden McDaniels",
+    "Name": "Donte DiVincenzo",
     "Team": "MIN",
     "Stat": "Pts+Rebs",
-    "Line": 17.5,
+    "Line": 18.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Amen Thompson",
-    "Team": "HOU",
-    "Stat": "Points",
-    "Line": 17.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kelly Oubre",
-    "Team": "PHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 17.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kon Knueppel",
+    "Name": "Miles Bridges",
     "Team": "CHA",
-    "Stat": "Points",
-    "Line": 17.5,
+    "Stat": "Pts+Asts",
+    "Line": 18.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "LaMelo Ball",
+    "Team": "CHA",
+    "Stat": "Points",
+    "Line": 18.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Tari Eason",
+    "Team": "HOU",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 18.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Keldon Johnson",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 17.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "De'Aaron Fox",
@@ -1428,61 +1392,16 @@
     "Line": 17.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Keldon Johnson",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 17.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Pts+Asts",
-    "Line": 17.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Derik Queen",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs",
-    "Line": 17.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Williams",
-    "Team": "DAL",
-    "Stat": "Pts+Asts",
-    "Line": 17.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaime Jaquez",
-    "Team": "MIA",
+    "Name": "Kon Knueppel",
+    "Team": "CHA",
     "Stat": "Points",
     "Line": 17.5,
-    "Versus": "CHI",
+    "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Donte DiVincenzo",
-    "Team": "MIN",
-    "Stat": "Pts+Asts",
-    "Line": 17.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Matas Buzelis",
@@ -1491,7 +1410,97 @@
     "Line": 17.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Johnson",
+    "Team": "ATL",
+    "Stat": "Rebs+Asts",
+    "Line": 17.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naz Reid",
+    "Team": "MIN",
+    "Stat": "Pts+Asts",
+    "Line": 17.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaden McDaniels",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs",
+    "Line": 17.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
+    "Stat": "Pts+Asts",
+    "Line": 17.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Donte DiVincenzo",
+    "Team": "MIN",
+    "Stat": "Pts+Asts",
+    "Line": 17.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kelly Oubre",
+    "Team": "PHI",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 17.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Derik Queen",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs",
+    "Line": 17.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaime Jaquez",
+    "Team": "MIA",
+    "Stat": "Points",
+    "Line": 17.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Williams",
+    "Team": "DAL",
+    "Stat": "Pts+Asts",
+    "Line": 17.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Amen Thompson",
+    "Team": "HOU",
+    "Stat": "Points",
+    "Line": 17.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Moussa Diabat\u00e9",
@@ -1500,16 +1509,7 @@
     "Line": 17.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Moussa Diabat\u00e9",
-    "Team": "CHA",
-    "Stat": "Pts+Rebs",
-    "Line": 17.0,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tari Eason",
@@ -1518,124 +1518,25 @@
     "Line": 17.0,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Andrew Nembhard",
-    "Team": "IND",
-    "Stat": "Points",
-    "Line": 16.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Keldon Johnson",
-    "Team": "SAS",
+    "Name": "Moussa Diabat\u00e9",
+    "Team": "CHA",
     "Stat": "Pts+Rebs",
-    "Line": 16.5,
-    "Versus": "CHA",
+    "Line": 17.0,
+    "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Bennedict Mathurin",
-    "Team": "IND",
-    "Stat": "Points",
-    "Line": 16.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Stephon Castle",
-    "Team": "SAS",
-    "Stat": "Points",
-    "Line": 16.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
-    "Stat": "Points",
-    "Line": 16.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kelly Oubre",
-    "Team": "PHI",
-    "Stat": "Pts+Rebs",
-    "Line": 16.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cedric Coward",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 16.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pelle Larsson",
     "Team": "MIA",
-    "Stat": "Pts+Rebs",
+    "Stat": "Pts+Asts",
     "Line": 16.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaden McDaniels",
-    "Team": "MIN",
-    "Stat": "Pts+Asts",
-    "Line": 16.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naz Reid",
-    "Team": "MIN",
-    "Stat": "Pts+Asts",
-    "Line": 16.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Aaron Nesmith",
-    "Team": "IND",
-    "Stat": "Pts+Asts",
-    "Line": 16.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Max Christie",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs",
-    "Line": 16.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Reed Sheppard",
-    "Team": "HOU",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 16.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Saddiq Bey",
@@ -1644,16 +1545,97 @@
     "Line": 16.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
+    "Name": "Kelly Oubre",
+    "Team": "PHI",
+    "Stat": "Pts+Rebs",
+    "Line": 16.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Max Christie",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs",
+    "Line": 16.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Reed Sheppard",
+    "Team": "HOU",
     "Stat": "Pts+Rebs+Asts",
+    "Line": 16.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Points",
+    "Line": 16.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Keldon Johnson",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs",
+    "Line": 16.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Stephon Castle",
+    "Team": "SAS",
+    "Stat": "Points",
+    "Line": 16.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Bennedict Mathurin",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 16.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 16.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cedric Coward",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
     "Line": 16.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaden McDaniels",
+    "Team": "MIN",
+    "Stat": "Pts+Asts",
+    "Line": 16.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Vince Williams",
@@ -1662,16 +1644,25 @@
     "Line": 16.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 16.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pelle Larsson",
     "Team": "MIA",
-    "Stat": "Pts+Asts",
+    "Stat": "Pts+Rebs",
     "Line": 16.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Brandon Williams",
@@ -1680,43 +1671,16 @@
     "Line": 16.0,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Julian Champagnie",
     "Team": "SAS",
-    "Stat": "Pts+Rebs+Asts",
+    "Stat": "Pts+Rebs",
     "Line": 15.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Miles Bridges",
-    "Team": "CHA",
-    "Stat": "Points",
-    "Line": 15.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Smith",
-    "Team": "CHI",
-    "Stat": "Pts+Asts",
-    "Line": 15.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "T.J. McConnell",
-    "Team": "IND",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 15.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Corey Kispert",
@@ -1725,70 +1689,16 @@
     "Line": 15.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jarace Walker",
+    "Name": "Aaron Nesmith",
     "Team": "IND",
-    "Stat": "Pts+Rebs",
+    "Stat": "Pts+Asts",
     "Line": 15.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julian Champagnie",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs",
-    "Line": 15.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Wiggins",
-    "Team": "MIA",
-    "Stat": "Points",
-    "Line": 15.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Max Christie",
-    "Team": "DAL",
-    "Stat": "Pts+Asts",
-    "Line": 15.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jabari Smith",
-    "Team": "HOU",
-    "Stat": "Pts+Asts",
-    "Line": 15.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Santi Aldama",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 15.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Paul George",
-    "Team": "PHI",
-    "Stat": "Points",
-    "Line": 15.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Herbert Jones",
@@ -1797,7 +1707,43 @@
     "Line": 15.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Paul George",
+    "Team": "PHI",
+    "Stat": "Points",
+    "Line": 15.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Devin Vassell",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 15.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julian Champagnie",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 15.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
+    "Line": 15.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Collin Sexton",
@@ -1806,16 +1752,16 @@
     "Line": 15.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Devin Vassell",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs+Asts",
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
+    "Stat": "Points",
     "Line": 15.5,
-    "Versus": "CHA",
+    "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Dru Smith",
@@ -1824,25 +1770,61 @@
     "Line": 15.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Alperen Sengun",
+    "Name": "Jarace Walker",
+    "Team": "IND",
+    "Stat": "Pts+Rebs",
+    "Line": 15.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Miles Bridges",
+    "Team": "CHA",
+    "Stat": "Points",
+    "Line": 15.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jabari Smith",
     "Team": "HOU",
-    "Stat": "Rebs+Asts",
-    "Line": 15.0,
+    "Stat": "Pts+Asts",
+    "Line": 15.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jeremiah Fears",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 15.0,
-    "Versus": "PHI",
+    "Name": "Max Christie",
+    "Team": "DAL",
+    "Stat": "Pts+Asts",
+    "Line": 15.5,
+    "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Smith",
+    "Team": "CHI",
+    "Stat": "Pts+Asts",
+    "Line": 15.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "T.J. McConnell",
+    "Team": "IND",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 15.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Josh Giddey",
@@ -1851,7 +1833,7 @@
     "Line": 15.0,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Derik Queen",
@@ -1860,52 +1842,25 @@
     "Line": 15.0,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 14.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 14.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Reed Sheppard",
+    "Name": "Alperen Sengun",
     "Team": "HOU",
-    "Stat": "Pts+Asts",
-    "Line": 14.5,
+    "Stat": "Rebs+Asts",
+    "Line": 15.0,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Cam Spencer",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 14.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dylan Harper",
-    "Team": "SAS",
+    "Name": "Jeremiah Fears",
+    "Team": "NOP",
     "Stat": "Pts+Rebs+Asts",
-    "Line": 14.5,
-    "Versus": "CHA",
+    "Line": 15.0,
+    "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Quentin Grimes",
@@ -1914,7 +1869,43 @@
     "Line": 14.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jock Landale",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
+    "Line": 14.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dylan Harper",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 14.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cam Spencer",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs",
+    "Line": 14.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Reed Sheppard",
+    "Team": "HOU",
+    "Stat": "Pts+Asts",
+    "Line": 14.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Reed Sheppard",
@@ -1923,7 +1914,25 @@
     "Line": 14.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "Pts+Rebs",
+    "Line": 14.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jock Landale",
+    "Team": "MEM",
+    "Stat": "Points",
+    "Line": 14.0,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Devin Vassell",
@@ -1932,7 +1941,7 @@
     "Line": 14.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "GG Jackson",
@@ -1941,115 +1950,7 @@
     "Line": 14.0,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 14.0,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Williams",
-    "Team": "DAL",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Daniel Gafford",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Isaac Okoro",
-    "Team": "CHI",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Yves Missi",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Joel Embiid",
-    "Team": "PHI",
-    "Stat": "Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Smith",
-    "Team": "CHI",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Pts+Asts",
-    "Line": 13.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Amen Thompson",
-    "Team": "HOU",
-    "Stat": "Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jabari Smith",
-    "Team": "HOU",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naz Reid",
-    "Team": "MIN",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Collin Sexton",
@@ -2058,25 +1959,25 @@
     "Line": 13.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Aaron Nesmith",
-    "Team": "IND",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Luke Kennard",
-    "Team": "ATL",
+    "Name": "Isaac Okoro",
+    "Team": "CHI",
     "Stat": "Pts+Rebs+Asts",
     "Line": 13.5,
-    "Versus": "IND",
+    "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "P.J. Washington",
+    "Team": "DAL",
+    "Stat": "Pts+Asts",
+    "Line": 13.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Corey Kispert",
@@ -2085,34 +1986,16 @@
     "Line": 13.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Rebs+Asts",
-    "Line": 13.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Points",
-    "Line": 13.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaden McDaniels",
+    "Name": "Donte DiVincenzo",
     "Team": "MIN",
     "Stat": "Points",
     "Line": 13.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Victor Wembanyama",
@@ -2121,16 +2004,34 @@
     "Line": 13.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Donte DiVincenzo",
-    "Team": "MIN",
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
     "Stat": "Points",
     "Line": 13.5,
-    "Versus": "MEM",
+    "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Joel Embiid",
+    "Team": "PHI",
+    "Stat": "Rebs+Asts",
+    "Line": 13.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Yves Missi",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 13.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cedric Coward",
@@ -2139,97 +2040,124 @@
     "Line": 13.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Herbert Jones",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs",
-    "Line": 12.5,
-    "Versus": "PHI",
+    "Name": "Jaden McDaniels",
+    "Team": "MIN",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jeremiah Fears",
-    "Team": "NOP",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "PHI",
+    "Name": "Naz Reid",
+    "Team": "MIN",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Klay Thompson",
+    "Name": "Jalen Smith",
+    "Team": "CHI",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Aaron Nesmith",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Daniel Gafford",
     "Team": "DAL",
     "Stat": "Pts+Rebs+Asts",
-    "Line": 12.5,
+    "Line": 13.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "P.J. Washington",
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Amen Thompson",
+    "Team": "HOU",
+    "Stat": "Rebs+Asts",
+    "Line": 13.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jabari Smith",
+    "Team": "HOU",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Williams",
     "Team": "DAL",
     "Stat": "Points",
-    "Line": 12.5,
+    "Line": 13.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Max Christie",
-    "Team": "DAL",
-    "Stat": "Points",
-    "Line": 12.5,
-    "Versus": "HOU",
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Rebs+Asts",
+    "Line": 13.5,
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Santi Aldama",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 12.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Yves Missi",
-    "Team": "NOP",
-    "Stat": "Pts+Rebs",
-    "Line": 12.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kelly Oubre",
-    "Team": "PHI",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kasparas Jaku\u010dionis",
-    "Team": "MIA",
+    "Name": "Luke Kennard",
+    "Team": "ATL",
     "Stat": "Pts+Rebs+Asts",
-    "Line": 12.5,
-    "Versus": "CHI",
+    "Line": 13.5,
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dylan Harper",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Keldon Johnson",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pelle Larsson",
@@ -2238,7 +2166,79 @@
     "Line": 12.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Tari Eason",
+    "Team": "HOU",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "P.J. Washington",
+    "Team": "DAL",
+    "Stat": "Points",
+    "Line": 12.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Max Christie",
+    "Team": "DAL",
+    "Stat": "Points",
+    "Line": 12.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Klay Thompson",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 12.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Devin Vassell",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Vince Williams",
+    "Team": "MEM",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dru Smith",
+    "Team": "MIA",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Isaac Okoro",
@@ -2247,106 +2247,25 @@
     "Line": 12.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Vince Williams",
-    "Team": "MEM",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jarace Walker",
-    "Team": "IND",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Corey Kispert",
-    "Team": "ATL",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Devin Vassell",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Keldon Johnson",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dylan Harper",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Zaccharie Risacher",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs",
-    "Line": 12.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Johnny Furphy",
-    "Team": "IND",
+    "Name": "Kasparas Jaku\u010dionis",
+    "Team": "MIA",
     "Stat": "Pts+Rebs+Asts",
     "Line": 12.5,
-    "Versus": "ATL",
+    "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "T.J. McConnell",
-    "Team": "IND",
+    "Name": "Jeremiah Fears",
+    "Team": "NOP",
     "Stat": "Pts+Asts",
     "Line": 12.5,
-    "Versus": "ATL",
+    "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Daniel Gafford",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs",
-    "Line": 12.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Tari Eason",
-    "Team": "HOU",
-    "Stat": "Pts+Asts",
-    "Line": 12.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jeremiah Fears",
@@ -2355,16 +2274,97 @@
     "Line": 12.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Dru Smith",
-    "Team": "MIA",
+    "Name": "Kelly Oubre",
+    "Team": "PHI",
     "Stat": "Pts+Asts",
     "Line": 12.5,
-    "Versus": "CHI",
+    "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Herbert Jones",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs",
+    "Line": 12.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Yves Missi",
+    "Team": "NOP",
+    "Stat": "Pts+Rebs",
+    "Line": 12.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "Points",
+    "Line": 12.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Johnny Furphy",
+    "Team": "IND",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 12.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "T.J. McConnell",
+    "Team": "IND",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Corey Kispert",
+    "Team": "ATL",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Zaccharie Risacher",
+    "Team": "ATL",
+    "Stat": "Pts+Rebs",
+    "Line": 12.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jarace Walker",
+    "Team": "IND",
+    "Stat": "Pts+Asts",
+    "Line": 12.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Daniel Gafford",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs",
+    "Line": 12.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "LaMelo Ball",
@@ -2373,7 +2373,7 @@
     "Line": 12.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jalen Smith",
@@ -2382,16 +2382,7 @@
     "Line": 12.0,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dru Smith",
-    "Team": "MIA",
-    "Stat": "Pts+Rebs",
-    "Line": 11.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Quentin Grimes",
@@ -2400,7 +2391,16 @@
     "Line": 11.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Rudy Gobert",
+    "Team": "MIN",
+    "Stat": "Pts+Asts",
+    "Line": 11.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Keldon Johnson",
@@ -2409,25 +2409,7 @@
     "Line": 11.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kelly Oubre",
-    "Team": "PHI",
-    "Stat": "Points",
-    "Line": 11.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Herbert Jones",
-    "Team": "NOP",
-    "Stat": "Pts+Asts",
-    "Line": 11.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Derik Queen",
@@ -2436,25 +2418,7 @@
     "Line": 11.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Luke Kennard",
-    "Team": "ATL",
-    "Stat": "Pts+Rebs",
-    "Line": 11.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Nembhard",
-    "Team": "IND",
-    "Stat": "Rebs+Asts",
-    "Line": 11.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Pascal Siakam",
@@ -2463,34 +2427,7 @@
     "Line": 11.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Harrison Barnes",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs+Asts",
-    "Line": 11.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Vince Williams",
-    "Team": "MEM",
-    "Stat": "Pts+Rebs",
-    "Line": 11.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Rudy Gobert",
-    "Team": "MIN",
-    "Stat": "Pts+Asts",
-    "Line": 11.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cam Spencer",
@@ -2499,79 +2436,25 @@
     "Line": 11.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 11.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julius Randle",
-    "Team": "MIN",
-    "Stat": "Rebs+Asts",
-    "Line": 11.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dylan Harper",
-    "Team": "SAS",
+    "Name": "Dru Smith",
+    "Team": "MIA",
     "Stat": "Pts+Rebs",
     "Line": 11.5,
-    "Versus": "CHA",
+    "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Quentin Grimes",
-    "Team": "PHI",
+    "Name": "Luke Kennard",
+    "Team": "ATL",
     "Stat": "Pts+Rebs",
     "Line": 11.5,
-    "Versus": "NOP",
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Tari Eason",
-    "Team": "HOU",
-    "Stat": "Points",
-    "Line": 11.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Klay Thompson",
-    "Team": "DAL",
-    "Stat": "Pts+Rebs",
-    "Line": 11.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Rudy Gobert",
-    "Team": "MIN",
-    "Stat": "Rebounds",
-    "Line": 11.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Stephon Castle",
-    "Team": "SAS",
-    "Stat": "Rebs+Asts",
-    "Line": 11.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Johnny Furphy",
@@ -2580,16 +2463,61 @@
     "Line": 11.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Clint Capela",
-    "Team": "HOU",
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "Rebs+Asts",
+    "Line": 11.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julius Randle",
+    "Team": "MIN",
+    "Stat": "Rebs+Asts",
+    "Line": 11.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Rudy Gobert",
+    "Team": "MIN",
+    "Stat": "Rebounds",
+    "Line": 11.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Vince Williams",
+    "Team": "MEM",
     "Stat": "Pts+Rebs",
     "Line": 11.5,
-    "Versus": "DAL",
+    "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kelly Oubre",
+    "Team": "PHI",
+    "Stat": "Points",
+    "Line": 11.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Herbert Jones",
+    "Team": "NOP",
+    "Stat": "Pts+Asts",
+    "Line": 11.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Reed Sheppard",
@@ -2598,16 +2526,79 @@
     "Line": 11.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Devin Vassell",
+    "Name": "Dylan Harper",
     "Team": "SAS",
-    "Stat": "Points",
-    "Line": 11.0,
+    "Stat": "Pts+Rebs",
+    "Line": 11.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Harrison Barnes",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 11.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Stephon Castle",
+    "Team": "SAS",
+    "Stat": "Rebs+Asts",
+    "Line": 11.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Clint Capela",
+    "Team": "HOU",
+    "Stat": "Pts+Rebs",
+    "Line": 11.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Quentin Grimes",
+    "Team": "PHI",
+    "Stat": "Pts+Rebs",
+    "Line": 11.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Klay Thompson",
+    "Team": "DAL",
+    "Stat": "Pts+Rebs",
+    "Line": 11.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Tari Eason",
+    "Team": "HOU",
+    "Stat": "Points",
+    "Line": 11.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "Points",
+    "Line": 11.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jaime Jaquez",
@@ -2616,7 +2607,7 @@
     "Line": 11.0,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Corey Kispert",
@@ -2625,43 +2616,16 @@
     "Line": 11.0,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Derik Queen",
-    "Team": "NOP",
-    "Stat": "Points",
-    "Line": 10.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julian Champagnie",
+    "Name": "Devin Vassell",
     "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 10.5,
+    "Stat": "Points",
+    "Line": 11.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Harrison Barnes",
-    "Team": "SAS",
-    "Stat": "Pts+Rebs",
-    "Line": 10.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jarace Walker",
-    "Team": "IND",
-    "Stat": "Points",
-    "Line": 10.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Luke Kennard",
@@ -2670,25 +2634,7 @@
     "Line": 10.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Cam Spencer",
-    "Team": "MEM",
-    "Stat": "Rebs+Asts",
-    "Line": 10.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Collin Sexton",
-    "Team": "CHA",
-    "Stat": "Points",
-    "Line": 10.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Simone Fontecchio",
@@ -2697,16 +2643,7 @@
     "Line": 10.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julian Champagnie",
-    "Team": "SAS",
-    "Stat": "Points",
-    "Line": 10.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Isaac Okoro",
@@ -2715,7 +2652,70 @@
     "Line": 10.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jarace Walker",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 10.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Derik Queen",
+    "Team": "NOP",
+    "Stat": "Points",
+    "Line": 10.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Harrison Barnes",
+    "Team": "SAS",
+    "Stat": "Pts+Rebs",
+    "Line": 10.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julian Champagnie",
+    "Team": "SAS",
+    "Stat": "Points",
+    "Line": 10.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Collin Sexton",
+    "Team": "CHA",
+    "Stat": "Points",
+    "Line": 10.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julian Champagnie",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
+    "Line": 10.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Cam Spencer",
+    "Team": "MEM",
+    "Stat": "Rebs+Asts",
+    "Line": 10.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kevin Durant",
@@ -2724,52 +2724,7 @@
     "Line": 10.0,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Klay Thompson",
-    "Team": "DAL",
-    "Stat": "Points",
-    "Line": 9.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Moussa Diabat\u00e9",
-    "Team": "CHA",
-    "Stat": "Pts+Asts",
-    "Line": 9.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Miles Bridges",
-    "Team": "CHA",
-    "Stat": "Rebs+Asts",
-    "Line": 9.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kasparas Jaku\u010dionis",
-    "Team": "MIA",
-    "Stat": "Pts+Rebs",
-    "Line": 9.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Harrison Barnes",
-    "Team": "SAS",
-    "Stat": "Pts+Asts",
-    "Line": 9.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "De'Aaron Fox",
@@ -2778,43 +2733,16 @@
     "Line": 9.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Mike Conley",
-    "Team": "MIN",
-    "Stat": "Pts+Rebs+Asts",
+    "Name": "Harrison Barnes",
+    "Team": "SAS",
+    "Stat": "Pts+Asts",
     "Line": 9.5,
-    "Versus": "MEM",
+    "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Anthony Edwards",
-    "Team": "MIN",
-    "Stat": "Rebs+Asts",
-    "Line": 9.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naz Reid",
-    "Team": "MIN",
-    "Stat": "Rebs+Asts",
-    "Line": 9.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Rebs+Asts",
-    "Line": 9.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jabari Smith",
@@ -2823,7 +2751,52 @@
     "Line": 9.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Klay Thompson",
+    "Team": "DAL",
+    "Stat": "Points",
+    "Line": 9.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Miles Bridges",
+    "Team": "CHA",
+    "Stat": "Rebs+Asts",
+    "Line": 9.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Moussa Diabat\u00e9",
+    "Team": "CHA",
+    "Stat": "Pts+Asts",
+    "Line": 9.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kasparas Jaku\u010dionis",
+    "Team": "MIA",
+    "Stat": "Pts+Rebs",
+    "Line": 9.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Herbert Jones",
+    "Team": "NOP",
+    "Stat": "Points",
+    "Line": 9.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cooper Flagg",
@@ -2832,7 +2805,7 @@
     "Line": 9.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Rudy Gobert",
@@ -2841,7 +2814,43 @@
     "Line": 9.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Anthony Edwards",
+    "Team": "MIN",
+    "Stat": "Rebs+Asts",
+    "Line": 9.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naz Reid",
+    "Team": "MIN",
+    "Stat": "Rebs+Asts",
+    "Line": 9.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Mike Conley",
+    "Team": "MIN",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 9.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jock Landale",
+    "Team": "MEM",
+    "Stat": "Rebs+Asts",
+    "Line": 9.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jeremiah Fears",
@@ -2850,7 +2859,7 @@
     "Line": 9.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Paul George",
@@ -2859,25 +2868,7 @@
     "Line": 9.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Herbert Jones",
-    "Team": "NOP",
-    "Stat": "Points",
-    "Line": 9.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Moussa Diabat\u00e9",
-    "Team": "CHA",
-    "Stat": "Rebounds",
-    "Line": 9.0,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Coby White",
@@ -2886,16 +2877,16 @@
     "Line": 9.0,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Andrew Wiggins",
-    "Team": "MIA",
-    "Stat": "Rebs+Asts",
-    "Line": 8.5,
-    "Versus": "CHI",
+    "Name": "Moussa Diabat\u00e9",
+    "Team": "CHA",
+    "Stat": "Rebounds",
+    "Line": 9.0,
+    "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Dylan Harper",
@@ -2904,34 +2895,7 @@
     "Line": 8.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kon Knueppel",
-    "Team": "CHA",
-    "Stat": "Rebs+Asts",
-    "Line": 8.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dru Smith",
-    "Team": "MIA",
-    "Stat": "Points",
-    "Line": 8.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Luke Kennard",
-    "Team": "ATL",
-    "Stat": "Points",
-    "Line": 8.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "T.J. McConnell",
@@ -2940,25 +2904,25 @@
     "Line": 8.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
-    "Stat": "Rebs+Asts",
-    "Line": 8.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Quentin Grimes",
-    "Team": "PHI",
+    "Name": "Luke Kennard",
+    "Team": "ATL",
     "Stat": "Points",
     "Line": 8.5,
-    "Versus": "NOP",
+    "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Zaccharie Risacher",
+    "Team": "ATL",
+    "Stat": "Points",
+    "Line": 8.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Joel Embiid",
@@ -2967,7 +2931,25 @@
     "Line": 8.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Quentin Grimes",
+    "Team": "PHI",
+    "Stat": "Points",
+    "Line": 8.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dru Smith",
+    "Team": "MIA",
+    "Stat": "Points",
+    "Line": 8.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Isaac Okoro",
@@ -2976,16 +2958,16 @@
     "Line": 8.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Zaccharie Risacher",
-    "Team": "ATL",
+    "Name": "Kentavious Caldwell-Pope",
+    "Team": "MEM",
     "Stat": "Points",
     "Line": 8.5,
-    "Versus": "IND",
+    "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kasparas Jaku\u010dionis",
@@ -2994,7 +2976,34 @@
     "Line": 8.5,
     "Versus": "CHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
+    "Stat": "Rebs+Asts",
+    "Line": 8.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Rebs+Asts",
+    "Line": 8.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kon Knueppel",
+    "Team": "CHA",
+    "Stat": "Rebs+Asts",
+    "Line": 8.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Moussa Diabat\u00e9",
@@ -3003,7 +3012,7 @@
     "Line": 8.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Brandon Miller",
@@ -3012,52 +3021,7 @@
     "Line": 8.0,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Josh Giddey",
-    "Team": "CHI",
-    "Stat": "Assists",
-    "Line": 7.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Aaron Nesmith",
-    "Team": "IND",
-    "Stat": "Rebs+Asts",
-    "Line": 7.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Pascal Siakam",
-    "Team": "IND",
-    "Stat": "Rebounds",
-    "Line": 7.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Bennedict Mathurin",
-    "Team": "IND",
-    "Stat": "Rebs+Asts",
-    "Line": 7.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Yves Missi",
-    "Team": "NOP",
-    "Stat": "Pts+Asts",
-    "Line": 7.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Daniel Gafford",
@@ -3066,25 +3030,7 @@
     "Line": 7.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Vince Williams",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 7.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Rebounds",
-    "Line": 7.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Mike Conley",
@@ -3093,16 +3039,7 @@
     "Line": 7.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kentavious Caldwell-Pope",
-    "Team": "MEM",
-    "Stat": "Points",
-    "Line": 7.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Cam Spencer",
@@ -3111,7 +3048,61 @@
     "Line": 7.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Pascal Siakam",
+    "Team": "IND",
+    "Stat": "Rebounds",
+    "Line": 7.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Yves Missi",
+    "Team": "NOP",
+    "Stat": "Pts+Asts",
+    "Line": 7.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Aaron Nesmith",
+    "Team": "IND",
+    "Stat": "Rebs+Asts",
+    "Line": 7.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Josh Giddey",
+    "Team": "CHI",
+    "Stat": "Assists",
+    "Line": 7.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Vince Williams",
+    "Team": "MEM",
+    "Stat": "Points",
+    "Line": 7.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Bennedict Mathurin",
+    "Team": "IND",
+    "Stat": "Rebs+Asts",
+    "Line": 7.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Josh Giddey",
@@ -3120,43 +3111,16 @@
     "Line": 7.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Rebounds",
-    "Line": 6.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Johnny Furphy",
-    "Team": "IND",
-    "Stat": "Rebs+Asts",
-    "Line": 6.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dru Smith",
-    "Team": "MIA",
-    "Stat": "Rebs+Asts",
-    "Line": 6.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Santi Aldama",
+    "Name": "Jock Landale",
     "Team": "MEM",
     "Stat": "Rebounds",
-    "Line": 6.5,
+    "Line": 7.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Daniel Gafford",
@@ -3165,7 +3129,34 @@
     "Line": 6.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dru Smith",
+    "Team": "MIA",
+    "Stat": "Rebs+Asts",
+    "Line": 6.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Rebounds",
+    "Line": 6.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "Rebounds",
+    "Line": 6.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Ryan Kalkbrenner",
@@ -3174,7 +3165,16 @@
     "Line": 6.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Johnny Furphy",
+    "Team": "IND",
+    "Stat": "Rebs+Asts",
+    "Line": 6.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Johnny Furphy",
@@ -3183,16 +3183,34 @@
     "Line": 6.0,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Max Christie",
+    "Name": "Tari Eason",
+    "Team": "HOU",
+    "Stat": "Rebounds",
+    "Line": 5.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
+    "Stat": "Rebounds",
+    "Line": 5.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "P.J. Washington",
     "Team": "DAL",
-    "Stat": "Rebs+Asts",
+    "Stat": "Rebounds",
     "Line": 5.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Clint Capela",
@@ -3201,43 +3219,7 @@
     "Line": 5.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Rebounds",
-    "Line": 5.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Wiggins",
-    "Team": "MIA",
-    "Stat": "Rebounds",
-    "Line": 5.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Tari Eason",
-    "Team": "HOU",
-    "Stat": "Rebounds",
-    "Line": 5.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Rebounds",
-    "Line": 5.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Paul George",
@@ -3246,7 +3228,16 @@
     "Line": 5.5,
     "Versus": "NOP",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Max Christie",
+    "Team": "DAL",
+    "Stat": "Rebs+Asts",
+    "Line": 5.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Anthony Edwards",
@@ -3255,7 +3246,16 @@
     "Line": 5.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
+    "Stat": "Rebounds",
+    "Line": 5.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kevin Durant",
@@ -3264,16 +3264,7 @@
     "Line": 5.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
-    "Stat": "Rebounds",
-    "Line": 5.0,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Amen Thompson",
@@ -3282,7 +3273,16 @@
     "Line": 5.0,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Rebounds",
+    "Line": 5.0,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Julian Champagnie",
@@ -3291,61 +3291,16 @@
     "Line": 5.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Stephon Castle",
-    "Team": "SAS",
-    "Stat": "Rebounds",
-    "Line": 4.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Derik Queen",
-    "Team": "NOP",
-    "Stat": "Assists",
-    "Line": 4.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kelly Oubre",
-    "Team": "PHI",
-    "Stat": "Rebounds",
-    "Line": 4.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
-    "Stat": "Rebounds",
-    "Line": 4.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Devin Vassell",
-    "Team": "SAS",
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
     "Stat": "Rebs+Asts",
     "Line": 4.5,
-    "Versus": "CHA",
+    "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Mike Conley",
-    "Team": "MIN",
-    "Stat": "Rebs+Asts",
-    "Line": 4.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Kentavious Caldwell-Pope",
@@ -3354,7 +3309,70 @@
     "Line": 4.5,
     "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaden McDaniels",
+    "Team": "MIN",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Stephon Castle",
+    "Team": "SAS",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Derik Queen",
+    "Team": "NOP",
+    "Stat": "Assists",
+    "Line": 4.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Mike Conley",
+    "Team": "MIN",
+    "Stat": "Rebs+Asts",
+    "Line": 4.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kelly Oubre",
+    "Team": "PHI",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Devin Vassell",
+    "Team": "SAS",
+    "Stat": "Rebs+Asts",
+    "Line": 4.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Brandon Miller",
+    "Team": "CHA",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Donte DiVincenzo",
@@ -3363,79 +3381,7 @@
     "Line": 4.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "Rebs+Asts",
-    "Line": 4.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Herbert Jones",
-    "Team": "NOP",
-    "Stat": "Rebounds",
-    "Line": 3.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Trey Murphy",
-    "Team": "NOP",
-    "Stat": "Assists",
-    "Line": 3.5,
-    "Versus": "PHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dru Smith",
-    "Team": "MIA",
-    "Stat": "Assists",
-    "Line": 3.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Coby White",
-    "Team": "CHI",
-    "Stat": "Rebounds",
-    "Line": 3.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Naji Marshall",
-    "Team": "DAL",
-    "Stat": "Assists",
-    "Line": 3.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Nickeil Alexander-Walker",
-    "Team": "ATL",
-    "Stat": "Rebounds",
-    "Line": 3.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Pelle Larsson",
-    "Team": "MIA",
-    "Stat": "Assists",
-    "Line": 3.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "CJ McCollum",
@@ -3444,52 +3390,70 @@
     "Line": 3.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Alperen Sengun",
-    "Team": "HOU",
-    "Stat": "Turnovers",
-    "Line": 2.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julius Randle",
-    "Team": "MIN",
-    "Stat": "Turnovers",
-    "Line": 2.5,
-    "Versus": "MEM",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Reed Sheppard",
-    "Team": "HOU",
-    "Stat": "Assists",
-    "Line": 2.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "T.J. McConnell",
-    "Team": "IND",
+    "Name": "Herbert Jones",
+    "Team": "NOP",
     "Stat": "Rebounds",
-    "Line": 2.5,
-    "Versus": "ATL",
+    "Line": 3.5,
+    "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Matas Buzelis",
-    "Team": "CHI",
+    "Name": "Pelle Larsson",
+    "Team": "MIA",
     "Stat": "Assists",
-    "Line": 2.5,
+    "Line": 3.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Coby White",
+    "Team": "CHI",
+    "Stat": "Rebounds",
+    "Line": 3.5,
     "Versus": "MIA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Trey Murphy",
+    "Team": "NOP",
+    "Stat": "Assists",
+    "Line": 3.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Naji Marshall",
+    "Team": "DAL",
+    "Stat": "Assists",
+    "Line": 3.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Nickeil Alexander-Walker",
+    "Team": "ATL",
+    "Stat": "Rebounds",
+    "Line": 3.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dru Smith",
+    "Team": "MIA",
+    "Stat": "Assists",
+    "Line": 3.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Amen Thompson",
@@ -3498,16 +3462,34 @@
     "Line": 2.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Brandon Miller",
-    "Team": "CHA",
+    "Name": "Alperen Sengun",
+    "Team": "HOU",
     "Stat": "Turnovers",
     "Line": 2.5,
-    "Versus": "SAS",
+    "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Reed Sheppard",
+    "Team": "HOU",
+    "Stat": "Assists",
+    "Line": 2.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Matas Buzelis",
+    "Team": "CHI",
+    "Stat": "Assists",
+    "Line": 2.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "LaMelo Ball",
@@ -3516,133 +3498,43 @@
     "Line": 2.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Collin Sexton",
+    "Name": "Brandon Miller",
     "Team": "CHA",
     "Stat": "Turnovers",
-    "Line": 1.5,
+    "Line": 2.5,
     "Versus": "SAS",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Tari Eason",
-    "Team": "HOU",
-    "Stat": "3-PT",
-    "Line": 1.5,
-    "Versus": "DAL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jock Landale",
-    "Team": "MEM",
-    "Stat": "Assists",
-    "Line": 1.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "Assists",
-    "Line": 1.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Luke Kennard",
-    "Team": "ATL",
-    "Stat": "3-PT",
-    "Line": 1.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Wiggins",
-    "Team": "MIA",
-    "Stat": "Turnovers",
-    "Line": 1.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Smith",
-    "Team": "CHI",
-    "Stat": "Assists",
-    "Line": 1.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Rudy Gobert",
+    "Name": "Julius Randle",
     "Team": "MIN",
-    "Stat": "Assists",
-    "Line": 1.5,
+    "Stat": "Turnovers",
+    "Line": 2.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Assists",
-    "Line": 1.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Paul George",
-    "Team": "PHI",
-    "Stat": "Turnovers",
-    "Line": 1.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jeremiah Fears",
     "Team": "NOP",
-    "Stat": "Turnovers",
-    "Line": 1.5,
+    "Stat": "Rebounds",
+    "Line": 2.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Kon Knueppel",
-    "Team": "CHA",
-    "Stat": "Turnovers",
-    "Line": 1.5,
-    "Versus": "SAS",
+    "Name": "T.J. McConnell",
+    "Team": "IND",
+    "Stat": "Rebounds",
+    "Line": 2.5,
+    "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "P.J. Washington",
-    "Team": "DAL",
-    "Stat": "Turnovers",
-    "Line": 1.5,
-    "Versus": "HOU",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Santi Aldama",
-    "Team": "MEM",
-    "Stat": "3-PT",
-    "Line": 1.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Rudy Gobert",
@@ -3651,34 +3543,16 @@
     "Line": 1.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Jaylen Wells",
-    "Team": "MEM",
-    "Stat": "3-PT",
-    "Line": 1.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Johnson",
+    "Name": "Luke Kennard",
     "Team": "ATL",
     "Stat": "3-PT",
     "Line": 1.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Andrew Nembhard",
-    "Team": "IND",
-    "Stat": "3-PT",
-    "Line": 1.5,
-    "Versus": "ATL",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jarace Walker",
@@ -3687,88 +3561,151 @@
     "Line": 1.5,
     "Versus": "ATL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Derik Queen",
-    "Team": "NOP",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "PHI",
+    "Name": "P.J. Washington",
+    "Team": "DAL",
+    "Stat": "Assists",
+    "Line": 1.5,
+    "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Dyson Daniels",
-    "Team": "ATL",
-    "Stat": "Dunks",
-    "Line": 0.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Mike Conley",
-    "Team": "MIN",
+    "Name": "P.J. Washington",
+    "Team": "DAL",
     "Stat": "Turnovers",
-    "Line": 0.5,
+    "Line": 1.5,
+    "Versus": "HOU",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "Assists",
+    "Line": 1.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jock Landale",
+    "Team": "MEM",
+    "Stat": "Assists",
+    "Line": 1.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Rudy Gobert",
+    "Team": "MIN",
+    "Stat": "Assists",
+    "Line": 1.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Kevin Durant",
-    "Team": "HOU",
-    "Stat": "Dunks",
-    "Line": 0.5,
-    "Versus": "DAL",
+    "Name": "Santi Aldama",
+    "Team": "MEM",
+    "Stat": "3-PT",
+    "Line": 1.5,
+    "Versus": "MIN",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jaylen Wells",
+    "Team": "MEM",
+    "Stat": "3-PT",
+    "Line": 1.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jeremiah Fears",
+    "Team": "NOP",
+    "Stat": "Turnovers",
+    "Line": 1.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Paul George",
+    "Team": "PHI",
+    "Stat": "Turnovers",
+    "Line": 1.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kon Knueppel",
+    "Team": "CHA",
+    "Stat": "Turnovers",
+    "Line": 1.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Tari Eason",
     "Team": "HOU",
-    "Stat": "Blocked Shots",
-    "Line": 0.5,
+    "Stat": "3-PT",
+    "Line": 1.5,
     "Versus": "DAL",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
-    "Name": "Zaccharie Risacher",
+    "Name": "Andrew Wiggins",
+    "Team": "MIA",
+    "Stat": "Turnovers",
+    "Line": 1.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Smith",
+    "Team": "CHI",
+    "Stat": "Assists",
+    "Line": 1.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "3-PT",
+    "Line": 1.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Collin Sexton",
+    "Team": "CHA",
+    "Stat": "Turnovers",
+    "Line": 1.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Johnson",
     "Team": "ATL",
-    "Stat": "Dunks",
-    "Line": 0.5,
+    "Stat": "3-PT",
+    "Line": 1.5,
     "Versus": "IND",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Blocked Shots",
-    "Line": 0.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Corey Kispert",
-    "Team": "ATL",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Luke Kennard",
-    "Team": "ATL",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "IND",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Jeremiah Fears",
@@ -3777,133 +3714,7 @@
     "Line": 0.5,
     "Versus": "PHI",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Paul George",
-    "Team": "PHI",
-    "Stat": "Blocked Shots",
-    "Line": 0.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Quentin Grimes",
-    "Team": "PHI",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "VJ Edgecombe",
-    "Team": "PHI",
-    "Stat": "Dunks",
-    "Line": 0.5,
-    "Versus": "NOP",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Jalen Smith",
-    "Team": "CHI",
-    "Stat": "Dunks",
-    "Line": 0.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Isaac Okoro",
-    "Team": "CHI",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Pelle Larsson",
-    "Team": "MIA",
-    "Stat": "Dunks",
-    "Line": 0.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Kasparas Jaku\u010dionis",
-    "Team": "MIA",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "CHI",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Isaac Okoro",
-    "Team": "CHI",
-    "Stat": "Turnovers",
-    "Line": 0.5,
-    "Versus": "MIA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Ryan Kalkbrenner",
-    "Team": "CHA",
-    "Stat": "Turnovers",
-    "Line": 0.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Julian Champagnie",
-    "Team": "SAS",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dylan Harper",
-    "Team": "SAS",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Dylan Harper",
-    "Team": "SAS",
-    "Stat": "3-PT",
-    "Line": 0.5,
-    "Versus": "CHA",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Moussa Diabat\u00e9",
-    "Team": "CHA",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "SAS",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
-  },
-  {
-    "Name": "Vince Williams",
-    "Team": "MEM",
-    "Stat": "Steals",
-    "Line": 0.5,
-    "Versus": "MIN",
-    "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
   },
   {
     "Name": "Anthony Edwards",
@@ -3912,6 +3723,213 @@
     "Line": 0.5,
     "Versus": "MEM",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-01-31 08:46"
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
+    "Stat": "Blocked Shots",
+    "Line": 0.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Quentin Grimes",
+    "Team": "PHI",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Paul George",
+    "Team": "PHI",
+    "Stat": "Blocked Shots",
+    "Line": 0.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Derik Queen",
+    "Team": "NOP",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "PHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "VJ Edgecombe",
+    "Team": "PHI",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "NOP",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Vince Williams",
+    "Team": "MEM",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "MIN",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Mike Conley",
+    "Team": "MIN",
+    "Stat": "Turnovers",
+    "Line": 0.5,
+    "Versus": "MEM",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Ryan Kalkbrenner",
+    "Team": "CHA",
+    "Stat": "Turnovers",
+    "Line": 0.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Moussa Diabat\u00e9",
+    "Team": "CHA",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "SAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dylan Harper",
+    "Team": "SAS",
+    "Stat": "3-PT",
+    "Line": 0.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dylan Harper",
+    "Team": "SAS",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Isaac Okoro",
+    "Team": "CHI",
+    "Stat": "Turnovers",
+    "Line": 0.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Julian Champagnie",
+    "Team": "SAS",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "CHA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Pelle Larsson",
+    "Team": "MIA",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Isaac Okoro",
+    "Team": "CHI",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kasparas Jaku\u010dionis",
+    "Team": "MIA",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "CHI",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Jalen Smith",
+    "Team": "CHI",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "MIA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Dyson Daniels",
+    "Team": "ATL",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Zaccharie Risacher",
+    "Team": "ATL",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Luke Kennard",
+    "Team": "ATL",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Corey Kispert",
+    "Team": "ATL",
+    "Stat": "Steals",
+    "Line": 0.5,
+    "Versus": "IND",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Tari Eason",
+    "Team": "HOU",
+    "Stat": "Blocked Shots",
+    "Line": 0.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
+  },
+  {
+    "Name": "Kevin Durant",
+    "Team": "HOU",
+    "Stat": "Dunks",
+    "Line": 0.5,
+    "Versus": "DAL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-01-31 09:15"
   }
 ]
