@@ -1,21 +1,57 @@
 [
   {
+    "Name": "Joel Embiid",
+    "Team": "PHI",
+    "Stat": "Points",
+    "Line": 28.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Paolo Banchero",
+    "Team": "ORL",
+    "Stat": "Points",
+    "Line": 21.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
     "Name": "Brandon Miller",
     "Team": "CHA",
     "Stat": "Points",
     "Line": 21.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "LaMelo Ball",
     "Team": "CHA",
     "Stat": "Points",
-    "Line": 20.5,
+    "Line": 19.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Desmond Bane",
+    "Team": "ORL",
+    "Stat": "Points",
+    "Line": 18.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 16.5,
+    "Versus": "WAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Miles Bridges",
@@ -24,7 +60,7 @@
     "Line": 16.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Amen Thompson",
@@ -33,7 +69,7 @@
     "Line": 15.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Jabari Smith",
@@ -42,7 +78,34 @@
     "Line": 14.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Aaron Nesmith",
+    "Team": "IND",
+    "Stat": "Points",
+    "Line": 13.5,
+    "Versus": "WAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Joel Embiid",
+    "Team": "PHI",
+    "Stat": "Rebounds",
+    "Line": 8.5,
+    "Versus": "ATL",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Paolo Banchero",
+    "Team": "ORL",
+    "Stat": "Rebounds",
+    "Line": 8.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "LaMelo Ball",
@@ -51,7 +114,16 @@
     "Line": 7.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Andrew Nembhard",
+    "Team": "IND",
+    "Stat": "Assists",
+    "Line": 7.5,
+    "Versus": "WAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Amen Thompson",
@@ -60,7 +132,7 @@
     "Line": 7.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Jabari Smith",
@@ -69,7 +141,7 @@
     "Line": 6.5,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Miles Bridges",
@@ -78,7 +150,7 @@
     "Line": 5.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Amen Thompson",
@@ -87,7 +159,7 @@
     "Line": 5.0,
     "Versus": "CHA",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "LaMelo Ball",
@@ -96,7 +168,16 @@
     "Line": 4.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Aaron Nesmith",
+    "Team": "IND",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "WAS",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Brandon Miller",
@@ -105,7 +186,16 @@
     "Line": 4.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
+  },
+  {
+    "Name": "Desmond Bane",
+    "Team": "ORL",
+    "Stat": "Rebounds",
+    "Line": 4.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-02-15 23:59"
   },
   {
     "Name": "Brandon Miller",
@@ -114,6 +204,6 @@
     "Line": 3.5,
     "Versus": "HOU",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-02-15 23:37"
+    "Scraped_At": "2026-02-15 23:59"
   }
 ]
