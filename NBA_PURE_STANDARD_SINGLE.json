@@ -1,11 +1,218 @@
 [
   {
+    "Name": "LeBron James",
+    "Team": "LAL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 43.0,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deni Avdija",
+    "Team": "POR",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 39.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Donovan Clingan",
+    "Team": "POR",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 27.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
     "Name": "Deni Avdija",
     "Team": "POR",
     "Stat": "Points",
     "Line": 26.5,
     "Versus": "SAC",
     "Odds_Type": "Standard",
-    "Scraped_At": "2026-04-11 13:45"
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Jrue Holiday",
+    "Team": "POR",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 26.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "LeBron James",
+    "Team": "LAL",
+    "Stat": "Points",
+    "Line": 25.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Scoot Henderson",
+    "Team": "POR",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 23.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Toumani Camara",
+    "Team": "POR",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 21.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deandre Ayton",
+    "Team": "LAL",
+    "Stat": "Pts+Rebs+Asts",
+    "Line": 20.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Jrue Holiday",
+    "Team": "POR",
+    "Stat": "Points",
+    "Line": 15.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Scoot Henderson",
+    "Team": "POR",
+    "Stat": "Points",
+    "Line": 15.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Toumani Camara",
+    "Team": "POR",
+    "Stat": "Points",
+    "Line": 14.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deandre Ayton",
+    "Team": "LAL",
+    "Stat": "Points",
+    "Line": 12.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Donovan Clingan",
+    "Team": "POR",
+    "Stat": "Points",
+    "Line": 12.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Donovan Clingan",
+    "Team": "POR",
+    "Stat": "Rebounds",
+    "Line": 12.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "LeBron James",
+    "Team": "LAL",
+    "Stat": "Assists",
+    "Line": 9.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deandre Ayton",
+    "Team": "LAL",
+    "Stat": "Rebounds",
+    "Line": 7.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "LeBron James",
+    "Team": "LAL",
+    "Stat": "Rebounds",
+    "Line": 7.5,
+    "Versus": "UTA",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deni Avdija",
+    "Team": "POR",
+    "Stat": "Rebounds",
+    "Line": 7.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Deni Avdija",
+    "Team": "POR",
+    "Stat": "Assists",
+    "Line": 6.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Jrue Holiday",
+    "Team": "POR",
+    "Stat": "Assists",
+    "Line": 6.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Jrue Holiday",
+    "Team": "POR",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Toumani Camara",
+    "Team": "POR",
+    "Stat": "Rebounds",
+    "Line": 4.5,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
+  },
+  {
+    "Name": "Scoot Henderson",
+    "Team": "POR",
+    "Stat": "Assists",
+    "Line": 4.0,
+    "Versus": "SAC",
+    "Odds_Type": "Standard",
+    "Scraped_At": "2026-04-11 14:05"
   }
 ]
