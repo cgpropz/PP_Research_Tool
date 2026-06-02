@@ -868,6 +868,37 @@
     "expected_minutes": 23.1
   },
   {
+    "name": "Landry Shamet",
+    "team": "NYK",
+    "opponent": "SAS",
+    "prop": "Pts+Rebs+Asts",
+    "line": 8.5,
+    "last_5": "4/5",
+    "last_5_pct": 80.0,
+    "last_10": "8/10",
+    "last_10_pct": 80.0,
+    "last_20": "10/15",
+    "last_20_pct": 66.7,
+    "season": "10/15",
+    "season_pct": 66.7,
+    "avg": 12.5,
+    "games": 15,
+    "last_10_values": [
+      11.0,
+      16.0,
+      4.0,
+      12.0,
+      11.0,
+      15.0,
+      41.0,
+      17.0,
+      13.0,
+      2.0
+    ],
+    "projection": 14.7,
+    "expected_minutes": 23.1
+  },
+  {
     "name": "Mitchell Robinson",
     "team": "NYK",
     "opponent": "SAS",
