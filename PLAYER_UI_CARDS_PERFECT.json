@@ -1519,6 +1519,37 @@
     "expected_minutes": 31.5
   },
   {
+    "name": "OG Anunoby",
+    "team": "NYK",
+    "opponent": "SAS",
+    "prop": "Points",
+    "line": 14.5,
+    "last_5": "3/5",
+    "last_5_pct": 60.0,
+    "last_10": "6/10",
+    "last_10_pct": 60.0,
+    "last_20": "12/20",
+    "last_20_pct": 60.0,
+    "season": "13/23",
+    "season_pct": 56.5,
+    "avg": 15.2,
+    "games": 23,
+    "last_10_values": [
+      21.0,
+      13.0,
+      24.0,
+      16.0,
+      2.0,
+      18.0,
+      8.0,
+      15.0,
+      23.0,
+      9.0
+    ],
+    "projection": 14.88,
+    "expected_minutes": 34.0
+  },
+  {
     "name": "Mitchell Robinson",
     "team": "NYK",
     "opponent": "SAS",
@@ -1764,37 +1795,6 @@
       14.0
     ],
     "projection": 20.58,
-    "expected_minutes": 34.0
-  },
-  {
-    "name": "OG Anunoby",
-    "team": "NYK",
-    "opponent": "SAS",
-    "prop": "Points",
-    "line": 15.5,
-    "last_5": "2/5",
-    "last_5_pct": 40.0,
-    "last_10": "5/10",
-    "last_10_pct": 50.0,
-    "last_20": "11/20",
-    "last_20_pct": 55.0,
-    "season": "12/23",
-    "season_pct": 52.2,
-    "avg": 15.2,
-    "games": 23,
-    "last_10_values": [
-      21.0,
-      13.0,
-      24.0,
-      16.0,
-      2.0,
-      18.0,
-      8.0,
-      15.0,
-      23.0,
-      9.0
-    ],
-    "projection": 14.88,
     "expected_minutes": 34.0
   },
   {
@@ -3160,37 +3160,6 @@
     ],
     "projection": 3.63,
     "expected_minutes": 30.2
-  },
-  {
-    "name": "Dylan Harper",
-    "team": "SAS",
-    "opponent": "NYK",
-    "prop": "Rebounds",
-    "line": 4.5,
-    "last_5": "1/5",
-    "last_5_pct": 20.0,
-    "last_10": "2/10",
-    "last_10_pct": 20.0,
-    "last_20": "4/20",
-    "last_20_pct": 20.0,
-    "season": "6/23",
-    "season_pct": 26.1,
-    "avg": 3.3,
-    "games": 23,
-    "last_10_values": [
-      3.0,
-      4.0,
-      5.0,
-      3.0,
-      2.0,
-      3.0,
-      3.0,
-      7.0,
-      4.0,
-      2.0
-    ],
-    "projection": 3.52,
-    "expected_minutes": 20.4
   },
   {
     "name": "Victor Wembanyama",
