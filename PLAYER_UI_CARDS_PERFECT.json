@@ -1767,37 +1767,6 @@
     "expected_minutes": 34.0
   },
   {
-    "name": "Devin Vassell",
-    "team": "SAS",
-    "opponent": "NYK",
-    "prop": "Pts+Rebs",
-    "line": 16.5,
-    "last_5": "2/5",
-    "last_5_pct": 40.0,
-    "last_10": "5/10",
-    "last_10_pct": 50.0,
-    "last_20": "14/20",
-    "last_20_pct": 70.0,
-    "season": "22/32",
-    "season_pct": 68.8,
-    "avg": 19.0,
-    "games": 32,
-    "last_10_values": [
-      8.0,
-      12.0,
-      28.0,
-      24.0,
-      25.0,
-      17.0,
-      22.0,
-      9.0,
-      14.0,
-      11.0
-    ],
-    "projection": 17.1,
-    "expected_minutes": 30.9
-  },
-  {
     "name": "De'Aaron Fox",
     "team": "SAS",
     "opponent": "NYK",
@@ -2167,6 +2136,37 @@
       11.0
     ],
     "projection": 19.29,
+    "expected_minutes": 30.9
+  },
+  {
+    "name": "Devin Vassell",
+    "team": "SAS",
+    "opponent": "NYK",
+    "prop": "Pts+Rebs",
+    "line": 17.5,
+    "last_5": "1/5",
+    "last_5_pct": 20.0,
+    "last_10": "4/10",
+    "last_10_pct": 40.0,
+    "last_20": "12/20",
+    "last_20_pct": 60.0,
+    "season": "19/32",
+    "season_pct": 59.4,
+    "avg": 19.0,
+    "games": 32,
+    "last_10_values": [
+      8.0,
+      12.0,
+      28.0,
+      24.0,
+      25.0,
+      17.0,
+      22.0,
+      9.0,
+      14.0,
+      11.0
+    ],
+    "projection": 17.1,
     "expected_minutes": 30.9
   },
   {
