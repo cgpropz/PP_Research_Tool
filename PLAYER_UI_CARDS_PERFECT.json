@@ -62,6 +62,37 @@
     "expected_minutes": 22.1
   },
   {
+    "name": "Keldon Johnson",
+    "team": "SAS",
+    "opponent": "NYK",
+    "prop": "Pts+Rebs",
+    "line": 7.5,
+    "last_5": "5/5",
+    "last_5_pct": 100.0,
+    "last_10": "10/10",
+    "last_10_pct": 100.0,
+    "last_20": "20/20",
+    "last_20_pct": 100.0,
+    "season": "33/33",
+    "season_pct": 100.0,
+    "avg": 19.8,
+    "games": 33,
+    "last_10_values": [
+      25.0,
+      9.0,
+      17.0,
+      16.0,
+      21.0,
+      26.0,
+      16.0,
+      37.0,
+      11.0,
+      27.0
+    ],
+    "projection": 21.48,
+    "expected_minutes": 22.1
+  },
+  {
     "name": "Luke Kornet",
     "team": "SAS",
     "opponent": "NYK",
