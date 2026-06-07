@@ -682,6 +682,37 @@
     "expected_minutes": 22.5
   },
   {
+    "name": "Mitchell Robinson",
+    "team": "NYK",
+    "opponent": "SAS",
+    "prop": "Blocked Shots",
+    "line": 0.5,
+    "last_5": "5/5",
+    "last_5_pct": 100.0,
+    "last_10": "9/10",
+    "last_10_pct": 90.0,
+    "last_20": "14/20",
+    "last_20_pct": 70.0,
+    "season": "15/22",
+    "season_pct": 68.2,
+    "avg": 1.1,
+    "games": 22,
+    "last_10_values": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      4.0,
+      2.0,
+      1.0,
+      2.0,
+      1.0,
+      1.0
+    ],
+    "projection": 1.32,
+    "expected_minutes": 20.1
+  },
+  {
     "name": "Jalen Brunson",
     "team": "NYK",
     "opponent": "SAS",
