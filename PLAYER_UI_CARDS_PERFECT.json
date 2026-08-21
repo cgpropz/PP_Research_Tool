@@ -899,6 +899,37 @@
     "expected_minutes": 26.5
   },
   {
+    "name": "LeBron James",
+    "team": "PHI",
+    "opponent": "NYK",
+    "prop": "Rebs+Asts",
+    "line": 13.5,
+    "last_5": "0/5",
+    "last_5_pct": 0.0,
+    "last_10": "3/10",
+    "last_10_pct": 30.0,
+    "last_20": "5/15",
+    "last_20_pct": 33.3,
+    "season": "5/15",
+    "season_pct": 33.3,
+    "avg": 11.4,
+    "games": 15,
+    "last_10_values": [
+      17.0,
+      13.0,
+      23.0,
+      7.0,
+      17.0,
+      7.0,
+      8.0,
+      7.0,
+      8.0,
+      8.0
+    ],
+    "projection": 10.3,
+    "expected_minutes": 32.6
+  },
+  {
     "name": "Victor Wembanyama",
     "team": "SAS",
     "opponent": "OKC",
