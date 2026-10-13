@@ -527,6 +527,37 @@
     "expected_minutes": 35.4
   },
   {
+    "name": "Cade Cunningham",
+    "team": "DET",
+    "opponent": "BOS",
+    "prop": "Assists",
+    "line": 9.5,
+    "last_5": "4/5",
+    "last_5_pct": 80.0,
+    "last_10": "6/10",
+    "last_10_pct": 60.0,
+    "last_20": "10/20",
+    "last_20_pct": 50.0,
+    "season": "17/31",
+    "season_pct": 54.8,
+    "avg": 9.7,
+    "games": 31,
+    "last_10_values": [
+      6.0,
+      10.0,
+      9.0,
+      10.0,
+      9.0,
+      14.0,
+      17.0,
+      9.0,
+      11.0,
+      11.0
+    ],
+    "projection": 10.85,
+    "expected_minutes": 35.4
+  },
+  {
     "name": "Victor Wembanyama",
     "team": "SAS",
     "opponent": "OKC",
